@@ -2397,7 +2397,7 @@ function QueryStat(myObj, sqlStat, res) {
     }
 
     function removeFile() {
-        // console.log('the remove function was called');
+        console.log('the remove function was called');
 
         const dir = 'config/geoCapacity'; //the dir of the file that I am going to remove.
 
