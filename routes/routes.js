@@ -2404,7 +2404,7 @@ function QueryStat(myObj, sqlStat, res) {
         fs.readdir(dir, (err, files) => {
             // let fileName = []; // create an empty array
             // fileName.push(files); //push the file name into the array
-            console.log(files);
+            // console.log(files);
 
             if(files.length > num_backups){ //if there are more than 100 file in the directory
                 if(!downloadFalse){ //if download succeed, run the code below
