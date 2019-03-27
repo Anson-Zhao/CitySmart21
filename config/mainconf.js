@@ -38,7 +38,7 @@ var configGlobal = {
 
     //approve file--active
     // 'GeoData_Dir': '/usr/share/worldwind-geoserver-0.2.1/data_dir/data/USGS'
-    'GeoData_Dir':'approvedfiles',
+    'GeoData_Dir':'approvedfolder',
 
     //trashfolder file--trashfolder
     'Delete_Dir':'trashfolder',

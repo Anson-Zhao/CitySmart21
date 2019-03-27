@@ -11,6 +11,7 @@
     "express": "latest",
     "express-mysql-session": "^2.1.0",
     "express-session": "^1.15.6",
+    "fs-extra": "^7.0.1",
     "mkdirp": "^0.5.1",
     "morgan": "^1.9.1",
     "multiparty": "^4.2.1",

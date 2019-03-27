@@ -1406,7 +1406,7 @@ module.exports = function (app, passport) {
                     var type = "Content-type: application/zip";
                     var datastore = "datastore" + fName;
 
-                    var statement = "curl -u julia:123654 -v -XPUT -H '" + type + "' --data-binary @approvedfiles/" + approvepictureStr[0] + " http://cs.aworldbridgelabs.com:8080/geoserver/rest/workspaces/Approved/datastores/" + datastore +"/file.shp";
+                    var statement = "curl -u julia:123654 -v -XPUT -H '" + type + "' --data-binary @approvedfolder/" + approvepictureStr[0] + " http://cs.aworldbridgelabs.com:8080/geoserver/rest/workspaces/Approved/datastores/" + datastore +"/file.shp";
 
                     child = exec(statement,
                         function (error, stdout, stderr) {
@@ -1443,7 +1443,7 @@ module.exports = function (app, passport) {
                 //
                 // var type = "Content-type: application/zip";
                 //
-                // var statement = "curl -u julia:123654 -v -XPUT -H '" + type + "' --data-binary @approvedfiles/" + approvepictureStr[0] + " http://cs.aworldbridgelabs.com:8080/geoserver/rest/workspaces/Approved/datastores/datastore/file.shp";
+                // var statement = "curl -u julia:123654 -v -XPUT -H '" + type + "' --data-binary @approvedfolder/" + approvepictureStr[0] + " http://cs.aworldbridgelabs.com:8080/geoserver/rest/workspaces/Approved/datastores/datastore/file.shp";
                 //
                 // child = exec(statement,
                 //     function (error, stdout, stderr) {
