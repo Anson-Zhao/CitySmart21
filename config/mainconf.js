@@ -34,6 +34,8 @@ var configGlobal = {
     // 'Upload_Path': 'http://usgs.aworldbridgelabs.com/uploadfiles',
     // 'Upload_Path':'uploadfiles',
     // 'Upload_Dir': '/var/www/usgs/uploadfiles',
+
+    // 'Upload_Dir': 'uploadfolder',
     'Upload_Dir': 'uploadfiles',
 
     //approve file--active
@@ -50,7 +52,15 @@ var configGlobal = {
     'eyeDistance_Heatmap': 4500,
 
     // uswtdb initial eye distance (m)
-    'eyeDistance_initial': 5000000
+    'eyeDistance_initial': 5000000,
+
+    // 'num_backups': 100,
+
+    'num_backups': 2,
+
+    'download_interval':30000,
+
+    // 'download_interval':86400000,
 };
 
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {

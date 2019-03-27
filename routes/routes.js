@@ -67,18 +67,6 @@ module.exports = function (app, passport) {
         })
     });
 
-    // function downloadImage () {
-    //     // const url = 'http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities';
-    //     const url = 'https://unsplash.com/photos/AaEQmoufHLk/download?force=true';
-    //     const downloadDir = path.resolve(__dirname, downloadPath, 'code1.jpg');
-    //
-    //     request(url).pipe(fs.createWriteStream(downloadDir));
-    //     fs.createWriteStream(downloadDir).end();
-    //
-    // }
-
-    // downloadImage();
-
     app.get('/homepageLI', isLoggedIn, function (req, res) {
         let myStat = "SELECT userrole FROM UserLogin WHERE username = '" + req.user.username + "';";
         let state2 = "SELECT firstName FROM UserProfile WHERE username = '" + req.user.username + "';";
@@ -392,34 +380,78 @@ module.exports = function (app, passport) {
         res.setHeader("Access-Control-Allow-Origin", "*");
         // del_recov("Approved", "Recovery failed!", "/userHome", req, res);
         let pictureStr = req.query.pictureStr.split(',');
-        let transactionPrStatusStr = req.query.transactionStatusStr;
-        console.log("tran:"+transactionPrStatusStr);
+        let transactionPrStatusStr = req.query.transactionStatusStr.split(',');
+        let layerNameStr = req.query.layerName.split(',');
 
         // mover folder
-        for(var a=0; a<transactionPrStatusStr.length; a++) {
+        for(let i = 0; i < pictureStr.length; i++) {
 
-            if (transactionPrStatusStr[a] ==="Pending") {
-                del_recov('Pending', "Recovery failed!", "/userHome", req, res);
-                for (let i = 0; i < pictureStr.length; i++) {
-                    fs.rename('' + Delete_Dir + '/' + pictureStr[i] + '', '' + upload_Dir + '/' + pictureStr[i] + '', function (err) {
-                        if (err) {
-                            console.log(err);
-                        } else {
-                            console.log("Recovery process is successful");
-                        }
-                 });
-                }
-            }else{
-                for (let i = 0; i < pictureStr.length; i++) {
-                    del_recov('Approved', "Recovery failed!", "/userHome", req, res);
-                    fs.rename('' + Delete_Dir + '/' + pictureStr[i] + '', '' + geoData_Dir + '/' + pictureStr[i] + '', function (err) {
-                        if (err) {
-                            console.log(err);
-                        } else {//if successful
-                            console.log("Recovery process is successful");
-                        }
-                    });
-                }
+            console.log("tran:"+transactionPrStatusStr[i]);
+
+            if (transactionPrStatusStr[i] === 'Pending') {
+                console.log('pending');
+
+                fs.rename(''+ Delete_Dir + '/' + pictureStr[i] + '' , '' + upload_Dir + '/' + pictureStr[i] + '', function (err) {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        console.log("Recovery process is successful");
+                    }
+                });
+
+                del_recov("Pending", "Recover Failed!", "/userHome", req, res);
+
+                let statementpractice = "UPDATE Request_Form SET Layer_Uploader = 'uploadfolder/'";
+
+                con_CS.query(statementpractice, function (err, results) {
+                    if (err) throw err;
+                    res.json(results[i]);
+                });
+            }
+
+            if(transactionPrStatusStr[i] === 'Approved'){
+                console.log('Approved');
+
+                fs.rename(''+ Delete_Dir + '/' + pictureStr[i] + '' , '' + geoData_Dir + '/' + pictureStr[i] + '', function (err) {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        console.log("Recovery process is successful");
+                    }
+                });
+
+                del_recov("Approved", "Recover Failed!", "/userHome", req, res);
+
+                let statement1 = "UPDATE Request_Form SET Layer_Uploader = 'approvedfolder/';";
+                let statement2 = "UPDATE LayerMenu SET Status = 'Approved' WHERE ThirdLayer = '" + layerNameStr[i]  + "';";
+                console.log(statement2);
+                console.log('statement:D'+statement1+statement2);
+
+                con_CS.query(statement1+statement2, function (err, results) {
+                    if (err) throw err;
+                    res.json(results[i]);
+                });
+            }
+
+            if(transactionPrStatusStr[i] === 'Reject'){
+                console.log('reject');
+                fs.rename(''+ Delete_Dir + '/' + pictureStr[i] + '' , '' + upload_Dir + '/' + pictureStr[i] + '', function (err) {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        console.log("Recovery process is successful");
+                    }
+                });
+
+                del_recov("Reject", "Recover Failed!", "/userHome", req, res);
+
+                let statement1 = "UPDATE Request_Form SET Layer_Uploader = 'uploadfolder/'";
+
+                con_CS.query(statement1, function (err, results) {
+                    if (err) throw err;
+                    res.json(results[i]);
+                });
+
             }
         }
     });
@@ -2361,11 +2393,11 @@ function QueryStat(myObj, sqlStat, res) {
 
     function predownloadXml () {
         const downloadDir = path.resolve(__dirname, downloadPath, 'ows.xml'); // the path of the destination
-        const timeout = 20000;
+        // const timeout = 20000;
         const requestOptions = {
             uri: 'http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities',
-            // timeout: download_interval
-            timeout:timeout
+            timeout: download_interval
+            // timeout:timeout
         };
         let resXMLRequest;
         console.log('predownloadXML was called');
@@ -2401,7 +2433,7 @@ function QueryStat(myObj, sqlStat, res) {
 
         const dir = 'config/geoCapacity'; //the dir of the file that I am going to remove.
 
-        fs.readdir(dir, (err, files) => {
+        fs.readdir(dir, (err, files) => {//a method to calculate the number of the files in the geoCapacity folder
             var fileLength = files.length; // the total name of the file in directory
             console.log(fileLength);
             var fileName = []; // create an empty array
