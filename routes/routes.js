@@ -2397,14 +2397,14 @@ function QueryStat(myObj, sqlStat, res) {
     }
 
     function removeFile() {
-        console.log('the remove function was called');
+        // console.log('the remove function was called');
 
         const dir = 'config/geoCapacity'; //the dir of the file that I am going to remove.
 
         fs.readdir(dir, (err, files) => {
-            var fileLength = files.length; // the total name of the file in directory
+            let fileLength = files.length; // the total name of the file in directory
             console.log(fileLength);
-            var fileName = []; // create an empty array
+            let fileName = []; // create an empty array
             fileName.push(files); //push the file name into the array
 
             if(fileLength > num_backups){ //if there are more than 100 file in the directory
