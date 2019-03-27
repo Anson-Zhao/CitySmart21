@@ -2346,11 +2346,11 @@ function QueryStat(myObj, sqlStat, res) {
 
     function copyXML(){
         const downloadDir = path.resolve(__dirname, downloadPath, 'ows.xml'); //the path of the source file
-        var today = new Date();//get the current date
-        var date = today.getFullYear()+ '_' +(today.getMonth()+1)+ '_' + today.getDate();
-        var time = today.getHours() + "_" + today.getMinutes()+'_' + today.getSeconds();
-        var dataStr = date + "_"+ time;
-        var downloadDis = 'config/geoCapacity/' + dataStr+ '.xml'; //define a file name
+        const today = new Date();//get the current date
+        let date = today.getFullYear()+ '_' +(today.getMonth()+1)+ '_' + today.getDate();
+        let time = today.getHours() + "_" + today.getMinutes()+'_' + today.getSeconds();
+        let dataStr = date + "_"+ time;
+        let downloadDis = 'config/geoCapacity/' + dataStr+ '.xml'; //define a file name
 
         fsextra.copy(downloadDir, downloadDis) //copy the file and rename
             .then(//if copy succeed, call pre-download XML function
@@ -2361,7 +2361,7 @@ function QueryStat(myObj, sqlStat, res) {
 
     function predownloadXml () {
         const downloadDir = path.resolve(__dirname, downloadPath, 'ows.xml'); // the path of the destination
-        const timeout = 20000;
+        const timeout = 600000;
         const requestOptions = {
             uri: 'http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities',
             // timeout: download_interval
@@ -2402,21 +2402,20 @@ function QueryStat(myObj, sqlStat, res) {
         const dir = 'config/geoCapacity'; //the dir of the file that I am going to remove.
 
         fs.readdir(dir, (err, files) => {
-            let fileLength = files.length; // the total name of the file in directory
-            console.log(fileLength);
-            let fileName = []; // create an empty array
-            fileName.push(files); //push the file name into the array
+            // let fileName = []; // create an empty array
+            // fileName.push(files); //push the file name into the array
+            console.log(files);
 
-            if(fileLength > num_backups){ //if there are more than 100 file in the directory
+            if(files.length > num_backups){ //if there are more than 100 file in the directory
                 if(!downloadFalse){ //if download succeed, run the code below
-                    fs.unlink('config/geoCapacity/'+ fileName[0][0], (err) => { //delete the first (the oldest) file in the directory
+                    fs.unlink('config/geoCapacity/'+ files[0], (err) => { //delete the first (the oldest) file in the directory
                         if (err) {throw err} else {
                             downloadFalse = true; //change the value of "downloadFalse" to true
                         }
                         console.log('download and remove copy successfully');
                     })
                 } else { //if download failed, run the code below
-                    fs.unlink('config/geoCapacity/'+ fileName[0][fileLength-1], (err) => { //then delete the last (the latest) file in the directory
+                    fs.unlink('config/geoCapacity/'+ files[files.length-1], (err) => { //then delete the last (the latest) file in the directory
                         if (err) {throw err}
                         console.log('download file failed, removed copy successfully')
                     })

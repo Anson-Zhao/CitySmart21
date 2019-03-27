@@ -44,7 +44,7 @@ var configGlobal = {
     'Delete_Dir':'trashfolder',
 
     'num_backups': 4,
-    'download_interval': 60000,
+    'download_interval': 660000,
 
     // uswtdb eye distance for placemark layer menu display (km)
     'eyeDistance_PL': 1500,
