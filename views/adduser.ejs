@@ -1,0 +1,138 @@
+<!-- views/addUser.ejs -->
+<!doctype html>
+<html>
+<head>
+    <title>CitySmart - User Management - Add User</title>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <!-- load fontawesome -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <!--<link rel="stylesheet" href="//unpkg.com/flatpickr/dist/flatpickr.min.css">-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/flatpickr"></script>
+    <!--<script src="//unpkg.com/flatpickr"></script>-->
+    <style>.floatingBox {
+            display: inline-block;
+        }
+
+        .banner {
+            position: relative;
+            width: 100%;
+        }
+
+        .button1 {
+            width: 500px;
+            height: 50px;
+            border-radius: 15px;
+            -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            background-color: white;
+            color: #f0ad4e;
+            border: 1px solid #f0ad4e;
+        }
+
+        .button1:hover {
+            background-color: #f0ad4e;
+            color: white;
+        }
+    </style>
+</head>
+<div class="navul" style="height: 80px;
+    background: #000000;">
+    <a class="navul" href="//aworldbridge.com" style="background: #000000;
+    width: 500px;
+    height: 80px;">
+        <img class="banner" src="../images/NewWBBanner.jpg" style="width: 550px;
+    height: 80px;
+    margin: auto; display: block;" />
+    </a>
+</div>
+<body>
+<div class="container" style="width: 500px;
+    padding: 0px;">
+    <h1 style="margin-top: 20px;"><span class="fa fa-sign-in"></span> Add User </h1>
+    <!-- show any messages that come back with authentication -->
+    <% if (message.length > 0) { %>
+    <div class="alert alert-danger">
+        <%= message %>
+    </div>
+    <% } %>
+    <!-- ADD USER FORM -->
+    <form onsubmit="return checkForm()" action="/addUser" method="post" id="addUser">
+        <div class="form-group">
+            <label>Username (email address):</label>
+            <input type="email" class="form-control" name="username" style="height: 50px;">
+        </div>
+        <div class="form-group">
+            <label>First Name:</label>
+            <input type="text" class="form-control" name="firstName" style="height: 50px;">
+        </div>
+        <div class="form-group">
+            <label>Last Name:</label>
+            <input type="text" class="form-control" name="lastName" style="height: 50px;">
+        </div>
+        <div class="form-group">
+            <label>Password:</label>
+            <input type="password" class="form-control" name="password" style="height: 50px;">
+        </div>
+        <div class="form-group">
+            <label>User Role:</label>
+            <br>
+            <input type="radio" name="userrole" value="Admin">
+            <h5 class="floatingBox">&nbsp;&nbsp;&nbsp;Admin</h5>&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" name="userrole" value="Regular">
+            <h5 class="floatingBox">&nbsp;&nbsp;&nbsp;Regular</h5>
+        </div>
+        <div class="form-group">
+            <label>Date Created:</label>
+            <input id="DATE" class="form-control date" name="dateCreated" readonly style="height: 50px;">
+        </div>
+        <div class="form-group">
+            <label>Created By User:</label>
+            <input type="text" id="createdUser" class="form-control" name="createdUser" value="<%= user.username %>" readonly style="height: 50px;">
+        </div>
+        <div class="form-group">
+            <label>Status:</label>
+            <input type="text" id="status" class="form-control" name="status" value="Never Logged In" readonly style="height: 50px;">
+        </div>
+        <div class="container" style="width: 500px;
+    padding: 0px;">
+            <button type="submit" class="button1"> Add User </button>
+        </div>
+    </form>
+    <hr style="margin-bottom: 10px;">
+    <p style="margin-left: 225px;"> <a href="/userManagement">Cancel</a></p>
+</div>
+<br>
+<script>
+    $(document).ready(function() {
+        $(function() {
+            $('#addUser').submit(function(e) {
+                e.preventDefault();
+                $.ajax({
+                    type: "post",
+                    url: "/addUser",
+                    dataType: 'json',
+                    data: $("#addUser").serialize(),
+                    success: function (result) {
+                        if (!result.error) {
+                            alert(result.message);
+                            window.location.replace('/userManagement');
+                        } else {
+                            alert(result.message);
+                        }
+                    }
+                })
+            });
+        });
+        var today = new Date();
+        var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+        var time2 = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        var dateTime = date + ' ' + time2;
+        document.getElementById("DATE").value = dateTime;
+    });
+</script>
+</body>
+</html>

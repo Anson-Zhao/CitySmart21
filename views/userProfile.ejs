@@ -1,0 +1,451 @@
+<!-- views/profileBK.ejs -->
+<!doctype html>
+<html>
+<head>
+    <title>CitySmart - User Profile</title>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link rel="stylesheet" href="../css/style_final.css" type="text/css">
+    <link rel="stylesheet" href="../css/multi-select.css" media="screen" type="text/css">-->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../src/jquery-validation-1.17.0/demo/css/screen.css">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+    <script src="../src/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/file-uploader/5.16.2/all.fine-uploader/all.fine-uploader.min.js"></script>
+    <script src="../src/jquery.multi-select.js"></script>
+    <script src="../src/jquery-validation-1.17.0/dist/jquery.validate.js"></script>
+    <style>
+        body { padding-bottom:80px; word-wrap:break-word; }
+        #clear{
+            background-color: white;
+            width: 105px;
+            height: 60px;
+            border-radius:15px;
+            font-size:16px;
+            -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+            color: #31a0ba;
+            border-color: #31a0ba;
+            margin-left:6px;
+        }
+        #clear:hover {
+            background-color: #31a0ba;
+            color: white;
+        }
+        #submit{
+            background-color: #31a0ba;
+            width: 700px;
+            height: 60px;
+            border-radius:15px;
+            font-size:16px;
+            -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+            color:white;
+        }
+        #submit:hover{
+            background-color: #ff758f;
+            color:white;
+        }
+        #checkit{
+            width: 250px;
+            height: 50px;
+            border-radius:15px;
+            font-size:16px;
+            -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+            color:white;
+        }
+        input[type="text"] {
+             height: 60px;
+        }
+        input[type="password"] {
+            height: 60px;
+        }
+    </style>
+
+</head>
+<div class="navul" style="height: 150px;
+    background: #000000;">
+    <a class="navul" href="//aworldbridge.com" style="background: #000000;
+    width: 500px;
+    height: 60px;">
+        <img class="banner" src="../images/NewWBBanner.jpg" style="width: 950px;
+    height: 150px;
+    margin: auto; display: block;" />
+    </a>
+</div>
+<body>
+
+<div class="container" style="width: 850px;">
+    <h1 class="text-center page-header"><strong>User Profile</strong></h1>
+    <h3 class="text-center" style="margin:30px;">Basic Form</h3>
+        <div class="generalForm">
+            <form id="basic"  class="well form-horizontal">
+                <fieldset>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">User Name(Email)</label>
+                        <div class="col-md-8 inputGroupContainer">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="username" name="username" class="form-control" value="<%= user.username %>" type="text" onchange="verifyemaila()">
+                            </div>
+                            <p style="margin-top:8px;color:#0088d8;" id="emailc"></p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">First Name</label>
+                        <div class="col-md-8 inputGroupContainer">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="firstName" name="firstName" class="form-control" value="" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Last Name</label>
+                        <div class="col-md-8 inputGroupContainer">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="lastName" name="lastName" class="form-control"  value="" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Address Line 1</label>
+                        <div class="col-md-8 inputGroupContainer">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="addressLine1" name="Address_Line1" placeholder="Street address, P.O. box, company name, c/o" class="form-control" value="" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Address Line 2</label>
+                        <div class="col-md-8 inputGroupContainer">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="addressLine2" name="Address_Line2" placeholder="Apartment, suite, unit, building, floor, etc." class="form-control" value="" type="text"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">City</label>
+                        <div class="col-md-8 inputGroupContainer">
+                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="city" name="City" class="form-control" value="" type="text"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">State/Province/Region</label>
+                        <div class="col-md-8 inputGroupContainer">
+                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="state" name="State_Province_Region" class="form-control" value="" type="text"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Postal Code/ZIP</label>
+                        <div class="col-md-8 inputGroupContainer">
+                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="postcode" name="PostalCode_ZIP" class="form-control" value="" type="text" maxlength="5"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Country</label>
+                        <div class="col-md-8 inputGroupContainer">
+                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="country" name="Country" class="form-control" value="" type="text"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Phone Number</label>
+                        <div class="col-md-8 inputGroupContainer">
+                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                                <input id="phoneNumber" name="Phone_Number" class="form-control" value="" type="text" onkeypress="return numberPressed(event);"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">User Role</label>
+                        <div class="col-md-8 inputGroupContainer">
+                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                <input class="form-control" type="text" style="background:#e6e6e6;" value="<%= user.userrole%>" readonly></div>
+                            <!--<h4 id="userrole" class="floating-Box"><strong>User Role:&nbsp;&nbsp;</strong></h4>-->
+                        </div>
+                    </div>
+                    <div class="form-group" id="dateCreated">
+                        <label class="col-md-4 control-label">Date Created</label>
+                        <div class="col-md-8 inputGroupContainer">
+                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                                <input class="form-control" type="text" style="background:#e6e6e6;" value="<%= user.dateCreated %>" readonly></div>
+                            <!--<h4 id="userrole" class="floating-Box"><strong>User Role:&nbsp;&nbsp;</strong></h4>-->
+                        </div>
+                    </div>
+                    <div class="form-group" id="lastModification">
+                        <label class="col-md-4 control-label">Last Modification</label>
+                        <div class="col-md-8 inputGroupContainer">
+                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                                <input class="form-control" type="text" style="background:#e6e6e6;" value="<%= user.dateModified %>" readonly></div>
+                            <!--<h4 id="userrole" class="floating-Box"><strong>User Role:&nbsp;&nbsp;</strong></h4>-->
+                        </div>
+                    </div>
+                    <div class="form-group" id="lastModified">
+                        <label class="col-md-4 control-label">Last Modified by</label>
+                        <div class="col-md-8 inputGroupContainer">
+                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-star"></i></span>
+                                <input class="form-control" type="text" style="background:#e6e6e6;" value="<%= user.username%>" readonly></div>
+                            <!--<h4 id="userrole" class="floating-Box"><strong>User Role:&nbsp;&nbsp;</strong></h4>-->
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <p style="font-size:15px">
+            <label for="password" >Do you want to change your password?</label>
+            <input type="checkbox" id="password" name="password" onclick="myFunction()">
+        </p>
+        <div class="generalForm">
+            <form id="pswchange" style="display:none;" class="well form-horizontal">
+                <fieldset>
+                    <div>
+                        <label style="font-size:18px;">Password Change</label>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Current Password</label>
+                        <div class="col-md-8 inputGroupContainer">
+                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="currentPassword" name="CurrentPassword"  class="form-control"  value="" type="password"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">New Password</label>
+                        <div class="col-md-8 inputGroupContainer">
+                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="newPassword" name="newpassword" class="form-control" value="" type="password"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Confirm New Password</label>
+                        <div class="col-md-8 inputGroupContainer">
+                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="ConfirmPassword" name="ConfirmNewPassword" class="form-control"  value="" type="password"></div>
+                        </div>
+                    </div>
+                <br>
+                <br>
+            </fieldset>
+            </form>
+            <button id="checkit" class="btn-primary" style="display:none; margin-top:-85px; margin-left:550px;" onclick="check()">Check</button>
+        </div>
+
+        <div>
+            <button id="submit" type="submit" value="Submit" onclick="submitForm();">Save Changes</button>
+            <button id="clear" type="button" onclick="clearForm();" value="Clear">Clear</button>
+            <hr>
+            <p class="text-center"><a id="cancel" onclick="userHome();">Cancel</a></p>
+        </div>
+</div>
+<script>
+    var UserName = "<%= user.username %>";
+    var passwordC = "<%= user.password %>";
+    var newusername;
+
+    $.ajax({
+        url: "/profile",
+        dataType: 'json',
+        success: function (results) {
+            // console.log(results);
+            newusername = results;
+            for(var i =0; i< results.length; i++) {
+                // console.log(results[i].username);
+                if (results[i].username === UserName) {
+                    document.getElementById('firstName').value = results[i].firstName;
+                    document.getElementById('lastName').value = results[i].lastName;
+                    document.getElementById('addressLine1').value = results[i].Address_Line1;
+                    document.getElementById('addressLine2').value = results[i].Address_Line2;
+                    document.getElementById('city').value = results[i].City;
+                    document.getElementById('state').value = results[i].State_Province_Region;
+                    document.getElementById('postcode').value = results[i].PostalCode_ZIP;
+                    document.getElementById('country').value = results[i].Country;
+                    document.getElementById('phoneNumber').value = results[i].Phone_Number;
+                }
+            }
+        }
+    })
+
+
+    var UserRole = "<%= user.userrole %>";
+
+    $(document).ready(function(){
+        if (UserRole === "Admin") {
+            document.getElementById('dateCreated').style.display = 'block';
+            document.getElementById('lastModification').style.display = 'block';
+            document.getElementById('lastModified').style.display = 'block';
+        } else if ( UserRole === "Regular") {
+            document.getElementById('dateCreated').style.display = 'none';
+            document.getElementById('lastModification').style.display = 'none';
+            document.getElementById('lastModified').style.display = 'none';
+        }
+
+    });
+
+    function userHome() {
+        if (confirm("Are you sure you want to leave this page? Changes will not be saved.") === true) {
+            window.location.replace('/userHome')
+        }
+    }
+
+    function clearForm(){
+        if (confirm("Are you sure you want to leave this page? All the data will be cleared accordingly!") === true) {
+            document.getElementById("basic").reset();
+            document.getElementById("pswchange").reset();
+        }
+    }
+
+    function check() {
+        let password = "pass=" + document.getElementById("currentPassword").value;
+        let oldP = document.getElementById("currentPassword").value;
+        var newP = document.getElementById("newPassword").value;
+        var confirmP = document.getElementById("ConfirmPassword").value;
+        $.ajax({
+            url  : '/checkpassword',
+            method : "POST",
+            data : password,
+            dataType: 'json',
+            success : function(d){
+                if (d === true) {
+                    alert("Please make sure you typed your current password correctly.");
+                }else if(d === false){
+                    if (oldP !== "" && confirmP !== "" && newP !== "") {
+                        if (oldP !== newP) {
+                            if (newP === confirmP) {
+                                alert("You can submit now!");
+                            } else {
+                                alert("New password do not match!");
+                            }
+                        } else {
+                            alert("Please make sure your new password is different from old one.");
+                        }
+                    } else {
+                        alert("All password fields are required.");
+                    }
+                }
+            }
+        });
+    }
+
+    var password = $("#password");
+    var initial = password.is(":checked");
+    var change = $("#password_change")[initial ? "removeClass" : "addClass"]("gray");
+    var changeInputs = change.find("input").attr("disabled", !initial);
+
+    password.click(function(){
+        change[this.checked ? "removeClass" : "addClass"]("gray");
+        changeInputs.attr("disabled", !this.checked);
+    });
+
+    function myFunction(){
+        var checkbox = document.getElementById("password");
+        var text = document.getElementById("pswchange");
+        if (checkbox.checked === true){
+            text.style.display = "block";
+            document.getElementById("checkit").style.display = "block";
+            document.getElementById("checkit").style.backgroundColor =  "#4183c4";
+        } else{
+            text.style.display = "none";
+            document.getElementById("checkit").style.display = "none";
+            document.getElementById("checkit").style.backgroundColor =  "lightgray";
+        }
+        document.getElementById("submit").style.marginTop = "30px";
+    }
+
+    function submitForm () {
+        // alert("Changes were saved!");
+        var data = $("#basic").serialize() + "&" + $("#pswchange").serialize();
+
+        // $.ajax({
+        //     url  : 'submit',
+        //     method : "POST",
+        //     data : data,
+        //     dataType: 'json',
+        //     success: function (result) {
+        //         // window.location.replace('/userProfile');
+        //     }
+        // });
+        //
+        // $.ajax({
+        //     url  : 'newPass',
+        //     method : "POST",
+        //     data : data,
+        //     dataType: 'json',
+        //     success : function(d){
+        //         // console.log(d);
+        //     }
+        // });
+        let currentPassword = document.getElementById("currentPassword").value;
+
+        $.ajax({
+            url  : '/userProfile',
+            method : "POST",
+            data : data,
+            dataType: 'json',
+            success : function(d){
+                if (d.error) {
+                    alert(d.message);
+                } else {
+                    alert("Changes were saved!");
+                    if(currentPassword !== ""){
+                        window.location.replace('/login');
+                    }else{
+                        window.location.replace('/userProfile');
+                    }
+                }
+            }
+        });
+    }
+
+    function verifyemaila(){
+        for (var i =0; i< newusername.length; i++){
+            console.log(document.getElementById("username").value);
+            console.log(newusername[i].username);
+            if(document.getElementById("username").value === newusername[i].username && document.getElementById("username").value !== UserName){
+                document.getElementById("emailc").innerHTML = "This user name does exist!";
+                break;
+            } else if(document.getElementById("username").value === UserName) {
+                document.getElementById("emailc").innerHTML = "";
+            }  else{
+                document.getElementById("emailc").innerHTML = "The User Name will not change until you verify the new username in your email.";
+            }
+        }
+        // document.getElementById("emailc").innerHTML = "The User Name will not change until you verify the new username in your email.";
+    }
+
+    // Format the phone number as the user types it
+    document.getElementById('phoneNumber').addEventListener('keyup',function(evt){
+        var phoneNumber = document.getElementById('phoneNumber');
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        phoneNumber.value = phoneFormat(phoneNumber.value);
+    });
+
+    // We need to manually format the phone number on page load
+    document.getElementById('phoneNumber').value = phoneFormat(document.getElementById('phoneNumber').value);
+
+    // A function to determine if the pressed key is an integer
+    function numberPressed(evt){
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        if(charCode > 31 && (charCode < 48 || charCode > 57) && (charCode < 36 || charCode > 40)){
+            return false;
+        }
+        return true;
+    }
+
+    // A function to format text to look like a phone number
+    function phoneFormat(input){
+        // Strip all characters from the input except digits
+        input = input.replace(/\D/g,'');
+
+        // Trim the remaining input to ten characters, to preserve phone number format
+        input = input.substring(0,10);
+
+        // Based upon the length of the string, we add formatting as necessary
+        var size = input.length;
+        if(size == 0){
+            input = input;
+        }else if(size < 4){
+            input = '('+input;
+        }else if(size < 7){
+            input = '('+input.substring(0,3)+') '+input.substring(3,6);
+        }else{
+            input = '('+input.substring(0,3)+') '+input.substring(3,6)+' - '+input.substring(6,10);
+        }
+        return input;
+    }
+</script>
+</body>
+</html>
