@@ -208,13 +208,13 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label">New Password</label>
                         <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="newPassword" name="newpassword" class="form-control" value="" type="password"></div>
+                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="newPassword" name="NewPassword" class="form-control" value="" type="password"></div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-4 control-label">Confirm New Password</label>
                         <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="ConfirmPassword" name="ConfirmNewPassword" class="form-control"  value="" type="password"></div>
+                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="confirmPassword" name="ConfirmNewPassword" class="form-control"  value="" type="password"></div>
                         </div>
                     </div>
                 <br>
@@ -292,7 +292,7 @@
         let password = "pass=" + document.getElementById("currentPassword").value;
         let oldP = document.getElementById("currentPassword").value;
         var newP = document.getElementById("newPassword").value;
-        var confirmP = document.getElementById("ConfirmPassword").value;
+        var confirmP = document.getElementById("confirmPassword").value;
         $.ajax({
             url  : '/checkpassword',
             method : "POST",
@@ -307,7 +307,7 @@
                             if (newP === confirmP) {
                                 alert("You can submit now!");
                             } else {
-                                alert("New password do not match!");
+                                alert("Passwords do not match!");
                             }
                         } else {
                             alert("Please make sure your new password is different from old one.");

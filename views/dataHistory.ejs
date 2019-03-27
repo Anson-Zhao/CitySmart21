@@ -350,19 +350,21 @@
             <table id="dataDisplay">
                 <thead>
                 <tr>
+                    <th>Date</th>
                     <th>UID</th>
                     <th>RID</th>
-                    <th>Date</th>
                     <th>Layer Type</th>
-                    <th>Layer State</th>
+                    <th>Layer Continent</th>
                     <th>Layer Country</th>
+                    <th>Layer State</th>
                     <th>Layer City</th>
                     <th>Main Category</th>
+                    <th>Other Main Category</th>
                     <th>Sub Category</th>
-                    <th>Layer Name</th>
-                    <th>Layer Format</th>
+                    <th>Other Sub Category</th>
+                    <th>Layer Display Name</th>
                     <th>Layer Description</th>
-                    <th>Layer Uploader</th>
+                    <th>Layer Format</th>
                     <th>Layer Uploader Name</th>
                     <th>Status</th>
                 </tr>
@@ -371,19 +373,21 @@
                 </tbody>
                 <tfoot>
                 <tr>
+                    <th>Date</th>
                     <th>UID</th>
                     <th>RID</th>
-                    <th>Date</th>
                     <th>Layer Type</th>
-                    <th>Layer State</th>
+                    <th>Layer Continent</th>
                     <th>Layer Country</th>
+                    <th>Layer State</th>
                     <th>Layer City</th>
                     <th>Main Category</th>
+                    <th>Other Main Category</th>
                     <th>Sub Category</th>
-                    <th>Layer Name</th>
-                    <th>Layer Format</th>
+                    <th>Other Sub Category</th>
+                    <th>Layer Display Name</th>
                     <th>Layer Description</th>
-                    <th>Layer Uploader</th>
+                    <th>Layer Format</th>
                     <th>Layer Uploader Name</th>
                     <th>Status</th>
                 </tr>
@@ -441,9 +445,10 @@
             // console.log(rowSelected);
             for (var i = 0; i < rowSelected.length; i ++) {
 //                console.log("rowSelected[" + i + "][0]: " + rowSelected[i][0]);
-                transactionID.push(rowSelected[i][1]);
-                transactionpicturename.push(rowSelected[i][11]);
-                LayerNameStr.push(rowSelected[i][8]);
+                transactionID.push(rowSelected[i][2]);
+                transactionpicturename.push(rowSelected[i][15]);
+                LayerNameStr.push(rowSelected[i][12]);
+                console.log(transactionpicturename)
             }
         });
 
@@ -453,6 +458,8 @@
                 var transactionIDStr = "transactionIDStr=" + transactionID.toString();
                 var pictureStr = "pictureStr=" + transactionpicturename.toString();
                 var LayerName = "LayerName=" + LayerNameStr.toString();
+
+                console.log(pictureStr);
                 $.ajax({
                     url: '/deleteRow2',
                     type: 'GET',
@@ -525,24 +532,27 @@
             data: querystr,
             success: function (resp) {
                 if (!resp[0].errMsg) {
+                    console.log(resp);
                     for (var i = 0; i < resp.length; i++) {
-                        if (resp[i].Status === "Active") {
+                        if (resp[i].Current_Status === "Approved") {
                             table.row.add([
+                                resp[i].Date,
                                 resp[i].UID,
                                 resp[i].RID,
-                                resp[i].Date,
                                 resp[i].LayerCategory,
-                                resp[i].StateName,
+                                resp[i].ContinentName,
                                 resp[i].CountryName,
+                                resp[i].StateName,
                                 resp[i].CityName,
                                 resp[i].FirstLayer,
+                                resp[i].FirstOther,
                                 resp[i].SecondLayer,
-                                resp[i].ThirdLayer,
-                                resp[i].LayerFormat,
+                                resp[i].SecondOther,
+                                resp[i].LayerName,
                                 resp[i].Layer_Description,
-                                resp[i].Layer_Uploader,
+                                resp[i].LayerFormat,
                                 resp[i].Layer_Uploader_name,
-                                resp[i].Status
+                                resp[i].Current_Status
                             ]).draw(false);
                         }
                     }

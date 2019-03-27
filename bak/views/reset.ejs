@@ -1,0 +1,108 @@
+<!-- views/profileBK.ejs -->
+<!doctype html>
+<html>
+<head>
+    <title>CitySmart - Reset Password</title>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/Profile.css" type="text/css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/buttons/1.4.2/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <!--<link rel="stylesheet" href="//unpkg.com/flatpickr/dist/flatpickr.min.css">-->
+    <link rel="stylesheet" href="../../css/Title.css" type="text/css">
+    <script src="../../src/jquery-3.3.1.min.js"></script>
+    <!--<script src="//unpkg.com/flatpickr"></script>-->
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/flatpickr"></script>
+    <style>body {
+            padding-bottom: 80px;
+            word-wrap: break-word;
+        }
+
+        .navul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .button1 {
+            width: 500px;
+            height: 50px;
+            border-radius: 15px;
+            -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            background-color: white;
+            color: #f0ad4e;
+            border: 1px solid #f0ad4e;
+        }
+
+        .button1:hover {
+            background-color: #f0ad4e;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div class="container" style="width: 500px;
+    margin-top: 10px;
+    padding: 0px;">
+    <h1><span class="fa fa-sign-in"></span> Change Password</h1>
+    <form id="submit" onsubmit="return checkForm()" action="" method="post">
+        <div class="form-group">
+            <label>New Password:</label>
+            <input type="password" id="newpassword" class="form-control" name="newpassword" maxlength="2000px" style="height: 50px;">
+        </div>
+        <div class="form-group">
+            <label>Confirm New Password: </label>
+            <input type="password" class="form-control" id="Confirmpassword" name="Confirmpassword" maxlength="2000px" style="height: 50px;">
+        </div>
+        <div class="form-group">
+            <label>Username (email): </label>
+            <input type="email" name="username" class="form-control" maxlength="2000px" value="<%= user.username %>" readonly style="height: 50px;">
+        </div>
+        <button id="SS" type="submit" class="button1"> Submit </button>
+    </form>
+    <hr>
+    <p style="margin-left: 230px;">
+        <a href="/login">Cancel</a></p>
+</div>
+<script>
+
+    function checkForm() {
+        var newP=document.getElementById("newpassword").value;
+        var confirmP =document.getElementById("Confirmpassword").value;
+
+        if (newP === confirmP) {
+            return true;
+        } else {
+            alert("New passwords don't match!");
+            return false;
+        }
+    }
+
+    $('#SS').submit(function(e) {
+        // Prevent form submission
+        e.preventDefault();
+
+        $.ajax({
+            type: "post",
+            url: "/reset/:token",
+            dataType: 'json',
+            data: $(this).serialize(),
+            success: function (result) {
+                if (!result.error) {
+                    alert("SUCCESS");
+                    window.location.replace('/login')
+                } else {
+                    alert(result.message);
+                }
+            }
+        })
+    });
+</script>
+</body>
+</html>

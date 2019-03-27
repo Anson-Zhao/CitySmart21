@@ -122,12 +122,100 @@ requirejs([
                 globe.addLayer(wmsLayer);
                 layerManager.synchronizeLayerList();
             }
-        }
-
-        // Called if an error occurs during WMS Capabilities document retrieval
-        var logError = function (jqXhr, text, exception) {
-            console.log("There was a failure retrieving the capabilities document: " + text + " exception: " + exception);
         };
+        var infobox;
+
+        $(document).ready(function () {
+            $.ajax({
+                url: '/placemark',
+                dataType: 'json',
+                success: function(result) {
+                    if (!result.err) {
+                        console.log(result.data);
+                        infobox = result.data;
+                        for (var k = 0; k < infobox.length; k++) {
+                            // alert (data[0].Color);
+
+                            var colorAttribute = infobox[k].Color;
+                            var cAtwo = colorAttribute.split(" ");
+                            // console.log(cAtwo);
+
+                            var coLat = infobox[k].Latitude;
+
+                            console.log(coLat);
+
+                            var coLong = infobox[k].Longitude;
+
+                            var PK = infobox[k].PK;
+                            // var ptwo = location.split(",");
+
+                            console.log(PK);
+
+                            var LayerName = infobox[k].LayerName;
+                            // console.log(LayerName);
+
+
+                            console.log(Placemark_Creation);
+                            Placemark_Creation(cAtwo, PK, coLat, coLong, LayerName);
+                        }
+                    }
+
+                }
+            });
+
+
+            $('.placemarkLayer').click(function(){
+
+                var val1;
+                if ($('.placemarkLayer').is(":checkbox:checked")) {
+                    alert("hi");
+
+                    $(':checkbox:checked').each(function () {
+                        val1 = $(this).val();
+                        // var str = val+'';
+                        // val2 = str.split(",");
+                        console.log(val1);
+                        console.log(layers);
+
+                        for (var a = 0; a < layers.length; a++) {
+
+                            if (layers[a].displayName === val1) {
+                                alert(layers[a].displayName + " works now!");
+
+                                layers[a].enabled = true;
+                                console.log(layers[a]);
+                                // console.log('KEA_Wind_Turbine'); //find out how to console the problem
+
+                            }
+                        }
+                    });
+                }
+
+                if($('.placemarkLayer').is(":not(:checked)")) {
+                    // console.log("enable:false");
+                    var val2;
+                    $(":checkbox:not(:checked)").each(function (i) {
+                        val2 = $(this).val();
+
+                        // console.log(str);
+                        // console.log(val2[i]);
+
+                        // alert("it doesn't works");
+                        // console.log(val);
+                        // console.log("s"+val2s[a].displayName);
+                        for (var a = 0; a < layers.length; a++) {
+                            if (layers[a].displayName === val2) {
+
+                                layers[a].enabled = false;
+
+                                // console.log("str: " + layers[a].displayName);
+                                // console.log(layers[a]);
+                            }
+                        }
+                    });
+                }
+            });
+        });
 
         var Placemark_Creation = function (RGB,PKValue, coLat, coLong, LayerName) {
             // console.log(coLong);
@@ -346,7 +434,19 @@ requirejs([
             //     //.
             //     // }
             // }
-        };//
+        };
+//
+        globe.addEventListener("mousemove", handlePick);
+
+// globe.addEventListener("click", sitePopUp);
+
+        globe.addEventListener("click", handleMouseCLK);
+
+
+        // // Called if an error occurs during WMS Capabilities document retrieval
+        // var logError = function (jqXhr, text, exception) {
+        //     console.log("There was a failure retrieving the capabilities document: " + text + " exception: " + exception);
+        // };
 
         var globlePosition = function(layerRequest){
             $.ajax({
@@ -438,14 +538,6 @@ requirejs([
             nextL.prop('disabled',true);
             previousL.prop('disabled',true);
 
-            // $.ajax({
-            //     url:'/download',
-            //     dataType:'json',
-            //     success:function (result) {
-            //         console.log(result)
-            //     }
-            // });
-
             //preload wmsLayer
             $(".wmsLayer").each(function (i) {
                 preloadLayer[i] = $(this).val();
@@ -487,73 +579,9 @@ requirejs([
                             Placemark_Creation(cAtwo, PK, coLat, coLong, LayerName);
                         }
                     }
-
                 }
             });
 
-            // $('.placemarkLayer').click(function(){
-            //     var val1 = $(this).val();
-            //     allCheckedArray = $(':checkbox:checked');
-            //     console.log(allCheckedArray);
-            //
-            //     var layerRequest = 'layername=' + val1;
-            //     globlePosition(layerRequest);
-            //     buttonControl(allCheckedArray,val1);
-            //
-            //     for (var a = 0; a < layers.length; a++) {
-            //         $(':checkbox:checked').each(function () {
-            //             if (layers[a].displayName === $(this).val()) {
-            //                 layers[a].enabled = true;
-            //             } else {
-            //                 bob = $(this).val().split(",");
-            //                 bob.forEach(function (eleValue) {
-            //                     if (layers[a].displayName === eleValue) {
-            //                         layers[a].enabled = true;
-            //                     }
-            //                 });
-            //             }
-            //         });
-            //         $(':checkbox:not(:checked)').each(function () {
-            //             if (layers[a].displayName === $(this).val()) {
-            //                 layers[a].enabled = false;
-            //             } else {
-            //                 bob = $(this).val().split(",");
-            //                 bob.forEach(function (ery) {
-            //                     if (layers[a].displayName === ery) {
-            //                         layers[a].enabled = false;
-            //                     }
-            //                 });
-            //             }
-            //         })
-            //     }
-            //
-            //     // if ($('.placemarkLayer').is(":checkbox:checked")) {
-            //     //
-            //     //     $(':checkbox:checked').each(function () {
-            //     //         for (var a = 0; a < layers.length; a++) {
-            //     //             if (layers[a].displayName === val1) {
-            //     //                 layers[a].enabled = true;
-            //     //                 console.log('KEA_Wind_Turbine'); //find out how to console the problem
-            //     //             }
-            //     //         }
-            //     //     });
-            //     // }else{
-            //     //     console.log("enable:false");
-            //     //     var val2;
-            //     //     $(":checkbox:not(:checked)").each(function () {
-            //     //         val2 = $(this).val();
-            //     //
-            //     //         for (var a = 0; a < layers.length; a++) {
-            //     //             if (layers[a].displayName === val2) {
-            //     //                 layers[a].enabled = false;
-            //     //                 // console.log("str: " + layers[a].displayName);
-            //     //                 // console.log(layers[a]);
-            //     //             }
-            //     //         }
-            //     //     });
-            //     // }
-            //
-            // });
 
             $(".wmsLayer,.placemarkLayer").click(function () {
                 var layer1 = $(this).val(); //the most current value of the selected switch
@@ -563,57 +591,6 @@ requirejs([
                 var layerRequest = 'layername=' + layer1;
                 globlePosition(layerRequest);
                 buttonControl(allCheckedArray,layer1);
-
-                // if (allCheckedArray.length > checkedCount){ //if there is new array was inserted into the allCheckedArray ( If user choose more than 1 switch)
-                //     console.log(LayerSelected.ThirdLayer);
-                //     checked.push(layer1); //insert current value to "checked" array
-                //     checkedCount = allCheckedArray.length; //checkedCount now equals to the numbers of arrays that were inserted to allCheckedArray
-                //     alertVal = false; //alert (only appear at the first time)
-                //     currentSelectedLayer.prop('value', LayerSelected.ThirdLayer); //if there are new array was inserted into the allCheckedArray,the value of the opened layer button equals to the name of the switch that user selected
-                //     console.log(currentSelectedLayer);
-                //     arrMenu.push(LayerSelected.ThirdLayer);//insert current ThirdLayer value to arrMenu
-                //     j = arrMenu.length - 1; //count
-                //     console.log(arrMenu.length);
-                //     if(arrMenu.length === 1){ //if the length of arrMenu is equal to 1 /if user only checks one switch.
-                //         nextL.prop('disabled',true);
-                //         previousL.prop('disabled',true);
-                //         currentSelectedLayer.prop('disabled',false);
-                //     }else{//if user checks over 1 switch
-                //         previousL.prop('disabled',false);
-                //         nextL.prop('disabled',true);
-                //     }
-                //     // LayerPosition.push(LayerSelected);
-                // } else { //if there is not new array was inserted into the allCheckedArray / If user un-checks a switch)
-                //     for( var i = 0 ; i < checked.length; i++) {
-                //         if (checked[i] === layer1) {
-                //             checked.splice(i,1); //remove current value from checked array
-                //             arrMenu.splice(i,1); //remove current ThirdLayer from the array
-                //             // LayerPosition.splice(i,1); //remove current Latlong from the array
-                //         }
-                //     }
-                //     // val = checked[checked.length - 1];
-                //     checkedCount = allCheckedArray.length;
-                //     alertVal = false;
-                //     currentSelectedLayer.prop('value',arrMenu[arrMenu.length - 1]);
-                //     // currentSelectedLayer.value = arrMenu[arrMenu.length - 1];
-                //     j = arrMenu.length - 1;
-                //     if(arrMenu.length === 1){
-                //         nextL.prop('disabled',true);
-                //         previousL.prop('disabled',true)
-                //     }else{
-                //         if(arrMenu.length === 0){
-                //             // currentSelectedLayer.value = "No Layer Selected";
-                //             currentSelectedLayer.prop('value','No Layer Selected');
-                //             currentSelectedLayer.prop('disabled',true);
-                //             previousL.prop('disabled',true);
-                //             nextL.prop('disabled',true);
-                //             // globe.goTo(new WorldWind.Position(37.0902, -95.7129, 9000000));
-                //         } else{
-                //             previousL.prop('disabled',false);
-                //             nextL.prop('disabled',true);
-                //         }
-                //     }
-                // }
 
                 //turn on/off wmsLayer and placemark layer
                 for (var a = 0; a < layers.length; a++) {
@@ -689,7 +666,6 @@ requirejs([
                     data:currentSelectedLayerData,
                     async: false,
                     success: function (results) {
-                        console.log(results);
                         var FirstLayerId = '#' + results[0].FirstLayer;
                         // console.log(FirstLayerId);
                         var SecondLayerId = '#' + results[0].FirstLayer + '-' + results[0].SecondLayer;

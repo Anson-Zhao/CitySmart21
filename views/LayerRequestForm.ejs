@@ -157,7 +157,7 @@
         .selectpicker {
             height: 60px;
         }
-        #City, #country{
+        #continent, #City, #country{
             height: 60px;
         }
         .other {
@@ -267,12 +267,23 @@
                 </div>
                 <!--<p id="LayerName1" style="color: palevioletred; margin-left:270px;">Please Enter the Layer Name, the Layer Name must be at least 6 characters</p>-->
                 <div class="form-group">
+                    <label class="col-md-4 control-label">Layer Continent</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+                            <select name="ContinentName" class="crs-country form-control" data-region-id="two" data-default-option="SELECT CONTINENT" id="continent" onchange="ChangeContinentList(this.value)">
+                                <option selected="selected" value="AL" id="continent-option">SELECT A CONTINENT</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
                     <label class="col-md-4 control-label">Layer Country</label>
                     <div class="col-md-8 inputGroupContainer">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-                            <select name="CountryName" class="crs-country form-control" data-region-id="two" data-default-option="SELECT COUNTRY" id="country">
-                                <option>United States</option>
+                            <select name="CountryName" class="crs-country form-control" data-region-id="two" data-default-option="SELECT COUNTRY" id="country" disabled>
+                                <option>SELECT A COUNTRY</option>
                             </select>
                         </div>
                     </div>
@@ -284,8 +295,10 @@
                             <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
                             <!--<select name="StateName" id="two" class="crs-region form-control" data-default-option="SELECT STATE" data-blank-option="NO STATE SELECTED">-->
                             <!--<option>Please select a state</option>-->
-                            <input name="StateName" value="" placeholder="Please enter full state name" class="form-control" required  type="text">
+                            <input name="StateName" value="" placeholder="Enter state name" class="form-control" required  type="text">
                         </div>
+                        <p style="color:palevioletred;margin-top:15px;">Please enter the full state name, no abbreviations. EXAMPLE: New York</p>
+
                     </div>
                 </div>
                 <div class="form-group">
@@ -294,7 +307,7 @@
                         <div class="input-group">
                             <span class="input-group-addon" style="max-width: 100%;"><i class="glyphicon glyphicon-globe"></i></span>
                             <!--<input id="LayerCityInput" name="CityName" placeholder="Layer City" class="form-control" required value="" type="text"></div>-->
-                            <input name="CityName" id="City" value="" placeholder="Please enter full City name" class="form-control" required  type="text">
+                            <input name="CityName" id="City" value="" placeholder="Enter city name" class="form-control" required  type="text">
                         </div>
                     </div>
                 </div>
@@ -323,7 +336,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-md-4 control-label">Layer Uploader <p>(You can only upload one file)</p> </label>
+                    <label class="col-md-4 control-label" id="msg">Layer Uploader <p>(You can only upload one file)</p> </label>
                     <div class="col-md-8 inputGroupContainer">
                         <div id="uploader" ></div>
                     </div>
@@ -342,6 +355,8 @@
 <script>
     var RID = '<%= RID %>';
     var username = '<%= user.username %>';
+    var userrole = '<%= user.userrole %>';
+    console.log(userrole);
     document.getElementById('User ID').value = username;
     document.getElementById('RID').value = RID;
 
@@ -355,7 +370,6 @@
         if (dd < 10) {
             dd = '0' + dd;
         }
-
         if (mm < 10) {
             mm = '0' + mm;
         }
@@ -363,7 +377,65 @@
         console.log(today);
         document.getElementById("date").value=today;
 
+        //if function can be written here for admin or non-admin disable or enable uploading button.
+        if(userrole === "Admin"){
+            console.log("This is working");
+            $( ".qq-uploader-selector" ).remove();
+            $("#msg").append(" <b> (Disabled for administrator) </b>")
+        }
+        // console.log now working, disable button working (test on submit button, need to find ID of upload button)
     });
+
+
+
+    $(document).ready(function() {
+
+        let continentList = document.getElementById("continent")
+        $.ajax({
+            url: "layerRequestContinent",
+            dataType: 'json',
+            success: function (results) {
+                console.log(results);
+                var option;
+                for (let i = 0; i < results.length; i++) {
+                    option = new Option(results[i].Contitent_name, results[i].Continent);
+                    continentList.add(option);
+                    // console.log(option);
+                }
+            }
+        });
+    });
+
+    function ChangeContinentList (continentValue){
+        console.log(continentValue);
+        var country = "country="+continentValue;
+        let countryList = document.getElementById("country")
+        while (countryList.options.length) {
+            countryList.remove(0);
+        }
+
+        if(continentValue !== 'SAS'){
+            countryList.disabled = false;
+        }
+        if(continentValue === "AL"){
+            countryList.disabled = true;
+            $("#country").html("<option>SELECT A COUNTRY</option>")
+        }
+        console.log(country);
+        $.ajax({
+            url: "layerRequestCountry",
+            method: 'GET',
+            dataType: 'json',
+            data: country,
+            success: function (results) {
+                console.log(results)
+                for(var j = 0; j < results.length; j++){
+                    var option = new Option(results[j].Country_name, results[j].Country_name);
+                    countryList.add(option);
+                }
+            }
+        });
+    }
 
     function clearForm(){
         if (confirm("Are you sure you want to clear the form? All the data will be reset accordingly!") === true) {
@@ -371,6 +443,7 @@
         }
     }
 
+    //to check if the current option of main Main-Category is "other" or not
     function Check(that){
         console.log(that);
         if (that === "other"){
@@ -382,6 +455,7 @@
 
         }
     }
+
     function userHome() {
         if (confirm("Are you sure you want to leave this page? All the data will be cleared accordingly!") === true) {
             window.location.replace('/userHome')
@@ -408,9 +482,10 @@
             }
         },
         validation:{
-            allowedExtensions: ['tif', 'shp','jp2','adf','j2k']
+            allowedExtensions: ['tif', 'shp','jp2','adf','j2k', 'zip']
         }
     });
+
 
     function submitForm () {
         alert("Submitted!");
@@ -467,6 +542,7 @@
         }
     });
 
+//to check that if there are duplicated from the layer name that layer name that you just inserted
     function SearchLayerName(value){
         $.ajax({
             url: "SearchLayerName",
@@ -511,15 +587,15 @@
         })
     }
 
-    $(function() {
-        new dgCitysCountries({
-            CityVal: document.getElementById("City").val,
-            countryVal: document.getElementById("country").val,
-            City: document.getElementById("City"),
-            country: document.getElementById("country"),
-            change: true
-        });
-    });
+    // $(function() {
+    //     new dgCitysCountries({
+    //         CityVal: document.getElementById("City").val,
+    //         countryVal: document.getElementById("country").val,
+    //         City: document.getElementById("City"),
+    //         country: document.getElementById("country"),
+    //         change: true
+    //     });
+    // });
 
 </script>
 </body>

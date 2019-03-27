@@ -416,9 +416,9 @@
                    console.log("usernameStr: " + usernameStr);
 
                     $.ajax({
-                        url: '/suspendUser',
+                        url: '/suspendUser', //this inside routes
                         type: 'GET',
-                        dataType: 'json',
+                        dataType: 'json', //result in json format
                         async: false,
                         data: usernameStr,
                         success: function (result) {
@@ -568,6 +568,7 @@
             }
             return input;
         }
+
 
 </script>
 </div>

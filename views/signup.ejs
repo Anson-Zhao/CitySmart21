@@ -68,7 +68,8 @@
 	</div>
 	<% } %>
 	<!-- LOGIN FORM -->
-	<form onsubmit="return checkForm()" action="/signup" method="post" id="signup">
+	<!--<form onsubmit="return checkForm()" action="/signup" method="post" id="signup">-->
+	<form  onsubmit="return checkForm()" action="/signup" method="post" id="signup">
 		<div class="form-group">
 			<label>Username (email address):</label>
 			<input type="email" class="form-control" name="username" style="height: 50px;" required>
@@ -122,9 +123,12 @@
                 dateFormat: "Y-m-d H:i:S",
                 time_24hr: true
             });
+		console.log($('#signup'));
+		console.log($("#signup").serialize());
 
             $('#signup').submit(function(e) {
                 console.log($("#signup").serialize());
+				console.log($('#signup'));
                 e.preventDefault();
                 $.ajax({
                     type: "post",
@@ -132,6 +136,7 @@
                     dataType: 'json',
                     data: $("#signup").serialize(),
                     success: function (result) {
+                    	console.log(result);
                         if (!result.error) {
                             // alert(result.message);
                             alert("We are sending you the email verification. Please check it before login to your account.");
