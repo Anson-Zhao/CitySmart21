@@ -35419,7 +35419,7 @@ define('layer/BingWMSLayer',[
             this.pickEnabled = false;
             this.maxActiveAltitude = 10e3;
 
-            this.urlBuilder = new WmsUrlBuilder("https://worldwind27.arc.nasa.gov/wms/virtualearth", "ve", "", "1.3.0");
+            // this.urlBuilder = new WmsUrlBuilder("https://worldwind27.arc.nasa.gov/wms/virtualearth", "ve", "", "1.3.0");
         };
 
         BingWMSLayer.prototype = Object.create(TiledImageLayer.prototype);
@@ -35472,8 +35472,8 @@ define('layer/BMNGLandsatLayer',[
             this.displayName = "Blue Marble & Landsat";
             this.pickEnabled = false;
 
-            this.urlBuilder = new WmsUrlBuilder("https://worldwind25.arc.nasa.gov/wms",
-                "BlueMarble-200405,esat", "", "1.3.0");
+            // this.urlBuilder = new WmsUrlBuilder("https://worldwind25.arc.nasa.gov/wms",
+            //     "BlueMarble-200405,esat", "", "1.3.0");
         };
 
         BMNGLandsatLayer.prototype = Object.create(TiledImageLayer.prototype);
@@ -35529,8 +35529,8 @@ define('layer/BMNGLayer',[
             this.displayName = "Blue Marble";
             this.pickEnabled = false;
 
-            this.urlBuilder = new WmsUrlBuilder("https://worldwind25.arc.nasa.gov/wms",
-                layerName || "BlueMarble-200405", "", "1.3.0");
+            // this.urlBuilder = new WmsUrlBuilder("https://worldwind25.arc.nasa.gov/wms",
+            //     layerName || "BlueMarble-200405", "", "1.3.0");
         };
 
         BMNGLayer.prototype = Object.create(TiledImageLayer.prototype);
@@ -85749,8 +85749,8 @@ define('globe/WcsEarthElevationCoverage',[
                 retrievalImageFormat: "image/tiff",
                 minElevation: -11000,
                 maxElevation: 8850,
-                urlBuilder: new WcsTileUrlBuilder("https://worldwind26.arc.nasa.gov/wms2",
-                    "NASA_SRTM30_900m_Tiled", "1.0.0")
+                // urlBuilder: new WcsTileUrlBuilder("https://worldwind26.arc.nasa.gov/wms2",
+                //     "NASA_SRTM30_900m_Tiled", "1.0.0")
             });
 
             this.displayName = "WCS Earth Elevation Coverage";
