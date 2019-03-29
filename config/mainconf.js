@@ -45,6 +45,9 @@ var configGlobal = {
     //trashfolder file--trashfolder
     'Delete_Dir':'trashfolder',
 
+    //rejectfolder file--rejectfolder
+    'Reject_Dir':'rejectfolder',
+
     // uswtdb eye distance for placemark layer menu display (km)
     'eyeDistance_PL': 1500,
 
@@ -56,9 +59,9 @@ var configGlobal = {
 
     // 'num_backups': 100,
 
-    'num_backups': 2,
+    'num_backups': 4,
 
-    'download_interval':30000,
+    'download_interval':660000,
 
     // 'download_interval':86400000,
 };

@@ -19,6 +19,7 @@ const path    = require('path');
 const upload_Dir = config.Upload_Dir; //contains pending and rejected
 const geoData_Dir = config.GeoData_Dir; //approve folder
 const Delete_Dir = config.Delete_Dir; //trash folder
+const reject_Dir = config.Delete_Dir; //reject folder
 const downloadPath = config.Download_Path;
 const con_CS = mysql.createConnection(config.commondb_connection);
 const num_backups = config.num_backups;
@@ -29,7 +30,7 @@ const maxFileSize = process.env.MAX_FILE_SIZE || 0; // in bytes, 0 for unlimited
 
 let transactionID, myStat, myVal, myErrMsg, token, errStatus, mylogin;
 let today, date2, date3, time2, time3, dateTime, tokenExpire;
-let downloadFalse = true;
+let downloadFalse = null ;
 
 const smtpTrans = nodemailer.createTransport({
     service: 'Gmail',
@@ -42,6 +43,8 @@ const smtpTrans = nodemailer.createTransport({
 con_CS.query('USE ' + config.Login_db); // Locate Login DB
 
 module.exports = function (app, passport) {
+    console.log(downloadFalse);
+    console.log(downloadFalse === null);
 
     removeFile();
     setInterval(copyXML, download_interval); // run the function one time a (day
@@ -66,6 +69,18 @@ module.exports = function (app, passport) {
             error: "Your username and password don't match."
         })
     });
+
+    // function downloadImage () {
+    //     // const url = 'http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities';
+    //     const url = 'https://unsplash.com/photos/AaEQmoufHLk/download?force=true';
+    //     const downloadDir = path.resolve(__dirname, downloadPath, 'code1.jpg');
+    //
+    //     request(url).pipe(fs.createWriteStream(downloadDir));
+    //     fs.createWriteStream(downloadDir).end();
+    //
+    // }
+
+    // downloadImage();
 
     app.get('/homepageLI', isLoggedIn, function (req, res) {
         let myStat = "SELECT userrole FROM UserLogin WHERE username = '" + req.user.username + "';";
@@ -435,7 +450,7 @@ module.exports = function (app, passport) {
 
             if(transactionPrStatusStr[i] === 'Reject'){
                 console.log('reject');
-                fs.rename(''+ Delete_Dir + '/' + pictureStr[i] + '' , '' + upload_Dir + '/' + pictureStr[i] + '', function (err) {
+                fs.rename(''+ Delete_Dir + '/' + pictureStr[i] + '' , '' + reject_Dir + '/' + pictureStr[i] + '', function (err) {
                     if (err) {
                         console.log(err);
                     } else {
@@ -445,7 +460,7 @@ module.exports = function (app, passport) {
 
                 del_recov("Reject", "Recover Failed!", "/userHome", req, res);
 
-                let statement1 = "UPDATE Request_Form SET Layer_Uploader = 'uploadfolder/'";
+                let statement1 = "UPDATE Request_Form SET Layer_Uploader = 'rejectfolder/'";
 
                 con_CS.query(statement1, function (err, results) {
                     if (err) throw err;
@@ -2378,11 +2393,11 @@ function QueryStat(myObj, sqlStat, res) {
 
     function copyXML(){
         const downloadDir = path.resolve(__dirname, downloadPath, 'ows.xml'); //the path of the source file
-        var today = new Date();//get the current date
-        var date = today.getFullYear()+ '_' +(today.getMonth()+1)+ '_' + today.getDate();
-        var time = today.getHours() + "_" + today.getMinutes()+'_' + today.getSeconds();
-        var dataStr = date + "_"+ time;
-        var downloadDis = 'config/geoCapacity/' + dataStr+ '.xml'; //define a file name
+        const today = new Date();//get the current date
+        let date = today.getFullYear()+ '_' +(today.getMonth()+1)+ '_' + today.getDate();
+        let time = today.getHours() + "_" + today.getMinutes()+'_' + today.getSeconds();
+        let dataStr = date + "_"+ time;
+        let downloadDis = 'config/geoCapacity/' + dataStr+ '.xml'; //define a file name
 
         fsextra.copy(downloadDir, downloadDis) //copy the file and rename
             .then(//if copy succeed, call pre-download XML function
@@ -2393,11 +2408,11 @@ function QueryStat(myObj, sqlStat, res) {
 
     function predownloadXml () {
         const downloadDir = path.resolve(__dirname, downloadPath, 'ows.xml'); // the path of the destination
-        // const timeout = 20000;
+        const timeout = 600000;
         const requestOptions = {
             uri: 'http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities',
-            timeout: download_interval
-            // timeout:timeout
+            // timeout: download_interval
+            timeout:timeout
         };
         let resXMLRequest;
         console.log('predownloadXML was called');
@@ -2434,26 +2449,37 @@ function QueryStat(myObj, sqlStat, res) {
         const dir = 'config/geoCapacity'; //the dir of the file that I am going to remove.
 
         fs.readdir(dir, (err, files) => {//a method to calculate the number of the files in the geoCapacity folder
-            var fileLength = files.length; // the total name of the file in directory
-            console.log(fileLength);
-            var fileName = []; // create an empty array
-            fileName.push(files); //push the file name into the array
 
-            if(fileLength > num_backups){ //if there are more than 100 file in the directory
+            if(files.length > num_backups){
+                console.log('readdir');
+                //if there are more than 100 file in the directory
                 if(!downloadFalse){ //if download succeed, run the code below
-                    fs.unlink('config/geoCapacity/'+ fileName[0][0], (err) => { //delete the first (the oldest) file in the directory
+                    fs.unlink('config/geoCapacity/'+ files[0], (err) => { //delete the first (the oldest) file in the directory
                         if (err) {throw err} else {
                             downloadFalse = true; //change the value of "downloadFalse" to true
                         }
                         console.log('download and remove copy successfully');
                     })
                 } else { //if download failed, run the code below
-                    fs.unlink('config/geoCapacity/'+ fileName[0][fileLength-1], (err) => { //then delete the last (the latest) file in the directory
+                    fs.unlink('config/geoCapacity/'+ files[files.length-1], (err) => { //then delete the last (the latest) file in the directory
                         if (err) {throw err}
                         console.log('download file failed, removed copy successfully')
                     })
                 }
+            }else {
+                //if the file number is less than num_backups, and download failed
+                if (files.length > 0) {
+                    if (downloadFalse === null) {
+                        fs.unlink('config/geoCapacity/' + files[files.length - 1], (err) => { //then delete the last (the latest) file in the directory
+                            if (err) {
+                                throw err
+                            }
+                            console.log('download file failed,number is less than num_backups, removed copy successfully')
+                        })
+                    }
+                }
             }
+
         });
     }
 
