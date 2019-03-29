@@ -444,11 +444,12 @@ module.exports = function (app, passport) {
 
                 con_CS.query(statement1+statement2, function (err, results) {
                     if (err) throw err;
-                    res.json(results[i]);
+                    // res.json(results[i]);
                 });
             }
 
             if(transactionPrStatusStr[i] === 'Reject'){
+
                 console.log('reject');
                 fs.rename(''+ Delete_Dir + '/' + pictureStr[i] + '' , '' + reject_Dir + '/' + pictureStr[i] + '', function (err) {
                     if (err) {
@@ -460,11 +461,30 @@ module.exports = function (app, passport) {
 
                 del_recov("Reject", "Recover Failed!", "/userHome", req, res);
 
+
+
                 let statement1 = "UPDATE Request_Form SET Layer_Uploader = 'rejectfolder/'";
 
                 con_CS.query(statement1, function (err, results) {
                     if (err) throw err;
-                    res.json(results[i]);
+                    // res.json(results[i]);
+                });
+
+                let statement2 = "SELECT * FROM LayerMenu WHERE ThirdLayer = '" + layerNameStr[i]  + "';";
+
+                con_CS.query(statement2, function (err, results) {
+
+                    console.log("reject: "+results);
+                    if (err) throw err;
+
+                    for(var a= 0; a < results.length; a++){}
+
+                    let statement3 = "UPDATE LayerMenu SET Status = 'Reject' WHERE ThirdLayer = '" + results[i]  + "';";
+
+                    con_CS.query(statement3, function (err, results) {
+                        if (err) throw err;
+                        // res.json(results[i]);
+                    });
                 });
 
             }
@@ -1634,7 +1654,7 @@ module.exports = function (app, passport) {
             // let statement1 = "DELETE FROM LayerMenu WHERE ThirdLayer = '" + LayerName[i]  + "';"; // the [i] is converting the array back to string so it can be used
         ////transferred value from client side to server side and then be used in SQL
         //parsed during the client to server exchange
-            fs.rename(''+ Delete_Dir + '/' + pictureStr[i] + '' , ''  + upload_Dir + '/' + pictureStr[i] + '',  function (err) {
+            fs.rename(''+ upload_Dir + '/' + pictureStr[i] + '' , ''  + Delete_Dir + '/' + pictureStr[i] + '',  function (err) {
                 if (err) {
                     console.log(err);
                 } else {
