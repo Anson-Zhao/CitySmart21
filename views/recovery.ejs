@@ -279,38 +279,65 @@
 
         $('#dataDisplay tbody').on('click', 'tr', function () {
             console.log('hello')
+            transactionID = [];
+            picPath = [];
+            priorStatus = [];
+            $(this).toggleClass('selected');    //toggle class for the rows selected
+            // $(this).toggleClass('change');   //toggle class change color
+            // changeColor();
 
-            if ($(this).hasClass('selected')) { //if the row is selected already
-                $(this).removeClass('selected');//unselect it
-                d = table.row(this).data();
-                var index = transactionID.indexOf(d[0]); //delete the transactionID in the array
-                transactionID.splice(index, 1);
-            } else {
-                $(this).addClass('selected');
+            rowSelected = table.rows('.selected').data();    //Store all the data for selected rows
 
-                d = table.row(this).data();
-                d.counter++;
-                table.row(this).data(d).draw();
-                console.log(d[1])
+            console.log(rowSelected);
 
-                console.log(d);
-                priorStatus.push(d[13])
-                transactionID.push(d[1]);
-                picturename.push(d[11]);
+            // $('#dataDisplay > thead > tr > th').each(function () {
+            //     thArray.push($(this).text())
+            // })
 
-                var thArray = [];
-
-                $('#dataDisplay > thead > tr > th').each(function () {
-                    thArray.push($(this).text())
-                })
-                console.log(thArray);
-
-                for (var i = 0; i < thArray.length; i++) {
-                    rowSelected[i] = {};
-                    rowSelected[i].Name = thArray[i];
-                    rowSelected[i].Value = d[i];
-                }
+            for (let i = 0; i < rowSelected.length; i++) {
+//                console.log("rowSelected[" + i + "][0]: " + rowSelected[i][0]);
+                transactionID.push(rowSelected[i][1]); //object variable / push means insert this value into ScoutingID
+                //i means row selected from table and 2 represents the column (count starting from zero)
+                //sent request from client side to server side "hey, could you make this record go from active to deleted status" server will ask for which row
+                //client says I will give you the scoutingID so you can identify and delete
+                //server side says okay I can do that
+                //server tells client side they changed it and client side also has to change
+                // console.log(transactionID[0]); //array where one length means one record and then access first element value of array
+                picPath.push(rowSelected[i][8]);
+                priorStatus.push(rowSelected[i][13]);
             }
+
+            // if ($(this).hasClass('selected')) { //if the row is selected already
+            //     $(this).removeClass('selected');//unselect it
+            //     d = table.row(this).data();
+            //     var index = transactionID.indexOf(d[0]); //delete the transactionID in the array
+            //     transactionID.splice(index, 1);
+            // } else {
+            //     $(this).addClass('selected');
+            //
+            //     d = table.row(this).data();
+            //     d.counter++;
+            //     table.row(this).data(d).draw();
+            //     console.log(d[1])
+            //
+            //     console.log(d);
+            //     priorStatus.push(d[13])
+            //     transactionID.push(d[1]);
+            //     picturename.push(d[11]);
+            //
+            //     var thArray = [];
+            //
+            //     $('#dataDisplay > thead > tr > th').each(function () {
+            //         thArray.push($(this).text())
+            //     })
+            //     console.log(thArray);
+            //
+            //     for (var i = 0; i < thArray.length; i++) {
+            //         rowSelected[i] = {};
+            //         rowSelected[i].Name = thArray[i];
+            //         rowSelected[i].Value = d[i];
+            //     }
+            // }
         });
 
         $("#recoverButton").on("click", function () {
