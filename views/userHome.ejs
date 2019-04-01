@@ -359,7 +359,7 @@
                 //server side says okay I can do that
                 //server tells client side they changed it and client side also has to change
                 // console.log(transactionID[0]); //array where one length means one record and then access first element value of array
-                picPath.push(rowSelected[i][14]);
+                picPath.push(rowSelected[i][15]);
                 LayerNameStr.push(rowSelected[i][11]);
             }
         });
@@ -556,7 +556,7 @@
                 } else {
                     for (let i = 0; i < results.length; i++) {
 
-                        if (results[i].Current_Status === "Pending" || results[i].Current_Status === "Approved") {
+                        if (results[i].Current_Status === "Pending" || results[i].Current_Status === "Approved" || results[i].Current_Status === "Reject") {
 
                             table.row.add([
                                 results[i].Date,

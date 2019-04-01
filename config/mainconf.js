@@ -22,7 +22,7 @@ var configGlobal = {
     'Login_table': 'UserLogin',
     'Upload_db': 'CitySmart2',
 
-    'Server_Port': 9086,
+    'Server_Port': 9085,
 
     // 'local_URL' : "",
     // 'local_URL' : "http://viewer.usgs.aworldbridgelabs.com",
@@ -34,6 +34,8 @@ var configGlobal = {
     // 'Upload_Path': 'http://usgs.aworldbridgelabs.com/uploadfiles',
     // 'Upload_Path':'uploadfiles',
     // 'Upload_Dir': '/var/www/usgs/uploadfiles',
+
+    // 'Upload_Dir': 'uploadfolder',
     'Upload_Dir': 'uploadfiles',
 
     //approve file--active
@@ -43,8 +45,8 @@ var configGlobal = {
     //trashfolder file--trashfolder
     'Delete_Dir':'trashfolder',
 
-    'num_backups': 4,
-    'download_interval': 660000,
+    //rejectfolder file--rejectfolder
+    'Reject_Dir':'rejectfolder',
 
     // uswtdb eye distance for placemark layer menu display (km)
     'eyeDistance_PL': 1500,
@@ -53,7 +55,15 @@ var configGlobal = {
     'eyeDistance_Heatmap': 4500,
 
     // uswtdb initial eye distance (m)
-    'eyeDistance_initial': 5000000
+    'eyeDistance_initial': 5000000,
+
+    // 'num_backups': 100,
+
+    'num_backups': 4,
+
+    'download_interval':660000,
+
+    // 'download_interval':86400000,
 };
 
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {

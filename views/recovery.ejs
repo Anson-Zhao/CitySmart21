@@ -245,6 +245,7 @@
     var transactionID = [];
     var picturename = []
     var priorStatus = []
+    var layerName = [];
 
 
     $(document).ready(function(){
@@ -270,10 +271,22 @@
 
             table.clear();
             table.draw();
+
+            // if (UserRole === "Regular") {
+            //     // document.getElementById('searchname').style.display = "none"; //disables username search for regular members
+            //     queryStr = "Current_Status=Pending&UID=" + username;
+            // } else {
+            //     queryStr = "Current_Status=Pending";//this line is for the admin, who does not need to only see a specific UID, but all records
+            // }
+            // console.log(queryStr);
+            // queryAndDisplay(queryStr);
             trapTable.clear();
             trapTable.draw();
-            queryAndDisplay("statusDel=" + "Deleted" + "&firstName=" + "<%= firstName %>" + "&lastName=" + "<%= lastName %>");
+            <!--queryAndDisplay("statusDel=" + "Deleted" + "&firstName=" + "<%= firstName %>" + "&lastName=" + "<%= lastName %>");-->
 
+            queryAndDisplay();//this is client
+            //got rid of the string b/c AddData will not process any query string b/c will return all records and will be filtered by clientside downstairs
+            console.log()
 
         });
 
@@ -295,6 +308,7 @@
 
                 console.log(d);
                 priorStatus.push(d[13])
+                layerName.push(d[8]);
                 transactionID.push(d[1]);
                 picturename.push(d[11]);
 
@@ -311,6 +325,38 @@
                     rowSelected[i].Value = d[i];
                 }
             }
+
+            // if ($(this).hasClass('selected')) { //if the row is selected already
+            //     $(this).removeClass('selected');//unselect it
+            //     d = table.row(this).data();
+            //     var index = transactionID.indexOf(d[0]); //delete the transactionID in the array
+            //     transactionID.splice(index, 1);
+            // } else {
+            //     $(this).addClass('selected');
+            //
+            //     d = table.row(this).data();
+            //     d.counter++;
+            //     table.row(this).data(d).draw();
+            //     console.log(d[1])
+            //
+            //     console.log(d);
+            //     priorStatus.push(d[13])
+            //     transactionID.push(d[1]);
+            //     picturename.push(d[11]);
+            //
+            //     var thArray = [];
+            //
+            //     $('#dataDisplay > thead > tr > th').each(function () {
+            //         thArray.push($(this).text())
+            //     })
+            //     console.log(thArray);
+            //
+            //     for (var i = 0; i < thArray.length; i++) {
+            //         rowSelected[i] = {};
+            //         rowSelected[i].Name = thArray[i];
+            //         rowSelected[i].Value = d[i];
+            //     }
+            // }
         });
 
         $("#recoverButton").on("click", function () {
@@ -359,15 +405,18 @@
 
                 var transactionIDStr = "transactionIDStr=";
                 var transactionPrStatusStr = "transactionStatusStr="
+                var layerNameStr = "layerName="
                 for (var i = 0; i < transactionID.length; i++) {
                     //update the status to pending
                     //move file from trash folder to upload files.
                     transactionIDStr += transactionID[i] + ",";
                     transactionPrStatusStr += priorStatus[i] + ",";
+                    layerNameStr += layerName[i]+ ",";
 
                     if (i === transactionID.length - 1) { //delete the , at the end of the string
                         transactionIDStr = transactionIDStr.substring(0, transactionIDStr.length - 1);
                         transactionPrStatusStr = transactionPrStatusStr.substring(0, transactionPrStatusStr.length - 1);
+                        layerNameStr = layerNameStr.substring(0,layerNameStr.length - 1);
                         update();
                     }
                 }
@@ -379,7 +428,7 @@
                         type: 'GET',
                         dataType: 'json',
                         async: false,
-                        data: transactionIDStr + '&' + pictureStr+ '&' + transactionPrStatusStr,
+                        data: transactionIDStr + '&' + pictureStr+ '&' + transactionPrStatusStr + '&' + layerNameStr,
                         success: function (result) {
                             window.location.replace('/userHome')
                         }

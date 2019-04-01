@@ -19,6 +19,7 @@ const path    = require('path');
 const upload_Dir = config.Upload_Dir; //contains pending and rejected
 const geoData_Dir = config.GeoData_Dir; //approve folder
 const Delete_Dir = config.Delete_Dir; //trash folder
+const reject_Dir = config.Delete_Dir; //reject folder
 const downloadPath = config.Download_Path;
 const con_CS = mysql.createConnection(config.commondb_connection);
 const num_backups = config.num_backups;
@@ -29,7 +30,7 @@ const maxFileSize = process.env.MAX_FILE_SIZE || 0; // in bytes, 0 for unlimited
 
 let transactionID, myStat, myVal, myErrMsg, token, errStatus, mylogin;
 let today, date2, date3, time2, time3, dateTime, tokenExpire;
-let downloadFalse = true;
+let downloadFalse = null ;
 
 const smtpTrans = nodemailer.createTransport({
     service: 'Gmail',
@@ -42,6 +43,8 @@ const smtpTrans = nodemailer.createTransport({
 con_CS.query('USE ' + config.Login_db); // Locate Login DB
 
 module.exports = function (app, passport) {
+    console.log(downloadFalse);
+    console.log(downloadFalse === null);
 
     removeFile();
     setInterval(copyXML, download_interval); // run the function one time a (day
@@ -393,34 +396,98 @@ module.exports = function (app, passport) {
         res.setHeader("Access-Control-Allow-Origin", "*");
         // del_recov("Approved", "Recovery failed!", "/userHome", req, res);
         let pictureStr = req.query.pictureStr.split(',');
-        let transactionPrStatusStr = req.query.transactionStatusStr;
-        console.log("tran:"+transactionPrStatusStr);
+        let transactionPrStatusStr = req.query.transactionStatusStr.split(',');
+        let layerNameStr = req.query.layerName.split(',');
 
         // mover folder
-        for(var a=0; a<transactionPrStatusStr.length; a++) {
+        for(let i = 0; i < pictureStr.length; i++) {
 
-            if (transactionPrStatusStr[a] ==="Pending") {
-                del_recov('Pending', "Recovery failed!", "/userHome", req, res);
-                for (let i = 0; i < pictureStr.length; i++) {
-                    fs.rename('' + Delete_Dir + '/' + pictureStr[i] + '', '' + upload_Dir + '/' + pictureStr[i] + '', function (err) {
-                        if (err) {
-                            console.log(err);
-                        } else {
-                            console.log("Recovery process is successful");
-                        }
-                 });
-                }
-            }else{
-                for (let i = 0; i < pictureStr.length; i++) {
-                    del_recov('Approved', "Recovery failed!", "/userHome", req, res);
-                    fs.rename('' + Delete_Dir + '/' + pictureStr[i] + '', '' + geoData_Dir + '/' + pictureStr[i] + '', function (err) {
-                        if (err) {
-                            console.log(err);
-                        } else {//if successful
-                            console.log("Recovery process is successful");
-                        }
+            console.log("tran:"+transactionPrStatusStr[i]);
+
+            if (transactionPrStatusStr[i] === 'Pending') {
+                console.log('pending');
+
+                fs.rename(''+ Delete_Dir + '/' + pictureStr[i] + '' , '' + upload_Dir + '/' + pictureStr[i] + '', function (err) {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        console.log("Recovery process is successful");
+                    }
+                });
+
+                del_recov("Pending", "Recover Failed!", "/userHome", req, res);
+
+                let statementpractice = "UPDATE Request_Form SET Layer_Uploader = 'uploadfolder/'";
+
+                con_CS.query(statementpractice, function (err, results) {
+                    if (err) throw err;
+                    res.json(results[i]);
+                });
+            }
+
+            if(transactionPrStatusStr[i] === 'Approved'){
+                console.log('Approved');
+
+                fs.rename(''+ Delete_Dir + '/' + pictureStr[i] + '' , '' + geoData_Dir + '/' + pictureStr[i] + '', function (err) {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        console.log("Recovery process is successful");
+                    }
+                });
+
+                del_recov("Approved", "Recover Failed!", "/userHome", req, res);
+
+                let statement1 = "UPDATE Request_Form SET Layer_Uploader = 'approvedfolder/';";
+                let statement2 = "UPDATE LayerMenu SET Status = 'Approved' WHERE ThirdLayer = '" + layerNameStr[i]  + "';";
+                console.log(statement2);
+                console.log('statement:D'+statement1+statement2);
+
+                con_CS.query(statement1+statement2, function (err, results) {
+                    if (err) throw err;
+                    // res.json(results[i]);
+                });
+            }
+
+            if(transactionPrStatusStr[i] === 'Reject'){
+
+                console.log('reject');
+                fs.rename(''+ Delete_Dir + '/' + pictureStr[i] + '' , '' + reject_Dir + '/' + pictureStr[i] + '', function (err) {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        console.log("Recovery process is successful");
+                    }
+                });
+
+                del_recov("Reject", "Recover Failed!", "/userHome", req, res);
+
+
+
+                let statement1 = "UPDATE Request_Form SET Layer_Uploader = 'rejectfolder/'";
+
+                con_CS.query(statement1, function (err, results) {
+                    if (err) throw err;
+                    // res.json(results[i]);
+                });
+
+                let statement2 = "SELECT * FROM LayerMenu WHERE ThirdLayer = '" + layerNameStr[i]  + "';";
+
+                con_CS.query(statement2, function (err, results) {
+
+                    console.log("reject: "+results);
+                    if (err) throw err;
+
+                    for(var a= 0; a < results.length; a++){}
+
+                    let statement3 = "UPDATE LayerMenu SET Status = 'Reject' WHERE ThirdLayer = '" + results[i]  + "';";
+
+                    con_CS.query(statement3, function (err, results) {
+                        if (err) throw err;
+                        // res.json(results[i]);
                     });
-                }
+                });
+
             }
         }
     });
@@ -1588,7 +1655,7 @@ module.exports = function (app, passport) {
             // let statement1 = "DELETE FROM LayerMenu WHERE ThirdLayer = '" + LayerName[i]  + "';"; // the [i] is converting the array back to string so it can be used
         ////transferred value from client side to server side and then be used in SQL
         //parsed during the client to server exchange
-            fs.rename(''+ Delete_Dir + '/' + pictureStr[i] + '' , ''  + upload_Dir + '/' + pictureStr[i] + '',  function (err) {
+            fs.rename(''+ upload_Dir + '/' + pictureStr[i] + '' , ''  + Delete_Dir + '/' + pictureStr[i] + '',  function (err) {
                 if (err) {
                     console.log(err);
                 } else {
@@ -2402,12 +2469,11 @@ function QueryStat(myObj, sqlStat, res) {
 
         const dir = 'config/geoCapacity'; //the dir of the file that I am going to remove.
 
-        fs.readdir(dir, (err, files) => {
-            // let fileName = []; // create an empty array
-            // fileName.push(files); //push the file name into the array
-            // console.log(files);
+        fs.readdir(dir, (err, files) => {//a method to calculate the number of the files in the geoCapacity folder
 
-            if(files.length > num_backups){ //if there are more than 100 file in the directory
+            if(files.length > num_backups){
+                console.log('readdir');
+                //if there are more than 100 file in the directory
                 if(!downloadFalse){ //if download succeed, run the code below
                     fs.unlink('config/geoCapacity/'+ files[0], (err) => { //delete the first (the oldest) file in the directory
                         if (err) {throw err} else {
@@ -2421,7 +2487,20 @@ function QueryStat(myObj, sqlStat, res) {
                         console.log('download file failed, removed copy successfully')
                     })
                 }
+            }else {
+                //if the file number is less than num_backups, and download failed
+                if (files.length > 0) {
+                    if (downloadFalse === null) {
+                        fs.unlink('config/geoCapacity/' + files[files.length - 1], (err) => { //then delete the last (the latest) file in the directory
+                            if (err) {
+                                throw err
+                            }
+                            console.log('download file failed,number is less than num_backups, removed copy successfully')
+                        })
+                    }
+                }
             }
+
         });
     }
 
