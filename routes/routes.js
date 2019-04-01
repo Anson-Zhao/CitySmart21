@@ -346,6 +346,7 @@ module.exports = function (app, passport) {
         // console.log(transactionID);
         let statementGeneral = "UPDATE Request_Form SET Current_Status = '" + StatusUpd + "'"; //this is where the problem is
 
+
         for (let i = 0; i < transactionID.length; i++) {
             if (i === 0) {
                 statementGeneral += " WHERE RID = '" + transactionID[i] + "'";
