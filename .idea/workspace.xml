@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4704f94f-8e06-4422-a8b4-19d911764f68" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/config/mainconf.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/mainconf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -49,17 +48,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/mainconf.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+            <state relative-caret-position="996">
+              <caret line="143" column="54" selection-start-line="143" selection-start-column="54" selection-end-line="143" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -117,12 +107,10 @@
       <find>logError</find>
       <find>fileLength</find>
       <find>?</find>
-      <find>upload_Dir</find>
     </findStrings>
     <replaceStrings>
       <replace>src</replace>
       <replace>globe</replace>
-      <replace>Pending_Dir</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -148,20 +136,20 @@
         <option value="$PROJECT_DIR$/views/reset.ejs" />
         <option value="$PROJECT_DIR$/views/signup.ejs" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+        <option value="$PROJECT_DIR$/config/mainconf.js" />
+        <option value="$PROJECT_DIR$/routes/routes.js" />
         <option value="$PROJECT_DIR$/src/globe/WcsEarthElevationCoverage.js" />
         <option value="$PROJECT_DIR$/src/layer/BMNGLayer.js" />
         <option value="$PROJECT_DIR$/src/layer/BingWMSLayer.js" />
         <option value="$PROJECT_DIR$/src/layer/BMNGLandsatLayer.js" />
         <option value="$PROJECT_DIR$/src/WorldWind.js" />
         <option value="$PROJECT_DIR$/scripts/MainMenu.js" />
-        <option value="$PROJECT_DIR$/config/mainconf.js" />
-        <option value="$PROJECT_DIR$/routes/routes.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="71" />
-    <option name="y" value="41" />
+    <option name="x" value="131" />
+    <option name="y" value="43" />
     <option name="width" value="1958" />
     <option name="height" value="1237" />
   </component>
@@ -179,11 +167,6 @@
             <path>
               <item name="CitySmart21" type="b2602c69:ProjectViewProjectNode" />
               <item name="CitySmart21" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CitySmart21" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CitySmart21" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CitySmart21" type="b2602c69:ProjectViewProjectNode" />
@@ -265,7 +248,7 @@
       <workItem from="1553624697841" duration="3235000" />
       <workItem from="1553628975511" duration="12061000" />
       <workItem from="1553714837054" duration="6658000" />
-      <workItem from="1553864595913" duration="3170000" />
+      <workItem from="1553864595913" duration="2813000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1553714451260</created>
@@ -344,21 +327,14 @@
       <option name="project" value="LOCAL" />
       <updated>1553808720531</updated>
     </task>
-    <task id="LOCAL-00012" summary="Initial Commit">
-      <created>1554236672563</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1554236672564</updated>
-    </task>
-    <option name="localTasksCounter" value="13" />
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25124000" />
+    <option name="totallyTimeSpent" value="24767000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="71" y="41" width="1958" height="1237" extended-state="0" />
+    <frame x="156" y="58" width="1958" height="1237" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49933776" visible="true" weight="0.19517314" />
@@ -373,7 +349,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4989507" visible="true" weight="0.3294849" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4989507" weight="0.3294849" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49758258" weight="0.3285968" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50104934" side_tool="true" weight="0.3294849" />
       <window_info anchor="bottom" id="Database Console" order="12" sideWeight="0.49952742" weight="0.3294849" />
@@ -547,6 +523,13 @@
         <state relative-caret-position="-1111" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/mainconf.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="46" column="29" selection-start-line="46" selection-start-column="29" selection-end-line="46" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/OptionList.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -590,17 +573,10 @@
     <entry file="file://$PROJECT_DIR$/views/homepage.ejs">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/mainconf.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/routes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+        <state relative-caret-position="996">
+          <caret line="143" column="54" selection-start-line="143" selection-start-column="54" selection-end-line="143" selection-end-column="54" />
         </state>
       </provider>
     </entry>
