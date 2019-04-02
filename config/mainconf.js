@@ -34,7 +34,8 @@ var configGlobal = {
     // 'Upload_Path': 'http://usgs.aworldbridgelabs.com/uploadfiles',
     // 'Upload_Path':'uploadfiles',
     // 'Upload_Dir': '/var/www/usgs/uploadfiles',
-    'Upload_Dir': 'uploadfiles',
+    'Pending_Dir': 'uploadfolder',
+    'Reject_Dir': 'rejectfolder',
 
     //approve file--active
     // 'GeoData_Dir': '/usr/share/worldwind-geoserver-0.2.1/data_dir/data/USGS'

@@ -16,7 +16,8 @@ const multiparty = require('multiparty');
 const path    = require('path');
 // var exec = require('child_process').exec, child;
 
-const upload_Dir = config.Upload_Dir; //contains pending and rejected
+const Pending_Dir = config.Pending_Dir; //contains pending files
+const Reject_Dir = config.Reject_Dir; //contains rejected files
 const geoData_Dir = config.GeoData_Dir; //approve folder
 const Delete_Dir = config.Delete_Dir; //trash folder
 const downloadPath = config.Download_Path;
@@ -401,7 +402,7 @@ module.exports = function (app, passport) {
             if (transactionPrStatusStr[a] ==="Pending") {
                 del_recov('Pending', "Recovery failed!", "/userHome", req, res);
                 for (let i = 0; i < pictureStr.length; i++) {
-                    fs.rename('' + Delete_Dir + '/' + pictureStr[i] + '', '' + upload_Dir + '/' + pictureStr[i] + '', function (err) {
+                    fs.rename('' + Delete_Dir + '/' + pictureStr[i] + '', '' + Pending_Dir + '/' + pictureStr[i] + '', function (err) {
                         if (err) {
                             console.log(err);
                         } else {
@@ -456,7 +457,7 @@ module.exports = function (app, passport) {
         for (let i = 0; i < transactionID.length; i++) {
             let statement = "UPDATE Request_Form SET Current_Status = 'Pending' WHERE RID = '" + transactionID[i] + "';";
             let statement1 = "UPDATE LayerMenu SET Status = 'Disapproved' WHERE ThirdLayer = '" + LayerName  + "';";
-            fs.rename(''+ geoData_Dir + '/' + pictureStr[i] + '' , '' + upload_Dir + '/' + pictureStr[i] + '',  function (err) {
+            fs.rename(''+ geoData_Dir + '/' + pictureStr[i] + '' , '' + Pending_Dir + '/' + pictureStr[i] + '',  function (err) {
                 if (err) {
                     console.log(err);
                 } else {
@@ -1145,7 +1146,7 @@ module.exports = function (app, passport) {
     //     for (let i = 0; i < transactionID.length; i++) {
     //         let statement = "UPDATE Request_Form SET Current_Status = 'Delete' WHERE RID = '" + transactionID[i] + "';";
     //         let statement1 = "UPDATE LayerMenu SET Current_Status = 'Disapproved' WHERE ThirdLayer = '" + LayerName  + "';";
-    //         fs.rename(''+ Delete_Dir + '/' + pictureStr[i] + '' , '' + upload_Dir + '/' + pictureStr[i] + '',  function (err) {
+    //         fs.rename(''+ Delete_Dir + '/' + pictureStr[i] + '' , '' + Pending_Dir + '/' + pictureStr[i] + '',  function (err) {
     //             if (err) {
     //                 console.log(err);
     //             } else {
@@ -1253,12 +1254,12 @@ module.exports = function (app, passport) {
             }
         }
         let newImage = {
-            Layer_Uploader: upload_Dir + "/" + responseDataUuid,
+            Layer_Uploader: Pending_Dir + "/" + responseDataUuid,
             Layer_Uploader_name: responseDataUuid
         };
         name += ", Layer_Uploader, Layer_Uploader_name";
         valueSubmit += ", '" + newImage.Layer_Uploader + "','" + newImage.Layer_Uploader_name + "'";
-        let filepathname = upload_Dir + "/" + responseDataUuid;
+        let filepathname = Pending_Dir + "/" + responseDataUuid;
 
         let statement2 = "INSERT INTO Request_Form (" + name + ") VALUES (" + valueSubmit + ");";
         let statement = "UPDATE Request_Form SET ThirdLayer = '" + result[7][1] + "' WHERE RID = '" + result[1][1] + "';";
@@ -1330,9 +1331,9 @@ module.exports = function (app, passport) {
                 update2 += result[i][0] + " = '" + result[i][1] + "', " ;
             }
         }
-        let Layer_Uploader = upload_Dir + "/" + responseDataUuid;
+        let Layer_Uploader = Pending_Dir + "/" + responseDataUuid;
         let Layer_Uploader_name = responseDataUuid;
-        let filepathname = upload_Dir + "/" + responseDataUuid;
+        let filepathname = Pending_Dir + "/" + responseDataUuid;
         let statement1 = update1+update2+update3;
         let statement2 = "UPDATE Request_Form SET Layer_Uploader = '" + Layer_Uploader + "', Layer_Uploader_name = '" + Layer_Uploader_name + "';";
         let statement3 = "UPDATE Request_Form SET ThirdLayer = '" + result[7][1] + "' WHERE RID = '" + result[1][1] + "';";
@@ -1390,7 +1391,7 @@ module.exports = function (app, passport) {
 
         // mover folder
         for(let i = 0; i < approvepictureStr.length; i++) {
-            fs.rename(''+ upload_Dir +'/' + approvepictureStr[i] + '' , '' + geoData_Dir + '/' + approvepictureStr[i] + '',  function (err) {
+            fs.rename(''+ Pending_Dir +'/' + approvepictureStr[i] + '' , '' + geoData_Dir + '/' + approvepictureStr[i] + '',  function (err) {
                 if (err) {
                     console.log(err);
                 } else {
@@ -1510,9 +1511,9 @@ module.exports = function (app, passport) {
             }
         }
 
-        let Layer_Uploader = upload_Dir + "/" + responseDataUuid;
+        let Layer_Uploader = Pending_Dir + "/" + responseDataUuid;
         let Layer_Uploader_name = responseDataUuid;
-        let filepathname = upload_Dir + "/" + responseDataUuid;
+        let filepathname = Pending_Dir + "/" + responseDataUuid;
         let statement1 = update1+update2+update3;
         let statement2 = "UPDATE Request_Form SET Layer_Uploader = '" + Layer_Uploader + "', Layer_Uploader_name = '" + Layer_Uploader_name + "' WHERE RID = '" + result[1][1] + "';";
         let statement3 = "UPDATE Request_Form SET ThirdLayer = '" + result[8][1] + "' WHERE RID = '" + result[1][1] + "';";
@@ -1587,7 +1588,7 @@ module.exports = function (app, passport) {
             // let statement1 = "DELETE FROM LayerMenu WHERE ThirdLayer = '" + LayerName[i]  + "';"; // the [i] is converting the array back to string so it can be used
         ////transferred value from client side to server side and then be used in SQL
         //parsed during the client to server exchange
-            fs.rename(''+ Delete_Dir + '/' + pictureStr[i] + '' , ''  + upload_Dir + '/' + pictureStr[i] + '',  function (err) {
+            fs.rename(''+ Delete_Dir + '/' + pictureStr[i] + '' , ''  + Pending_Dir + '/' + pictureStr[i] + '',  function (err) {
                 if (err) {
                     console.log(err);
                 } else {
