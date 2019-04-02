@@ -1547,7 +1547,7 @@ module.exports = function (app, passport) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
         let rejectID = req.query.reject;
         let comment = req.query.comment;
-        let statement = "UPDATE Request_Form SET Current_Status = 'Reject', Comments = '" + comment + "' WHERE RID = '" + rejectID + "'";
+        let statement = "UPDATE Request_Form SET Prior_Status = Current_Status, Current_Status = 'Reject', Comments = '" + comment + "' WHERE RID = '" + rejectID + "'";
         con_CS.query(statement,function (err,results) {
             if (err) throw err;
             res.json(results);
