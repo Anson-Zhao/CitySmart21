@@ -378,11 +378,11 @@
         document.getElementById("date").value=today;
 
         //if function can be written here for admin or non-admin disable or enable uploading button.
-        if(userrole === "Admin"){
-            console.log("This is working");
-            $( ".qq-uploader-selector" ).remove();
-            $("#msg").append(" <b> (Disabled for administrator) </b>")
-        }
+        // if(userrole === "Admin"){
+        //     console.log("This is working");
+            // $( ".qq-uploader-selector" ).remove();
+            // $("#msg").append(" <b> (Disabled for administrator) </b>")
+        // }
         // console.log now working, disable button working (test on submit button, need to find ID of upload button)
     });
 
@@ -441,6 +441,27 @@
         if (confirm("Are you sure you want to clear the form? All the data will be reset accordingly!") === true) {
             window.location.reload();
         }
+    }
+
+    function ChangeMainCategory(Category){
+        let subList = document.getElementById("sub");
+        while (subList.options.length){
+            subList.remove(0);
+        }
+        $.ajax({
+            url: "MainCategory",
+            dataType: 'json',
+            success:function (results) {
+                let option;
+                for (let i = 0; i < results.length; i++) {
+                    if (Category === results[i]. FirstLayer) {
+                        option = new Option(results[i].SecondLayer, results[i].SecondLayer);
+                        subList.add(option);
+                        document.getElementById("sub").disabled = false;
+                    }
+                }
+            }
+        })
     }
 
     //to check if the current option of main Main-Category is "other" or not
