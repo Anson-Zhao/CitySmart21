@@ -680,6 +680,7 @@
                 let lForm = "lForm=" + rowSelectedValue[14];
                 let fName = "fName=" + rowSelectedValue[12];
                 let data = $("#layer").serialize();
+                console.log(fName);
                 $.ajax({
                     url: 'approve',
                     type: "GET",

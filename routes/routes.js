@@ -1445,6 +1445,7 @@ module.exports = function (app, passport) {
     app.delete("/deleteFiles/:uuid", onDeleteFile1);
     app.delete("/deleteFiles",onDeleteFile2);
 
+    let geoName = "";
     app.get('/approve', function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*");
         let approveIDStr = req.query.tID;
@@ -1498,10 +1499,22 @@ module.exports = function (app, passport) {
                                         } else {
                                             layerName = "Approved:" + jsonF.featureTypes.featureType[0].name;
                                             console.log(layerName);
+                                            geoName = layerName;
+
+                                            let statementNext = "UPDATE Request_Form SET LayerName = '" + geoName +"' WHERE RID = '" + approveIDStr + "'";
+
+                                            con_CS.query(statementNext, function (err, results) {
+                                                if (err) {
+                                                    throw err;
+                                                } else {
+                                                    res.json(results);
+                                                }
+                                            })
                                         }
                                     });
                             }
                         });
+
                 } else if (format === "GeoTIFF - Tagged Image File Format with Geographic information (.tif)") {
                     console.log("geotiff file works :D");
                 }
