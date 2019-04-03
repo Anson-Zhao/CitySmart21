@@ -2,21 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4704f94f-8e06-4422-a8b4-19d911764f68" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config/geoCapacity/2019_4_3_10_17_27.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/geoCapacity/2019_4_3_10_28_27.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CS2_MainSvr.js" beforeDir="false" afterPath="$PROJECT_DIR$/CS2_MainSvr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_3_27_16_24_57.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_3_27_16_25_57.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_4_1_11_42_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/mainconf.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/mainconf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/mainconf_bk.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/mainconf_bk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_4_2_15_42_32.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_4_3_10_17_27.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_4_3_10_28_27.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/routes_bk.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/routes_bk.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fine-uploader/routesBK.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/fine-uploader/routesBK.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery.form.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/jquery.form.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploadfiles/2019-01-30T21:47:52Z_NAA_Campus.tif" beforeDir="false" afterPath="$PROJECT_DIR$/uploadfolder/2019-01-30T21:47:52Z_NAA_Campus.tif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploadfiles/2019-02-01T21:26:00Z_NAA_Campus.tif" beforeDir="false" afterPath="$PROJECT_DIR$/uploadfolder/2019-02-01T21:26:00Z_NAA_Campus.tif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/homepage.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/homepage.ejs" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -59,11 +51,64 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://57aaff9e-0a65-4f92-bbaf-3af7b5e18b6e/schema/CitySmart2/table/UserLogin">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/config/mainconf.js">
+        <entry file="file://$PROJECT_DIR$/routes/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="455">
-              <caret line="47" column="32" lean-forward="true" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
+            <state relative-caret-position="321">
+              <caret line="65" column="12" lean-forward="true" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/homepage.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="531">
+              <caret line="490" column="7" lean-forward="true" selection-start-line="490" selection-start-column="7" selection-end-line="490" selection-end-column="7" />
+              <folding>
+                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/MainMenu.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-147">
+              <caret line="21" column="8" lean-forward="true" selection-start-line="17" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/OptionList.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="89">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://57aaff9e-0a65-4f92-bbaf-3af7b5e18b6e/schema/CitySmart2/table/UserProfile">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -99,6 +144,11 @@
       <find>infobox</find>
       <find>wmsplayerAutoMenu</find>
       <find>OptionList</find>
+      <find>message</find>
+      <find>'/'</find>
+      <find>redirect('/')</find>
+      <find>/thirdlay</find>
+      <find>ChangeCountryList</find>
     </findStrings>
     <replaceStrings>
       <replace>src</replace>
@@ -127,21 +177,22 @@
         <option value="$PROJECT_DIR$/views/userHome.ejs" />
         <option value="$PROJECT_DIR$/views/reset.ejs" />
         <option value="$PROJECT_DIR$/views/signup.ejs" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/src/globe/WcsEarthElevationCoverage.js" />
         <option value="$PROJECT_DIR$/src/layer/BMNGLayer.js" />
         <option value="$PROJECT_DIR$/src/layer/BingWMSLayer.js" />
         <option value="$PROJECT_DIR$/src/layer/BMNGLandsatLayer.js" />
         <option value="$PROJECT_DIR$/src/WorldWind.js" />
         <option value="$PROJECT_DIR$/scripts/MainMenu.js" />
-        <option value="$PROJECT_DIR$/routes/routes.js" />
         <option value="$PROJECT_DIR$/config/mainconf.js" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+        <option value="$PROJECT_DIR$/routes/routes.js" />
+        <option value="$PROJECT_DIR$/views/homepage.ejs" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="131" />
-    <option name="y" value="43" />
+    <option name="x" value="130" />
+    <option name="y" value="42" />
     <option name="width" value="1958" />
     <option name="height" value="1237" />
   </component>
@@ -163,7 +214,12 @@
             <path>
               <item name="CitySmart21" type="b2602c69:ProjectViewProjectNode" />
               <item name="CitySmart21" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CitySmart21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CitySmart21" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -187,7 +243,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
+    <property name="settings.editor.selected.configurable" value="tasks.timeTracking" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -241,6 +297,7 @@
       <workItem from="1553628975511" duration="12061000" />
       <workItem from="1553714837054" duration="6658000" />
       <workItem from="1553864595913" duration="2813000" />
+      <workItem from="1554303604204" duration="4364000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1553714451260</created>
@@ -375,21 +432,29 @@
       <option name="project" value="LOCAL" />
       <updated>1554300695662</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Merge branch 'Amy' of https://github.com/Anson-Zhao/CitySmart21&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;routes/routes.js">
+      <created>1554302829919</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1554302829919</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28492000" />
+    <option name="totallyTimeSpent" value="33542000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="131" y="43" width="1958" height="1237" extended-state="0" />
+    <frame x="130" y="42" width="1958" height="1237" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49933776" visible="true" weight="0.19779643" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49933776" visible="true" weight="0.20041972" />
       <window_info id="Structure" order="1" sideWeight="0.50066227" side_tool="true" weight="0.19517314" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4973767" weight="0.3294849" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49422875" visible="true" weight="0.3294849" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49370408" visible="true" weight="0.3294849" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -398,7 +463,7 @@
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49842602" weight="0.3294849" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49758258" weight="0.3285968" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5057712" side_tool="true" visible="true" weight="0.3294849" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5062959" side_tool="true" visible="true" weight="0.3294849" />
       <window_info anchor="bottom" id="Database Console" order="12" sideWeight="0.49952742" weight="0.3294849" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -566,17 +631,8 @@
     <entry file="file://$PROJECT_DIR$/views/login.ejs">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/geoCapacity/2019_3_27_16_22_47.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/config/geoCapacity/2019_3_27_16_22_47.xml" />
     <entry file="file://$PROJECT_DIR$/config/geoCapacity/2019_3_27_16_21_47.xml" />
-    <entry file="file://$PROJECT_DIR$/scripts/OptionList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/code1.jpg" />
     <entry file="file://$PROJECT_DIR$/config/GeoLayer" />
     <entry file="file://$PROJECT_DIR$/scripts/AutoMenujs" />
@@ -590,36 +646,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/homepage.ejs">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/bak/AutoMenu1.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-593" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/MainMenu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="31">
-          <caret line="430" lean-forward="true" selection-start-line="430" selection-end-line="430" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/userHome.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="661">
           <caret line="476" selection-start-line="476" selection-end-line="476" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -636,6 +671,56 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="455">
           <caret line="47" column="32" lean-forward="true" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://57aaff9e-0a65-4f92-bbaf-3af7b5e18b6e/schema/CitySmart2/table/UserLogin">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://57aaff9e-0a65-4f92-bbaf-3af7b5e18b6e/schema/CitySmart2/table/UserProfile">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/homepage.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="531">
+          <caret line="490" column="7" lean-forward="true" selection-start-line="490" selection-start-column="7" selection-end-line="490" selection-end-column="7" />
+          <folding>
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/MainMenu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-147">
+          <caret line="21" column="8" lean-forward="true" selection-start-line="17" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/OptionList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="65" column="12" lean-forward="true" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="12" />
         </state>
       </provider>
     </entry>

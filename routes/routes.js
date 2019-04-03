@@ -316,9 +316,11 @@ module.exports = function (app, passport) {
         let myStat = "SELECT userrole FROM UserLogin WHERE username = '" + req.user.username + "';";
         let state2 = "SELECT firstName, lastName FROM UserProfile WHERE username = '" + req.user.username + "';"; //define last name
 
-        con_CS.query(myStat + state2, function (err, results, fields) {
-            // console.log("Users: ");
-            // console.log(results);
+        con_CS.query(myStat + state2, function (err, results) {
+            console.log("Users: ");
+            console.log(results);
+
+            if (err) throw err;
 
             if (!results[0][0].userrole) {
                 console.log("Error2");
@@ -1793,34 +1795,6 @@ module.exports = function (app, passport) {
     // =====================================
     // CitySmart Dynamic Menu SECTION ======
     // =====================================
-    // app.get('/firstlayer', function (req, res) {
-    //
-    //     res.setHeader("Access-Control-Allow-Origin", "*");
-    //
-    //     con_CS.query("SELECT FirstLayer From LayerMenu", function (err, result) {
-    //         let JSONresult = JSON.stringify(result, null, "\t");
-    //         res.send(JSONresult);
-    //     });
-    // });
-
-    // app.get('/secondlayer', function (req, res) {
-    //     res.setHeader("Access-Control-Allow-Origin", "*");
-    //     con_CS.query("SELECT SecondLayer From LayerMenu", function (err, result) {
-    //         let JSONresult = JSON.stringify(result, null, "\t");
-    //         res.send(JSONresult);
-    //     });
-    //
-    // });
-
-    // app.get('/thirdlayer', function (req, res) {
-    //     res.setHeader("Access-Control-Allow-Origin", "*");
-    //
-    //     con_CS.query("SELECT ThirdLayer From LayerMenu", function (err, result) {
-    //         let JSONresult = JSON.stringify(result, null, "\t");
-    //         res.send(JSONresult);
-    //     });
-    //
-    // });
 
     app.get('/layername', function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*");
@@ -1835,24 +1809,24 @@ module.exports = function (app, passport) {
         con_CS.query("SELECT FirstLayer FROM LayerMenu WHERE Status ='Approved' GROUP BY FirstLayer ", function (err, result) {
             // let JSONresult = JSON.stringify(result, null, "\t");
             if (err) { throw err } else {
-                // console.log(result);
                 res.json(result);
             }
         });
 
     });
+
     app.get('/secondLayer', function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*");
         var firstlayerValue = req.query.FirstLayer;
         con_CS.query("SELECT SecondLayer,FirstLayer FROM LayerMenu WHERE Status ='Approved' and FirstLayer =? GROUP BY SecondLayer", firstlayerValue ,function (err, result) {
             // let JSONresult = JSON.stringify(result, null, "\t");
             if (err) { throw err } else {
-                // console.log(result);
                 res.json(result);
             }
         });
 
     });
+
     app.get('/thirdLayer', function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*");
         var secondLayerValue = req.query.SecondLayer;
@@ -1861,20 +1835,18 @@ module.exports = function (app, passport) {
             //All layer?
             //WHERE cityname = ''?
             if (err) { throw err } else {
-                // console.log(result.length);
-                for(var i =0; i<result.length; i++){
-                    // console.log(result[i].LayerName);
-                }
                 res.json(result);
             }
         });
     });
+
     app.get('/createlayer', function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*");
 
         con_CS.query("SELECT * From LayerMenu WHERE Status = 'Approved'", function (err, result) {
-            let JSONresult = JSON.stringify(result, null, "\t");
-            res.send(JSONresult);
+            // let JSONresult = JSON.stringify(result, null, "\t");
+            // res.send(JSONresult);
+            res.json(result);
         });
 
     });
