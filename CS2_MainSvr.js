@@ -32,7 +32,7 @@ app.use(bodyParser.json());
 app.use("/css", express.static(__dirname + "/css"));
 app.use("/scripts", express.static(__dirname + "/scripts"));
 app.use("/config", express.static(__dirname + "/config"));
-// app.use("/uploadfiles", express.static(__dirname + "/a"));
+// app.use("/uploadfolder", express.static(__dirname + "/a"));
 app.use("/pic", express.static(__dirname + "/pic"));
 
 app.set('views', path.join(__dirname, './', 'views'));

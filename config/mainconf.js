@@ -32,8 +32,8 @@ var configGlobal = {
 
     //upload file--pending
     // 'Upload_Path': 'http://usgs.aworldbridgelabs.com/uploadfiles',
-    // 'Upload_Path':'uploadfiles',
-    // 'Upload_Dir': '/var/www/usgs/uploadfiles',
+    // 'Upload_Path':'uploadfolder',
+    // 'Upload_Dir': '/var/www/usgs/uploadfolder',
     'Pending_Dir': 'uploadfolder',
     'Reject_Dir': 'rejectfolder',
 

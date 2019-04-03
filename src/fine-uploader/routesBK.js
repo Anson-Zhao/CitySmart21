@@ -18,7 +18,7 @@ var fileInputName = process.env.FILE_INPUT_NAME || "qqfile",
 //     fileInputName = process.env.FILE_INPUT_NAME || "qqfile",
 //     publicDir = process.env.PUBLIC_DIR || "/public",
 //     nodeModulesDir = process.env.NODE_MODULES_DIR || "/node_modules",
-//     uploadedFilesPath = process.env.UPLOADED_FILES_DIR || "/uploadfiles",
+//     uploadedFilesPath = process.env.UPLOADED_FILES_DIR || "/uploadfolder",
 //     chunkDirName = "chunks",
 //     port = process.env.SERVER_PORT || 8009,
 //     maxFileSize = process.env.MAX_FILE_SIZE || 0; // in bytes, 0 for unlimited
@@ -208,7 +208,7 @@ function failWithTooBigFile(responseData, res) {
 function onDeleteFile(req, res) {
     console.log("A");
     var uuid = req.params.uuid,
-        dirToDelete = "var/www/faw/current/uploadfiles/" + uuid;
+        dirToDelete = "var/www/faw/current/uploadfolder/" + uuid;
     console.log(uuid);
     rimraf(dirToDelete, function(error) {
         if (error) {
@@ -280,7 +280,7 @@ function moveFile(destinationDir, sourceFile, destinationFile, success, failure)
 function moveUploadedFile(file, uuid, success, failure) {
     console.log("this is: " + uuid);
     // var destinationDir = uploadedFilesPath + uuid + "/",
-    var destinationDir = "uploadfiles/",
+    var destinationDir = "uploadfolder/",
         fileDestination = destinationDir + uuid + "_" + file.name;
 
     moveFile(destinationDir, file.path, fileDestination, success, failure);

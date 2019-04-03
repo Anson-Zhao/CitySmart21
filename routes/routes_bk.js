@@ -1565,7 +1565,7 @@ module.exports = function (app, passport) {
                 }
             });
         }
-        // mv('/uploadfiles', 'dest/file', {mkdirp: true}, {clobber: false}, function(err) {
+        // mv('/uploadfolder', 'dest/file', {mkdirp: true}, {clobber: false}, function(err) {
         //     //This is supposed to do the following:
         //     //Tries fs.rename first, then falls back to
         //     // piping the source file to the dest file (destination)  then unlinking
@@ -2119,7 +2119,7 @@ function QueryStat(myObj, sqlStat, res) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
         //console.log("result=" + req.params.uuid);
         let uuid = req.params.uuid,
-            dirToDelete = "uploadfiles/" + uuid;
+            dirToDelete = "uploadfolder/" + uuid;
         rimraf(dirToDelete, function(error) {
             if (error) {
                 console.error("Problem deleting file! " + error);
@@ -2131,7 +2131,7 @@ function QueryStat(myObj, sqlStat, res) {
     //delete old photo
     function onDeleteFile2(req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
-        let dirToDelete = "uploadfiles/" + olduuid[0].Layer_Uploader_name;
+        let dirToDelete = "uploadfolder/" + olduuid[0].Layer_Uploader_name;
         rimraf(dirToDelete, function(error) {
             if (error) {
                 console.error("Problem deleting file! " + error);
@@ -2185,7 +2185,7 @@ function QueryStat(myObj, sqlStat, res) {
     }
 
     function moveUploadedFile(file, uuid, success, failure) {
-        let destinationDir = "uploadfiles/",
+        let destinationDir = "uploadfolder/",
             fileDestination = destinationDir + uuid + "_" + file.name;
 
         moveFile(destinationDir, file.path, fileDestination, success, failure);

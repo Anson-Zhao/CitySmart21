@@ -2,11 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4704f94f-8e06-4422-a8b4-19d911764f68" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_3_27_16_22_47.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/AutoMenu1.js" beforeDir="false" afterPath="$PROJECT_DIR$/bak/AutoMenu1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/PlacemarkMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/bak/PlacemarkMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/placemarkAutoMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/bak/placemarkAutoMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/wmslayerAutoMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/bak/wmslayerAutoMenu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/geoCapacity/2019_4_3_10_17_27.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/geoCapacity/2019_4_3_10_28_27.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CS2_MainSvr.js" beforeDir="false" afterPath="$PROJECT_DIR$/CS2_MainSvr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_3_27_16_24_57.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_3_27_16_25_57.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_4_1_11_42_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/mainconf.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/mainconf.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/mainconf_bk.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/mainconf_bk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/routes_bk.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/routes_bk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fine-uploader/routesBK.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/fine-uploader/routesBK.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jquery.form.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/jquery.form.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploadfiles/2019-01-30T21:47:52Z_NAA_Campus.tif" beforeDir="false" afterPath="$PROJECT_DIR$/uploadfolder/2019-01-30T21:47:52Z_NAA_Campus.tif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploadfiles/2019-02-01T21:26:00Z_NAA_Campus.tif" beforeDir="false" afterPath="$PROJECT_DIR$/uploadfolder/2019-02-01T21:26:00Z_NAA_Campus.tif" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -49,22 +59,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="false">
-        <entry file="das://57aaff9e-0a65-4f92-bbaf-3af7b5e18b6e/schema/CitySmart2/table/LayerMenu">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true">
-                <filter text="LayerType='Placemark'" />
-              </filtering>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/mainconf.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="89">
-              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+            <state relative-caret-position="455">
+              <caret line="47" column="32" lean-forward="true" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -129,7 +128,6 @@
         <option value="$PROJECT_DIR$/views/reset.ejs" />
         <option value="$PROJECT_DIR$/views/signup.ejs" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
-        <option value="$PROJECT_DIR$/config/mainconf.js" />
         <option value="$PROJECT_DIR$/src/globe/WcsEarthElevationCoverage.js" />
         <option value="$PROJECT_DIR$/src/layer/BMNGLayer.js" />
         <option value="$PROJECT_DIR$/src/layer/BingWMSLayer.js" />
@@ -137,6 +135,7 @@
         <option value="$PROJECT_DIR$/src/WorldWind.js" />
         <option value="$PROJECT_DIR$/scripts/MainMenu.js" />
         <option value="$PROJECT_DIR$/routes/routes.js" />
+        <option value="$PROJECT_DIR$/config/mainconf.js" />
       </list>
     </option>
   </component>
@@ -164,7 +163,7 @@
             <path>
               <item name="CitySmart21" type="b2602c69:ProjectViewProjectNode" />
               <item name="CitySmart21" type="462c0819:PsiDirectoryNode" />
-              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -191,19 +190,19 @@
     <property name="settings.editor.selected.configurable" value="settings.nodejs" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/bak" />
+      <recent name="$PROJECT_DIR$/scripts" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/routes" />
+      <recent name="$PROJECT_DIR$/src1" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/scripts" />
       <recent name="$PROJECT_DIR$/2" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/approvedfiles" />
       <recent name="$PROJECT_DIR$" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/scripts" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/bak" />
-      <recent name="$PROJECT_DIR$/routes" />
-      <recent name="$PROJECT_DIR$/src1" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -362,11 +361,25 @@
       <option name="project" value="LOCAL" />
       <updated>1554300246985</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Merge branch 'Amy' of https://github.com/Anson-Zhao/CitySmart21&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;routes/routes.js">
+      <created>1554300661457</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1554300661457</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Merge branch 'Amy' of https://github.com/Anson-Zhao/CitySmart21&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;routes/routes.js">
+      <created>1554300695662</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1554300695662</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27264000" />
+    <option name="totallyTimeSpent" value="28492000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="131" y="43" width="1958" height="1237" extended-state="0" />
@@ -375,8 +388,8 @@
       <window_info id="Structure" order="1" sideWeight="0.50066227" side_tool="true" weight="0.19517314" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49790135" weight="0.3294849" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49475342" visible="true" weight="0.3294849" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4973767" weight="0.3294849" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49422875" visible="true" weight="0.3294849" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -385,7 +398,7 @@
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49842602" weight="0.3294849" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49758258" weight="0.3285968" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5052466" side_tool="true" visible="true" weight="0.3294849" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5057712" side_tool="true" visible="true" weight="0.3294849" />
       <window_info anchor="bottom" id="Database Console" order="12" sideWeight="0.49952742" weight="0.3294849" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -621,8 +634,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/mainconf.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        <state relative-caret-position="455">
+          <caret line="47" column="32" lean-forward="true" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
         </state>
       </provider>
     </entry>
