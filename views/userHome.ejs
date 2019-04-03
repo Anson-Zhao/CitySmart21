@@ -353,20 +353,10 @@
             for (let i = 0; i < rowSelected.length; i++) {
 //                console.log("rowSelected[" + i + "][0]: " + rowSelected[i][0]);
                 transactionID.push(rowSelected[i][2]); //object variable / push means insert this value into ScoutingID
-                //i means row selected from table and 2 represents the column (count starting from zero)
-                //sent request from client side to server side "hey, could you make this record go from active to deleted status" server will ask for which row
-                //client says I will give you the scoutingID so you can identify and delete
-                //server side says okay I can do that
-                //server tells client side they changed it and client side also has to change
-                // console.log(transactionID[0]); //array where one length means one record and then access first element value of array
                 picPath.push(rowSelected[i][15]);
                 LayerNameStr.push(rowSelected[i][11]);
             }
         });
-
-        // $("#Request").on("click", function () {
-        //     location.replace('../bak/Layer Request form.html');
-        // });
 
         $("#editButton").on("click", function () {
             // console.log(transactionID);
@@ -465,78 +455,6 @@
         queryAndDisplay(queryStr);
     }
 
-    // let queryAndDisplay = function (query) {
-    //     console.log(query);
-    //     //this console shows me
-    //     $.ajax({
-    //         url: '/filterQuery',
-    //         type: 'GET',
-    //         dataType: 'json',
-    //         async: false,
-    //         data: query, //status="active or pending" & username=@ after deleting records, you reload table which shows a new output not including the deleted records - it's still an instance of filtering
-    //         success: function (results) {
-    //             console.log(results);
-    //             for (let i = 0; i < results.length; i++) {
-    //                 if (UserRole === "Regular") {
-    //                     if (results[i].UID === username) {
-    //                         if (results[i].Current_Status === "Pending" || results[i].Current_Status === "Active") {
-    //                             table.row.add([
-    //                                 results[i].Date,
-    //                                 results[i].UID,
-    //                                 results[i].RID,
-    //                                 results[i].LayerCategory,
-    //                                 results[i].CityName,
-    //                                 results[i].CountryName,
-    //                                 results[i].StateName,
-    //                                 results[i].FirstLayer,
-    //                                 results[i].FirstOther,
-    //                                 results[i].SecondLayer,
-    //                                 results[i].SecondOther,
-    //                                 results[i].LayerName,
-    //                                 results[i].Layer_Description,
-    //                                 results[i].LayerFormat,
-    //                                 results[i].Layer_Uploader_name,
-    //                                 results[i].Current_Status,
-    //                                 results[i].Comments
-    //                             ]).draw(false);
-    //
-    //                         }
-    //
-    //                     }
-    //                 }
-    //                 //start a new set of if statements for the admin here
-    //
-    //                 if (UserRole === "Admin") {
-    //                     // if (results[i].UID === username) {
-    //                         if (results[i].Current_Status === "Pending" || results[i].Current_Status === "Active") {
-    //                             table.row.add([
-    //                                 results[i].Date,
-    //                                 results[i].UID,
-    //                                 results[i].RID,
-    //                                 results[i].LayerCategory,
-    //                                 results[i].CityName,
-    //                                 results[i].CountryName,
-    //                                 results[i].StateName,
-    //                                 results[i].FirstLayer,
-    //                                 results[i].FirstOther,
-    //                                 results[i].SecondLayer,
-    //                                 results[i].SecondOther,
-    //                                 results[i].LayerName,
-    //                                 results[i].Layer_Description,
-    //                                 results[i].LayerFormat,
-    //                                 results[i].Layer_Uploader_name,
-    //                                 results[i].Current_Status,
-    //                                 results[i].Comments
-    //                             ]).draw(false);
-    //                         }
-    //
-    //                     }
-    //                 // }
-    //             }
-    //         }
-    //     })
-    // }
-
     let queryAndDisplay = function (query) {
         $.ajax({
             url: '/layerReqQuery',
@@ -571,7 +489,7 @@
                                 results[i].FirstOther,
                                 results[i].SecondLayer,
                                 results[i].SecondOther,
-                                results[i].LayerName,
+                                results[i].ThirdLayer,
                                 results[i].Layer_Description,
                                 results[i].LayerFormat,
                                 results[i].Layer_Uploader_name,

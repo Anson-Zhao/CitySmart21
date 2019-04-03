@@ -14,7 +14,7 @@ const rimraf = require("rimraf");
 const mkdirp = require("mkdirp");
 const multiparty = require('multiparty');
 const path    = require('path');
-// var exec = require('child_process').exec, child;
+var exec = require('child_process').exec, child;
 
 const upload_Dir = config.Upload_Dir; //contains pending and rejected
 const geoData_Dir = config.GeoData_Dir; //approve folder
@@ -46,7 +46,7 @@ module.exports = function (app, passport) {
     console.log(downloadFalse);
     console.log(downloadFalse === null);
 
-    removeFile();
+    // removeFile();
     setInterval(copyXML, download_interval); // run the function one time a (day
     // setInterval(predownloadXml, 3660000);
 
@@ -521,7 +521,7 @@ module.exports = function (app, passport) {
         let pictureStr = req.query.pictureStr.split(',');
         let LayerName = req.query.LayerName.split(',');
         for (let i = 0; i < transactionID.length; i++) {
-            let statement = "UPDATE Request_Form SET Current_Status = 'Pending' WHERE RID = '" + transactionID[i] + "';";
+            let statement = "UPDATE Request_Form SET Current_Status = 'Pending', Layer_Uploader_name = '" + pictureStr[i] + "' WHERE RID = '" + transactionID[i] + "';";
             let statement1 = "UPDATE LayerMenu SET Status = 'Disapproved' WHERE ThirdLayer = '" + LayerName  + "';";
             fs.rename(''+ geoData_Dir + '/' + pictureStr[i] + '' , '' + upload_Dir + '/' + pictureStr[i] + '',  function (err) {
                 if (err) {
@@ -1533,6 +1533,7 @@ module.exports = function (app, passport) {
         });
 
         console.log(result);
+        console.log(result[10][1]);
 
         var statement = "curl -u julia:123654 -v -XGET http://cs.aworldbridgelabs.com:8080/geoserver/rest/workspaces/Approved/datastores/datastoresigh/featuretypes.json";
         var jsonF;
@@ -1576,15 +1577,17 @@ module.exports = function (app, passport) {
                 update2 += result[i][0] + " = '" + result[i][1] + "', " ;
             }
         }
+        console.log(result[15][1]);
+
 
         let Layer_Uploader = upload_Dir + "/" + responseDataUuid;
         let Layer_Uploader_name = responseDataUuid;
         let filepathname = upload_Dir + "/" + responseDataUuid;
         let statement1 = update1+update2+update3;
-        let statement2 = "UPDATE Request_Form SET Layer_Uploader = '" + Layer_Uploader + "', Layer_Uploader_name = '" + Layer_Uploader_name + "' WHERE RID = '" + result[1][1] + "';";
+        let statement2 = "UPDATE Request_Form SET Layer_Uploader = '" + Layer_Uploader + "', Layer_Uploader_name = '" + result[15][1] + "' WHERE RID = '" + result[1][1] + "';";
         let statement3 = "UPDATE Request_Form SET ThirdLayer = '" + result[8][1] + "' WHERE RID = '" + result[1][1] + "';";
         if(result[3][1] === "other"){
-            let statement = "REPLACE INTO LayerMenu (LayerName, LayerType, FirstLayer, SecondLayer, ThirdLayer, Picture_Location, ContinentName, CountryName, StateName, Status, RID) VALUES ('" + result[7][1] + "', 'Wmslayer', '" + result[4][1] + "','" + result[6][1] + "','" + result[8][1] + "','" + result[10][1] + "','" + result[8][1] + "','" + result[9][1] + "', 'Approved', '" + result[1][1] + "');";
+            let statement = "INSERT INTO LayerMenu (LayerName, LayerType, FirstLayer, SecondLayer, ThirdLayer, Picture_Location, ContinentName, CountryName, StateName, CityName, Site_Description, Status, RID) VALUES ('" + result[7][1] + "', 'Wmslayer', '" + result[4][1] + "','" + result[6][1] + "','" + result[8][1] + "','" + result[15][1] + "','" + result[9][1] + "','" + result[10][1] + "','" + result[11][1] + "','" + result[12][1] + "','" + result[13][1] + "', 'Approved', '" + result[1][1] + "') ON DUPLICATE KEY UPDATE LayerName ='" + result[7][1] + "', FirstLayer = '" + result[4][1] + "', SecondLayer = '" + result[6][1] + "', ThirdLayer = '" + result[8][1] + "', Picture_Location = '" + result[15][1] + "', Status = 'Approved';";
             con_CS.query(statement1 + statement + statement2 + statement3, function (err, result) {
                 if (err) {
                     throw err;
@@ -1593,11 +1596,12 @@ module.exports = function (app, passport) {
                 }
             });
         }else{
-            let statement = "REPLACE INTO LayerMenu (LayerName, LayerType, FirstLayer, SecondLayer, ThirdLayer, Picture_Location, ContinentName, CountryName, StateName, Status, RID) VALUES ('" + result[7][1] + "', 'Wmslayer', '" + result[3][1] + "','" + result[5][1] + "','" + result[8][1] + "','" + result[10][1] + "','" + result[8][1] + "','" + result[9][1] + "', 'Approved', '" + result[1][1] + "');";
+            let statement = "INSERT INTO LayerMenu (LayerName, LayerType, FirstLayer, SecondLayer, ThirdLayer, Picture_Location, ContinentName, CountryName, StateName, CityName, Site_Description, Status, RID) VALUES ('" + result[7][1] + "', 'Wmslayer', '" + result[3][1] + "','" + result[5][1] + "','" + result[8][1] + "','" + result[15][1] + "','" + result[9][1] + "','" + result[10][1] + "','" + result[11][1] + "','" + result[12][1] + "','" + result[13][1] + "', 'Approved', '" + result[1][1] + "') ON DUPLICATE KEY UPDATE LayerName ='" + result[7][1] + "', FirstLayer = '" + result[3][1] + "', SecondLayer = '" + result[5][1] + "', ThirdLayer = '" + result[8][1] + "', Picture_Location = '" + result[15][1] + "', Status = 'Approved';";
            con_CS.query(statement1 + statement + statement2 + statement3, function (err, result) {
                 if (err) {
                     throw err;
                 } else {
+                    console.log(statement);
                     res.json("Connected!")
                 }
             });
@@ -2463,45 +2467,45 @@ function QueryStat(myObj, sqlStat, res) {
             })
     }
 
-    function removeFile() {
-        console.log('the remove function was called');
-
-        const dir = 'config/geoCapacity'; //the dir of the file that I am going to remove.
-
-        fs.readdir(dir, (err, files) => {//a method to calculate the number of the files in the geoCapacity folder
-
-            if(files.length > num_backups){
-                console.log('readdir');
-                //if there are more than 100 file in the directory
-                if(!downloadFalse){ //if download succeed, run the code below
-                    fs.unlink('config/geoCapacity/'+ files[0], (err) => { //delete the first (the oldest) file in the directory
-                        if (err) {throw err} else {
-                            downloadFalse = true; //change the value of "downloadFalse" to true
-                        }
-                        console.log('download and remove copy successfully');
-                    })
-                } else { //if download failed, run the code below
-                    fs.unlink('config/geoCapacity/'+ files[files.length-1], (err) => { //then delete the last (the latest) file in the directory
-                        if (err) {throw err}
-                        console.log('download file failed, removed copy successfully')
-                    })
-                }
-            }else {
-                //if the file number is less than num_backups, and download failed
-                if (files.length > 0) {
-                    if (downloadFalse === null) {
-                        fs.unlink('config/geoCapacity/' + files[files.length - 1], (err) => { //then delete the last (the latest) file in the directory
-                            if (err) {
-                                throw err
-                            }
-                            console.log('download file failed,number is less than num_backups, removed copy successfully')
-                        })
-                    }
-                }
-            }
-
-        });
-    }
+    // function removeFile() {
+    //     console.log('the remove function was called');
+    //
+    //     const dir = 'config/geoCapacity'; //the dir of the file that I am going to remove.
+    //
+    //     fs.readdir(dir, (err, files) => {//a method to calculate the number of the files in the geoCapacity folder
+    //
+    //         if(files.length > num_backups){
+    //             console.log('readdir');
+    //             //if there are more than 100 file in the directory
+    //             if(!downloadFalse){ //if download succeed, run the code below
+    //                 fs.unlink('config/geoCapacity/'+ files[0], (err) => { //delete the first (the oldest) file in the directory
+    //                     if (err) {throw err} else {
+    //                         downloadFalse = true; //change the value of "downloadFalse" to true
+    //                     }
+    //                     console.log('download and remove copy successfully');
+    //                 })
+    //             } else { //if download failed, run the code below
+    //                 fs.unlink('config/geoCapacity/'+ files[files.length-1], (err) => { //then delete the last (the latest) file in the directory
+    //                     if (err) {throw err}
+    //                     console.log('download file failed, removed copy successfully')
+    //                 })
+    //             }
+    //         }else {
+    //             //if the file number is less than num_backups, and download failed
+    //             if (files.length > 0) {
+    //                 if (downloadFalse === null) {
+    //                     fs.unlink('config/geoCapacity/' + files[files.length - 1], (err) => { //then delete the last (the latest) file in the directory
+    //                         if (err) {
+    //                             throw err
+    //                         }
+    //                         console.log('download file failed,number is less than num_backups, removed copy successfully')
+    //                     })
+    //                 }
+    //             }
+    //         }
+    //
+    //     });
+    // }
 
 
 };
