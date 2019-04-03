@@ -16,8 +16,7 @@ const multiparty = require('multiparty');
 const path    = require('path');
 // var exec = require('child_process').exec, child;
 
-const Pending_Dir = config.Pending_Dir; //contains pending files
-const Reject_Dir = config.Reject_Dir; //contains rejected files
+const upload_Dir = config.Upload_Dir; //contains pending and rejected
 const geoData_Dir = config.GeoData_Dir; //approve folder
 const Delete_Dir = config.Delete_Dir; //trash folder
 const downloadPath = config.Download_Path;
@@ -1563,7 +1562,7 @@ module.exports = function (app, passport) {
 
     });
 
-    app.post('/replace', function (req, res) {
+    app.post('/replace', function (req, res) { //puts everything from a request form into LayerMenu once it has been approved
         let result = Object.keys(req.body).map(function (key) {
             return [String(key), req.body[key]];
         });

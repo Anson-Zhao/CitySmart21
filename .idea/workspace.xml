@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4704f94f-8e06-4422-a8b4-19d911764f68" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/config/geoCapacity/2019_4_1_11_42_4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/LayerRequestForm_edit.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/LayerRequestForm_edit.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/dataHistory.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/dataHistory.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/recovery.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/recovery.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/userHome.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/userHome.ejs" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -70,7 +68,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/mainconf.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
+            <state relative-caret-position="346">
               <caret line="42" selection-start-line="42" selection-end-line="42" />
             </state>
           </provider>
@@ -263,9 +261,6 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="CS2_MainSvr.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="CS2_MainSvr.js" working-dir="$PROJECT_DIR$">
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Node.js.CS2_MainSvr.js" />
@@ -385,11 +380,18 @@
       <option name="project" value="LOCAL" />
       <updated>1554299366939</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart21&#10;&#10;# Conflicts:&#10;#&#9;routes/routes.js">
+      <created>1554299897177</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1554299897177</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26495000" />
+    <option name="totallyTimeSpent" value="26768000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="131" y="43" width="1958" height="1237" extended-state="0" />
@@ -465,7 +467,8 @@
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="Cons 1" />
     <MESSAGE value="Merge branch 'Yiyang' of https://github.com/Anson-Zhao/CitySmart21&#10;&#10;# Conflicts:&#10;#&#9;approvedfolder/2019-01-30T21:47:52Z_NAA_Campus.tif&#10;#&#9;approvedfolder/2019-03-29T19:11:59Z_NAA_Campus.tif&#10;#&#9;config/geoCapacity/2019_4_2_15_42_32.xml&#10;#&#9;config/mainconf.js&#10;#&#9;routes/routes.js&#10;#&#9;uploadfiles/2019-01-30T21:47:52Z_NAA_Campus.tif&#10;#&#9;uploadfiles/2019-02-01T21:26:00Z_NAA_Campus.tif" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'Yiyang' of https://github.com/Anson-Zhao/CitySmart21&#10;&#10;# Conflicts:&#10;#&#9;approvedfolder/2019-01-30T21:47:52Z_NAA_Campus.tif&#10;#&#9;approvedfolder/2019-03-29T19:11:59Z_NAA_Campus.tif&#10;#&#9;config/geoCapacity/2019_4_2_15_42_32.xml&#10;#&#9;config/mainconf.js&#10;#&#9;routes/routes.js&#10;#&#9;uploadfiles/2019-01-30T21:47:52Z_NAA_Campus.tif&#10;#&#9;uploadfiles/2019-02-01T21:26:00Z_NAA_Campus.tif" />
+    <MESSAGE value="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart21&#10;&#10;# Conflicts:&#10;#&#9;routes/routes.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart21&#10;&#10;# Conflicts:&#10;#&#9;routes/routes.js" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/node_modules/worldwindjs/build/dist/worldwind.js" />
@@ -635,7 +638,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/mainconf.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
+        <state relative-caret-position="346">
           <caret line="42" selection-start-line="42" selection-end-line="42" />
         </state>
       </provider>
