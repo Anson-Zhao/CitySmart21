@@ -136,11 +136,46 @@ module.exports = function (app, passport) {
         });
     });
 
+    app.get('/firstLayer', function (req, res) {
+        res.setHeader("Access-Control-Allow-Origin", "*");
+        con_CS.query("SELECT FirstLayer FROM LayerMenu WHERE Status ='Approved' GROUP BY FirstLayer ", function (err, result) {
+            // let JSONresult = JSON.stringify(result, null, "\t");
+            if (err) { throw err } else {
+                res.json(result);
+            }
+        });
 
-    app.get('/request',function (req,res) {
-        res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
-        res.render('login.ejs');
     });
+
+    app.get('/secondLayer', function (req, res) {
+        res.setHeader("Access-Control-Allow-Origin", "*");
+        var firstlayerValue = req.query.FirstLayer;
+        con_CS.query("SELECT SecondLayer,FirstLayer FROM LayerMenu WHERE Status ='Approved' and FirstLayer =? GROUP BY SecondLayer", firstlayerValue ,function (err, result) {
+            // let JSONresult = JSON.stringify(result, null, "\t");
+            if (err) { throw err } else {
+                res.json(result);
+            }
+        });
+
+    });
+
+    app.get('/thirdLayer', function (req, res) {
+        res.setHeader("Access-Control-Allow-Origin", "*");
+        var secondLayerValue = req.query.SecondLayer;
+        con_CS.query("SELECT LayerType,SecondLayer,ThirdLayer,CityName,StateName,CountryName, GROUP_CONCAT(LayerName) as LayerName FROM LayerMenu WHERE Status ='Approved' and SecondLayer =? GROUP BY ThirdLayer,CityName,StateName,CountryName,SecondLayer,LayerType", secondLayerValue ,function (err, result) {
+            // let JSONresult = JSON.stringify(result, null, "\t");
+            //All layer?
+            //WHERE cityname = ''?
+            if (err) { throw err } else {
+                res.json(result);
+            }
+        });
+    });
+
+    // app.get('/request',function (req,res) {
+    //     res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
+    //     res.render('login.ejs');
+    // });
 
     // =====================================
     // LOGIN Section =======================
@@ -1782,41 +1817,6 @@ module.exports = function (app, passport) {
         });
     });
 
-    app.get('/firstLayer', function (req, res) {
-        res.setHeader("Access-Control-Allow-Origin", "*");
-        con_CS.query("SELECT FirstLayer FROM LayerMenu WHERE Status ='Approved' GROUP BY FirstLayer ", function (err, result) {
-            // let JSONresult = JSON.stringify(result, null, "\t");
-            if (err) { throw err } else {
-                res.json(result);
-            }
-        });
-
-    });
-
-    app.get('/secondLayer', function (req, res) {
-        res.setHeader("Access-Control-Allow-Origin", "*");
-        var firstlayerValue = req.query.FirstLayer;
-        con_CS.query("SELECT SecondLayer,FirstLayer FROM LayerMenu WHERE Status ='Approved' and FirstLayer =? GROUP BY SecondLayer", firstlayerValue ,function (err, result) {
-            // let JSONresult = JSON.stringify(result, null, "\t");
-            if (err) { throw err } else {
-                res.json(result);
-            }
-        });
-
-    });
-
-    app.get('/thirdLayer', function (req, res) {
-        res.setHeader("Access-Control-Allow-Origin", "*");
-        var secondLayerValue = req.query.SecondLayer;
-        con_CS.query("SELECT LayerType,SecondLayer,ThirdLayer,CityName,StateName,CountryName, GROUP_CONCAT(LayerName) as LayerName FROM LayerMenu WHERE Status ='Approved' and SecondLayer =? GROUP BY ThirdLayer,CityName,StateName,CountryName,SecondLayer,LayerType", secondLayerValue ,function (err, result) {
-            // let JSONresult = JSON.stringify(result, null, "\t");
-            //All layer?
-            //WHERE cityname = ''?
-            if (err) { throw err } else {
-                res.json(result);
-            }
-        });
-    });
 
     app.get('/createlayer', function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*");
