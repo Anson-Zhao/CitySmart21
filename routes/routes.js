@@ -16,6 +16,8 @@ const multiparty = require('multiparty');
 const path    = require('path');
 // var exec = require('child_process').exec, child;
 
+const geoServer = config.geoServer;
+const WMS_URL = config.WMS_URL;
 const upload_Dir = config.Upload_Dir; //contains pending and rejected
 const geoData_Dir = config.GeoData_Dir; //approve folder
 const Delete_Dir = config.Delete_Dir; //trash folder
@@ -67,33 +69,18 @@ module.exports = function (app, passport) {
         })
     });
 
-    // function downloadImage () {
-    //     // const url = 'http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities';
-    //     const url = 'https://unsplash.com/photos/AaEQmoufHLk/download?force=true';
-    //     const downloadDir = path.resolve(__dirname, downloadPath, 'code1.jpg');
-    //
-    //     request(url).pipe(fs.createWriteStream(downloadDir));
-    //     fs.createWriteStream(downloadDir).end();
-    //
-    // }
-
-    // downloadImage();
-
     app.get('/homepageLI', isLoggedIn, function (req, res) {
-        let myStat = "SELECT userrole FROM UserLogin WHERE username = '" + req.user.username + "';";
-        let state2 = "SELECT firstName FROM UserProfile WHERE username = '" + req.user.username + "';";
-
-        con_CS.query(myStat + state2, function (err, results, fields) {
+        let myStat = "Select userrole From UserLogin WHERE username = ? ;";
+        let state = "SELECT firstName FROM UserProfile WHERE username = ? ;";
+        con_CS.query(myStat + state, [req.user.username, req.user.username], (err, results) => {
             if (!results[0][0].userrole) {
-                console.log("Error2");
+                console.log("User Role is missing!");
             } else if (!results[1][0].firstName) {
-                console.log("Error1")
+                console.log("First Name is missing!")
             } else {
-                console.log(req.user);
                 res.render('homepageUSER.ejs', {
                     user: req.user, // get the user out of session and pass to template
-                    firstName: results[1][0].firstName,
-                    lastName: results[1][0].lastName
+                    firstName: results[1][0].firstName
                 });
             }
         });
@@ -114,8 +101,6 @@ module.exports = function (app, passport) {
                 res.json({"error": true, "message": "no result found!"});
             } else {
                 res.json(results);
-                // console.log("Results:");
-                // console.log(results);
             }
         });
         // con_CS.query("SELECT LayerName, Longitude, Latitude, Altitude, ThirdLayer FROM LayerMenu Where LayerName = ?", parsedLayers[0], function (err, results) {
@@ -124,7 +109,19 @@ module.exports = function (app, passport) {
         // })
     });
 
-    app.get('/thirdL',function (req,res) {
+    app.get('/placemark', function(req, res) {
+        res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
+        var select = "SELECT * FROM CitySmart2.LayerMenu WHERE LayerType = 'Placemark'";
+        con_CS.query( select, function (err, result) {
+            if (err) throw err;
+            else {
+                // console.log(result);
+                res.json({"err": false, "data": result});
+            }
+        });
+    });
+
+    app.get('/currenLayer',function (req,res) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
         var thirdlayer = req.query.thirdlayer;
         var queryState = 'SELECT FirstLayer, SecondLayer, ThirdLayer, Longitude, Latitude, Altitude FROM LayerMenu WHERE ThirdLayer = ?';
@@ -134,7 +131,7 @@ module.exports = function (app, passport) {
                 res.json({"error": true, "message": "An unexpected error occurred !"});
             } else {
                 res.json(results);
-                console.log(results);
+                // console.log(results);
             }
         });
     });
@@ -185,25 +182,6 @@ module.exports = function (app, passport) {
         res.render('forgotPassword.ejs', {message: req.flash('forgotPassMessage')});
 
     });
-
-
-    app.get('/placemark', function(req, res) {
-        res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
-        var select = "SELECT * FROM CitySmart2.LayerMenu WHERE LayerType = 'Placemark'";
-        con_CS.query( select, function (err, result) {
-            if (err) throw err;
-            else {
-                // console.log(result);
-                res.json({"err": false, "data": result});
-            }
-        });
-    });
-
-
-
-
-    // app.listen(3005, function(){ console.log('Example app listening on port 3005!')});
-
 
     app.post('/email', function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
@@ -1473,7 +1451,7 @@ module.exports = function (app, passport) {
                     var type = "Content-type: application/zip";
                     var datastore = "datastore" + fName;
 
-                    var statement = "curl -u julia:123654 -v -XPUT -H '" + type + "' --data-binary @approvedfolder/" + approvepictureStr[0] + " http://cs.aworldbridgelabs.com:8080/geoserver/rest/workspaces/Approved/datastores/" + datastore +"/file.shp";
+                    var statement = "curl -u julia:123654 -v -XPUT -H '" + type + "' --data-binary @approvedfolder/" + approvepictureStr[0] + " " + geoServer + "rest/workspaces/Approved/datastores/" + datastore +"/file.shp";
 
                     child = exec(statement,
                         function (error, stdout, stderr) {
@@ -1483,7 +1461,7 @@ module.exports = function (app, passport) {
                             if (error !== null) {
                                 console.log('exec error: ' + error);
                             } else {
-                                var statement = "curl -u julia:123654 -v -XGET http://cs.aworldbridgelabs.com:8080/geoserver/rest/workspaces/Approved/datastores/" + datastore + "/featuretypes.json";
+                                var statement = "curl -u julia:123654 -v -XGET " + geoServer + "rest/workspaces/Approved/datastores/" + datastore + "/featuretypes.json";
                                 var jsonF;
                                 child = exec(statement,
                                     function (error, stdout, stderr) {
@@ -1521,7 +1499,7 @@ module.exports = function (app, passport) {
                 //
                 // var type = "Content-type: application/zip";
                 //
-                // var statement = "curl -u julia:123654 -v -XPUT -H '" + type + "' --data-binary @approvedfolder/" + approvepictureStr[0] + " http://cs.aworldbridgelabs.com:8080/geoserver/rest/workspaces/Approved/datastores/datastore/file.shp";
+                // var statement = "curl -u julia:123654 -v -XPUT -H '" + type + "' --data-binary @approvedfolder/" + approvepictureStr[0] + " " + geoServer + "rest/workspaces/Approved/datastores/datastore/file.shp";
                 //
                 // child = exec(statement,
                 //     function (error, stdout, stderr) {
@@ -1545,7 +1523,7 @@ module.exports = function (app, passport) {
 
         console.log(result);
 
-        var statement = "curl -u julia:123654 -v -XGET http://cs.aworldbridgelabs.com:8080/geoserver/rest/workspaces/Approved/datastores/datastoresigh/featuretypes.json";
+        var statement = "curl -u julia:123654 -v -XGET " + geoServer + "rest/workspaces/Approved/datastores/datastoresigh/featuretypes.json";
         var jsonF;
         child = exec(statement,
             function (error, stdout, stderr) {
@@ -2398,7 +2376,7 @@ function QueryStat(myObj, sqlStat, res) {
         let date = today.getFullYear()+ '_' +(today.getMonth()+1)+ '_' + today.getDate();
         let time = today.getHours() + "_" + today.getMinutes()+'_' + today.getSeconds();
         let dataStr = date + "_"+ time;
-        let downloadDis = 'config/geoCapacity/' + dataStr+ '.xml'; //define a file name
+        let downloadDis = downloadPath + '/geoCapacity/' + dataStr+ '.xml'; //define a file name
 
         fsextra.copy(downloadDir, downloadDis) //copy the file and rename
             .then(//if copy succeed, call pre-download XML function
@@ -2411,7 +2389,7 @@ function QueryStat(myObj, sqlStat, res) {
         const downloadDir = path.resolve(__dirname, downloadPath, 'ows.xml'); // the path of the destination
         const timeout = 600000;
         const requestOptions = {
-            uri: 'http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities',
+            uri: WMS_URL,
             // timeout: download_interval
             timeout:timeout
         };

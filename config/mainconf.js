@@ -27,8 +27,11 @@ var configGlobal = {
     // 'local_URL' : "",
     // 'local_URL' : "http://viewer.usgs.aworldbridgelabs.com",
 
+    'geoServer' : 'http://10.11.90.16:8080/geoserver/',
+    'WMS_URL' : 'http://10.11.90.16:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities',
+
     // 'Upload_Path': 'http://usgs.aworldbridgelabs.com/uploadfiles',
-    'Download_Path':'../config',
+    'Download_Path':'config',
 
     //upload file--pending
     // 'Upload_Path': 'http://usgs.aworldbridgelabs.com/uploadfiles',

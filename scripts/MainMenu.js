@@ -15,10 +15,6 @@
 */
 
 requirejs([
-        // '../src/heatmap/GlobeInterface',
-        // '../src/heatmap/Globe',
-        // '../src/heatmap/Controls',
-        // '../src/heatmap/HeatmapPanel',
         './WorldWindShim',
         './LayerManager',
         './OptionList',
@@ -26,12 +22,6 @@ requirejs([
         '../src/ogc/wms/WmsLayerCapabilities'
         ],
     function (
-        // OptionList,
-        // AutoMenu,
-        // GlobeInterface,
-        // Globe,
-        // Controls,
-        // HeatmapPanel,
         WorldWind,
         LayerManager
     ) {
@@ -55,14 +45,6 @@ requirejs([
             layers[l].layer.enabled = layers[l].enabled;
             globe.addLayer(layers[l].layer);
         }
-        // var globe = new Globe({id: "canvasOne"});
-        // var globeID = "canvasOne";
-        // var controls = new Controls(globe);
-        // var gInterface = new GlobeInterface(globe);
-        //
-        // var heatmapPanel = new HeatmapPanel(globe, gInterface.globe.navigator, gInterface.globe.worldWindowController, controls);
-
-        // WorldWind.Logger.setLoggingLevel(WorldWind.Logger.LEVEL_WARNING);
 
         // Create a layer manager for controlling layer visibility.
         var layerManager = new LayerManager(globe);
@@ -73,15 +55,13 @@ requirejs([
         globe.goTo(new WorldWind.Position(37.0902, -95.7129, 9000000));
 
         // Web Map Service information from NASA's Near Earth Observations WMS
-        // var serviceAddress = "http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&request=GetCapabilities&version=1.1.1";
         // var serviceAddress = "https://cors.aworldbridgelabs.com/http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities";
 
         var preloadWMSLayerName = [];
         var highlightedItems= [];
-        var layerName = [];
         var preloadLayer = []; //preload entire layer name
         var layers = globe.layers;
-        let bob=[];
+        var bob=[];
         var checked = []; //selected toggle switch value
         var alertVal = true;
         var LayerSelected;
@@ -122,12 +102,12 @@ requirejs([
                 globe.addLayer(wmsLayer);
                 layerManager.synchronizeLayerList();
             }
-        };
+        }
 
         // Called if an error occurs during WMS Capabilities document retrieval
         function logError (jqXhr, text, exception) {
             console.log("There was a failure retrieving the capabilities document: " + text + " exception: " + exception);
-        };
+        }
 
         function Placemark_Creation (RGB,PKValue, coLat, coLong, LayerName) {
             // console.log(coLong);
@@ -201,11 +181,10 @@ requirejs([
             // console.log(placemarkLayer);
             // console.log(placemark);
             globe.addLayer(placemarkLayer);
-        };
+        }
 
         function handlePick (o) {
 
-            // alert("ttyy");
             // The input argument is either an Event or a TapRecognizer. Both have the same properties for determining
             // the mouse or tap location.
             var x = o.clientX,
@@ -248,7 +227,7 @@ requirejs([
             if (redrawRequired) {
                 globe.redraw(); // redraw to make the highlighting changes take effect on the screen
             }
-        };
+        }
 
         function handleMouseCLK (a)   {
             var x = a.clientX,
@@ -290,26 +269,15 @@ requirejs([
                     });
                 }
             }
-        };
+        }
 
         function sitePopUp (PKValue) {
             var popupBodyItem = $("#popupBody");
             var c = PKValue;
-            console.log(c);
-
-            // console.log(infobox);
-
 
             for (var k = 0, lengths = infobox.length; k < lengths; k++) {
-                // alert("popup info");
-                console.log(infobox[k].PK);
                 if (infobox[k].PK === c) {
-                    console.log("good-bye");
-
                     popupBodyItem.children().remove();
-                    // alert(infobox[k].sitename);
-                    //     alert("hi");
-
 
                     var popupBodyName = $('<p class="site-name"><h4>' + infobox[k].LayerName + '</h4></p>');
                     var popupBodyDesc = $('<p class="site-description">' + infobox[k].Site_Description + '</p><br>');
@@ -325,32 +293,13 @@ requirejs([
                     popupBodyItem.append(copyrightStatus);
                     popupBodyItem.append(coordinates);
                     break
-
-                    // alert(popupBodyName);
                 }
             }
-
-            // alert("hello" + pmDescription[0].Layer_Name);
-            // alert ("length: " + pmDescription.length);
-
-            // for (var k = 0, lengths = pmDescription.length; k < lengths; k++) {
-            //     var pmLayerName = pmDescription[k].Layer_Name;
-            //     var pmSiteNam
-            // e = pmDescription[k].Site_Name;
-            //     var pmColor = pmDescription[k].Color;
-            //     var pmPicLoc = pmDescription[k].Picture_Location;
-            //
-            //     // if (pmLayerName[k]) {
-            //     //
-            //     //     popupBodyItem.children().remove();
-            //     //.
-            //     // }
-            // }
-        };
+        }
 
         function globlePosition (layerRequest){
             $.ajax({
-                url: 'position',
+                url: '/position',
                 type: 'GET',
                 dataType: 'json',
                 data: layerRequest, //send the most current value of the selected switch to server-side
@@ -364,7 +313,7 @@ requirejs([
                     globe.goTo(new WorldWind.Position(LayerSelected.Latitude, LayerSelected.Longitude, Altitude));
                 }
             })
-        };
+        }
 
         function buttonControl (allCheckedArray,layer1){
             if (alertVal){
@@ -427,7 +376,7 @@ requirejs([
                 }
             }
 
-        };
+        }
 
         //preload function
         $(document).ready(function() {
@@ -493,13 +442,6 @@ requirejs([
                     var val2;
                     $(":checkbox:not(:checked)").each(function (i) {
                         val2 = $(this).val();
-
-                        // console.log(str);
-                        // console.log(val2[i]);
-
-                        // alert("it doesn't works");
-                        // console.log(val);
-                        // console.log("s"+val2s[a].displayName);
                         for (var a = 0; a < layers.length; a++) {
                             if (layers[a].displayName === val2) {
 
@@ -513,7 +455,6 @@ requirejs([
                 }
             });
 
-            // var serviceAddress = "https://cors.aworldbridgelabs.com/http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities";
             //the beginning value of the button
             currentSelectedLayer.prop('value','No Layer Selected');
             nextL.prop('disabled',true);
@@ -582,10 +523,7 @@ requirejs([
             });
 
             $('#nextL').click(function(){
-                // console.log(arrMenu.length);
-                // console.log(j); //j = j - 1;
                 if(j !== arrMenu.length - 1){ // if there is not only one switch was selected
-                    // console.log(j);
                     if(j === arrMenu.length - 2){
                         nextL.prop('disabled',true);
                     }
@@ -605,7 +543,7 @@ requirejs([
 
                 var currentSelectedLayerData = "thirdlayer=" + arrMenu[j];
                 $.ajax({
-                    url: 'thirdL',
+                    url: '/currentLayer',
                     type: 'GET',
                     dataType: 'json',
                     data:currentSelectedLayerData,
