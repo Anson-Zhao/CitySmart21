@@ -424,8 +424,8 @@
                         <label class="col-md-4 control-label">Picture String Name</label>
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-                                <input id="LayerNameInput" name="PictureName" value="" placeholder="Layer Name.  NOTE: Do not include spaces." class="form-control" required  type="text" onchange="SearchLayerName(this.value)"></div>
-                            <p id="pictureStr" style="color: palevioletred;margin-top:15px;"></p>
+                                <input id="pictureStr" name="Layer_Uploader_name" value="" placeholder="Layer Name.  NOTE: Do not include spaces." class="form-control" required  type="text" onchange="SearchLayerName(this.value)"></div>
+                            <p id="LayerUploaderName" style="color: palevioletred;margin-top:15px;"></p>
                         </div>
                     </div>
                     <div class="form-group">
@@ -680,6 +680,7 @@
                 let lForm = "lForm=" + rowSelectedValue[14];
                 let fName = "fName=" + rowSelectedValue[12];
                 let data = $("#layer").serialize();
+                console.log(fName);
                 $.ajax({
                     url: 'approve',
                     type: "GET",
