@@ -61,9 +61,9 @@ var configGlobal = {
 
     'num_backups': 4,
 
-    'download_interval':660000,
+    // 'download_interval':70000,
 
-    // 'download_interval':86400000,
+    'download_interval':86400000,
 };
 
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {

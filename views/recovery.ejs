@@ -430,6 +430,7 @@
                         async: false,
                         data: transactionIDStr + '&' + pictureStr+ '&' + transactionPrStatusStr + '&' + layerNameStr,
                         success: function (result) {
+                            console.log(result);
                             window.location.replace('/userHome')
                         }
                     })

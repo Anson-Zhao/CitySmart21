@@ -395,9 +395,13 @@
                     url: 'deleteData',
                     type: "GET",
                     dataType: 'json',
-                    data: transactionIDStr + '&' + pictureStr + '&' + LayerName
+                    data: transactionIDStr + '&' + pictureStr + '&' + LayerName,
+                    success: function (result) {
+                        console.log(result);
+                        window.location.reload();
+                    }
                 });
-                window.location.reload();
+
 
             } else {
                 return false;
