@@ -570,7 +570,10 @@
             dataType:"json",
             success: function (results) {
                 for(var i = 0; i < results.length; i++) {
-                    if (value === results[i].ThirdLayer) {
+                    // let newRes = JSON.stringify(results);
+                    console.log(value);
+                    console.log(results[0].LayerName);
+                    if (value === results[i].LayerName) {
                         document.getElementById("LayerName1").innerHTML = "The layer name has already been used. Please use another one.";
                         document.addEventListener("keyup", function (e) {
                             if (event.keyCode === 8) {
