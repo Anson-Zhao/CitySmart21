@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><WMS_Capabilities version="1.3.0" updateSequence="188" xmlns="http://www.opengis.net/wms" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wms http://10.11.90.16:8080/geoserver/schemas/wms/1.3.0/capabilities_1_3_0.xsd">
+<?xml version="1.0" encoding="UTF-8"?><WMS_Capabilities version="1.3.0" updateSequence="2975" xmlns="http://www.opengis.net/wms" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wms http://cs.aworldbridgelabs.com:8080/geoserver/schemas/wms/1.3.0/capabilities_1_3_0.xsd">
   <Service>
     <Name>WMS</Name>
     <Title>GeoServer Web Map Service</Title>
@@ -5963,21 +5963,6 @@
       </EX_GeographicBoundingBox>
       <BoundingBox CRS="CRS:84" minx="-180.0" miny="-90.0" maxx="180.0" maxy="90.0"/>
       <Layer queryable="1">
-        <Name>YEETUS_FEETUS:Matthew_Layer</Name>
-        <Title>Matthew_Layer</Title>
-        <Abstract>Matthew's layer</Abstract>
-        <KeywordList/>
-        <CRS>EPSG:4326</CRS>
-        <EX_GeographicBoundingBox>
-          <westBoundLongitude>-180.0</westBoundLongitude>
-          <eastBoundLongitude>179.99999999996396</eastBoundLongitude>
-          <southBoundLatitude>-89.99999999998198</southBoundLatitude>
-          <northBoundLatitude>90.0</northBoundLatitude>
-        </EX_GeographicBoundingBox>
-        <BoundingBox CRS="CRS:84" minx="-180.0" miny="-89.99999999998198" maxx="179.99999999996396" maxy="90.0"/>
-        <BoundingBox CRS="EPSG:4326" minx="-89.99999999998198" miny="-180.0" maxx="90.0" maxy="179.99999999996396"/>
-      </Layer>
-      <Layer queryable="1">
         <Name>spearfish</Name>
         <Title>Spearfish</Title>
         <Abstract>Spearfish City in Lawrence County, South Dakota&#13;
@@ -6091,6 +6076,35 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
         </Style>
       </Layer>
       <Layer queryable="1" opaque="0">
+        <Name>Matthew_yeet:Matthew_yeet</Name>
+        <Title/>
+        <Abstract>Matthew's natural layer yeet</Abstract>
+        <KeywordList>
+          <Keyword>NE2_LR_LC</Keyword>
+          <Keyword>WCS</Keyword>
+          <Keyword>GeoTIFF</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-180.0</westBoundLongitude>
+          <eastBoundLongitude>179.99999999996396</eastBoundLongitude>
+          <southBoundLatitude>-89.99999999998198</southBoundLatitude>
+          <northBoundLatitude>90.0</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-180.0" miny="-89.99999999998198" maxx="179.99999999996396" maxy="90.0"/>
+        <BoundingBox CRS="EPSG:4326" minx="-89.99999999998198" miny="-180.0" maxx="90.0" maxy="179.99999999996396"/>
+        <Style>
+          <Name>raster</Name>
+          <Title>Default Raster</Title>
+          <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://10.11.90.16:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Matthew_yeet%3AMatthew_yeet"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
         <Name>nurc:Pk50095</Name>
         <Title>Pk50095</Title>
         <Abstract>Pk50095 is a raster file accompanied by a spatial data file.</Abstract>
@@ -6116,35 +6130,6 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://10.11.90.16:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=nurc%3APk50095"/>
-          </LegendURL>
-        </Style>
-      </Layer>
-      <Layer queryable="1" opaque="0">
-        <Name>YEETUS_FEETUS:Yeetus_Feetus</Name>
-        <Title>Yeetus_Feetus</Title>
-        <Abstract>Matthew's nature layer.</Abstract>
-        <KeywordList>
-          <Keyword>NE2_LR_LC</Keyword>
-          <Keyword>WCS</Keyword>
-          <Keyword>GeoTIFF</Keyword>
-        </KeywordList>
-        <CRS>EPSG:4326</CRS>
-        <CRS>CRS:84</CRS>
-        <EX_GeographicBoundingBox>
-          <westBoundLongitude>-180.0</westBoundLongitude>
-          <eastBoundLongitude>179.99999999996396</eastBoundLongitude>
-          <southBoundLatitude>-89.99999999998198</southBoundLatitude>
-          <northBoundLatitude>90.0</northBoundLatitude>
-        </EX_GeographicBoundingBox>
-        <BoundingBox CRS="CRS:84" minx="-180.0" miny="-89.99999999998198" maxx="179.99999999996396" maxy="90.0"/>
-        <BoundingBox CRS="EPSG:4326" minx="-89.99999999998198" miny="-180.0" maxx="90.0" maxy="179.99999999996396"/>
-        <Style>
-          <Name>raster</Name>
-          <Title>Default Raster</Title>
-          <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
-          <LegendURL width="20" height="20">
-            <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://10.11.90.16:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=YEETUS_FEETUS%3AYeetus_Feetus"/>
           </LegendURL>
         </Style>
       </Layer>
