@@ -1066,7 +1066,7 @@ module.exports = function (app, passport) {
          edit_city = req.query.City;
          edit_lastName = req.query.Last_Name;
          edit_userrole = req.query.User_Role;
-         edit_status = req.query.Current_Status;
+         edit_status = req.query.status;
 
          res.json({"error": false, "message": "/editUser"});
      });
@@ -1138,7 +1138,7 @@ module.exports = function (app, passport) {
             });
 
             // var update3 = " WHERE username = '" + req.user.username + "'";
-            let statement1 = "UPDATE UserLogin SET userrole = '" + result[3][1] + "',   Current_Status = '" + result[4][1] + "' WHERE username = '" + result[0][1]+ "';";
+            let statement1 = "UPDATE UserLogin SET userrole = '" + result[3][1] + "',   status = '" + result[4][1] + "' WHERE username = '" + result[0][1]+ "';";
             let statement2 = "UPDATE UserProfile SET firstName = '" + result[1][1] + "', lastName = '" + result[2][1] + "' WHERE username = '" + result[0][1] + "';";
             con_CS.query(statement1 + statement2, function (err, result) {
                 if (err) throw err;
