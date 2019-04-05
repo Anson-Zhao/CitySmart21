@@ -235,17 +235,13 @@
     var UserName = "<%= user.username %>";
     var passwordC = "<%= user.password %>";
     var newusername;
-    var random = document.getElementById('username');
 
 
     var getvalue = JSON.parse(localStorage.getItem("getvalue"));
     document.getElementById('username').value = getvalue[0];
     document.getElementById('firstName').value = getvalue[1];
     document.getElementById('lastName').value = getvalue[2];
-    // document.getElementById('StAtUs').value = getvalue[12];
-    console.log(UserName.value);
-    console.log(typeof UserName);
-    console.log(typeof random);
+
 
 
     $.ajax({
