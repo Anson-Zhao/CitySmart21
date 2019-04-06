@@ -1686,9 +1686,9 @@ module.exports = function (app, passport) {
             if(i ===pictureStr.length - 1){
                 if (err) {
                     console.log(err);
-                    res.json({"error": true, "message": "Recover Failed"});
+                    res.json({"error": true, "message": "Reject Failed"});
                 } else {
-                    res.json({"error": false, "message": "Recover successful, jump to UserHome"});
+                    res.json({"error": false, "message": "Reject successful, jump to UserHome"});
                 }
             }
         })
