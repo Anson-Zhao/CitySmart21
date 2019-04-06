@@ -1045,7 +1045,7 @@ module.exports = function (app, passport) {
             },
             {
                 fieldVal: req.query.status,
-                dbCol: "Current_Status",
+                dbCol: "status",
                 op: " = '",
                 adj: req.query.status
             },
@@ -1443,6 +1443,14 @@ module.exports = function (app, passport) {
     app.get('/SearchLayerName', function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*");
         con_CS.query("SELECT LayerName FROM Request_Form", function (err, results) {
+            if (err) throw err;
+            res.json(results);
+        });
+    });
+
+    app.get('/SearchUsername', function (req, res) {
+        res.setHeader("Access-Control-Allow-Origin", "*");
+        con_CS.query("SELECT username FROM UserLogin", function (err, results) {
             if (err) throw err;
             res.json(results);
         });
