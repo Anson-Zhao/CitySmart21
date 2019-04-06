@@ -22,31 +22,31 @@ var configGlobal = {
     'Login_table': 'UserLogin',
     'Upload_db': 'CitySmart2',
 
-    'Server_Port': 9085,
+    'Server_Port': 9089,
 
     // 'local_URL' : "",
     // 'local_URL' : "http://viewer.usgs.aworldbridgelabs.com",
+
+    'geoServer' : 'http://aworldbridgelabs.com:8080/geoserver/',
+    'WMS_URL' : 'http://aworldbridgelabs.com:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities',
 
     // 'Upload_Path': 'http://usgs.aworldbridgelabs.com/uploadfiles',
     'Download_Path':'../config',
 
     //upload file--pending
-    // 'Upload_Path': 'http://usgs.aworldbridgelabs.com/uploadfiles',
-    // 'Upload_Path':'uploadfiles',
-    // 'Upload_Dir': '/var/www/usgs/uploadfiles',
-
-    // 'Upload_Dir': 'uploadfolder',
-    'Upload_Dir': 'uploadfiles',
+    // 'Pending_Dir': '/var/www/usgs/uploadfolder',
+    'Pending_Dir': 'uploadfolder',
+    'Reject_Dir': 'rejectfolder',
 
     //approve file--active
-    // 'GeoData_Dir': '/usr/share/worldwind-geoserver-0.2.1/data_dir/data/USGS'
-    'GeoData_Dir':'approvedfolder',
+    // 'Approve_Dir': '/usr/share/geoserver-2.15.0/data_dir/data/citysmart'
+    'Approve_Dir':'approvedfolder',
 
     //trashfolder file--trashfolder
     'Delete_Dir':'trashfolder',
 
-    //rejectfolder file--rejectfolder
-    'Reject_Dir':'rejectfolder',
+    'num_backups': 4,
+    'download_interval': 1800000,
 
     // uswtdb eye distance for placemark layer menu display (km)
     'eyeDistance_PL': 1500,
@@ -55,15 +55,7 @@ var configGlobal = {
     'eyeDistance_Heatmap': 4500,
 
     // uswtdb initial eye distance (m)
-    'eyeDistance_initial': 5000000,
-
-    // 'num_backups': 100,
-
-    'num_backups': 4,
-
-    // 'download_interval':70000,
-
-    'download_interval':86400000,
+    'eyeDistance_initial': 5000000
 };
 
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {

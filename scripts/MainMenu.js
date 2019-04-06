@@ -15,10 +15,6 @@
 */
 
 requirejs([
-        // '../src/heatmap/GlobeInterface',
-        // '../src/heatmap/Globe',
-        // '../src/heatmap/Controls',
-        // '../src/heatmap/HeatmapPanel',
         './WorldWindShim',
         './LayerManager',
         './OptionList',
@@ -26,12 +22,6 @@ requirejs([
         '../src/ogc/wms/WmsLayerCapabilities'
         ],
     function (
-        // OptionList,
-        // AutoMenu,
-        // GlobeInterface,
-        // Globe,
-        // Controls,
-        // HeatmapPanel,
         WorldWind,
         LayerManager
     ) {
@@ -55,14 +45,6 @@ requirejs([
             layers[l].layer.enabled = layers[l].enabled;
             globe.addLayer(layers[l].layer);
         }
-        // var globe = new Globe({id: "canvasOne"});
-        // var globeID = "canvasOne";
-        // var controls = new Controls(globe);
-        // var gInterface = new GlobeInterface(globe);
-        //
-        // var heatmapPanel = new HeatmapPanel(globe, gInterface.globe.navigator, gInterface.globe.worldWindowController, controls);
-
-        // WorldWind.Logger.setLoggingLevel(WorldWind.Logger.LEVEL_WARNING);
 
         // Create a layer manager for controlling layer visibility.
         var layerManager = new LayerManager(globe);
@@ -73,15 +55,13 @@ requirejs([
         globe.goTo(new WorldWind.Position(37.0902, -95.7129, 9000000));
 
         // Web Map Service information from NASA's Near Earth Observations WMS
-        // var serviceAddress = "http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&request=GetCapabilities&version=1.1.1";
         // var serviceAddress = "https://cors.aworldbridgelabs.com/http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities";
 
         var preloadWMSLayerName = [];
         var highlightedItems= [];
-        var layerName = [];
         var preloadLayer = []; //preload entire layer name
         var layers = globe.layers;
-        let bob=[];
+        var bob=[];
         var checked = []; //selected toggle switch value
         var alertVal = true;
         var LayerSelected;
@@ -100,12 +80,15 @@ requirejs([
             // console.log(xmlDom);
             // Create a WmsCapabilities object from the XML DOM
             var wms = new WorldWind.WmsCapabilities(xmlDom);
-            // console.log(wms.getNamedLayer);
+            console.log(xmlDom);
+            console.log(wms.getNamedLayer);
 
             // Retrieve a WmsLayerCapabilities object by the desired layer name
             for (var n = 0; n < preloadWMSLayerName.length; n++) {
+
                 // console.log(preloadWMSLayerName[n]);
                 var wmsLayerCapability = wms.getNamedLayer(preloadWMSLayerName[n]);
+                console.log(wmsLayerCapability);
 
                 // Form a configuration object from the wmsLayerCapability object
                 var wmsConfig = WorldWind.WmsLayer.formLayerConfiguration(wmsLayerCapability);
@@ -122,102 +105,14 @@ requirejs([
                 globe.addLayer(wmsLayer);
                 layerManager.synchronizeLayerList();
             }
-        };
-        var infobox;
+        }
 
-        $(document).ready(function () {
-            $.ajax({
-                url: '/placemark',
-                dataType: 'json',
-                success: function(result) {
-                    if (!result.err) {
-                        console.log(result.data);
-                        infobox = result.data;
-                        for (var k = 0; k < infobox.length; k++) {
-                            // alert (data[0].Color);
+        // Called if an error occurs during WMS Capabilities document retrieval
+        function logError (jqXhr, text, exception) {
+            console.log("There was a failure retrieving the capabilities document: " + text + " exception: " + exception);
+        }
 
-                            var colorAttribute = infobox[k].Color;
-                            var cAtwo = colorAttribute.split(" ");
-                            // console.log(cAtwo);
-
-                            var coLat = infobox[k].Latitude;
-
-                            console.log(coLat);
-
-                            var coLong = infobox[k].Longitude;
-
-                            var PK = infobox[k].PK;
-                            // var ptwo = location.split(",");
-
-                            console.log(PK);
-
-                            var LayerName = infobox[k].LayerName;
-                            // console.log(LayerName);
-
-
-                            console.log(Placemark_Creation);
-                            Placemark_Creation(cAtwo, PK, coLat, coLong, LayerName);
-                        }
-                    }
-
-                }
-            });
-
-
-            $('.placemarkLayer').click(function(){
-
-                var val1;
-                if ($('.placemarkLayer').is(":checkbox:checked")) {
-                    alert("hi");
-
-                    $(':checkbox:checked').each(function () {
-                        val1 = $(this).val();
-                        // var str = val+'';
-                        // val2 = str.split(",");
-                        console.log(val1);
-                        console.log(layers);
-
-                        for (var a = 0; a < layers.length; a++) {
-
-                            if (layers[a].displayName === val1) {
-                                alert(layers[a].displayName + " works now!");
-
-                                layers[a].enabled = true;
-                                console.log(layers[a]);
-                                // console.log('KEA_Wind_Turbine'); //find out how to console the problem
-
-                            }
-                        }
-                    });
-                }
-
-                if($('.placemarkLayer').is(":not(:checked)")) {
-                    // console.log("enable:false");
-                    var val2;
-                    $(":checkbox:not(:checked)").each(function (i) {
-                        val2 = $(this).val();
-
-                        // console.log(str);
-                        // console.log(val2[i]);
-
-                        // alert("it doesn't works");
-                        // console.log(val);
-                        // console.log("s"+val2s[a].displayName);
-                        for (var a = 0; a < layers.length; a++) {
-                            if (layers[a].displayName === val2) {
-
-                                layers[a].enabled = false;
-
-                                // console.log("str: " + layers[a].displayName);
-                                // console.log(layers[a]);
-                            }
-                        }
-                    });
-                }
-            });
-        });
-
-        var Placemark_Creation = function (RGB,PKValue, coLat, coLong, LayerName) {
+        function Placemark_Creation (RGB,PKValue, coLat, coLong, LayerName) {
             // console.log(coLong);
 
             var placemark;
@@ -289,11 +184,10 @@ requirejs([
             // console.log(placemarkLayer);
             // console.log(placemark);
             globe.addLayer(placemarkLayer);
-        };
+        }
 
-        var handlePick = function (o) {
+        function handlePick (o) {
 
-            // alert("ttyy");
             // The input argument is either an Event or a TapRecognizer. Both have the same properties for determining
             // the mouse or tap location.
             var x = o.clientX,
@@ -336,9 +230,9 @@ requirejs([
             if (redrawRequired) {
                 globe.redraw(); // redraw to make the highlighting changes take effect on the screen
             }
-        };
+        }
 
-        var handleMouseCLK = function (a)   {
+        function handleMouseCLK (a)   {
             var x = a.clientX,
                 y = a.clientY;
             var pickListCLK = globe.pick(globe.canvasCoordinates(x, y));
@@ -378,26 +272,15 @@ requirejs([
                     });
                 }
             }
-        };
+        }
 
-        var sitePopUp = function (PKValue) {
+        function sitePopUp (PKValue) {
             var popupBodyItem = $("#popupBody");
             var c = PKValue;
-            console.log(c);
-
-            // console.log(infobox);
-
 
             for (var k = 0, lengths = infobox.length; k < lengths; k++) {
-                // alert("popup info");
-                console.log(infobox[k].PK);
                 if (infobox[k].PK === c) {
-                    console.log("good-bye");
-
                     popupBodyItem.children().remove();
-                    // alert(infobox[k].sitename);
-                    //     alert("hi");
-
 
                     var popupBodyName = $('<p class="site-name"><h4>' + infobox[k].LayerName + '</h4></p>');
                     var popupBodyDesc = $('<p class="site-description">' + infobox[k].Site_Description + '</p><br>');
@@ -413,44 +296,13 @@ requirejs([
                     popupBodyItem.append(copyrightStatus);
                     popupBodyItem.append(coordinates);
                     break
-
-                    // alert(popupBodyName);
                 }
             }
+        }
 
-            // alert("hello" + pmDescription[0].Layer_Name);
-            // alert ("length: " + pmDescription.length);
-
-            // for (var k = 0, lengths = pmDescription.length; k < lengths; k++) {
-            //     var pmLayerName = pmDescription[k].Layer_Name;
-            //     var pmSiteNam
-            // e = pmDescription[k].Site_Name;
-            //     var pmColor = pmDescription[k].Color;
-            //     var pmPicLoc = pmDescription[k].Picture_Location;
-            //
-            //     // if (pmLayerName[k]) {
-            //     //
-            //     //     popupBodyItem.children().remove();
-            //     //.
-            //     // }
-            // }
-        };
-//
-        globe.addEventListener("mousemove", handlePick);
-
-// globe.addEventListener("click", sitePopUp);
-
-        globe.addEventListener("click", handleMouseCLK);
-
-
-        // // Called if an error occurs during WMS Capabilities document retrieval
-        // var logError = function (jqXhr, text, exception) {
-        //     console.log("There was a failure retrieving the capabilities document: " + text + " exception: " + exception);
-        // };
-
-        var globlePosition = function(layerRequest){
+        function globlePosition (layerRequest){
             $.ajax({
-                url: 'position',
+                url: '/position',
                 type: 'GET',
                 dataType: 'json',
                 data: layerRequest, //send the most current value of the selected switch to server-side
@@ -464,9 +316,9 @@ requirejs([
                     globe.goTo(new WorldWind.Position(LayerSelected.Latitude, LayerSelected.Longitude, Altitude));
                 }
             })
-        };
+        }
 
-        var buttonControl = function(allCheckedArray,layer1){
+        function buttonControl (allCheckedArray,layer1){
             if (alertVal){
                 confirm("Some layers may take awhile to load. Please be patient.")
             }
@@ -527,26 +379,10 @@ requirejs([
                 }
             }
 
-        };
+        }
 
         //preload function
         $(document).ready(function() {
-
-            // var serviceAddress = "https://cors.aworldbridgelabs.com/http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities";
-            //the beginning value of the button
-            currentSelectedLayer.prop('value','No Layer Selected');
-            nextL.prop('disabled',true);
-            previousL.prop('disabled',true);
-
-            //preload wmsLayer
-            $(".wmsLayer").each(function (i) {
-                preloadLayer[i] = $(this).val();
-            });
-            var preloadLayerStr = preloadLayer + '';//change preloadLayer into a string
-            preloadWMSLayerName = preloadLayerStr.split(",");//split preloadLayerStr with ","
-
-            $.get("../config/ows.xml").done(createWMSLayer).fail(logError);// get the xml file of wmslayer and pass the file into  createLayer function.
-
             //preload placemark
             $.ajax({
                 url: '/placemark',
@@ -559,7 +395,7 @@ requirejs([
                             // alert (data[0].Color);
 
                             var colorAttribute = infobox[k].Color;
-                            // console.log(colorAttribute);
+
                             var cAtwo = colorAttribute.split(" ");
 
                             var coLat = infobox[k].Latitude;
@@ -567,21 +403,74 @@ requirejs([
                             var coLong = infobox[k].Longitude;
 
                             var PK = infobox[k].PK;
-                            // var ptwo = location.split(",");
-
-           // $.get(serviceAddress).done(createWMSLayer).fail(logError);
 
                             var LayerName = infobox[k].LayerName;
-                            // console.log(LayerName);
 
-
-                            // console.log(Placemark_Creation);
                             Placemark_Creation(cAtwo, PK, coLat, coLong, LayerName);
                         }
                     }
                 }
             });
 
+            $('.placemarkLayer').click(function(){
+
+                var val1;
+                if ($('.placemarkLayer').is(":checkbox:checked")) {
+                    alert("hi");
+
+                    $(':checkbox:checked').each(function () {
+                        val1 = $(this).val();
+                        // var str = val+'';
+                        // val2 = str.split(",");
+                        console.log(val1);
+                        console.log(layers);
+
+                        for (var a = 0; a < layers.length; a++) {
+
+                            if (layers[a].displayName === val1) {
+                                alert(layers[a].displayName + " works now!");
+
+                                layers[a].enabled = true;
+                                console.log(layers[a]);
+                                // console.log('KEA_Wind_Turbine'); //find out how to console the problem
+
+                            }
+                        }
+                    });
+                }
+
+                if($('.placemarkLayer').is(":not(:checked)")) {
+                    // console.log("enable:false");
+                    var val2;
+                    $(":checkbox:not(:checked)").each(function (i) {
+                        val2 = $(this).val();
+                        for (var a = 0; a < layers.length; a++) {
+                            if (layers[a].displayName === val2) {
+
+                                layers[a].enabled = false;
+
+                                // console.log("str: " + layers[a].displayName);
+                                // console.log(layers[a]);
+                            }
+                        }
+                    });
+                }
+            });
+
+            //the beginning value of the button
+            currentSelectedLayer.prop('value','No Layer Selected');
+            nextL.prop('disabled',true);
+            previousL.prop('disabled',true);
+
+            //preload wmsLayer
+            $(".wmsLayer").each(function (i) {
+                preloadLayer[i] = $(this).val();
+            });
+            var preloadLayerStr = preloadLayer + '';//change preloadLayer into a string
+            preloadWMSLayerName = preloadLayerStr.split(",");//split preloadLayerStr with ","
+            console.log(preloadLayerStr);
+
+            $.get("../config/ows1.xml").done(createWMSLayer).fail(logError);// get the xml file of wmslayer and pass the file into  createLayer function.
 
             $(".wmsLayer,.placemarkLayer").click(function () {
                 var layer1 = $(this).val(); //the most current value of the selected switch
@@ -637,10 +526,7 @@ requirejs([
             });
 
             $('#nextL').click(function(){
-                // console.log(arrMenu.length);
-                // console.log(j); //j = j - 1;
                 if(j !== arrMenu.length - 1){ // if there is not only one switch was selected
-                    // console.log(j);
                     if(j === arrMenu.length - 2){
                         nextL.prop('disabled',true);
                     }
@@ -660,7 +546,7 @@ requirejs([
 
                 var currentSelectedLayerData = "thirdlayer=" + arrMenu[j];
                 $.ajax({
-                    url: 'thirdL',
+                    url: '/currentLayer',
                     type: 'GET',
                     dataType: 'json',
                     data:currentSelectedLayerData,
@@ -682,5 +568,9 @@ requirejs([
             $('#globeOrigin').click(function(){
                 globe.goTo(new WorldWind.Position(37.0902, -95.7129, 9000000));
             });
+
+            globe.addEventListener("mousemove", handlePick);
+
+            globe.addEventListener("click", handleMouseCLK);
         });
     });
