@@ -3,13 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4704f94f-8e06-4422-a8b4-19d911764f68" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_4_3_15_15_15.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/ows.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config/ows.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploadfolder/2019-01-30T21:47:52Z_NAA_Campus.tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploadfolder/2019-02-01T21:26:00Z_NAA_Campus.tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/LayerRequestForm_edit.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/LayerRequestForm_edit.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/recovery.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/recovery.ejs" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -52,11 +45,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="1685" column="43" lean-forward="true" selection-start-line="1685" selection-start-column="43" selection-end-line="1685" selection-end-column="43" />
+            <state relative-caret-position="715">
+              <caret line="531" column="13" lean-forward="true" selection-start-line="531" selection-start-column="13" selection-end-line="531" selection-end-column="13" />
+              <folding>
+                <element signature="e#17603#17794#0" />
+                <element signature="e#17531#18292#0" />
+                <element signature="e#18350#19348#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -64,8 +62,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/recovery.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="407" column="24" lean-forward="true" selection-start-line="407" selection-start-column="24" selection-end-line="418" selection-end-column="25" />
+            <state relative-caret-position="255">
+              <caret line="410" lean-forward="true" selection-start-line="410" selection-end-line="410" />
             </state>
           </provider>
         </entry>
@@ -79,11 +77,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/LayerRequestForm_edit.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="871" selection-start-line="871" selection-end-line="871" />
+            <state relative-caret-position="216">
+              <caret line="866" column="33" lean-forward="true" selection-start-line="866" selection-start-column="33" selection-end-line="866" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -134,7 +132,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>cs.awor</find>
       <find>http://cs.aworldbridgelabs.com:8080/geoserver/</find>
       <find>ge</find>
       <find>geoServer</find>
@@ -155,15 +152,16 @@
       <find>service</find>
       <find>upload_Dir</find>
       <find>recoverR</find>
-      <find>reject</find>
       <find>/reject</find>
       <find>/approve</find>
       <find>/Rej</find>
       <find>reject_Dir</find>
       <find>/Approve</find>
-      <find>/Recover</find>
       <find>/RecoverRow</find>
       <find>/Reject</find>
+      <find>reject</find>
+      <find>Recover</find>
+      <find>/Recover</find>
     </findStrings>
     <replaceStrings>
       <replace>src</replace>
@@ -221,8 +219,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-70" />
-    <option name="y" value="32" />
+    <option name="x" value="16" />
+    <option name="y" value="23" />
     <option name="width" value="1958" />
     <option name="height" value="1052" />
   </component>
@@ -341,7 +339,7 @@
       <workItem from="1554303604204" duration="9816000" />
       <workItem from="1554321874488" duration="5822000" />
       <workItem from="1554495111303" duration="5000" />
-      <workItem from="1554495123402" duration="4603000" />
+      <workItem from="1554495123402" duration="5176000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1553714451260</created>
@@ -518,22 +516,43 @@
       <option name="project" value="LOCAL" />
       <updated>1554380453472</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Merge branch 'Amy' of https://github.com/Anson-Zhao/CitySmart21&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;routes/routes.js">
+      <created>1554509682104</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1554509682104</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Merge branch 'Amy' of https://github.com/Anson-Zhao/CitySmart21&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;routes/routes.js">
+      <created>1554509698876</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1554509698876</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Merge branch 'Amy' of https://github.com/Anson-Zhao/CitySmart21&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;routes/routes.js">
+      <created>1554509826371</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1554509826371</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49424000" />
+    <option name="totallyTimeSpent" value="49997000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="332" y="224" width="1958" height="1052" extended-state="0" />
+    <frame x="16" y="23" width="1958" height="1052" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49933776" visible="true" weight="0.20289107" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49933776" visible="true" weight="0.20289107" />
       <window_info id="Structure" order="1" sideWeight="0.50066227" side_tool="true" weight="0.19517314" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4973767" weight="0.3294849" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4925142" visible="true" weight="0.32916668" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4925142" visible="true" weight="0.32916668" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -821,6 +840,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/recovery2.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5661" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="715">
+          <caret line="531" column="13" lean-forward="true" selection-start-line="531" selection-start-column="13" selection-end-line="531" selection-end-column="13" />
+          <folding>
+            <element signature="e#17603#17794#0" />
+            <element signature="e#17531#18292#0" />
+            <element signature="e#18350#19348#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/userHome.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1189">
@@ -828,29 +864,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/recovery2.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5661" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/recovery.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="407" column="24" lean-forward="true" selection-start-line="407" selection-start-column="24" selection-end-line="418" selection-end-column="25" />
+        <state relative-caret-position="255">
+          <caret line="410" lean-forward="true" selection-start-line="410" selection-end-line="410" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/LayerRequestForm_edit.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="871" selection-start-line="871" selection-end-line="871" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="1685" column="43" lean-forward="true" selection-start-line="1685" selection-start-column="43" selection-end-line="1685" selection-end-column="43" />
+        <state relative-caret-position="216">
+          <caret line="866" column="33" lean-forward="true" selection-start-line="866" selection-start-column="33" selection-end-line="866" selection-end-column="33" />
         </state>
       </provider>
     </entry>
