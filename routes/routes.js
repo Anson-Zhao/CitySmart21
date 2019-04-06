@@ -16,16 +16,18 @@ const multiparty = require('multiparty');
 const path    = require('path');
 // var exec = require('child_process').exec, child;
 
+const con_CS = mysql.createConnection(config.commondb_connection);
+
 const geoServer = config.geoServer;
 const WMS_URL = config.WMS_URL;
-const geoData_Dir = config.GeoData_Dir; //approve folder
-const Delete_Dir = config.Delete_Dir; //trash folder
 const downloadPath = config.Download_Path;
-const con_CS = mysql.createConnection(config.commondb_connection);
 const num_backups = config.num_backups;
 const download_interval = config.download_interval;
+
+const Approve_Dir = config.Approve_Dir; //approve folder
 const Pending_Dir = config.Pending_Dir;
-const reject_Dir = config.Reject_Dir;
+const Reject_Dir = config.Reject_Dir;
+const Delete_Dir = config.Delete_Dir; //trash folder
 
 const fileInputName = process.env.FILE_INPUT_NAME || "qqfile";
 const maxFileSize = process.env.MAX_FILE_SIZE || 0; // in bytes, 0 for unlimited
@@ -46,9 +48,8 @@ con_CS.query('USE ' + config.Login_db); // Locate Login DB
 
 module.exports = function (app, passport) {
 
-    // removeFile();
-    // setInterval(copyXML, download_interval); // run the function one time a (day
-    // setInterval(predownloadXml, 3660000);
+    removeFile();
+    setInterval(copyXML, download_interval); // run the function one time a (day
 
     app.use(bodyParser.urlencoded({extended: true}));
     app.use(bodyParser.json());
@@ -433,11 +434,11 @@ module.exports = function (app, passport) {
 
                 // del_recov("Pending", "Recover Failed!", "/userHome", req, res);
 
-                let statementpractice = "UPDATE Request_Form SET Layer_Uploader = 'uploadfolder/',Current_Status = 'Pending' WHERE ThirdLayer ='"+ layerNameStr[i] +"';";
+                let statementpractice = "UPDATE Request_Form SET Layer_Uploader = ?, Current_Status = 'Pending' WHERE ThirdLayer = ?;";
                 // console.log(statementpractice);
                 // let statement1 = "UPDATE Request_Form SET Current_Status = 'Delete' WHERE ThirdLayer = '" + layerNameStr[i]  + "';";
 
-                con_CS.query(statementpractice, function (err, results) {
+                con_CS.query(statementpractice, [Pending_Dir, layerNameStr[i]], (err, results)=> {
                     if(i ===pictureStr.length - 1){
                         if (err) {
                             console.log(err);
@@ -452,7 +453,7 @@ module.exports = function (app, passport) {
             if(transactionPrStatusStr[i] === 'Approved'){
                 console.log('Approved');
 
-                fs.rename(''+ Delete_Dir + '/' + pictureStr[i] + '' , '' + geoData_Dir + '/' + pictureStr[i] + '', function (err) {
+                fs.rename(''+ Delete_Dir + '/' + pictureStr[i] + '' , '' + Approve_Dir + '/' + pictureStr[i] + '', function (err) {
                     if (err) {
                         console.log(err);
                     } else {
@@ -483,7 +484,7 @@ module.exports = function (app, passport) {
             if(transactionPrStatusStr[i] === 'Rejected'){
 
                 console.log('reject');
-                fs.rename(''+ Delete_Dir + '/' + pictureStr[i] + '' , '' + reject_Dir + '/' + pictureStr[i] + '', function (err) {
+                fs.rename(''+ Delete_Dir + '/' + pictureStr[i] + '' , '' + Reject_Dir + '/' + pictureStr[i] + '', function (err) {
                     if (err) {
                         console.log(err);
                     } else {
@@ -563,7 +564,7 @@ module.exports = function (app, passport) {
         for (let i = 0; i < transactionID.length; i++) {
             let statement = "UPDATE Request_Form SET Current_Status = 'Rejected', Layer_Uploader_name = '" + pictureStr[i] + "' WHERE RID = '" + transactionID[i] + "';";
             let statement1 = "UPDATE LayerMenu SET Status = 'Disapproved' WHERE ThirdLayer = '" + LayerName  + "';";
-            fs.rename(''+ geoData_Dir + '/' + pictureStr[i] + '' , '' + Pending_Dir + '/' + pictureStr[i] + '',  function (err) {
+            fs.rename(''+ Approve_Dir + '/' + pictureStr[i] + '' , '' + Pending_Dir + '/' + pictureStr[i] + '',  function (err) {
                 if (err) {
                     console.log(err);
                 } else {
@@ -1484,7 +1485,7 @@ module.exports = function (app, passport) {
 
         // mover folder
         for(let i = 0; i < approvepictureStr.length; i++) {
-            fs.rename(''+ Pending_Dir +'/' + approvepictureStr[i] + '' , '' + geoData_Dir + '/' + approvepictureStr[i] + '',  function (err) {
+            fs.rename(''+ Pending_Dir +'/' + approvepictureStr[i] + '' , '' + Approve_Dir + '/' + approvepictureStr[i] + '',  function (err) {
                 if (err) {
                     console.log(err);
                 } else {
@@ -1655,7 +1656,7 @@ module.exports = function (app, passport) {
         let pictureStr = req.query.picturePath.split(',');
 
         for (var i = 0; i< pictureStr.length; i++) {
-            fs.rename('' + Pending_Dir + '/' + pictureStr[i] + '', '' + reject_Dir + '/' + pictureStr[i] + '', function (err) {
+            fs.rename('' + Pending_Dir + '/' + pictureStr[i] + '', '' + Reject_Dir + '/' + pictureStr[i] + '', function (err) {
                 if (err) {
                     console.log(err);
                 } else {
@@ -2148,7 +2149,7 @@ function QueryStat(myObj, sqlStat, res) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
         //console.log("result=" + req.params.uuid);
         let uuid = req.params.uuid,
-            dirToDelete = "uploadfolder/" + uuid;
+            dirToDelete = Pending_Dir + uuid;
         rimraf(dirToDelete, function(error) {
             if (error) {
                 console.error("Problem deleting file! " + error);
@@ -2160,7 +2161,7 @@ function QueryStat(myObj, sqlStat, res) {
     //delete old photo
     function onDeleteFile2(req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
-        let dirToDelete = "uploadfolder/" + olduuid[0].Layer_Uploader_name;
+        let dirToDelete = Pending_Dir + olduuid[0].Layer_Uploader_name;
         rimraf(dirToDelete, function(error) {
             if (error) {
                 console.error("Problem deleting file! " + error);
@@ -2214,7 +2215,7 @@ function QueryStat(myObj, sqlStat, res) {
     }
 
     function moveUploadedFile(file, uuid, success, failure) {
-        let destinationDir = "uploadfolder/",
+        let destinationDir = Pending_Dir,
             fileDestination = destinationDir + uuid + "_" + file.name;
 
         moveFile(destinationDir, file.path, fileDestination, success, failure);
