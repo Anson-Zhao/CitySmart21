@@ -374,15 +374,16 @@
         });
 
         $("#deleteButton").on("click", function () {
-            if (confirm("Are you sure you would like to trash the row(s) you selected?") === true) {
+            if (confirm("Are you sure you would like to trashfolder the row(s) you selected?") === true) {
                 // console.log(transactionID); //provides the associated values of the element(record) in the array
 
-                let transactionIDStr = "transactionIDStr=" + transactionID.toString(); //combines Scouting ID with the trapID
+                let transactionIDStr = "transactionIDStr=" + transactionID.toString();//combines Scouting ID with the trapID
                 console.log(transactionIDStr);
                 let pictureStr = "pictureStr=" + picPath.toString();
                 let LayerName = "LayerName=" + LayerNameStr.toString();
+                console.log(transactionIDStr + '&' + pictureStr + '&' + LayerName);
                 $.ajax({
-                    url: 'deleteData',
+                    url: '/deleteData',
                     type: "GET",
                     dataType: 'json',
                     data: transactionIDStr + '&' + pictureStr + '&' + LayerName
@@ -408,7 +409,7 @@
                 document.getElementById('searchname').style.display = "none"; //disables username search for regular members
                 qStr = "UID=" + username;
             } else {
-                qStr = "";;//this line is for the admin, who does not need to only see a specific UID, but all records
+                qStr = "";//this line is for the admin, who does not need to only see a specific UID, but all records
             }
 
             // let qStr = "UID=" + username;
@@ -474,7 +475,7 @@
                 } else {
                     for (let i = 0; i < results.length; i++) {
 
-                        if (results[i].Current_Status === "Pending" || results[i].Current_Status === "Approved" || results[i].Current_Status === "Reject") {
+                        if (results[i].Current_Status === "Pending" || results[i].Current_Status === "Approved" || results[i].Current_Status === "Rejected") {
 
                             table.row.add([
                                 results[i].Date,

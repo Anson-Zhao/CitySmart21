@@ -145,7 +145,6 @@ module.exports = function (app, passport) {
                 res.json(result);
             }
         });
-
     });
 
     app.get('/secondLayer', function (req, res) {
@@ -331,8 +330,8 @@ module.exports = function (app, passport) {
         let state2 = "SELECT firstName, lastName FROM UserProfile WHERE username = '" + req.user.username + "';"; //define last name
 
         con_CS.query(myStat + state2, function (err, results) {
-            console.log("Users: ");
-            console.log(results);
+            // console.log("Users: ");
+            // console.log(results);
 
             if (err) throw err;
 
@@ -405,7 +404,6 @@ module.exports = function (app, passport) {
     //Copy the record directly to Layer Menu if the PStatus was approved.
 
     app.get('/recoverRow', isLoggedIn, function (req, res) {
-
         res.setHeader("Access-Control-Allow-Origin", "*");
         let pictureStr = req.query.pictureStr.split(',');
         let transactionPrStatusStr = req.query.transactionStatusStr.split(',');
@@ -436,7 +434,7 @@ module.exports = function (app, passport) {
                 // del_recov("Pending", "Recover Failed!", "/userHome", req, res);
 
                 let statementpractice = "UPDATE Request_Form SET Layer_Uploader = 'uploadfolder/',Current_Status = 'Pending' WHERE ThirdLayer ='"+ layerNameStr[i] +"';";
-                console.log(statementpractice);
+                // console.log(statementpractice);
                 // let statement1 = "UPDATE Request_Form SET Current_Status = 'Delete' WHERE ThirdLayer = '" + layerNameStr[i]  + "';";
 
                 con_CS.query(statementpractice, function (err, results) {
@@ -500,7 +498,7 @@ module.exports = function (app, passport) {
 
                 // let statement3 = "UPDATE LayerMenu SET Status = 'Rejected' WHERE ThirdLayer in (SELECT LayerName FROM LayerMenu WHERE ThirdLayer = ?);";
                 let statement3 = "UPDATE LayerMenu SET Status = 'Rejected' WHERE ThirdLayer = ?";
-                console.log(statement3);
+                // console.log(statement3);
                 con_CS.query(statement+ statement3, [layerNameStr[i],layerNameStr[i]] , function (err, results) {
 
                     if(i === pictureStr.length - 1){
@@ -563,13 +561,13 @@ module.exports = function (app, passport) {
         let pictureStr = req.query.pictureStr.split(',');
         let LayerName = req.query.LayerName.split(',');
         for (let i = 0; i < transactionID.length; i++) {
-            let statement = "UPDATE Request_Form SET Current_Status = 'Pending', Layer_Uploader_name = '" + pictureStr[i] + "' WHERE RID = '" + transactionID[i] + "';";
+            let statement = "UPDATE Request_Form SET Current_Status = 'Rejected', Layer_Uploader_name = '" + pictureStr[i] + "' WHERE RID = '" + transactionID[i] + "';";
             let statement1 = "UPDATE LayerMenu SET Status = 'Disapproved' WHERE ThirdLayer = '" + LayerName  + "';";
             fs.rename(''+ geoData_Dir + '/' + pictureStr[i] + '' , '' + Pending_Dir + '/' + pictureStr[i] + '',  function (err) {
                 if (err) {
                     console.log(err);
                 } else {
-                    console.log("Delete successfully!");
+                    console.log("Rejected successfully!");
                 }
             });
             con_CS.query(statement + statement1, function (err, results) {
@@ -714,11 +712,8 @@ module.exports = function (app, passport) {
         // console.log(password);
         // console.log(statement);
         // console.log(req.body.username);
-
         con_CS.query(statement,function (err,results) {
             res.json((!bcrypt.compareSync(password, results[0].password)));
-            // console.log("Password:");
-            // console.log(results[0].password);
         });
     });
 
@@ -1075,7 +1070,7 @@ module.exports = function (app, passport) {
             },
             {
                 fieldVal: req.query.status,
-                dbCol: "status",
+                dbCol: "Current_Status",
                 op: " = '",
                 adj: req.query.status
             },
@@ -1247,29 +1242,7 @@ module.exports = function (app, passport) {
             }
         }
     });
-    //approve picture in the folder and approve record in the table
-    // //Delete button
-    // app.get('/deleteData', function (req, res) { //is this deleteData for the records?
-    //     res.setHeader("Access-Control-Allow-Origin", "*");
-    //     let transactionID = req.query.transactionIDStr.split(',');
-    //     let pictureStr = req.query.pictureStr.split(',');
-    //     let LayerName = req.query.LayerName.split(',');
-    //     for (let i = 0; i < transactionID.length; i++) {
-    //         let statement = "UPDATE Request_Form SET Current_Status = 'Delete' WHERE RID = '" + transactionID[i] + "';";
-    //         let statement1 = "UPDATE LayerMenu SET Current_Status = 'Disapproved' WHERE ThirdLayer = '" + LayerName  + "';";
-    //         fs.rename(''+ Delete_Dir + '/' + pictureStr[i] + '' , '' + Pending_Dir + '/' + pictureStr[i] + '',  function (err) {
-    //             if (err) {
-    //                 console.log(err);
-    //             } else {
-    //                 console.log("success");
-    //             }
-    //         });
-    //         con_CS.query(statement + statement1, function (err, results) {
-    //             if (err) throw err;
-    //             res.json(results[i]);
-    //         });
-    //     }
-    // });
+
 
     app.get('/recovery', isLoggedIn, function (req, res) {
         let state2 = "SELECT firstName FROM UserProfile WHERE username = '" + req.user.username + "';";
@@ -1731,14 +1704,17 @@ module.exports = function (app, passport) {
         let transactionID = req.query.transactionIDStr.split(',');
         let pictureStr = req.query.pictureStr.split(',');
         let LayerName = req.query.LayerName.split(',');
-        for (let i = 0; i < transactionID.length; i++) {
 
-            let statement = "UPDATE Request_Form SET Layer_Uploader = 'trashfolder/', Prior_Status = Current_Status, Current_Status = 'Delete'  WHERE RID = '" + transactionID[i] + "';";
-            let statement1 = "UPDATE LayerMenu SET Status = 'Disapproved' WHERE ThirdLayer = '" + LayerName[i]  + "';";
+        for (let i = 0; i < transactionID.length; i++) {
+            console.log('hh');
+            console.log(LayerName[i]);
+            let statement = "UPDATE Request_Form SET Layer_Uploader = 'trashfolder/', Prior_Status = Current_Status, Current_Status = 'Deleted'  WHERE RID = '" + transactionID[i] + "';";
+            let statement1 = "UPDATE LayerMenu SET Status = 'Deleted' WHERE ThirdLayer = '" + LayerName[i] + "';";
+
+            console.log("WOW " + statement1);
             // let statement1 = "DELETE FROM LayerMenu WHERE ThirdLayer = '" + LayerName[i]  + "';"; // the [i] is converting the array back to string so it can be used
         ////transferred value from client side to server side and then be used in SQL
-        //parsed during the client to server exchange
-            fs.rename(''+ Delete_Dir + '/' + pictureStr[i] + '' , ''  + Pending_Dir + '/' + pictureStr[i] + '',  function (err) {
+            fs.rename(''+ Pending_Dir + '/' + pictureStr[i] + '' , ''  + Delete_Dir + '/' + pictureStr[i] + '',  function (err) {
                 if (err) {
                     console.log(err);
                 } else {
@@ -1926,52 +1902,52 @@ module.exports = function (app, passport) {
         tokenExpire = date3 + ' ' + time3;
     }
 
-    // function del_recov(StatusUpd, ErrMsg, targetURL, req, res) {
-    //
-    //     transactionID = req.query.transactionIDStr.split(",");
-    //     // console.log(transactionID);
-    //     let statementGeneral = "UPDATE Request_Form SET Status = '" + StatusUpd + "'"; //this is where the problem is
-    //
-    //     for (let i = 0; i < transactionID.length; i++) {
-    //         if (i === 0) {
-    //             statementGeneral += " WHERE RID = '" + transactionID[i] + "'";
-    //             // statementDetailedS += " WHERE transactionID = '" + transactionID[i] + "'";
-    //             // statementDetailedT += " WHERE transactionID = '" + transactionID[i] + "'";
-    //
-    //             if (i === transactionID.length - 1) {
-    //                 statementGeneral += ";";
-    //                 // statementDetailedS += ";";
-    //                 // statementDetailedT += ";";
-    //                 myStat = statementGeneral;
-    //                 updateDBNres(myStat, "", ErrMsg, targetURL, res);
-    //             }
-    //         } else {
-    //             statementGeneral += " OR RID = '" + transactionID[i] + "'";
-    //             // statementDetailedS += " OR transactionID = '" + transactionID[i] + "'";
-    //             // statementDetailedT += " OR transactionID = '" + transactionID[i] + "'";
-    //
-    //             if (i === transactionID.length - 1) {
-    //                 statementGeneral += ";";
-    //                 // statementDetailedS += ";";
-    //                 // statementDetailedT += ";";
-    //                 myStat = statementGeneral;
-    //                 updateDBNres(myStat, "", ErrMsg, targetURL, res);
-    //             }
-    //         }
-    //     }
-    // }
+    function del_recov(StatusUpd, ErrMsg, targetURL, req, res) {
 
-    // function updateDBNres(SQLstatement, Value, ErrMsg, targetURL, res) {
-    //     res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
-    //     con_CS.query(SQLstatement, Value, function (err, rows) {
-    //         if (err) {
-    //             console.log(err);
-    //             res.json({"error": true, "message": ErrMsg});
-    //         } else {
-    //             res.json({"error": false, "message": targetURL});
-    //         }
-    //     })
-    // }
+        transactionID = req.query.transactionIDStr.split(",");
+        // console.log(transactionID);
+        let statementGeneral = "UPDATE Request_Form SET Status = '" + StatusUpd + "'"; //this is where the problem is
+
+        for (let i = 0; i < transactionID.length; i++) {
+            if (i === 0) {
+                statementGeneral += " WHERE RID = '" + transactionID[i] + "'";
+                // statementDetailedS += " WHERE transactionID = '" + transactionID[i] + "'";
+                // statementDetailedT += " WHERE transactionID = '" + transactionID[i] + "'";
+
+                if (i === transactionID.length - 1) {
+                    statementGeneral += ";";
+                    // statementDetailedS += ";";
+                    // statementDetailedT += ";";
+                    myStat = statementGeneral;
+                    updateDBNres(myStat, "", ErrMsg, targetURL, res);
+                }
+            } else {
+                statementGeneral += " OR RID = '" + transactionID[i] + "'";
+                // statementDetailedS += " OR transactionID = '" + transactionID[i] + "'";
+                // statementDetailedT += " OR transactionID = '" + transactionID[i] + "'";
+
+                if (i === transactionID.length - 1) {
+                    statementGeneral += ";";
+                    // statementDetailedS += ";";
+                    // statementDetailedT += ";";
+                    myStat = statementGeneral;
+                    updateDBNres(myStat, "", ErrMsg, targetURL, res);
+                }
+            }
+        }
+    }
+
+    function updateDBNres(SQLstatement, Value, ErrMsg, targetURL, res) {
+        res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
+        con_CS.query(SQLstatement, Value, function (err, rows) {
+            if (err) {
+                console.log(err);
+                res.json({"error": true, "message": ErrMsg});
+            } else {
+                res.json({"error": false, "message": targetURL});
+            }
+        })
+    }
 
     function updateDBNredir(SQLstatement, Value, ErrMsg, failURL, redirURL, res) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
