@@ -55,7 +55,8 @@ requirejs([
         globe.goTo(new WorldWind.Position(37.0902, -95.7129, 9000000));
 
         // Web Map Service information from NASA's Near Earth Observations WMS
-        // var serviceAddress = "https://cors.aworldbridgelabs.com/http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities";
+        var serviceAddress = "https://cors.aworldbridgelabs.com:9084/http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities";
+        // var serviceAddress = "../config/ows.xml";
 
         var preloadWMSLayerName = [];
         var highlightedItems= [];
@@ -84,8 +85,9 @@ requirejs([
 
             // Retrieve a WmsLayerCapabilities object by the desired layer name
             for (var n = 0; n < preloadWMSLayerName.length; n++) {
-                // console.log(preloadWMSLayerName[n]);
+                console.log(preloadWMSLayerName[n]);
                 var wmsLayerCapability = wms.getNamedLayer(preloadWMSLayerName[n]);
+                console.log(wmsLayerCapability);
 
                 // Form a configuration object from the wmsLayerCapability object
                 var wmsConfig = WorldWind.WmsLayer.formLayerConfiguration(wmsLayerCapability);
@@ -183,51 +185,54 @@ requirejs([
             globe.addLayer(placemarkLayer);
         }
 
-        function handlePick (o) {
+        // function handlePick (o) {
+        //
+        //     // The input argument is either an Event or a TapRecognizer. Both have the same properties for determining
+        //     // the mouse or tap location.
+        //     var x = o.clientX,
+        //         y = o.clientY;
+        //
+        //     var redrawRequired = highlightedItems.length > 0; // must redraw if we de-highlight previously picked items
+        //
+        //     // De-highlight any previously highlighted placemarks.
+        //     for (var h = 0; h < highlightedItems.length; h++) {
+        //         highlightedItems[h].highlighted = false;
+        //     }
+        //     highlightedItems = [];
+        //
+        //     // Perform the pick. Must first convert from window coordinates to canvas coordinates, which are
+        //     // relative to the upper left corner of the canvas rather than the upper left corner of the page.
+        //     var pickList = globe .pick(globe.canvasCoordinates(x, y));
+        //     if (pickList.objects.length > 0) {
+        //         redrawRequired = true;
+        //     }
+        //
+        //     // Highlight the items picked by simply setting their highlight flag to true.
+        //     if (pickList.objects.length > 0) {
+        //         for (var p = 0; p < pickList.objects.length; p++) {
+        //             pickList.objects[p].userObject.highlighted = true;
+        //
+        //             // Keep track of highlighted items in order to de-highlight them later.
+        //             highlightedItems.push(pickList.objects[p].userObject);
+        //
+        //             // Detect whether the placemark's label was picked. If so, the "labelPicked" property is true.
+        //             // If instead the user picked the placemark's image, the "labelPicked" property is false.
+        //             // Applications might use this information to determine whether the user wants to edit the label
+        //             // or is merely picking the placemark as a whole.
+        //             if (pickList.objects[p].labelPicked) {
+        //                 // console.log("Label picked");
+        //             }
+        //         }
+        //     }
+        //
+        //     // Update the window if we changed anything.
+        //     if (redrawRequired) {
+        //         globe.redraw(); // redraw to make the highlighting changes take effect on the screen
+        //     }
+        // }
 
-            // The input argument is either an Event or a TapRecognizer. Both have the same properties for determining
-            // the mouse or tap location.
-            var x = o.clientX,
-                y = o.clientY;
-
-            var redrawRequired = highlightedItems.length > 0; // must redraw if we de-highlight previously picked items
-
-            // De-highlight any previously highlighted placemarks.
-            for (var h = 0; h < highlightedItems.length; h++) {
-                highlightedItems[h].highlighted = false;
-            }
-            highlightedItems = [];
-
-            // Perform the pick. Must first convert from window coordinates to canvas coordinates, which are
-            // relative to the upper left corner of the canvas rather than the upper left corner of the page.
-            var pickList = globe .pick(globe.canvasCoordinates(x, y));
-            if (pickList.objects.length > 0) {
-                redrawRequired = true;
-            }
-
-            // Highlight the items picked by simply setting their highlight flag to true.
-            if (pickList.objects.length > 0) {
-                for (var p = 0; p < pickList.objects.length; p++) {
-                    pickList.objects[p].userObject.highlighted = true;
-
-                    // Keep track of highlighted items in order to de-highlight them later.
-                    highlightedItems.push(pickList.objects[p].userObject);
-
-                    // Detect whether the placemark's label was picked. If so, the "labelPicked" property is true.
-                    // If instead the user picked the placemark's image, the "labelPicked" property is false.
-                    // Applications might use this information to determine whether the user wants to edit the label
-                    // or is merely picking the placemark as a whole.
-                    if (pickList.objects[p].labelPicked) {
-                        // console.log("Label picked");
-                    }
-                }
-            }
-
-            // Update the window if we changed anything.
-            if (redrawRequired) {
-                globe.redraw(); // redraw to make the highlighting changes take effect on the screen
-            }
-        }
+            // http://cs.aworldbridgelabs.com:8080/geoserver/City_Smart/wms?service=WMS&version=1.1.0&request=GetMap&layers=City_Smart:KEAParcelMap_Layer&bbox=-154.82015128037102%2C56.165278407107536%2C-144.29104078833544%2C61.88058272783616&width=768&height=416&srs=EPSG%3A4326&format=application/openlayers
+            // http://cs.aworldbridgelabs.com:8081/geoserver/City_Smart/wms?service=WMS&version=1.1.0&request=GetMap&layers=City_Smart:KEAParcelMap_Layer&bbox=-154.82015128037102,56.165278407107536,-144.29104078833544,61.88058272783616&width=768&height=416&srs=EPSG:4326&format=application/openlayers
 
         function handleMouseCLK (a)   {
             var x = a.clientX,
@@ -410,51 +415,6 @@ requirejs([
                 }
             });
 
-            $('.placemarkLayer').click(function(){
-
-                var val1;
-                if ($('.placemarkLayer').is(":checkbox:checked")) {
-                    alert("hi");
-
-                    $(':checkbox:checked').each(function () {
-                        val1 = $(this).val();
-                        // var str = val+'';
-                        // val2 = str.split(",");
-                        console.log(val1);
-                        console.log(layers);
-
-                        for (var a = 0; a < layers.length; a++) {
-
-                            if (layers[a].displayName === val1) {
-                                alert(layers[a].displayName + " works now!");
-
-                                layers[a].enabled = true;
-                                console.log(layers[a]);
-                                // console.log('KEA_Wind_Turbine'); //find out how to console the problem
-
-                            }
-                        }
-                    });
-                }
-
-                if($('.placemarkLayer').is(":not(:checked)")) {
-                    // console.log("enable:false");
-                    var val2;
-                    $(":checkbox:not(:checked)").each(function (i) {
-                        val2 = $(this).val();
-                        for (var a = 0; a < layers.length; a++) {
-                            if (layers[a].displayName === val2) {
-
-                                layers[a].enabled = false;
-
-                                // console.log("str: " + layers[a].displayName);
-                                // console.log(layers[a]);
-                            }
-                        }
-                    });
-                }
-            });
-
             //the beginning value of the button
             currentSelectedLayer.prop('value','No Layer Selected');
             nextL.prop('disabled',true);
@@ -467,7 +427,53 @@ requirejs([
             var preloadLayerStr = preloadLayer + '';//change preloadLayer into a string
             preloadWMSLayerName = preloadLayerStr.split(",");//split preloadLayerStr with ","
 
-            $.get("../config/ows.xml").done(createWMSLayer).fail(logError);// get the xml file of wmslayer and pass the file into  createLayer function.
+            $.get(serviceAddress).done(createWMSLayer).fail(logError);// get the xml file of wmslayer and pass the file into  createLayer function.
+
+
+            // $('.placemarkLayer').click(function(){
+            //
+            //     var val1;
+            //     if ($('.placemarkLayer').is(":checkbox:checked")) {
+            //         alert("hi");
+            //
+            //         $(':checkbox:checked').each(function () {
+            //             val1 = $(this).val();
+            //             // var str = val+'';
+            //             // val2 = str.split(",");
+            //             console.log(val1);
+            //             console.log(layers);
+            //
+            //             for (var a = 0; a < layers.length; a++) {
+            //
+            //                 if (layers[a].displayName === val1) {
+            //                     alert(layers[a].displayName + " works now!");
+            //
+            //                     layers[a].enabled = true;
+            //                     console.log(layers[a]);
+            //                     // console.log('KEA_Wind_Turbine'); //find out how to console the problem
+            //
+            //                 }
+            //             }
+            //         });
+            //     }
+            //
+            //     if($('.placemarkLayer').is(":not(:checked)")) {
+            //         // console.log("enable:false");
+            //         var val2;
+            //         $(":checkbox:not(:checked)").each(function (i) {
+            //             val2 = $(this).val();
+            //             for (var a = 0; a < layers.length; a++) {
+            //                 if (layers[a].displayName === val2) {
+            //
+            //                     layers[a].enabled = false;
+            //
+            //                     // console.log("str: " + layers[a].displayName);
+            //                     // console.log(layers[a]);
+            //                 }
+            //             }
+            //         });
+            //     }
+            // });
 
             $(".wmsLayer,.placemarkLayer").click(function () {
                 var layer1 = $(this).val(); //the most current value of the selected switch
@@ -566,7 +572,7 @@ requirejs([
                 globe.goTo(new WorldWind.Position(37.0902, -95.7129, 9000000));
             });
 
-            globe.addEventListener("mousemove", handlePick);
+            // globe.addEventListener("mousemove", handlePick);
 
             globe.addEventListener("click", handleMouseCLK);
         });

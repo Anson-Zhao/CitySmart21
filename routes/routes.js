@@ -2424,7 +2424,7 @@ function QueryStat(myObj, sqlStat, res) {
 
     function predownloadXml () {
         const downloadDir = path.resolve(__dirname, downloadPath, 'ows.xml'); // the path of the destination
-        const timeout = 600000;
+        const timeout = 500000;
         const requestOptions = {
             uri: WMS_URL,
             // timeout: download_interval
