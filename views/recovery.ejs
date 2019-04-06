@@ -451,7 +451,7 @@
             success: function (results) {
                 console.log(results);
                 for (var i = 0; i < results.length; i++) {
-                    if (results[i].Current_Status === "Delete") {
+                    if (results[i].Current_Status === "Deleted") {
                         if (UserRole === "Regular") {
                             if (results[i].UID === username) {
                                 table.row.add([

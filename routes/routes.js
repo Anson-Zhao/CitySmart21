@@ -438,7 +438,7 @@ module.exports = function (app, passport) {
 
                 del_recov("Approved", "Recover Failed!", "/userHome", req, res);
 
-                let statement1 = "UPDATE Request_Form SET Layer_Uploader = 'approvedfolder/';";
+                let statement1 = "UPDATE Request_Form SET Layer_Uploader = 'approvedfolder/'";
                 let statement2 = "UPDATE LayerMenu SET Status = 'Approved' WHERE ThirdLayer = '" + layerNameStr[i]  + "';";
                 console.log(statement2);
                 console.log('statement:D'+statement1+statement2);
@@ -449,7 +449,7 @@ module.exports = function (app, passport) {
                 });
             }
 
-            if(transactionPrStatusStr[i] === 'Reject'){
+            if(transactionPrStatusStr[i] === 'Rejected'){
 
                 console.log('reject');
                 fs.rename(''+ Delete_Dir + '/' + pictureStr[i] + '' , '' + reject_Dir + '/' + pictureStr[i] + '', function (err) {
@@ -460,7 +460,7 @@ module.exports = function (app, passport) {
                     }
                 });
 
-                del_recov("Reject", "Recover Failed!", "/userHome", req, res);
+                del_recov("Rejected", "Recover Failed!", "/userHome", req, res);
 
 
 
@@ -480,7 +480,7 @@ module.exports = function (app, passport) {
 
                     for(var a= 0; a < results.length; a++){}
 
-                    let statement3 = "UPDATE LayerMenu SET Status = 'Reject' WHERE ThirdLayer = '" + results[i]  + "';";
+                    let statement3 = "UPDATE LayerMenu SET Status = 'Rejected' WHERE ThirdLayer = '" + results[i]  + "';";
 
                     con_CS.query(statement3, function (err, results) {
                         if (err) throw err;
@@ -522,13 +522,13 @@ module.exports = function (app, passport) {
         let pictureStr = req.query.pictureStr.split(',');
         let LayerName = req.query.LayerName.split(',');
         for (let i = 0; i < transactionID.length; i++) {
-            let statement = "UPDATE Request_Form SET Current_Status = 'Pending' WHERE RID = '" + transactionID[i] + "';";
-            let statement1 = "UPDATE LayerMenu SET Status = 'Disapproved' WHERE ThirdLayer = '" + LayerName  + "';";
+            let statement = "UPDATE Request_Form SET Layer_Uploader = 'uploadfolder/', Current_Status = 'Rejected' WHERE RID = '" + transactionID[i] + "';";
+            let statement1 = "UPDATE LayerMenu SET Status = 'Rejected' WHERE ThirdLayer = '" + LayerName  + "';";
             fs.rename(''+ geoData_Dir + '/' + pictureStr[i] + '' , '' + upload_Dir + '/' + pictureStr[i] + '',  function (err) {
                 if (err) {
                     console.log(err);
                 } else {
-                    console.log("Delete successfully!");
+                    console.log("Rejected successfully!");
                 }
             });
             con_CS.query(statement + statement1, function (err, results) {
@@ -1203,29 +1203,7 @@ module.exports = function (app, passport) {
             }
         }
     });
-    //approve picture in the folder and approve record in the table
-    // //Delete button
-    // app.get('/deleteData', function (req, res) { //is this deleteData for the records?
-    //     res.setHeader("Access-Control-Allow-Origin", "*");
-    //     let transactionID = req.query.transactionIDStr.split(',');
-    //     let pictureStr = req.query.pictureStr.split(',');
-    //     let LayerName = req.query.LayerName.split(',');
-    //     for (let i = 0; i < transactionID.length; i++) {
-    //         let statement = "UPDATE Request_Form SET Current_Status = 'Delete' WHERE RID = '" + transactionID[i] + "';";
-    //         let statement1 = "UPDATE LayerMenu SET Current_Status = 'Disapproved' WHERE ThirdLayer = '" + LayerName  + "';";
-    //         fs.rename(''+ Delete_Dir + '/' + pictureStr[i] + '' , '' + upload_Dir + '/' + pictureStr[i] + '',  function (err) {
-    //             if (err) {
-    //                 console.log(err);
-    //             } else {
-    //                 console.log("success");
-    //             }
-    //         });
-    //         con_CS.query(statement + statement1, function (err, results) {
-    //             if (err) throw err;
-    //             res.json(results[i]);
-    //         });
-    //     }
-    // });
+
 
     app.get('/recovery', isLoggedIn, function (req, res) {
         let state2 = "SELECT firstName FROM UserProfile WHERE username = '" + req.user.username + "';";
@@ -1616,9 +1594,11 @@ module.exports = function (app, passport) {
         let rejectID = req.query.reject;
         let comment = req.query.comment;
         let statement = "UPDATE Request_Form SET Current_Status = 'Reject', Comments = '" + comment + "' WHERE RID = '" + rejectID + "'";
-        con_CS.query(statement,function (err,results) {
+        let statement1 = "UPDATE LayerMenu SET Status = 'Rejected' WHERE ThirdLayer = '" + LayerName[i]  + "';";
+        con_CS.query(statement + statement1, function (err, results) {
             if (err) throw err;
-            res.json(results);
+            res.json(results[i]);
+
         })
     });
 
@@ -1648,13 +1628,16 @@ module.exports = function (app, passport) {
         let transactionID = req.query.transactionIDStr.split(',');
         let pictureStr = req.query.pictureStr.split(',');
         let LayerName = req.query.LayerName.split(',');
-        for (let i = 0; i < transactionID.length; i++) {
 
-            let statement = "UPDATE Request_Form SET Layer_Uploader = 'trashfolder/', Prior_Status = Current_Status, Current_Status = 'Delete'  WHERE RID = '" + transactionID[i] + "';";
-            let statement1 = "UPDATE LayerMenu SET Status = 'Disapproved' WHERE ThirdLayer = '" + LayerName[i]  + "';";
+        for (let i = 0; i < transactionID.length; i++) {
+            console.log('hh');
+            console.log(LayerName[i]);
+            let statement = "UPDATE Request_Form SET Layer_Uploader = 'trashfolder/', Prior_Status = Current_Status, Current_Status = 'Deleted'  WHERE RID = '" + transactionID[i] + "';";
+            let statement1 = "UPDATE LayerMenu SET Status = 'Deleted' WHERE ThirdLayer = '" + LayerName[i] + "';";
+
+            console.log("WOW " + statement1);
             // let statement1 = "DELETE FROM LayerMenu WHERE ThirdLayer = '" + LayerName[i]  + "';"; // the [i] is converting the array back to string so it can be used
         ////transferred value from client side to server side and then be used in SQL
-        //parsed during the client to server exchange
             fs.rename(''+ upload_Dir + '/' + pictureStr[i] + '' , ''  + Delete_Dir + '/' + pictureStr[i] + '',  function (err) {
                 if (err) {
                     console.log(err);
@@ -1662,12 +1645,14 @@ module.exports = function (app, passport) {
                     console.log("Delete button working fine!");
                 }
             });
+            // console.log(statement+statement1);
             con_CS.query(statement + statement1, function (err, results) {
                 if (err) throw err;
                 res.json(results[i]);
             });
         }
     });
+
 
     app.get('/editdata',function (req,res){
         // var d = new Date();

@@ -22,7 +22,7 @@ var configGlobal = {
     'Login_table': 'UserLogin',
     'Upload_db': 'CitySmart2',
 
-    'Server_Port': 9085,
+    'Server_Port': 9086,
 
     // 'local_URL' : "",
     // 'local_URL' : "http://viewer.usgs.aworldbridgelabs.com",
