@@ -18,13 +18,14 @@ const path    = require('path');
 
 const geoServer = config.geoServer;
 const WMS_URL = config.WMS_URL;
-const upload_Dir = config.Upload_Dir; //contains pending and rejected
 const geoData_Dir = config.GeoData_Dir; //approve folder
 const Delete_Dir = config.Delete_Dir; //trash folder
 const downloadPath = config.Download_Path;
 const con_CS = mysql.createConnection(config.commondb_connection);
 const num_backups = config.num_backups;
 const download_interval = config.download_interval;
+const Pending_Dir = config.Pending_Dir;
+const reject_Dir = config.Reject_Dir;
 
 const fileInputName = process.env.FILE_INPUT_NAME || "qqfile";
 const maxFileSize = process.env.MAX_FILE_SIZE || 0; // in bytes, 0 for unlimited
@@ -45,8 +46,8 @@ con_CS.query('USE ' + config.Login_db); // Locate Login DB
 
 module.exports = function (app, passport) {
 
-    removeFile();
-    setInterval(copyXML, download_interval); // run the function one time a (day
+    // removeFile();
+    // setInterval(copyXML, download_interval); // run the function one time a (day
     // setInterval(predownloadXml, 3660000);
 
     app.use(bodyParser.urlencoded({extended: true}));
@@ -404,21 +405,27 @@ module.exports = function (app, passport) {
     //Copy the record directly to Layer Menu if the PStatus was approved.
 
     app.get('/recoverRow', isLoggedIn, function (req, res) {
+
         res.setHeader("Access-Control-Allow-Origin", "*");
-        // del_recov("Approved", "Recovery failed!", "/userHome", req, res);
         let pictureStr = req.query.pictureStr.split(',');
         let transactionPrStatusStr = req.query.transactionStatusStr.split(',');
         let layerNameStr = req.query.layerName.split(',');
 
         // mover folder
-        for(let i = 0; i < pictureStr.length; i++) {
-
+        for(let i = 0; i < pictureStr.length; i++) {//the length of pictureStr and Prior_status may not be the same since some layer may not have picture with it
             console.log("tran:"+transactionPrStatusStr[i]);
+
+            if(transactionPrStatusStr[i] !== 'Pending' && 'Approved' && 'Rejected'){
+                if(i===pictureStr.length-1){
+                    res.json({"error": true, "message": "Recover Failed, error occur,Prior Statue undefined"});
+                }
+
+            }
 
             if (transactionPrStatusStr[i] === 'Pending') {
                 console.log('pending');
 
-                fs.rename(''+ Delete_Dir + '/' + pictureStr[i] + '' , '' + upload_Dir + '/' + pictureStr[i] + '', function (err) {
+                fs.rename(''+ Delete_Dir + '/' + pictureStr[i] + '' , '' + Pending_Dir + '/' + pictureStr[i] + '', function (err) {
                     if (err) {
                         console.log(err);
                     } else {
@@ -426,13 +433,21 @@ module.exports = function (app, passport) {
                     }
                 });
 
-                del_recov("Pending", "Recover Failed!", "/userHome", req, res);
+                // del_recov("Pending", "Recover Failed!", "/userHome", req, res);
 
-                let statementpractice = "UPDATE Request_Form SET Layer_Uploader = 'uploadfolder/'";
+                let statementpractice = "UPDATE Request_Form SET Layer_Uploader = 'uploadfolder/',Current_Status = 'Pending' WHERE ThirdLayer ='"+ layerNameStr[i] +"';";
+                console.log(statementpractice);
+                // let statement1 = "UPDATE Request_Form SET Current_Status = 'Delete' WHERE ThirdLayer = '" + layerNameStr[i]  + "';";
 
                 con_CS.query(statementpractice, function (err, results) {
-                    if (err) throw err;
-                    res.json(results[i]);
+                    if(i ===pictureStr.length - 1){
+                        if (err) {
+                            console.log(err);
+                            res.json({"error": true, "message": "Recover Failed"});
+                        } else {
+                            res.json({"error": false, "message": "Recover successful, jump to UserHome"});
+                        }
+                    }
                 });
             }
 
@@ -447,20 +462,27 @@ module.exports = function (app, passport) {
                     }
                 });
 
-                del_recov("Approved", "Recover Failed!", "/userHome", req, res);
+                // del_recov("Approved", "Recover Failed!", "/userHome", req, res);
 
-                let statement1 = "UPDATE Request_Form SET Layer_Uploader = 'approvedfolder/';";
+                let statement1 = "UPDATE Request_Form SET Layer_Uploader = 'approvedfolder/',Current_Status = 'Approved' WHERE ThirdLayer ='"+ layerNameStr[i] +"';";
                 let statement2 = "UPDATE LayerMenu SET Status = 'Approved' WHERE ThirdLayer = '" + layerNameStr[i]  + "';";
                 console.log(statement2);
                 console.log('statement:D'+statement1+statement2);
 
                 con_CS.query(statement1+statement2, function (err, results) {
-                    if (err) throw err;
+                    if(i === pictureStr.length - 1){
+                        if (err) {
+                            console.log(err);
+                            res.json({"error": true, "message": "Recover Failed"});
+                        } else {
+                            res.json({"error": false, "message": "Recover successful, jump to UserHome"});
+                        }
+                    }
                     // res.json(results[i]);
                 });
             }
-
-            if(transactionPrStatusStr[i] === 'Reject'){
+            //
+            if(transactionPrStatusStr[i] === 'Rejected'){
 
                 console.log('reject');
                 fs.rename(''+ Delete_Dir + '/' + pictureStr[i] + '' , '' + reject_Dir + '/' + pictureStr[i] + '', function (err) {
@@ -471,34 +493,42 @@ module.exports = function (app, passport) {
                     }
                 });
 
-                del_recov("Reject", "Recover Failed!", "/userHome", req, res);
+                // let statement = "UPDATE Request_Form SET Layer_Uploader = 'rejectfolder/',Current_Status = 'Rejected' WHERE ThirdLayer ='"+ layerNameStr[i] +"';";
+                let statement = "UPDATE Request_Form SET Layer_Uploader = 'rejectfolder/',Current_Status = 'Rejected' WHERE ThirdLayer = ?;";
 
+                // let statement2 = "SELECT * FROM LayerMenu WHERE ThirdLayer = '" + layerNameStr[i]  + "';";
 
+                // let statement3 = "UPDATE LayerMenu SET Status = 'Rejected' WHERE ThirdLayer in (SELECT LayerName FROM LayerMenu WHERE ThirdLayer = ?);";
+                let statement3 = "UPDATE LayerMenu SET Status = 'Rejected' WHERE ThirdLayer = ?";
+                console.log(statement3);
+                con_CS.query(statement+ statement3, [layerNameStr[i],layerNameStr[i]] , function (err, results) {
 
-                let statement1 = "UPDATE Request_Form SET Layer_Uploader = 'rejectfolder/'";
+                    if(i === pictureStr.length - 1){
+                        if (err) {
+                            console.log(err);
+                            res.json({"error": true, "message": "Recover Failed, err"});
+                        } else {
+                            res.json({"error": false, "message": "Recover successful, go to UserHome"});
+                        }
+                    }
+                    // con_CS.query(statement2, function (err, results) {
+                    //
+                    //     // if (err) throw err;
+                    //
+                    //
+                    //     for (var a = 0; a < results.length; a++) {
+                    //
+                    //         let statement3 = "UPDATE LayerMenu SET Status = 'Rejected' WHERE ThirdLayer = '" + results[a].ThirdLayer + "';";
+                    //         console.log(statement3);
+                    //
+                    //         con_CS.query(statement3, function (err, results) {
+                    //             console.log('statement');
+                    //
+                    //         });
+                    //     }
+                    // });
 
-                con_CS.query(statement1, function (err, results) {
-                    if (err) throw err;
-                    // res.json(results[i]);
                 });
-
-                let statement2 = "SELECT * FROM LayerMenu WHERE ThirdLayer = '" + layerNameStr[i]  + "';";
-
-                con_CS.query(statement2, function (err, results) {
-
-                    console.log("reject: "+results);
-                    if (err) throw err;
-
-                    for(var a= 0; a < results.length; a++){}
-
-                    let statement3 = "UPDATE LayerMenu SET Status = 'Reject' WHERE ThirdLayer = '" + results[i]  + "';";
-
-                    con_CS.query(statement3, function (err, results) {
-                        if (err) throw err;
-                        // res.json(results[i]);
-                    });
-                });
-
             }
         }
     });
@@ -1649,10 +1679,29 @@ module.exports = function (app, passport) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
         let rejectID = req.query.reject;
         let comment = req.query.comment;
-        let statement = "UPDATE Request_Form SET Current_Status = 'Reject', Comments = '" + comment + "' WHERE RID = '" + rejectID + "'";
-        con_CS.query(statement,function (err,results) {
-            if (err) throw err;
-            res.json(results);
+        let pictureStr = req.query.picturePath.split(',');
+
+        for (var i = 0; i< pictureStr.length; i++) {
+            fs.rename('' + Pending_Dir + '/' + pictureStr[i] + '', '' + reject_Dir + '/' + pictureStr[i] + '', function (err) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    console.log("Reject process is successful");
+                }
+            });
+        }
+
+        let statement = "UPDATE Request_Form SET Current_Status = 'Rejected', Comments = '" + comment + "' WHERE RID = '" + rejectID + "'";
+        let statement2 = "UPDATE LayerMenu SET Status = 'Approved' WHERE ThirdLayer = '" + rejectID  + "';";
+        con_CS.query(statement + statement2,function (err,results) {
+            if(i ===pictureStr.length - 1){
+                if (err) {
+                    console.log(err);
+                    res.json({"error": true, "message": "Reject Failed"});
+                } else {
+                    res.json({"error": false, "message": "Reject successful, jump to UserHome"});
+                }
+            }
         })
     });
 
