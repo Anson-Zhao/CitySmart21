@@ -72,7 +72,8 @@
 	<form  onsubmit="return checkForm()" action="/signup" method="post" id="signup">
 		<div class="form-group">
 			<label>Username (email address):</label>
-			<input type="email" class="form-control" name="username" style="height: 50px;" required>
+			<input type="email" class="form-control" name="username" onchange="SearchUsername(this.value)" style="height: 50px;" required>
+			<p id="emailUser" style="color: palevioletred;margin-top:15px;"></p>
 		</div>
 		<div class="form-group">
 			<label>First Name:</label>
@@ -154,6 +155,26 @@
         var dateTime = date + ' ' + time2;
         document.getElementById("DATE").value = dateTime;
     });
+
+	function SearchUsername(value) {
+		$.ajax({
+			url: "SearchUsername",
+			dataType: "json",
+			success: function (results) {
+				for (var i = 0; i < results.length; i++) {
+					// let newRes = JSON.stringify(results);
+					console.log(value);
+					console.log(results[i].username);
+					if (value === results[i].username) {
+						document.getElementById("emailUser").innerHTML = "This username is already taken. Please use a different one.";
+						break;
+					} else {
+						document.getElementById("emailUser").innerHTML = "";
+					}
+				}
+			}
+		})
+	}
 </script>
 </body>
 </html>
