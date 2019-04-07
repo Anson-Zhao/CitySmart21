@@ -5905,4 +5905,1892 @@
       <CRS>EPSG:66616413</CRS>
       <CRS>EPSG:66636405</CRS>
       <CRS>EPSG:66646405</CRS>
-      <CRS>
+      <CRS>EPSG:66656405</CRS>
+      <CRS>EPSG:66666405</CRS>
+      <CRS>EPSG:66676405</CRS>
+      <CRS>EPSG:68016405</CRS>
+      <CRS>EPSG:68026405</CRS>
+      <CRS>EPSG:68036405</CRS>
+      <CRS>EPSG:68046405</CRS>
+      <CRS>EPSG:68056405</CRS>
+      <CRS>EPSG:68066405</CRS>
+      <CRS>EPSG:68086405</CRS>
+      <CRS>EPSG:68096405</CRS>
+      <CRS>EPSG:68136405</CRS>
+      <CRS>EPSG:68146405</CRS>
+      <CRS>EPSG:68156405</CRS>
+      <CRS>EPSG:68186405</CRS>
+      <CRS>EPSG:68206405</CRS>
+      <CRS>EPSG:69036405</CRS>
+      <CRS>EPSG:404000</CRS>
+      <CRS>EPSG:102113</CRS>
+      <CRS>EPSG:42302</CRS>
+      <CRS>EPSG:42301</CRS>
+      <CRS>EPSG:54009</CRS>
+      <CRS>EPSG:900913</CRS>
+      <CRS>EPSG:45556</CRS>
+      <CRS>EPSG:45555</CRS>
+      <CRS>EPSG:54004</CRS>
+      <CRS>EPSG:41001</CRS>
+      <CRS>EPSG:42311</CRS>
+      <CRS>EPSG:42310</CRS>
+      <CRS>EPSG:18001</CRS>
+      <CRS>EPSG:54012</CRS>
+      <CRS>EPSG:53029</CRS>
+      <CRS>EPSG:391141</CRS>
+      <CRS>EPSG:54029</CRS>
+      <CRS>EPSG:100003</CRS>
+      <CRS>EPSG:42106</CRS>
+      <CRS>EPSG:100002</CRS>
+      <CRS>EPSG:42105</CRS>
+      <CRS>EPSG:100001</CRS>
+      <CRS>EPSG:42309</CRS>
+      <CRS>EPSG:42104</CRS>
+      <CRS>EPSG:42308</CRS>
+      <CRS>EPSG:42103</CRS>
+      <CRS>EPSG:42307</CRS>
+      <CRS>EPSG:42102</CRS>
+      <CRS>EPSG:42306</CRS>
+      <CRS>EPSG:42101</CRS>
+      <CRS>EPSG:42305</CRS>
+      <CRS>EPSG:42304</CRS>
+      <CRS>EPSG:42303</CRS>
+      <CRS>CRS:84</CRS>
+      <EX_GeographicBoundingBox>
+        <westBoundLongitude>-180.0</westBoundLongitude>
+        <eastBoundLongitude>180.0</eastBoundLongitude>
+        <southBoundLatitude>-90.0</southBoundLatitude>
+        <northBoundLatitude>90.0</northBoundLatitude>
+      </EX_GeographicBoundingBox>
+      <BoundingBox CRS="CRS:84" minx="-180.0" miny="-90.0" maxx="180.0" maxy="90.0"/>
+      <Layer queryable="1">
+        <Name>spearfish</Name>
+        <Title>Spearfish</Title>
+        <Abstract>Spearfish City in Lawrence County, South Dakota&#13;
+&#13;
+The area covered by the data set is in the vicinity of Spearfish and includes a majority of the Black Hills National Forest (i.e., Mount Rushmore).</Abstract>
+        <KeywordList/>
+        <CRS>EPSG:26713</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-103.87791475407893</westBoundLongitude>
+          <eastBoundLongitude>-103.62278893469492</eastBoundLongitude>
+          <southBoundLatitude>44.37246687108142</southBoundLatitude>
+          <northBoundLatitude>44.50235105543566</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-103.87791475407893" miny="44.37246687108142" maxx="-103.62278893469492" maxy="44.50235105543566"/>
+        <BoundingBox CRS="EPSG:26713" minx="589425.9342365642" miny="4913959.224611808" maxx="609518.6719560538" maxy="4928082.949945881"/>
+      </Layer>
+      <Layer queryable="1">
+        <Name>tasmania</Name>
+        <Title>Tasmania</Title>
+        <Abstract>Tasmania Australia from Digital Chart of the World.</Abstract>
+        <KeywordList/>
+        <CRS>EPSG:4326</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>143.83482400000003</westBoundLongitude>
+          <eastBoundLongitude>148.47914100000003</eastBoundLongitude>
+          <southBoundLatitude>-43.648056</southBoundLatitude>
+          <northBoundLatitude>-39.573891</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="143.83482400000003" miny="-43.648056" maxx="148.47914100000003" maxy="-39.573891"/>
+        <BoundingBox CRS="EPSG:4326" minx="-43.648056" miny="143.83482400000003" maxx="-39.573891" maxy="148.47914100000003"/>
+      </Layer>
+      <Layer queryable="1">
+        <Name>tiger-ny</Name>
+        <Title>TIGER New York</Title>
+        <Abstract>Topologically Integrated Geographic Encoding and Referencing (TIGER) dataset for New York.</Abstract>
+        <KeywordList/>
+        <CRS>EPSG:4326</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-74.047185</westBoundLongitude>
+          <eastBoundLongitude>-73.907005</eastBoundLongitude>
+          <southBoundLatitude>40.679648</southBoundLatitude>
+          <northBoundLatitude>40.882078</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-74.047185" miny="40.679648" maxx="-73.907005" maxy="40.882078"/>
+        <BoundingBox CRS="EPSG:4326" minx="40.679648" miny="-74.047185" maxx="40.882078" maxy="-73.907005"/>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>City_Smart:Airport_Substation</Name>
+        <Title>Airport_Substation</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>AIRPORT%20SUB_polygon</Keyword>
+          <Keyword>airport</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-152.5140940728851</westBoundLongitude>
+          <eastBoundLongitude>-152.51133832338363</eastBoundLongitude>
+          <southBoundLatitude>57.761214471569325</southBoundLatitude>
+          <northBoundLatitude>57.76262479280566</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-152.5140940728851" miny="57.761214471569325" maxx="-152.51133832338363" maxy="57.76262479280566"/>
+        <BoundingBox CRS="EPSG:4326" minx="57.761214471569325" miny="-152.5140940728851" maxx="57.76262479280566" maxy="-152.51133832338363"/>
+        <Style>
+          <Name>Yellow Polygon</Name>
+          <Title>A teal polygon style</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AAirport_Substation"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>nurc:Arc_Sample</Name>
+        <Title>A sample ArcGrid file</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>WCS</Keyword>
+          <Keyword>arcGridSample</Keyword>
+          <Keyword>arcGridSample_Coverage</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-180.0</westBoundLongitude>
+          <eastBoundLongitude>180.0</eastBoundLongitude>
+          <southBoundLatitude>-90.0</southBoundLatitude>
+          <northBoundLatitude>90.0</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-180.0" miny="-90.0" maxx="180.0" maxy="90.0"/>
+        <BoundingBox CRS="EPSG:4326" minx="-90.0" miny="-180.0" maxx="90.0" maxy="180.0"/>
+        <Style>
+          <Name>rain</Name>
+          <Title>Rain distribution</Title>
+          <LegendURL width="22" height="121">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=nurc%3AArc_Sample"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>raster</Name>
+          <Title>Default Raster</Title>
+          <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=nurc%3AArc_Sample&amp;style=raster"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>City_Smart:BaseRoad_Layer</Name>
+        <Title>BaseRoad_Layer</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>BaseRoad_Layer</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-152.55991098869222</westBoundLongitude>
+          <eastBoundLongitude>-152.46322737134633</eastBoundLongitude>
+          <southBoundLatitude>57.71907510468132</southBoundLatitude>
+          <northBoundLatitude>57.78702222697634</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-152.55991098869222" miny="57.71907510468132" maxx="-152.46322737134633" maxy="57.78702222697634"/>
+        <BoundingBox CRS="EPSG:4326" minx="57.71907510468132" miny="-152.55991098869222" maxx="57.78702222697634" maxy="-152.46322737134633"/>
+        <Style>
+          <Name>Neon Green</Name>
+          <Title>Default Line</Title>
+          <Abstract>A sample style that draws a line</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3ABaseRoad_Layer"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>City_Smart:Circuit_Direction</Name>
+        <Title>Circuit_Direction</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>CIRCUIT_ARROW_line</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-152.92177297547914</westBoundLongitude>
+          <eastBoundLongitude>-152.19022031049</eastBoundLongitude>
+          <southBoundLatitude>57.440562812374715</southBoundLatitude>
+          <northBoundLatitude>57.882796839420855</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-152.92177297547914" miny="57.440562812374715" maxx="-152.19022031049" maxy="57.882796839420855"/>
+        <BoundingBox CRS="EPSG:4326" minx="57.440562812374715" miny="-152.92177297547914" maxx="57.882796839420855" maxy="-152.19022031049"/>
+        <Style>
+          <Name>Yellow Line</Name>
+          <Title>A yellow line style</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3ACircuit_Direction"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>City_Smart:FUSE_line_Kodiak</Name>
+        <Title>FUSE_line_Kodiak</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>FUSE_line</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-152.88915144430362</westBoundLongitude>
+          <eastBoundLongitude>-152.21236648964296</eastBoundLongitude>
+          <southBoundLatitude>57.44402316216594</southBoundLatitude>
+          <northBoundLatitude>57.87102614700083</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-152.88915144430362" miny="57.44402316216594" maxx="-152.21236648964296" maxy="57.87102614700083"/>
+        <BoundingBox CRS="EPSG:4326" minx="57.44402316216594" miny="-152.88915144430362" maxx="57.87102614700083" maxy="-152.21236648964296"/>
+        <Style>
+          <Name>Magenta Line</Name>
+          <Title>A dark orange line style</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AFUSE_line_Kodiak"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>nurc:Img_Sample</Name>
+        <Title>North America sample imagery</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>WCS</Keyword>
+          <Keyword>worldImageSample</Keyword>
+          <Keyword>worldImageSample_Coverage</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-130.85168</westBoundLongitude>
+          <eastBoundLongitude>-62.0054</eastBoundLongitude>
+          <southBoundLatitude>20.7052</southBoundLatitude>
+          <northBoundLatitude>54.1141</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-130.85168" miny="20.7052" maxx="-62.0054" maxy="54.1141"/>
+        <BoundingBox CRS="EPSG:4326" minx="20.7052" miny="-130.85168" maxx="54.1141" maxy="-62.0054"/>
+        <Style>
+          <Name>raster</Name>
+          <Title>Default Raster</Title>
+          <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=nurc%3AImg_Sample"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>City_Smart:KEAGridMap_Layer</Name>
+        <Title>KEAGridMap_Layer</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>KEAGridMap_Layer</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-152.92180892330802</westBoundLongitude>
+          <eastBoundLongitude>-144.29104078833544</eastBoundLongitude>
+          <southBoundLatitude>56.165278407107536</southBoundLatitude>
+          <northBoundLatitude>61.88058272783616</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-152.92180892330802" miny="56.165278407107536" maxx="-144.29104078833544" maxy="61.88058272783616"/>
+        <BoundingBox CRS="EPSG:4326" minx="56.165278407107536" miny="-152.92180892330802" maxx="61.88058272783616" maxy="-144.29104078833544"/>
+        <Style>
+          <Name>Red Line</Name>
+          <Title>A dark yellow line style</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AKEAGridMap_Layer"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>City_Smart:KEAParcelMap_Layer</Name>
+        <Title>KEAParcelMap_Layer</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>KEAParcelMap_Layer</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-154.82015128037102</westBoundLongitude>
+          <eastBoundLongitude>-144.29104078833544</eastBoundLongitude>
+          <southBoundLatitude>56.165278407107536</southBoundLatitude>
+          <northBoundLatitude>61.88058272783616</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-154.82015128037102" miny="56.165278407107536" maxx="-144.29104078833544" maxy="61.88058272783616"/>
+        <BoundingBox CRS="EPSG:4326" minx="56.165278407107536" miny="-154.82015128037102" maxx="61.88058272783616" maxy="-144.29104078833544"/>
+        <Style>
+          <Name>line</Name>
+          <Title>Default Line</Title>
+          <Abstract>A sample style that draws a line</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AKEAParcelMap_Layer"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>City_Smart:K_Subs</Name>
+        <Title>K_Subs</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>0-Subs_line</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-152.89540496636715</westBoundLongitude>
+          <eastBoundLongitude>-152.4033315726397</eastBoundLongitude>
+          <southBoundLatitude>57.68639979547806</southBoundLatitude>
+          <northBoundLatitude>57.79918918321283</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-152.89540496636715" miny="57.68639979547806" maxx="-152.4033315726397" maxy="57.79918918321283"/>
+        <BoundingBox CRS="EPSG:4326" minx="57.68639979547806" miny="-152.89540496636715" maxx="57.79918918321283" maxy="-152.4033315726397"/>
+        <Style>
+          <Name>Yellow Polygon</Name>
+          <Title>A teal polygon style</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AK_Subs"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>City_Smart:Kodiak_Large_Transformers</Name>
+        <Title>Kodiak_Large_Transformers</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>UGTFP_polygon</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-152.8933392361329</westBoundLongitude>
+          <eastBoundLongitude>-152.32765747468684</eastBoundLongitude>
+          <southBoundLatitude>57.439622220138986</southBoundLatitude>
+          <northBoundLatitude>57.87368806872767</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-152.8933392361329" miny="57.439622220138986" maxx="-152.32765747468684" maxy="57.87368806872767"/>
+        <BoundingBox CRS="EPSG:4326" minx="57.439622220138986" miny="-152.8933392361329" maxx="57.87368806872767" maxy="-152.32765747468684"/>
+        <Style>
+          <Name>Purple With Blue Outline</Name>
+          <Title>A dark yellow polygon style</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AKodiak_Large_Transformers"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>City_Smart:Kodiak_Poles_with_Guy_Cable_Support</Name>
+        <Title>Kodiak_Poles_with_Guy_Cable_Support</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>GUY_line</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-152.8931581521974</westBoundLongitude>
+          <eastBoundLongitude>-152.18861212875552</eastBoundLongitude>
+          <southBoundLatitude>57.44129166240881</southBoundLatitude>
+          <northBoundLatitude>57.88178284879661</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-152.8931581521974" miny="57.44129166240881" maxx="-152.18861212875552" maxy="57.88178284879661"/>
+        <BoundingBox CRS="EPSG:4326" minx="57.44129166240881" miny="-152.8931581521974" maxx="57.88178284879661" maxy="-152.18861212875552"/>
+        <Style>
+          <Name>Light Coral Red Line</Name>
+          <Title>A red line style</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AKodiak_Poles_with_Guy_Cable_Support"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>City_Smart:Kodiak_Road_System</Name>
+        <Title>Kodiak_Road_System</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>Kodiak_Road_System</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-152.58050469018187</westBoundLongitude>
+          <eastBoundLongitude>-152.32667673238316</eastBoundLongitude>
+          <southBoundLatitude>57.71908990987967</southBoundLatitude>
+          <northBoundLatitude>57.836720227614286</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-152.58050469018187" miny="57.71908990987967" maxx="-152.32667673238316" maxy="57.836720227614286"/>
+        <BoundingBox CRS="EPSG:4326" minx="57.71908990987967" miny="-152.58050469018187" maxx="57.836720227614286" maxy="-152.32667673238316"/>
+        <Style>
+          <Name>Navy Blue</Name>
+          <Title>A violet line style</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AKodiak_Road_System"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>Dark Orange Line</Name>
+          <Title>A azure line style</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AKodiak_Road_System&amp;style=Dark%20Orange%20Line"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>City_Smart:Kodiak_Small_Transformers</Name>
+        <Title>Kodiak_Small_Transformers</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>PRI_UG_polygon</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-152.8891009290482</westBoundLongitude>
+          <eastBoundLongitude>-152.33406906404147</eastBoundLongitude>
+          <southBoundLatitude>57.439869043798915</southBoundLatitude>
+          <northBoundLatitude>57.873988395723565</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-152.8891009290482" miny="57.439869043798915" maxx="-152.33406906404147" maxy="57.873988395723565"/>
+        <BoundingBox CRS="EPSG:4326" minx="57.439869043798915" miny="-152.8891009290482" maxx="57.873988395723565" maxy="-152.33406906404147"/>
+        <Style>
+          <Name>Green Polygon</Name>
+          <Title>A dark orange polygon style</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AKodiak_Small_Transformers"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>City_Smart:Kodiak_Substations</Name>
+        <Title>Kodiak_Substations</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>SUBSTATION_polygon</Keyword>
+          <Keyword>features</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-152.8948471242195</westBoundLongitude>
+          <eastBoundLongitude>-152.39666656830377</eastBoundLongitude>
+          <southBoundLatitude>57.68672009402202</southBoundLatitude>
+          <northBoundLatitude>57.79883066642975</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-152.8948471242195" miny="57.68672009402202" maxx="-152.39666656830377" maxy="57.79883066642975"/>
+        <BoundingBox CRS="EPSG:4326" minx="57.68672009402202" miny="-152.8948471242195" maxx="57.79883066642975" maxy="-152.39666656830377"/>
+        <Style>
+          <Name>Yellow Polygon</Name>
+          <Title>A teal polygon style</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AKodiak_Substations"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>City_Smart:Line_WMS_Kodiak_Trident</Name>
+        <Title>Line_WMS_Kodiak_Trident</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>Kodiak%20Town%20AK83-5F$0$SHIP_line</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-152.4056387518297</westBoundLongitude>
+          <eastBoundLongitude>-152.40364612220424</eastBoundLongitude>
+          <southBoundLatitude>57.78646704184539</southBoundLatitude>
+          <northBoundLatitude>57.78688207124024</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-152.4056387518297" miny="57.78646704184539" maxx="-152.40364612220424" maxy="57.78688207124024"/>
+        <BoundingBox CRS="EPSG:4326" minx="57.78646704184539" miny="-152.4056387518297" maxx="57.78688207124024" maxy="-152.40364612220424"/>
+        <Style>
+          <Name>Aqua Blue Line</Name>
+          <Title>A orange line style</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3ALine_WMS_Kodiak_Trident"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>City_Smart:M1</Name>
+        <Title>M1</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>STLT_polygon</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-152.5072599110577</westBoundLongitude>
+          <eastBoundLongitude>-152.38252281484412</eastBoundLongitude>
+          <southBoundLatitude>57.762299784911725</southBoundLatitude>
+          <northBoundLatitude>57.80515240254925</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-152.5072599110577" miny="57.762299784911725" maxx="-152.38252281484412" maxy="57.80515240254925"/>
+        <BoundingBox CRS="EPSG:4326" minx="57.762299784911725" miny="-152.5072599110577" maxx="57.80515240254925" maxy="-152.38252281484412"/>
+        <Style>
+          <Name>Green Polygon</Name>
+          <Title>A dark orange polygon style</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AM1"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>City_Smart:MANHOLE_line</Name>
+        <Title>MANHOLE_line</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>MANHOLE_line</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-152.51346568301116</westBoundLongitude>
+          <eastBoundLongitude>-152.48355127633465</eastBoundLongitude>
+          <southBoundLatitude>57.73146405544148</southBoundLatitude>
+          <northBoundLatitude>57.75776741541116</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-152.51346568301116" miny="57.73146405544148" maxx="-152.48355127633465" maxy="57.75776741541116"/>
+        <BoundingBox CRS="EPSG:4326" minx="57.73146405544148" miny="-152.51346568301116" maxx="57.75776741541116" maxy="-152.48355127633465"/>
+        <Style>
+          <Name>Red Line</Name>
+          <Title>A dark yellow line style</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AMANHOLE_line"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>City_Smart:MANHOLE_polygon</Name>
+        <Title>MANHOLE_polygon</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>MANHOLE_polygon</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-152.50866654991506</westBoundLongitude>
+          <eastBoundLongitude>-152.48409189822027</eastBoundLongitude>
+          <southBoundLatitude>57.73156135083627</southBoundLatitude>
+          <northBoundLatitude>57.74969430922357</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-152.50866654991506" miny="57.73156135083627" maxx="-152.48409189822027" maxy="57.74969430922357"/>
+        <BoundingBox CRS="EPSG:4326" minx="57.73156135083627" miny="-152.50866654991506" maxx="57.74969430922357" maxy="-152.48409189822027"/>
+        <Style>
+          <Name>polygon</Name>
+          <Title>Default Polygon</Title>
+          <Abstract>A sample style that draws a polygon</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AMANHOLE_polygon"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>City_Smart:OHC_1</Name>
+        <Title>OHC_1</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>OHC1_line</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-152.89307859590156</westBoundLongitude>
+          <eastBoundLongitude>-152.18869068495422</eastBoundLongitude>
+          <southBoundLatitude>57.440904819231434</southBoundLatitude>
+          <northBoundLatitude>57.883503282520664</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-152.89307859590156" miny="57.440904819231434" maxx="-152.18869068495422" maxy="57.883503282520664"/>
+        <BoundingBox CRS="EPSG:4326" minx="57.440904819231434" miny="-152.89307859590156" maxx="57.883503282520664" maxy="-152.18869068495422"/>
+        <Style>
+          <Name>Pink Line</Name>
+          <Title>A orange line style</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AOHC_1"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>City_Smart:OHC_2</Name>
+        <Title>OHC_2</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>OHC2_line</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-152.5022748150272</westBoundLongitude>
+          <eastBoundLongitude>-152.3612481271624</eastBoundLongitude>
+          <southBoundLatitude>57.749196465975686</southBoundLatitude>
+          <northBoundLatitude>57.810476461368545</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-152.5022748150272" miny="57.749196465975686" maxx="-152.3612481271624" maxy="57.810476461368545"/>
+        <BoundingBox CRS="EPSG:4326" minx="57.749196465975686" miny="-152.5022748150272" maxx="57.810476461368545" maxy="-152.3612481271624"/>
+        <Style>
+          <Name>Pink Line</Name>
+          <Title>A orange line style</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AOHC_2"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>City_Smart:OHC_3</Name>
+        <Title>OHC_3</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>OHC3_line</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-152.92180892330776</westBoundLongitude>
+          <eastBoundLongitude>-152.21245335325042</eastBoundLongitude>
+          <southBoundLatitude>57.441333712876265</southBoundLatitude>
+          <northBoundLatitude>57.87102601237074</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-152.92180892330776" miny="57.441333712876265" maxx="-152.21245335325042" maxy="57.87102601237074"/>
+        <BoundingBox CRS="EPSG:4326" minx="57.441333712876265" miny="-152.92180892330776" maxx="57.87102601237074" maxy="-152.21245335325042"/>
+        <Style>
+          <Name>Pink Line</Name>
+          <Title>A orange line style</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AOHC_3"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>City_Smart:OHC_M</Name>
+        <Title>OHC_M</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>OHSC_line</Keyword>
+          <Keyword>features</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-152.88874674469872</westBoundLongitude>
+          <eastBoundLongitude>-152.40883828395246</eastBoundLongitude>
+          <southBoundLatitude>57.78539449026859</southBoundLatitude>
+          <northBoundLatitude>57.868392982480074</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-152.88874674469872" miny="57.78539449026859" maxx="-152.40883828395246" maxy="57.868392982480074"/>
+        <BoundingBox CRS="EPSG:4326" minx="57.78539449026859" miny="-152.88874674469872" maxx="57.868392982480074" maxy="-152.40883828395246"/>
+        <Style>
+          <Name>Pink Line</Name>
+          <Title>A orange line style</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AOHC_M"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>City_Smart:Overhead_Transformers</Name>
+        <Title>Overhead_Transformers</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>OHTFMR_polygon</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-152.89311704847628</westBoundLongitude>
+          <eastBoundLongitude>-152.18864833357955</eastBoundLongitude>
+          <southBoundLatitude>57.44091849969728</southBoundLatitude>
+          <northBoundLatitude>57.88355574560088</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-152.89311704847628" miny="57.44091849969728" maxx="-152.18864833357955" maxy="57.88355574560088"/>
+        <BoundingBox CRS="EPSG:4326" minx="57.44091849969728" miny="-152.89311704847628" maxx="57.88355574560088" maxy="-152.18864833357955"/>
+        <Style>
+          <Name>Green Polygon</Name>
+          <Title>A dark orange polygon style</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AOverhead_Transformers"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>nurc:Pk50095</Name>
+        <Title>Pk50095</Title>
+        <Abstract>Pk50095 is a raster file accompanied by a spatial data file.</Abstract>
+        <KeywordList>
+          <Keyword>WCS</Keyword>
+          <Keyword>img_sample2</Keyword>
+          <Keyword>Pk50095</Keyword>
+        </KeywordList>
+        <CRS>EPSG:32633</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>12.999446822650462</westBoundLongitude>
+          <eastBoundLongitude>13.308182612644663</eastBoundLongitude>
+          <southBoundLatitude>46.722110379286</southBoundLatitude>
+          <northBoundLatitude>46.91359611878293</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="12.999446822650462" miny="46.722110379286" maxx="13.308182612644663" maxy="46.91359611878293"/>
+        <BoundingBox CRS="EPSG:32633" minx="347649.93086859107" miny="5176214.082539256" maxx="370725.976428591" maxy="5196961.352859256"/>
+        <Style>
+          <Name>raster</Name>
+          <Title>Default Raster</Title>
+          <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=nurc%3APk50095"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>City_Smart:Polygon_WMS_Kodiak_Trident</Name>
+        <Title>Polygon_WMS_Kodiak_Trident</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>Kodiak%20Town%20AK83-5F$0$SHIP_polygon</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-152.40417859985192</westBoundLongitude>
+          <eastBoundLongitude>-152.40396900163816</eastBoundLongitude>
+          <southBoundLatitude>57.786838926070516</southBoundLatitude>
+          <northBoundLatitude>57.786923860738746</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-152.40417859985192" miny="57.786838926070516" maxx="-152.40396900163816" maxy="57.786923860738746"/>
+        <BoundingBox CRS="EPSG:4326" minx="57.786838926070516" miny="-152.40417859985192" maxx="57.786923860738746" maxy="-152.40396900163816"/>
+        <Style>
+          <Name>Purple With Blue Outline</Name>
+          <Title>A dark yellow polygon style</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3APolygon_WMS_Kodiak_Trident"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>City_Smart:UGC_1</Name>
+        <Title>UGC_1</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>UGC1_line</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-152.8933009471627</westBoundLongitude>
+          <eastBoundLongitude>-152.19155583240592</eastBoundLongitude>
+          <southBoundLatitude>57.46254075222091</southBoundLatitude>
+          <northBoundLatitude>57.86877735762947</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-152.8933009471627" miny="57.46254075222091" maxx="-152.19155583240592" maxy="57.86877735762947"/>
+        <BoundingBox CRS="EPSG:4326" minx="57.46254075222091" miny="-152.8933009471627" maxx="57.86877735762947" maxy="-152.19155583240592"/>
+        <Style>
+          <Name>Yellow Line</Name>
+          <Title>A yellow line style</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AUGC_1"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>Yellow Line</Name>
+          <Title>A yellow line style</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AUGC_1&amp;style=Yellow%20Line"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>City_Smart:UGC_2</Name>
+        <Title>UGC_2</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>UGC2_line</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-152.56613973511688</westBoundLongitude>
+          <eastBoundLongitude>-152.49662997976972</eastBoundLongitude>
+          <southBoundLatitude>57.716831173997484</southBoundLatitude>
+          <northBoundLatitude>57.759649884288685</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-152.56613973511688" miny="57.716831173997484" maxx="-152.49662997976972" maxy="57.759649884288685"/>
+        <BoundingBox CRS="EPSG:4326" minx="57.716831173997484" miny="-152.56613973511688" maxx="57.759649884288685" maxy="-152.49662997976972"/>
+        <Style>
+          <Name>Yellow Line</Name>
+          <Title>A yellow line style</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AUGC_2"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>City_Smart:UGC_3</Name>
+        <Title>UGC_3</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>UGC3_line</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-152.89322974061645</westBoundLongitude>
+          <eastBoundLongitude>-152.32764422615705</eastBoundLongitude>
+          <southBoundLatitude>57.43964183194778</southBoundLatitude>
+          <northBoundLatitude>57.87525226046504</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-152.89322974061645" miny="57.43964183194778" maxx="-152.32764422615705" maxy="57.87525226046504"/>
+        <BoundingBox CRS="EPSG:4326" minx="57.43964183194778" miny="-152.89322974061645" maxx="57.87525226046504" maxy="-152.32764422615705"/>
+        <Style>
+          <Name>Yellow Line</Name>
+          <Title>A yellow line style</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AUGC_3"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>City_Smart:UGTFP_polygon</Name>
+        <Title>UGTFP_polygon</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>UGTFP_polygon</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-152.8933392361329</westBoundLongitude>
+          <eastBoundLongitude>-152.32765747468684</eastBoundLongitude>
+          <southBoundLatitude>57.439622220138986</southBoundLatitude>
+          <northBoundLatitude>57.87368806872767</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-152.8933392361329" miny="57.439622220138986" maxx="-152.32765747468684" maxy="57.87368806872767"/>
+        <BoundingBox CRS="EPSG:4326" minx="57.439622220138986" miny="-152.8933392361329" maxx="57.87368806872767" maxy="-152.32765747468684"/>
+        <Style>
+          <Name>Neon Green</Name>
+          <Title>Default Line</Title>
+          <Abstract>A sample style that draws a line</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AUGTFP_polygon"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>City_Smart:Wire_Transmission_Kodiak</Name>
+        <Title>Wire_Transmission_Kodiak</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>TRNSMSMWIRE_line</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-152.8941493534258</westBoundLongitude>
+          <eastBoundLongitude>-152.3961706667948</eastBoundLongitude>
+          <southBoundLatitude>57.687000480153166</southBoundLatitude>
+          <northBoundLatitude>57.79880514346245</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-152.8941493534258" miny="57.687000480153166" maxx="-152.3961706667948" maxy="57.79880514346245"/>
+        <BoundingBox CRS="EPSG:4326" minx="57.687000480153166" miny="-152.8941493534258" maxx="57.79880514346245" maxy="-152.3961706667948"/>
+        <Style>
+          <Name>Aqua Blue Line</Name>
+          <Title>A orange line style</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AWire_Transmission_Kodiak"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>sf:archsites</Name>
+        <Title>Spearfish archeological sites</Title>
+        <Abstract>Sample data from GRASS, archeological sites location, Spearfish, South Dakota, USA</Abstract>
+        <KeywordList>
+          <Keyword>archsites</Keyword>
+          <Keyword>spearfish</Keyword>
+          <Keyword>sfArchsites</Keyword>
+          <Keyword>archeology</Keyword>
+        </KeywordList>
+        <CRS>EPSG:26713</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-103.8725637911543</westBoundLongitude>
+          <eastBoundLongitude>-103.63794182141925</eastBoundLongitude>
+          <southBoundLatitude>44.37740330855979</southBoundLatitude>
+          <northBoundLatitude>44.48804280772808</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-103.8725637911543" miny="44.37740330855979" maxx="-103.63794182141925" maxy="44.48804280772808"/>
+        <BoundingBox CRS="EPSG:26713" minx="589851.4376666048" miny="4914490.882968263" maxx="608346.4603107043" maxy="4926501.8980334345"/>
+        <Style>
+          <Name>point</Name>
+          <Title>Default Point</Title>
+          <Abstract>A sample style that draws a point</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sf%3Aarchsites"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>burg</Name>
+          <Title>A small red flag</Title>
+          <Abstract>A sample of how to use an SVG based symbolizer</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sf%3Aarchsites&amp;style=burg"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>capitals</Name>
+          <Title>Capital cities</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sf%3Aarchsites&amp;style=capitals"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>sf:bugsites</Name>
+        <Title>Spearfish bug locations</Title>
+        <Abstract>Sample data from GRASS, bug sites location, Spearfish, South Dakota, USA</Abstract>
+        <KeywordList>
+          <Keyword>spearfish</Keyword>
+          <Keyword>sfBugsites</Keyword>
+          <Keyword>insects</Keyword>
+          <Keyword>bugsites</Keyword>
+          <Keyword>tiger_beetles</Keyword>
+        </KeywordList>
+        <CRS>EPSG:26713</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-103.86796131703647</westBoundLongitude>
+          <eastBoundLongitude>-103.63773523234195</eastBoundLongitude>
+          <southBoundLatitude>44.373938816704396</southBoundLatitude>
+          <northBoundLatitude>44.43418821380063</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-103.86796131703647" miny="44.373938816704396" maxx="-103.63773523234195" maxy="44.43418821380063"/>
+        <BoundingBox CRS="EPSG:26713" minx="590223.4382724703" miny="4914107.882513998" maxx="608462.4604629107" maxy="4920523.89081033"/>
+        <Style>
+          <Name>capitals</Name>
+          <Title>Capital cities</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sf%3Abugsites"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>burg</Name>
+          <Title>A small red flag</Title>
+          <Abstract>A sample of how to use an SVG based symbolizer</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sf%3Abugsites&amp;style=burg"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>point</Name>
+          <Title>Default Point</Title>
+          <Abstract>A sample style that draws a point</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sf%3Abugsites&amp;style=point"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>tiger:giant_polygon</Name>
+        <Title>World rectangle</Title>
+        <Abstract>A simple rectangular polygon covering most of the world, it's only used for the purpose of providing a background (WMS bgcolor could be used instead)</Abstract>
+        <KeywordList>
+          <Keyword>DS_giant_polygon</Keyword>
+          <Keyword>giant_polygon</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-180.0</westBoundLongitude>
+          <eastBoundLongitude>180.0</eastBoundLongitude>
+          <southBoundLatitude>-90.0</southBoundLatitude>
+          <northBoundLatitude>90.0</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-180.0" miny="-90.0" maxx="180.0" maxy="90.0"/>
+        <BoundingBox CRS="EPSG:4326" minx="-90.0" miny="-180.0" maxx="90.0" maxy="180.0"/>
+        <Style>
+          <Name>giant_polygon</Name>
+          <Title>Border-less gray fill</Title>
+          <Abstract>Light gray polygon fill without a border</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=tiger%3Agiant_polygon"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>nurc:mosaic</Name>
+        <Title>mosaic</Title>
+        <Abstract>Italian sample mosaic</Abstract>
+        <KeywordList>
+          <Keyword>WCS</Keyword>
+          <Keyword>ImageMosaic</Keyword>
+          <Keyword>mosaic</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>6.346</westBoundLongitude>
+          <eastBoundLongitude>20.83</eastBoundLongitude>
+          <southBoundLatitude>36.492</southBoundLatitude>
+          <northBoundLatitude>46.591</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="6.346" miny="36.492" maxx="20.83" maxy="46.591"/>
+        <BoundingBox CRS="EPSG:4326" minx="36.492" miny="6.346" maxx="46.591" maxy="20.83"/>
+        <Style>
+          <Name>raster</Name>
+          <Title>Default Raster</Title>
+          <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=nurc%3Amosaic"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>tiger:poi</Name>
+        <Title>Manhattan (NY) points of interest</Title>
+        <Abstract>Points of interest in New York, New York (on Manhattan). One of the attributes contains the name of a file with a picture of the point of interest.</Abstract>
+        <KeywordList>
+          <Keyword>poi</Keyword>
+          <Keyword>Manhattan</Keyword>
+          <Keyword>DS_poi</Keyword>
+          <Keyword>points_of_interest</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-74.0118315772888</westBoundLongitude>
+          <eastBoundLongitude>-74.00857344353275</eastBoundLongitude>
+          <southBoundLatitude>40.70754683896324</southBoundLatitude>
+          <northBoundLatitude>40.711945649065406</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-74.0118315772888" miny="40.70754683896324" maxx="-74.00857344353275" maxy="40.711945649065406"/>
+        <BoundingBox CRS="EPSG:4326" minx="40.70754683896324" miny="-74.0118315772888" maxx="40.719885123828675" maxy="-74.00153046439813"/>
+        <Style>
+          <Name>poi</Name>
+          <Title>Points of interest</Title>
+          <Abstract>Manhattan points of interest</Abstract>
+          <LegendURL width="22" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=tiger%3Apoi"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>burg</Name>
+          <Title>A small red flag</Title>
+          <Abstract>A sample of how to use an SVG based symbolizer</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=tiger%3Apoi&amp;style=burg"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>point</Name>
+          <Title>Default Point</Title>
+          <Abstract>A sample style that draws a point</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=tiger%3Apoi&amp;style=point"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>Approved:pointlands3</Name>
+        <Title>pointlands</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>pointlands</Keyword>
+          <Keyword>features</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4269</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-105.370531</westBoundLongitude>
+          <eastBoundLongitude>-105.065309</eastBoundLongitude>
+          <southBoundLatitude>39.914352</southBoundLatitude>
+          <northBoundLatitude>40.217396</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-105.370531" miny="39.914352" maxx="-105.065309" maxy="40.217396"/>
+        <BoundingBox CRS="EPSG:4269" minx="39.914352" miny="-105.370531" maxx="40.217396" maxy="-105.065309"/>
+        <Style>
+          <Name>point</Name>
+          <Title>Default Point</Title>
+          <Abstract>A sample style that draws a point</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Approved%3Apointlands3"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>Approved:pointlands4</Name>
+        <Title>pointlands</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>pointlands</Keyword>
+          <Keyword>features</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4269</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-105.370531</westBoundLongitude>
+          <eastBoundLongitude>-105.065309</eastBoundLongitude>
+          <southBoundLatitude>39.914352</southBoundLatitude>
+          <northBoundLatitude>40.217396</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-105.370531" miny="39.914352" maxx="-105.065309" maxy="40.217396"/>
+        <BoundingBox CRS="EPSG:4269" minx="39.914352" miny="-105.370531" maxx="40.217396" maxy="-105.065309"/>
+        <Style>
+          <Name>point</Name>
+          <Title>Default Point</Title>
+          <Abstract>A sample style that draws a point</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Approved%3Apointlands4"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>tiger:poly_landmarks</Name>
+        <Title>Manhattan (NY) landmarks</Title>
+        <Abstract>Manhattan landmarks, identifies water, lakes, parks, interesting buildilngs</Abstract>
+        <KeywordList>
+          <Keyword>landmarks</Keyword>
+          <Keyword>DS_poly_landmarks</Keyword>
+          <Keyword>manhattan</Keyword>
+          <Keyword>poly_landmarks</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-74.047185</westBoundLongitude>
+          <eastBoundLongitude>-73.90782</eastBoundLongitude>
+          <southBoundLatitude>40.679648</southBoundLatitude>
+          <northBoundLatitude>40.882078</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-74.047185" miny="40.679648" maxx="-73.90782" maxy="40.882078"/>
+        <BoundingBox CRS="EPSG:4326" minx="40.679648" miny="-74.047185" maxx="40.882078" maxy="-73.90782"/>
+        <Style>
+          <Name>poly_landmarks</Name>
+          <Title>poly_landmarks</Title>
+          <LegendURL width="22" height="60">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=tiger%3Apoly_landmarks"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>grass</Name>
+          <Title>Grass fill</Title>
+          <Abstract>A style filling polygons with a grass theme coming from a PNG file</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=tiger%3Apoly_landmarks&amp;style=grass"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>restricted</Name>
+          <Title>Red, translucent style</Title>
+          <Abstract>A sample style that just prints out a transparent red interior with a red outline</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=tiger%3Apoly_landmarks&amp;style=restricted"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>polygon</Name>
+          <Title>Default Polygon</Title>
+          <Abstract>A sample style that draws a polygon</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=tiger%3Apoly_landmarks&amp;style=polygon"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>City_Smart:power</Name>
+        <Title>power</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>power</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-74.44038984239812</westBoundLongitude>
+          <eastBoundLongitude>-74.43724158307265</eastBoundLongitude>
+          <southBoundLatitude>41.45073786576917</southBoundLatitude>
+          <northBoundLatitude>41.45324407118593</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-74.44038984239812" miny="41.45073786576917" maxx="-74.43724158307265" maxy="41.45324407118593"/>
+        <BoundingBox CRS="EPSG:4326" minx="41.45073786576917" miny="-74.44038984239812" maxx="41.45324407118593" maxy="-74.43724158307265"/>
+        <Style>
+          <Name>Light Coral Red Line</Name>
+          <Title>A red line style</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3Apower"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>City_Smart:power2</Name>
+        <Title>power2</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>power2</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-74.43940603236624</westBoundLongitude>
+          <eastBoundLongitude>-74.4370987197435</eastBoundLongitude>
+          <southBoundLatitude>41.45166593938486</southBoundLatitude>
+          <northBoundLatitude>41.452732857196075</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-74.43940603236624" miny="41.45166593938486" maxx="-74.4370987197435" maxy="41.452732857196075"/>
+        <BoundingBox CRS="EPSG:4326" minx="41.45166593938486" miny="-74.43940603236624" maxx="41.452732857196075" maxy="-74.4370987197435"/>
+        <Style>
+          <Name>Magenta Line</Name>
+          <Title>A dark orange line style</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3Apower2"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>sf:restricted</Name>
+        <Title>Spearfish restricted areas</Title>
+        <Abstract>Sample data from GRASS, restricted areas, Spearfish, South Dakota, USA</Abstract>
+        <KeywordList>
+          <Keyword>spearfish</Keyword>
+          <Keyword>restricted</Keyword>
+          <Keyword>areas</Keyword>
+          <Keyword>sfRestricted</Keyword>
+        </KeywordList>
+        <CRS>EPSG:26713</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-103.85057172920756</westBoundLongitude>
+          <eastBoundLongitude>-103.74741494853805</eastBoundLongitude>
+          <southBoundLatitude>44.39436387625042</southBoundLatitude>
+          <northBoundLatitude>44.48215752041131</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-103.85057172920756" miny="44.39436387625042" maxx="-103.74741494853805" maxy="44.48215752041131"/>
+        <BoundingBox CRS="EPSG:26713" minx="591579.1858092896" miny="4916236.662227167" maxx="599648.9251686076" maxy="4925872.146218054"/>
+        <Style>
+          <Name>restricted</Name>
+          <Title>Red, translucent style</Title>
+          <Abstract>A sample style that just prints out a transparent red interior with a red outline</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sf%3Arestricted"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>polygon</Name>
+          <Title>Default Polygon</Title>
+          <Abstract>A sample style that draws a polygon</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sf%3Arestricted&amp;style=polygon"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>sf:roads</Name>
+        <Title>Spearfish roads</Title>
+        <Abstract>Sample data from GRASS, road layout, Spearfish, South Dakota, USA</Abstract>
+        <KeywordList>
+          <Keyword>sfRoads</Keyword>
+          <Keyword>spearfish</Keyword>
+          <Keyword>roads</Keyword>
+        </KeywordList>
+        <CRS>EPSG:26713</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-103.87741691493184</westBoundLongitude>
+          <eastBoundLongitude>-103.62231404880659</eastBoundLongitude>
+          <southBoundLatitude>44.37087275281798</southBoundLatitude>
+          <northBoundLatitude>44.50015918338962</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-103.87741691493184" miny="44.37087275281798" maxx="-103.62231404880659" maxy="44.50015918338962"/>
+        <BoundingBox CRS="EPSG:26713" minx="589434.8564686741" miny="4914006.337837095" maxx="609527.2102150217" maxy="4928063.398014731"/>
+        <Style>
+          <Name>simple_roads</Name>
+          <Title>Default Styler for simple road segments</Title>
+          <Abstract>Light red line, 2px wide</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sf%3Aroads"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>line</Name>
+          <Title>Default Line</Title>
+          <Abstract>A sample style that draws a line</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sf%3Aroads&amp;style=line"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>sf:sfdem</Name>
+        <Title>Spearfish elevation</Title>
+        <Abstract>Digital elevation model for the Spearfish region.&#13;
+&#13;
+sfdem is a Tagged Image File Format with Geographic information</Abstract>
+        <KeywordList>
+          <Keyword>WCS</Keyword>
+          <Keyword>sfdem</Keyword>
+          <Keyword>sfdem</Keyword>
+        </KeywordList>
+        <CRS>EPSG:26713</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-103.87108701853181</westBoundLongitude>
+          <eastBoundLongitude>-103.62940739432703</eastBoundLongitude>
+          <southBoundLatitude>44.370187074132616</southBoundLatitude>
+          <northBoundLatitude>44.5016011535299</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-103.87108701853181" miny="44.370187074132616" maxx="-103.62940739432703" maxy="44.5016011535299"/>
+        <BoundingBox CRS="EPSG:26713" minx="589980.0" miny="4913700.0" maxx="609000.0" maxy="4928010.0"/>
+        <Style>
+          <Name>dem</Name>
+          <Title>Simple DEM style</Title>
+          <Abstract>Classic elevation color progression</Abstract>
+          <LegendURL width="63" height="182">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sf%3Asfdem"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>topp:states</Name>
+        <Title>USA Population</Title>
+        <Abstract>This is some census data on the states.</Abstract>
+        <KeywordList>
+          <Keyword>census</Keyword>
+          <Keyword>united</Keyword>
+          <Keyword>boundaries</Keyword>
+          <Keyword>state</Keyword>
+          <Keyword>states</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-124.731422</westBoundLongitude>
+          <eastBoundLongitude>-66.969849</eastBoundLongitude>
+          <southBoundLatitude>24.955967</southBoundLatitude>
+          <northBoundLatitude>49.371735</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-124.731422" miny="24.955967" maxx="-66.969849" maxy="49.371735"/>
+        <BoundingBox CRS="EPSG:4326" minx="24.955967" miny="-124.73142200000001" maxx="49.371735" maxy="-66.969849"/>
+        <Style>
+          <Name>population</Name>
+          <Title>Population in the United States</Title>
+          <Abstract>A sample filter that filters the United States into three
+        categories of population, drawn in different colors</Abstract>
+          <LegendURL width="84" height="80">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=topp%3Astates"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>pophatch</Name>
+          <Title>Population in the United States</Title>
+          <Abstract>A sample filter that filters the United States into three
+        categories of population, drawn in different colors</Abstract>
+          <LegendURL width="84" height="80">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=topp%3Astates&amp;style=pophatch"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>polygon</Name>
+          <Title>Default Polygon</Title>
+          <Abstract>A sample style that draws a polygon</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=topp%3Astates&amp;style=polygon"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>sf:streams</Name>
+        <Title>Spearfish streams</Title>
+        <Abstract>Sample data from GRASS, streams, Spearfish, South Dakota, USA</Abstract>
+        <KeywordList>
+          <Keyword>spearfish</Keyword>
+          <Keyword>sfStreams</Keyword>
+          <Keyword>streams</Keyword>
+        </KeywordList>
+        <CRS>EPSG:26713</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-103.87789019829768</westBoundLongitude>
+          <eastBoundLongitude>-103.62287788915457</eastBoundLongitude>
+          <southBoundLatitude>44.372335260095554</southBoundLatitude>
+          <northBoundLatitude>44.502218486214815</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-103.87789019829768" miny="44.372335260095554" maxx="-103.62287788915457" maxy="44.502218486214815"/>
+        <BoundingBox CRS="EPSG:26713" minx="589434.4971235897" miny="4913947.342298816" maxx="609518.2117427464" maxy="4928071.049965891"/>
+        <Style>
+          <Name>simple_streams</Name>
+          <Title>Default Styler for streams segments</Title>
+          <Abstract>Blue lines, 2px wide</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sf%3Astreams"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>line</Name>
+          <Title>Default Line</Title>
+          <Abstract>A sample style that draws a line</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sf%3Astreams&amp;style=line"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>topp:tasmania_cities</Name>
+        <Title>Tasmania cities</Title>
+        <Abstract>Cities in Tasmania (actually, just the capital)</Abstract>
+        <KeywordList>
+          <Keyword>cities</Keyword>
+          <Keyword>Tasmania</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>145.19754</westBoundLongitude>
+          <eastBoundLongitude>148.27298000000002</eastBoundLongitude>
+          <southBoundLatitude>-43.423512</southBoundLatitude>
+          <northBoundLatitude>-40.852802</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="145.19754" miny="-43.423512" maxx="148.27298000000002" maxy="-40.852802"/>
+        <BoundingBox CRS="EPSG:4326" minx="-43.423512" miny="145.19754" maxx="-40.852802" maxy="148.27298000000002"/>
+        <Style>
+          <Name>capitals</Name>
+          <Title>Capital cities</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=topp%3Atasmania_cities"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>topp:tasmania_roads</Name>
+        <Title>Tasmania roads</Title>
+        <Abstract>Main Tasmania roads</Abstract>
+        <KeywordList>
+          <Keyword>Roads</Keyword>
+          <Keyword>Tasmania</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>145.19754</westBoundLongitude>
+          <eastBoundLongitude>148.27298000000002</eastBoundLongitude>
+          <southBoundLatitude>-43.423512</southBoundLatitude>
+          <northBoundLatitude>-40.852802</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="145.19754" miny="-43.423512" maxx="148.27298000000002" maxy="-40.852802"/>
+        <BoundingBox CRS="EPSG:4326" minx="-43.423512" miny="145.19754" maxx="-40.852802" maxy="148.27298000000002"/>
+        <Style>
+          <Name>simple_roads</Name>
+          <Title>Default Styler for simple road segments</Title>
+          <Abstract>Light red line, 2px wide</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=topp%3Atasmania_roads"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>topp:tasmania_state_boundaries</Name>
+        <Title>Tasmania state boundaries</Title>
+        <Abstract>Tasmania state boundaries</Abstract>
+        <KeywordList>
+          <Keyword>boundaries</Keyword>
+          <Keyword>tasmania_state_boundaries</Keyword>
+          <Keyword>Tasmania</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>143.83482400000003</westBoundLongitude>
+          <eastBoundLongitude>148.47914100000003</eastBoundLongitude>
+          <southBoundLatitude>-43.648056</southBoundLatitude>
+          <northBoundLatitude>-39.573891</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="143.83482400000003" miny="-43.648056" maxx="148.47914100000003" maxy="-39.573891"/>
+        <BoundingBox CRS="EPSG:4326" minx="-43.648056" miny="143.83482400000003" maxx="-39.573891" maxy="148.47914100000003"/>
+        <Style>
+          <Name>green</Name>
+          <Title>Green polygon</Title>
+          <Abstract>Green fill with black outline</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=topp%3Atasmania_state_boundaries"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>topp:tasmania_water_bodies</Name>
+        <Title>Tasmania water bodies</Title>
+        <Abstract>Tasmania water bodies</Abstract>
+        <KeywordList>
+          <Keyword>Lakes</Keyword>
+          <Keyword>Bodies</Keyword>
+          <Keyword>Australia</Keyword>
+          <Keyword>Water</Keyword>
+          <Keyword>Tasmania</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>145.97161899999998</westBoundLongitude>
+          <eastBoundLongitude>147.219696</eastBoundLongitude>
+          <southBoundLatitude>-43.031944</southBoundLatitude>
+          <northBoundLatitude>-41.775558</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="145.97161899999998" miny="-43.031944" maxx="147.219696" maxy="-41.775558"/>
+        <BoundingBox CRS="EPSG:4326" minx="-43.031944" miny="145.97161899999998" maxx="-41.775558" maxy="147.219696"/>
+        <Style>
+          <Name>cite_lakes</Name>
+          <Title>Blue lake</Title>
+          <Abstract>A blue fill, solid black outline style</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=topp%3Atasmania_water_bodies"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>tiger:tiger_roads</Name>
+        <Title>Manhattan (NY) roads</Title>
+        <Abstract>Highly simplified road layout of Manhattan in New York..</Abstract>
+        <KeywordList>
+          <Keyword>DS_tiger_roads</Keyword>
+          <Keyword>tiger_roads</Keyword>
+          <Keyword>roads</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-74.02722</westBoundLongitude>
+          <eastBoundLongitude>-73.907005</eastBoundLongitude>
+          <southBoundLatitude>40.684221</southBoundLatitude>
+          <northBoundLatitude>40.878178</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-74.02722" miny="40.684221" maxx="-73.907005" maxy="40.878178"/>
+        <BoundingBox CRS="EPSG:4326" minx="40.684221" miny="-74.02722" maxx="40.878178" maxy="-73.907005"/>
+        <Style>
+          <Name>tiger_roads</Name>
+          <Title>tiger_roads</Title>
+          <LegendURL width="22" height="40">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=tiger%3Atiger_roads"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>line</Name>
+          <Title>Default Line</Title>
+          <Abstract>A sample style that draws a line</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=tiger%3Atiger_roads&amp;style=line"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>simple_roads</Name>
+          <Title>Default Styler for simple road segments</Title>
+          <Abstract>Light red line, 2px wide</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=tiger%3Atiger_roads&amp;style=simple_roads"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>City_Smart:water1_FTAA</Name>
+        <Title>water1_FTAA</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>water1</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-74.44033274451563</westBoundLongitude>
+          <eastBoundLongitude>-74.43755140405297</eastBoundLongitude>
+          <southBoundLatitude>41.45069692449353</southBoundLatitude>
+          <northBoundLatitude>41.45360571397422</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-74.44033274451563" miny="41.45069692449353" maxx="-74.43755140405297" maxy="41.45360571397422"/>
+        <BoundingBox CRS="EPSG:4326" minx="41.45069692449353" miny="-74.44033274451563" maxx="41.45360571397422" maxy="-74.43755140405297"/>
+        <Style>
+          <Name>Navy Blue</Name>
+          <Title>A violet line style</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3Awater1_FTAA"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>Navy Blue</Name>
+          <Title>A violet line style</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3Awater1_FTAA&amp;style=Navy%20Blue"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="1">
+        <Name>City_Smart:water1c_FTAA</Name>
+        <Title>water1c_FTAA</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>water1c</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-74.44043963269452</westBoundLongitude>
+          <eastBoundLongitude>-74.43750509483866</eastBoundLongitude>
+          <southBoundLatitude>41.4507698653736</southBoundLatitude>
+          <northBoundLatitude>41.45375473102406</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-74.44043963269452" miny="41.4507698653736" maxx="-74.43750509483866" maxy="41.45375473102406"/>
+        <BoundingBox CRS="EPSG:4326" minx="41.4507698653736" miny="-74.44043963269452" maxx="41.45375473102406" maxy="-74.43750509483866"/>
+        <Style>
+          <Name>Yellow Line</Name>
+          <Title>A yellow line style</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3Awater1c_FTAA"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>Yellow Line</Name>
+          <Title>A yellow line style</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3Awater1c_FTAA&amp;style=Yellow%20Line"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>City_Smart:water2_FTAA</Name>
+        <Title>water2_FTAA</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>water2</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-74.43971256296214</westBoundLongitude>
+          <eastBoundLongitude>-74.43673482333816</eastBoundLongitude>
+          <southBoundLatitude>41.45120615592469</southBoundLatitude>
+          <northBoundLatitude>41.45361557896639</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-74.43971256296214" miny="41.45120615592469" maxx="-74.43673482333816" maxy="41.45361557896639"/>
+        <BoundingBox CRS="EPSG:4326" minx="41.45120615592469" miny="-74.43971256296214" maxx="41.45361557896639" maxy="-74.43673482333816"/>
+        <Style>
+          <Name>Aqua Blue Line</Name>
+          <Title>A orange line style</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3Awater2_FTAA"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>Aqua Blue Line</Name>
+          <Title>A orange line style</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3Awater2_FTAA&amp;style=Aqua%20Blue%20Line"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>City_Smart:water2c_FTAA</Name>
+        <Title>water2c_FTAA</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>water2c</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-74.43955835667605</westBoundLongitude>
+          <eastBoundLongitude>-74.436716717976</eastBoundLongitude>
+          <southBoundLatitude>41.451192461861844</southBoundLatitude>
+          <northBoundLatitude>41.45376622728569</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-74.43955835667605" miny="41.451192461861844" maxx="-74.436716717976" maxy="41.45376622728569"/>
+        <BoundingBox CRS="EPSG:4326" minx="41.451192461861844" miny="-74.43955835667605" maxx="41.45376622728569" maxy="-74.436716717976"/>
+        <Style>
+          <Name>Neon Green</Name>
+          <Title>Default Line</Title>
+          <Abstract>A sample style that draws a line</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3Awater2c_FTAA"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>Neon Green</Name>
+          <Title>Default Line</Title>
+          <Abstract>A sample style that draws a line</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3Awater2c_FTAA&amp;style=Neon%20Green"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>City_Smart:water3_FTAA</Name>
+        <Title>water3_FTAA</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>water3</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-74.4394858874746</westBoundLongitude>
+          <eastBoundLongitude>-74.4367271265951</eastBoundLongitude>
+          <southBoundLatitude>41.4512729295978</southBoundLatitude>
+          <northBoundLatitude>41.45327890595641</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-74.4394858874746" miny="41.4512729295978" maxx="-74.4367271265951" maxy="41.45327890595641"/>
+        <BoundingBox CRS="EPSG:4326" minx="41.4512729295978" miny="-74.4394858874746" maxx="41.45327890595641" maxy="-74.4367271265951"/>
+        <Style>
+          <Name>Light Sea Green Line</Name>
+          <Title>A violet line style</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3Awater3_FTAA"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>Light Sea Green Line</Name>
+          <Title>A violet line style</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3Awater3_FTAA&amp;style=Light%20Sea%20Green%20Line"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>City_Smart:water3c_FTAA</Name>
+        <Title>water3c_FTAA</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>water3c</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-74.43947784473858</westBoundLongitude>
+          <eastBoundLongitude>-74.43671832793696</eastBoundLongitude>
+          <southBoundLatitude>41.451274495964846</southBoundLatitude>
+          <northBoundLatitude>41.45321625440281</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-74.43947784473858" miny="41.451274495964846" maxx="-74.43671832793696" maxy="41.45321625440281"/>
+        <BoundingBox CRS="EPSG:4326" minx="41.451274495964846" miny="-74.43947784473858" maxx="41.45321625440281" maxy="-74.43671832793696"/>
+        <Style>
+          <Name>Dark Orange Line</Name>
+          <Title>A azure line style</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3Awater3c_FTAA"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>Dark Orange Line</Name>
+          <Title>A azure line style</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3Awater3c_FTAA&amp;style=Dark%20Orange%20Line"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+    </Layer>
+  </Capability>
+</WMS_Capabilities>
