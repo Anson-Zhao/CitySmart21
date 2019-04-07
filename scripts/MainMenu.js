@@ -55,11 +55,11 @@ requirejs([
         globe.goTo(new WorldWind.Position(37.0902, -95.7129, 9000000));
 
         // Web Map Service information from NASA's Near Earth Observations WMS
-        var serviceAddress = "https://cors.aworldbridgelabs.com:9084/http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities";
-        // var serviceAddress = "../config/ows.xml";
+        // var serviceAddress = "https://cors.aworldbridgelabs.com:9084/http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities";
+        var serviceAddress = "../config/ows.xml";
 
         var preloadWMSLayerName = [];
-        var highlightedItems= [];
+        // var highlightedItems= [];
         var preloadLayer = []; //preload entire layer name
         var layers = globe.layers;
         var bob=[];
@@ -81,11 +81,11 @@ requirejs([
             // console.log(xmlDom);
             // Create a WmsCapabilities object from the XML DOM
             var wms = new WorldWind.WmsCapabilities(xmlDom);
-            // console.log(wms.getNamedLayer);
+            console.log(wms);
 
             // Retrieve a WmsLayerCapabilities object by the desired layer name
             for (var n = 0; n < preloadWMSLayerName.length; n++) {
-                console.log(preloadWMSLayerName[n]);
+                // console.log(preloadWMSLayerName[n]);
                 var wmsLayerCapability = wms.getNamedLayer(preloadWMSLayerName[n]);
                 console.log(wmsLayerCapability);
 
@@ -423,7 +423,9 @@ requirejs([
             //preload wmsLayer
             $(".wmsLayer").each(function (i) {
                 preloadLayer[i] = $(this).val();
+                console.log(preloadLayer[i])
             });
+            console.log(preloadLayer);
             var preloadLayerStr = preloadLayer + '';//change preloadLayer into a string
             preloadWMSLayerName = preloadLayerStr.split(",");//split preloadLayerStr with ","
 

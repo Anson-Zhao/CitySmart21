@@ -1745,7 +1745,7 @@ module.exports = function (app, passport) {
     //Country level
     app.get('/CountryList', function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*");
-        con_CS.query('SELECT CountryName FROM LayerMenu GROUP BY CountryName', function (err, results, fields) {
+        con_CS.query('SELECT CountryName FROM LayerMenu GROUP BY CountryName', function (err, results) {
             if (err) throw err;
             res.json(results);
         });

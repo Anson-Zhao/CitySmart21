@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><WMS_Capabilities version="1.3.0" updateSequence="156" xmlns="http://www.opengis.net/wms" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wms http://cs.aworldbridgelabs.com:8080/geoserver/schemas/wms/1.3.0/capabilities_1_3_0.xsd">
+<?xml version="1.0" encoding="UTF-8"?><WMS_Capabilities version="1.3.0" updateSequence="154" xmlns="http://www.opengis.net/wms" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wms http://aworldbridgelabs.com:8080/geoserver/schemas/wms/1.3.0/capabilities_1_3_0.xsd">
   <Service>
     <Name>WMS</Name>
     <Title>GeoServer Web Map Service</Title>
@@ -37,10 +37,10 @@
         <DCPType>
           <HTTP>
             <Get>
-              <OnlineResource xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?SERVICE=WMS&amp;"/>
+              <OnlineResource xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?SERVICE=WMS&amp;"/>
             </Get>
             <Post>
-              <OnlineResource xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?SERVICE=WMS&amp;"/>
+              <OnlineResource xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?SERVICE=WMS&amp;"/>
             </Post>
           </HTTP>
         </DCPType>
@@ -70,7 +70,7 @@
         <DCPType>
           <HTTP>
             <Get>
-              <OnlineResource xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?SERVICE=WMS&amp;"/>
+              <OnlineResource xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?SERVICE=WMS&amp;"/>
             </Get>
           </HTTP>
         </DCPType>
@@ -86,7 +86,7 @@
         <DCPType>
           <HTTP>
             <Get>
-              <OnlineResource xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?SERVICE=WMS&amp;"/>
+              <OnlineResource xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?SERVICE=WMS&amp;"/>
             </Get>
           </HTTP>
         </DCPType>
@@ -6034,7 +6034,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Title>A teal polygon style</Title>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AAirport_Substation"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AAirport_Substation"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -6062,7 +6062,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Title>Rain distribution</Title>
           <LegendURL width="22" height="121">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=nurc%3AArc_Sample"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=nurc%3AArc_Sample"/>
           </LegendURL>
         </Style>
         <Style>
@@ -6071,7 +6071,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=nurc%3AArc_Sample&amp;style=raster"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=nurc%3AArc_Sample&amp;style=raster"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -6099,7 +6099,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Abstract>A sample style that draws a line</Abstract>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3ABaseRoad_Layer"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3ABaseRoad_Layer"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -6126,7 +6126,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Title>A yellow line style</Title>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3ACircuit_Direction"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3ACircuit_Direction"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -6153,7 +6153,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Title>A dark orange line style</Title>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AFUSE_line_Kodiak"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AFUSE_line_Kodiak"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -6182,7 +6182,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=nurc%3AImg_Sample"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=nurc%3AImg_Sample"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -6209,7 +6209,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Title>A dark yellow line style</Title>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AKEAGridMap_Layer"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AKEAGridMap_Layer"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -6237,7 +6237,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Abstract>A sample style that draws a line</Abstract>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AKEAParcelMap_Layer"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AKEAParcelMap_Layer"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -6264,7 +6264,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Title>A teal polygon style</Title>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AK_Subs"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AK_Subs"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -6291,7 +6291,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Title>A dark yellow polygon style</Title>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AKodiak_Large_Transformers"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AKodiak_Large_Transformers"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -6318,7 +6318,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Title>A red line style</Title>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AKodiak_Poles_with_Guy_Cable_Support"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AKodiak_Poles_with_Guy_Cable_Support"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -6345,7 +6345,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Title>A violet line style</Title>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AKodiak_Road_System"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AKodiak_Road_System"/>
           </LegendURL>
         </Style>
         <Style>
@@ -6353,7 +6353,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Title>A azure line style</Title>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AKodiak_Road_System&amp;style=Dark%20Orange%20Line"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AKodiak_Road_System&amp;style=Dark%20Orange%20Line"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -6380,7 +6380,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Title>A dark orange polygon style</Title>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AKodiak_Small_Transformers"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AKodiak_Small_Transformers"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -6407,7 +6407,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Title>A teal polygon style</Title>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AKodiak_Substations"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AKodiak_Substations"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -6434,7 +6434,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Title>A orange line style</Title>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3ALine_WMS_Kodiak_Trident"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3ALine_WMS_Kodiak_Trident"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -6461,7 +6461,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Title>A dark orange polygon style</Title>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AM1"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AM1"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -6488,35 +6488,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Title>A dark yellow line style</Title>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AMANHOLE_line"/>
-          </LegendURL>
-        </Style>
-      </Layer>
-      <Layer queryable="1" opaque="0">
-        <Name>City_Smart:MANHOLE_polygon</Name>
-        <Title>MANHOLE_polygon</Title>
-        <Abstract/>
-        <KeywordList>
-          <Keyword>features</Keyword>
-          <Keyword>MANHOLE_polygon</Keyword>
-        </KeywordList>
-        <CRS>EPSG:4326</CRS>
-        <CRS>CRS:84</CRS>
-        <EX_GeographicBoundingBox>
-          <westBoundLongitude>-152.50866654991506</westBoundLongitude>
-          <eastBoundLongitude>-152.48409189822027</eastBoundLongitude>
-          <southBoundLatitude>57.73156135083627</southBoundLatitude>
-          <northBoundLatitude>57.74969430922357</northBoundLatitude>
-        </EX_GeographicBoundingBox>
-        <BoundingBox CRS="CRS:84" minx="-152.50866654991506" miny="57.73156135083627" maxx="-152.48409189822027" maxy="57.74969430922357"/>
-        <BoundingBox CRS="EPSG:4326" minx="57.73156135083627" miny="-152.50866654991506" maxx="57.74969430922357" maxy="-152.48409189822027"/>
-        <Style>
-          <Name>polygon</Name>
-          <Title>Default Polygon</Title>
-          <Abstract>A sample style that draws a polygon</Abstract>
-          <LegendURL width="20" height="20">
-            <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AMANHOLE_polygon"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AMANHOLE_line"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -6543,7 +6515,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Title>A orange line style</Title>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AOHC_1"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AOHC_1"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -6570,7 +6542,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Title>A orange line style</Title>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AOHC_2"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AOHC_2"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -6597,7 +6569,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Title>A orange line style</Title>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AOHC_3"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AOHC_3"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -6624,7 +6596,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Title>A orange line style</Title>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AOHC_M"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AOHC_M"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -6651,7 +6623,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Title>A dark orange polygon style</Title>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AOverhead_Transformers"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AOverhead_Transformers"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -6680,7 +6652,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=nurc%3APk50095"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=nurc%3APk50095"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -6707,7 +6679,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Title>A dark yellow polygon style</Title>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3APolygon_WMS_Kodiak_Trident"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3APolygon_WMS_Kodiak_Trident"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -6734,7 +6706,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Title>A yellow line style</Title>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AUGC_1"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AUGC_1"/>
           </LegendURL>
         </Style>
         <Style>
@@ -6742,7 +6714,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Title>A yellow line style</Title>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AUGC_1&amp;style=Yellow%20Line"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AUGC_1&amp;style=Yellow%20Line"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -6769,7 +6741,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Title>A yellow line style</Title>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AUGC_2"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AUGC_2"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -6796,7 +6768,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Title>A yellow line style</Title>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AUGC_3"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AUGC_3"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -6824,7 +6796,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Abstract>A sample style that draws a line</Abstract>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AUGTFP_polygon"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AUGTFP_polygon"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -6851,7 +6823,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Title>A orange line style</Title>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AWire_Transmission_Kodiak"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AWire_Transmission_Kodiak"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -6881,7 +6853,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Abstract>A sample style that draws a point</Abstract>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sf%3Aarchsites"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sf%3Aarchsites"/>
           </LegendURL>
         </Style>
         <Style>
@@ -6890,7 +6862,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Abstract>A sample of how to use an SVG based symbolizer</Abstract>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sf%3Aarchsites&amp;style=burg"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sf%3Aarchsites&amp;style=burg"/>
           </LegendURL>
         </Style>
         <Style>
@@ -6898,7 +6870,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Title>Capital cities</Title>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sf%3Aarchsites&amp;style=capitals"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sf%3Aarchsites&amp;style=capitals"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -6928,7 +6900,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Title>Capital cities</Title>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sf%3Abugsites"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sf%3Abugsites"/>
           </LegendURL>
         </Style>
         <Style>
@@ -6937,7 +6909,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Abstract>A sample of how to use an SVG based symbolizer</Abstract>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sf%3Abugsites&amp;style=burg"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sf%3Abugsites&amp;style=burg"/>
           </LegendURL>
         </Style>
         <Style>
@@ -6946,7 +6918,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Abstract>A sample style that draws a point</Abstract>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sf%3Abugsites&amp;style=point"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sf%3Abugsites&amp;style=point"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -6974,7 +6946,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Abstract>Light gray polygon fill without a border</Abstract>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=tiger%3Agiant_polygon"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=tiger%3Agiant_polygon"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -7003,7 +6975,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=nurc%3Amosaic"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=nurc%3Amosaic"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -7033,7 +7005,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Abstract>Manhattan points of interest</Abstract>
           <LegendURL width="22" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=tiger%3Apoi"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=tiger%3Apoi"/>
           </LegendURL>
         </Style>
         <Style>
@@ -7042,7 +7014,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Abstract>A sample of how to use an SVG based symbolizer</Abstract>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=tiger%3Apoi&amp;style=burg"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=tiger%3Apoi&amp;style=burg"/>
           </LegendURL>
         </Style>
         <Style>
@@ -7051,7 +7023,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Abstract>A sample style that draws a point</Abstract>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=tiger%3Apoi&amp;style=point"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=tiger%3Apoi&amp;style=point"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -7080,7 +7052,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Title>poly_landmarks</Title>
           <LegendURL width="22" height="60">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=tiger%3Apoly_landmarks"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=tiger%3Apoly_landmarks"/>
           </LegendURL>
         </Style>
         <Style>
@@ -7089,7 +7061,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Abstract>A style filling polygons with a grass theme coming from a PNG file</Abstract>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=tiger%3Apoly_landmarks&amp;style=grass"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=tiger%3Apoly_landmarks&amp;style=grass"/>
           </LegendURL>
         </Style>
         <Style>
@@ -7098,7 +7070,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Abstract>A sample style that just prints out a transparent red interior with a red outline</Abstract>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=tiger%3Apoly_landmarks&amp;style=restricted"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=tiger%3Apoly_landmarks&amp;style=restricted"/>
           </LegendURL>
         </Style>
         <Style>
@@ -7107,7 +7079,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Abstract>A sample style that draws a polygon</Abstract>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=tiger%3Apoly_landmarks&amp;style=polygon"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=tiger%3Apoly_landmarks&amp;style=polygon"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -7134,7 +7106,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Title>A red line style</Title>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3Apower"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3Apower"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -7161,7 +7133,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Title>A dark orange line style</Title>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3Apower2"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3Apower2"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -7191,7 +7163,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Abstract>A sample style that just prints out a transparent red interior with a red outline</Abstract>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sf%3Arestricted"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sf%3Arestricted"/>
           </LegendURL>
         </Style>
         <Style>
@@ -7200,7 +7172,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Abstract>A sample style that draws a polygon</Abstract>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sf%3Arestricted&amp;style=polygon"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sf%3Arestricted&amp;style=polygon"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -7229,7 +7201,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Abstract>Light red line, 2px wide</Abstract>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sf%3Aroads"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sf%3Aroads"/>
           </LegendURL>
         </Style>
         <Style>
@@ -7238,7 +7210,7 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <Abstract>A sample style that draws a line</Abstract>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sf%3Aroads&amp;style=line"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sf%3Aroads&amp;style=line"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -7269,7 +7241,7 @@ sfdem is a Tagged Image File Format with Geographic information</Abstract>
           <Abstract>Classic elevation color progression</Abstract>
           <LegendURL width="63" height="182">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sf%3Asfdem"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sf%3Asfdem"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -7301,7 +7273,7 @@ sfdem is a Tagged Image File Format with Geographic information</Abstract>
         categories of population, drawn in different colors</Abstract>
           <LegendURL width="84" height="80">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=topp%3Astates"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=topp%3Astates"/>
           </LegendURL>
         </Style>
         <Style>
@@ -7311,7 +7283,7 @@ sfdem is a Tagged Image File Format with Geographic information</Abstract>
         categories of population, drawn in different colors</Abstract>
           <LegendURL width="84" height="80">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=topp%3Astates&amp;style=pophatch"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=topp%3Astates&amp;style=pophatch"/>
           </LegendURL>
         </Style>
         <Style>
@@ -7320,7 +7292,7 @@ sfdem is a Tagged Image File Format with Geographic information</Abstract>
           <Abstract>A sample style that draws a polygon</Abstract>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=topp%3Astates&amp;style=polygon"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=topp%3Astates&amp;style=polygon"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -7349,7 +7321,7 @@ sfdem is a Tagged Image File Format with Geographic information</Abstract>
           <Abstract>Blue lines, 2px wide</Abstract>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sf%3Astreams"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sf%3Astreams"/>
           </LegendURL>
         </Style>
         <Style>
@@ -7358,7 +7330,7 @@ sfdem is a Tagged Image File Format with Geographic information</Abstract>
           <Abstract>A sample style that draws a line</Abstract>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sf%3Astreams&amp;style=line"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sf%3Astreams&amp;style=line"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -7385,7 +7357,7 @@ sfdem is a Tagged Image File Format with Geographic information</Abstract>
           <Title>Capital cities</Title>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=topp%3Atasmania_cities"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=topp%3Atasmania_cities"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -7413,7 +7385,7 @@ sfdem is a Tagged Image File Format with Geographic information</Abstract>
           <Abstract>Light red line, 2px wide</Abstract>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=topp%3Atasmania_roads"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=topp%3Atasmania_roads"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -7442,7 +7414,7 @@ sfdem is a Tagged Image File Format with Geographic information</Abstract>
           <Abstract>Green fill with black outline</Abstract>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=topp%3Atasmania_state_boundaries"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=topp%3Atasmania_state_boundaries"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -7473,7 +7445,7 @@ sfdem is a Tagged Image File Format with Geographic information</Abstract>
           <Abstract>A blue fill, solid black outline style</Abstract>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=topp%3Atasmania_water_bodies"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=topp%3Atasmania_water_bodies"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -7501,7 +7473,7 @@ sfdem is a Tagged Image File Format with Geographic information</Abstract>
           <Title>tiger_roads</Title>
           <LegendURL width="22" height="40">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=tiger%3Atiger_roads"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=tiger%3Atiger_roads"/>
           </LegendURL>
         </Style>
         <Style>
@@ -7510,7 +7482,7 @@ sfdem is a Tagged Image File Format with Geographic information</Abstract>
           <Abstract>A sample style that draws a line</Abstract>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=tiger%3Atiger_roads&amp;style=line"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=tiger%3Atiger_roads&amp;style=line"/>
           </LegendURL>
         </Style>
         <Style>
@@ -7519,7 +7491,7 @@ sfdem is a Tagged Image File Format with Geographic information</Abstract>
           <Abstract>Light red line, 2px wide</Abstract>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=tiger%3Atiger_roads&amp;style=simple_roads"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=tiger%3Atiger_roads&amp;style=simple_roads"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -7546,7 +7518,7 @@ sfdem is a Tagged Image File Format with Geographic information</Abstract>
           <Title>A violet line style</Title>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3Awater1_FTAA"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3Awater1_FTAA"/>
           </LegendURL>
         </Style>
         <Style>
@@ -7554,7 +7526,7 @@ sfdem is a Tagged Image File Format with Geographic information</Abstract>
           <Title>A violet line style</Title>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3Awater1_FTAA&amp;style=Navy%20Blue"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3Awater1_FTAA&amp;style=Navy%20Blue"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -7581,7 +7553,7 @@ sfdem is a Tagged Image File Format with Geographic information</Abstract>
           <Title>A yellow line style</Title>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3Awater1c_FTAA"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3Awater1c_FTAA"/>
           </LegendURL>
         </Style>
         <Style>
@@ -7589,7 +7561,7 @@ sfdem is a Tagged Image File Format with Geographic information</Abstract>
           <Title>A yellow line style</Title>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3Awater1c_FTAA&amp;style=Yellow%20Line"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3Awater1c_FTAA&amp;style=Yellow%20Line"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -7616,7 +7588,7 @@ sfdem is a Tagged Image File Format with Geographic information</Abstract>
           <Title>A orange line style</Title>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3Awater2_FTAA"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3Awater2_FTAA"/>
           </LegendURL>
         </Style>
         <Style>
@@ -7624,7 +7596,7 @@ sfdem is a Tagged Image File Format with Geographic information</Abstract>
           <Title>A orange line style</Title>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3Awater2_FTAA&amp;style=Aqua%20Blue%20Line"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3Awater2_FTAA&amp;style=Aqua%20Blue%20Line"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -7652,7 +7624,7 @@ sfdem is a Tagged Image File Format with Geographic information</Abstract>
           <Abstract>A sample style that draws a line</Abstract>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3Awater2c_FTAA"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3Awater2c_FTAA"/>
           </LegendURL>
         </Style>
         <Style>
@@ -7661,7 +7633,7 @@ sfdem is a Tagged Image File Format with Geographic information</Abstract>
           <Abstract>A sample style that draws a line</Abstract>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3Awater2c_FTAA&amp;style=Neon%20Green"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3Awater2c_FTAA&amp;style=Neon%20Green"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -7688,7 +7660,7 @@ sfdem is a Tagged Image File Format with Geographic information</Abstract>
           <Title>A violet line style</Title>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3Awater3_FTAA"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3Awater3_FTAA"/>
           </LegendURL>
         </Style>
         <Style>
@@ -7696,7 +7668,7 @@ sfdem is a Tagged Image File Format with Geographic information</Abstract>
           <Title>A violet line style</Title>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3Awater3_FTAA&amp;style=Light%20Sea%20Green%20Line"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3Awater3_FTAA&amp;style=Light%20Sea%20Green%20Line"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -7723,7 +7695,7 @@ sfdem is a Tagged Image File Format with Geographic information</Abstract>
           <Title>A azure line style</Title>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3Awater3c_FTAA"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3Awater3c_FTAA"/>
           </LegendURL>
         </Style>
         <Style>
@@ -7731,7 +7703,7 @@ sfdem is a Tagged Image File Format with Geographic information</Abstract>
           <Title>A azure line style</Title>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3Awater3c_FTAA&amp;style=Dark%20Orange%20Line"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3Awater3c_FTAA&amp;style=Dark%20Orange%20Line"/>
           </LegendURL>
         </Style>
       </Layer>
