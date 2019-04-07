@@ -14,7 +14,7 @@ const rimraf = require("rimraf");
 const mkdirp = require("mkdirp");
 const multiparty = require('multiparty');
 const path    = require('path');
-// var exec = require('child_process').exec, child;
+var exec = require('child_process').exec, child;
 
 const con_CS = mysql.createConnection(config.commondb_connection);
 
@@ -1075,7 +1075,7 @@ module.exports = function (app, passport) {
             },
             {
                 fieldVal: req.query.status,
-                dbCol: "Current_Status",
+                dbCol: "status",
                 op: " = '",
                 adj: req.query.status
             },
@@ -1343,7 +1343,7 @@ module.exports = function (app, passport) {
             }
         }
         let newImage = {
-            Layer_Uploader: Pending_Dir + "/" + responseDataUuid,
+            Layer_Uploader: Pending_Dir + "/",
             Layer_Uploader_name: responseDataUuid
         };
         name += ", Layer_Uploader, Layer_Uploader_name";
@@ -1538,7 +1538,7 @@ module.exports = function (app, passport) {
                                                 if (err) {
                                                     throw err;
                                                 } else {
-                                                    res.json(results);
+                                                    //res.json(results);
                                                 }
                                             })
                                         }
@@ -1660,27 +1660,30 @@ module.exports = function (app, passport) {
         let pictureStr = req.query.picturePath.split(',');
 
         for (var i = 0; i< pictureStr.length; i++) {
+
+            let statement = "UPDATE Request_Form SET Current_Status = 'Rejected', Comments = '" + comment + "' WHERE RID = '" + rejectID + "'";
+            let statement2 = "UPDATE LayerMenu SET Status = 'Rejected' WHERE ThirdLayer = '" + rejectID  + "';";
             fs.rename('' + Pending_Dir + '/' + pictureStr[i] + '', '' + Reject_Dir + '/' + pictureStr[i] + '', function (err) {
                 if (err) {
                     console.log(err);
                 } else {
+
                     console.log("Reject process is successful");
+                }
+            });
+            con_CS.query(statement + statement2,function (err,results) {
+                if(i ===pictureStr.length - 1){
+                    if (err) {
+                        console.log(err);
+                        res.json({"error": true, "message": "Reject Failed"});
+                    } else {
+                        res.json({"error": false, "message": "Reject successful, jump to UserHome"});
+                    }
                 }
             });
         }
 
-        let statement = "UPDATE Request_Form SET Current_Status = 'Rejected', Comments = '" + comment + "' WHERE RID = '" + rejectID + "'";
-        let statement2 = "UPDATE LayerMenu SET Status = 'Approved' WHERE ThirdLayer = '" + rejectID  + "';";
-        con_CS.query(statement + statement2,function (err,results) {
-            if(i ===pictureStr.length - 1){
-                if (err) {
-                    console.log(err);
-                    res.json({"error": true, "message": "Reject Failed"});
-                } else {
-                    res.json({"error": false, "message": "Reject successful, jump to UserHome"});
-                }
-            }
-        })
+
     });
 
     let olduuid;
@@ -2153,7 +2156,7 @@ function QueryStat(myObj, sqlStat, res) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
         //console.log("result=" + req.params.uuid);
         let uuid = req.params.uuid,
-            dirToDelete = Pending_Dir + uuid;
+            dirToDelete = Pending_Dir + '/' + uuid;
         rimraf(dirToDelete, function(error) {
             if (error) {
                 console.error("Problem deleting file! " + error);
@@ -2165,7 +2168,7 @@ function QueryStat(myObj, sqlStat, res) {
     //delete old photo
     function onDeleteFile2(req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
-        let dirToDelete = Pending_Dir + olduuid[0].Layer_Uploader_name;
+        let dirToDelete = Pending_Dir + '/' + olduuid[0].Layer_Uploader_name;
         rimraf(dirToDelete, function(error) {
             if (error) {
                 console.error("Problem deleting file! " + error);
@@ -2219,7 +2222,7 @@ function QueryStat(myObj, sqlStat, res) {
     }
 
     function moveUploadedFile(file, uuid, success, failure) {
-        let destinationDir = Pending_Dir,
+        let destinationDir = Pending_Dir + "/",
             fileDestination = destinationDir + uuid + "_" + file.name;
 
         moveFile(destinationDir, file.path, fileDestination, success, failure);
