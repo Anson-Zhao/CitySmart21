@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><WMS_Capabilities version="1.3.0" updateSequence="176" xmlns="http://www.opengis.net/wms" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wms http://cs.aworldbridgelabs.com:8080/geoserver/schemas/wms/1.3.0/capabilities_1_3_0.xsd">
+<?xml version="1.0" encoding="UTF-8"?><WMS_Capabilities version="1.3.0" updateSequence="162" xmlns="http://www.opengis.net/wms" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wms http://cs.aworldbridgelabs.com:8080/geoserver/schemas/wms/1.3.0/capabilities_1_3_0.xsd">
   <Service>
     <Name>WMS</Name>
     <Title>GeoServer Web Map Service</Title>
@@ -6131,35 +6131,6 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
         </Style>
       </Layer>
       <Layer queryable="1" opaque="0">
-        <Name>City_Smart:FTAA_Campus</Name>
-        <Title>FTAA_Campus</Title>
-        <Abstract>FTAA Campus</Abstract>
-        <KeywordList>
-          <Keyword>WCS</Keyword>
-          <Keyword>GeoTIFF</Keyword>
-          <Keyword>FTAA_Campus</Keyword>
-        </KeywordList>
-        <CRS>EPSG:32618</CRS>
-        <CRS>CRS:84</CRS>
-        <EX_GeographicBoundingBox>
-          <westBoundLongitude>-74.44129058718954</westBoundLongitude>
-          <eastBoundLongitude>-74.4341919107993</eastBoundLongitude>
-          <southBoundLatitude>41.448435982442064</southBoundLatitude>
-          <northBoundLatitude>41.454290649266234</northBoundLatitude>
-        </EX_GeographicBoundingBox>
-        <BoundingBox CRS="CRS:84" minx="-74.44129058718954" miny="41.448435982442064" maxx="-74.4341919107993" maxy="41.454290649266234"/>
-        <BoundingBox CRS="EPSG:32618" minx="546668.47368" miny="4588694.099890001" maxx="547257.22268" maxy="4589340.281160001"/>
-        <Style>
-          <Name>raster</Name>
-          <Title>Default Raster</Title>
-          <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
-          <LegendURL width="20" height="20">
-            <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AFTAA_Campus"/>
-          </LegendURL>
-        </Style>
-      </Layer>
-      <Layer queryable="1" opaque="0">
         <Name>City_Smart:FUSE_line_Kodiak</Name>
         <Title>FUSE_line_Kodiak</Title>
         <Abstract/>
@@ -6267,64 +6238,6 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AKEAParcelMap_Layer"/>
-          </LegendURL>
-        </Style>
-      </Layer>
-      <Layer queryable="1" opaque="0">
-        <Name>City_Smart:KEA_Mosaic</Name>
-        <Title>KEA_Mosaic</Title>
-        <Abstract/>
-        <KeywordList>
-          <Keyword>WCS</Keyword>
-          <Keyword>GeoTIFF</Keyword>
-          <Keyword>kea windfarm_transparent_mosaic_group1</Keyword>
-        </KeywordList>
-        <CRS>EPSG:32605</CRS>
-        <CRS>CRS:84</CRS>
-        <EX_GeographicBoundingBox>
-          <westBoundLongitude>-152.46517567875924</westBoundLongitude>
-          <eastBoundLongitude>-152.43492278322145</eastBoundLongitude>
-          <southBoundLatitude>57.779426821957095</southBoundLatitude>
-          <northBoundLatitude>57.790021931592136</northBoundLatitude>
-        </EX_GeographicBoundingBox>
-        <BoundingBox CRS="CRS:84" minx="-152.46517567875924" miny="57.779426821957095" maxx="-152.43492278322145" maxy="57.790021931592136"/>
-        <BoundingBox CRS="EPSG:32605" minx="531806.8864600001" miny="6404293.612850001" maxx="533596.4518100001" maxy="6405458.680310001"/>
-        <Style>
-          <Name>raster</Name>
-          <Title>Default Raster</Title>
-          <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
-          <LegendURL width="20" height="20">
-            <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AKEA_Mosaic"/>
-          </LegendURL>
-        </Style>
-      </Layer>
-      <Layer queryable="1" opaque="0">
-        <Name>USGS:KEA_windturbine</Name>
-        <Title>KEA_windturbine</Title>
-        <Abstract/>
-        <KeywordList>
-          <Keyword>WCS</Keyword>
-          <Keyword>GeoTIFF</Keyword>
-          <Keyword>kea_windfarm_transparent_mosaic_group1</Keyword>
-        </KeywordList>
-        <CRS>EPSG:32605</CRS>
-        <CRS>CRS:84</CRS>
-        <EX_GeographicBoundingBox>
-          <westBoundLongitude>-152.46517567875924</westBoundLongitude>
-          <eastBoundLongitude>-152.43492278322145</eastBoundLongitude>
-          <southBoundLatitude>57.779426821957095</southBoundLatitude>
-          <northBoundLatitude>57.790021931592136</northBoundLatitude>
-        </EX_GeographicBoundingBox>
-        <BoundingBox CRS="CRS:84" minx="-152.46517567875924" miny="57.779426821957095" maxx="-152.43492278322145" maxy="57.790021931592136"/>
-        <BoundingBox CRS="EPSG:32605" minx="531806.8864600001" miny="6404293.612850001" maxx="533596.4518100001" maxy="6405458.680310001"/>
-        <Style>
-          <Name>raster</Name>
-          <Title>Default Raster</Title>
-          <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
-          <LegendURL width="20" height="20">
-            <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=USGS%3AKEA_windturbine"/>
           </LegendURL>
         </Style>
       </Layer>
