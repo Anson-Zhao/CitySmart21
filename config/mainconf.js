@@ -38,11 +38,11 @@ var configGlobal = {
     'Reject_Dir': 'rejectfolder',
 
     //approve file--active
-    // 'Approve_Dir': '/usr/share/geoserver-2.15.0/data_dir/data/Approved'
-    'Approve_Dir':'approvedfolder',
+    // 'Approve_Dir': '/usr/share/geoserver-2.15.0/data_dir/data/Approved',
+    'Approve_Dir': 'approvedfolder',
 
     //trashfolder file--trashfolder
-    'Delete_Dir':'trashfolder',
+    'Delete_Dir': 'trashfolder',
 
     'num_backups': 4,
     'download_interval': 1800000,
