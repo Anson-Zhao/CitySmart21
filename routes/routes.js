@@ -1658,27 +1658,30 @@ module.exports = function (app, passport) {
         let pictureStr = req.query.picturePath.split(',');
 
         for (var i = 0; i< pictureStr.length; i++) {
+
+            let statement = "UPDATE Request_Form SET Current_Status = 'Rejected', Comments = '" + comment + "' WHERE RID = '" + rejectID + "'";
+            let statement2 = "UPDATE LayerMenu SET Status = 'Rejected' WHERE ThirdLayer = '" + rejectID  + "';";
             fs.rename('' + Pending_Dir + '/' + pictureStr[i] + '', '' + Reject_Dir + '/' + pictureStr[i] + '', function (err) {
                 if (err) {
                     console.log(err);
                 } else {
+
                     console.log("Reject process is successful");
+                }
+            });
+            con_CS.query(statement + statement2,function (err,results) {
+                if(i ===pictureStr.length - 1){
+                    if (err) {
+                        console.log(err);
+                        res.json({"error": true, "message": "Reject Failed"});
+                    } else {
+                        res.json({"error": false, "message": "Reject successful, jump to UserHome"});
+                    }
                 }
             });
         }
 
-        let statement = "UPDATE Request_Form SET Current_Status = 'Rejected', Comments = '" + comment + "' WHERE RID = '" + rejectID + "'";
-        let statement2 = "UPDATE LayerMenu SET Status = 'Approved' WHERE ThirdLayer = '" + rejectID  + "';";
-        con_CS.query(statement + statement2,function (err,results) {
-            if(i ===pictureStr.length - 1){
-                if (err) {
-                    console.log(err);
-                    res.json({"error": true, "message": "Reject Failed"});
-                } else {
-                    res.json({"error": false, "message": "Reject successful, jump to UserHome"});
-                }
-            }
-        })
+
     });
 
     let olduuid;
