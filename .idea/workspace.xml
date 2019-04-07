@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4704f94f-8e06-4422-a8b4-19d911764f68" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_4_7_17_21_56.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config/geoCapacity/2019_4_7_17_25_56.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/LayerRequestForm_edit.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/LayerRequestForm_edit.ejs" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -271,7 +272,7 @@
       <workItem from="1554495111303" duration="5000" />
       <workItem from="1554495123402" duration="5176000" />
       <workItem from="1554585935570" duration="10665000" />
-      <workItem from="1554663441494" duration="7916000" />
+      <workItem from="1554663441494" duration="8439000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1553714451260</created>
@@ -539,33 +540,54 @@
       <option name="project" value="LOCAL" />
       <updated>1554672357310</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Fixed xml download issue.">
+      <created>1554672675653</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1554672675653</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Fixed xml download issue.">
+      <created>1554672698099</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1554672698099</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart21&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;config/geoCapacity/2019_4_7_17_23_56.xml&#10;#&#9;config/geoCapacity/2019_4_7_17_24_56.xml&#10;#&#9;config/geoCapacity/2019_4_7_17_25_56.xml">
+      <created>1554672863796</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1554672863796</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71939000" />
+    <option name="totallyTimeSpent" value="72462000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="109" y="23" width="2119" height="1237" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49933776" visible="true" weight="0.19448476" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49933776" visible="true" weight="0.19448476" />
       <window_info id="Structure" order="1" sideWeight="0.50066227" side_tool="true" weight="0.19517314" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="File Transfer" sideWeight="0.8021287" weight="0.3294849" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49685204" weight="0.3294849" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.48959845" visible="true" weight="0.3285968" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.48959845" weight="0.3285968" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49790135" weight="0.3294849" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49733913" visible="true" weight="0.3294849" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49685204" weight="0.3285968" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.51040155" side_tool="true" visible="true" weight="0.3285968" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5026609" side_tool="true" visible="true" weight="0.3294849" />
       <window_info anchor="bottom" id="Database Console" order="12" sideWeight="0.49952742" weight="0.3294849" />
-      <window_info anchor="right" id="Remote Host" visible="true" weight="0.30382195" />
+      <window_info active="true" anchor="right" id="Remote Host" visible="true" weight="0.30382195" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -628,7 +650,8 @@
     <MESSAGE value="Merge branch 'Yiyang' of https://github.com/Anson-Zhao/CitySmart21&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;config/mainconf.js&#10;#&#9;config/ows.xml&#10;#&#9;routes/routes.js&#10;#&#9;scripts/MainMenu.js&#10;#&#9;uploadfolder/2019-04-05T23:22:53Z_NAA_Campus.tif" />
     <MESSAGE value="Fixed CORS issue." />
     <MESSAGE value="Fixed xml download issue." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed xml download issue." />
+    <MESSAGE value="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart21&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;config/geoCapacity/2019_4_7_17_23_56.xml&#10;#&#9;config/geoCapacity/2019_4_7_17_24_56.xml&#10;#&#9;config/geoCapacity/2019_4_7_17_25_56.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart21&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;config/geoCapacity/2019_4_7_17_23_56.xml&#10;#&#9;config/geoCapacity/2019_4_7_17_24_56.xml&#10;#&#9;config/geoCapacity/2019_4_7_17_25_56.xml" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/examples/WorldWindShim.js" />
