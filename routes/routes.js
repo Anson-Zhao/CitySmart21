@@ -29,9 +29,9 @@ const num_backups = config.num_backups;
 const download_interval = config.download_interval;
 
 const Approve_Dir = config.Approve_Dir; //approve folder
-const Pending_Dir = config.Pending_Dir;
-const Reject_Dir = config.Reject_Dir;
-const Delete_Dir = config.Delete_Dir; //trash folder
+const Pending_Dir = path.resolve(__dirname, "../" + config.Pending_Dir);
+const Reject_Dir = path.resolve(__dirname, "../" + config.Reject_Dir);
+const Delete_Dir = path.resolve(__dirname, "../" + config.Delete_Dir);
 
 const fileInputName = process.env.FILE_INPUT_NAME || "qqfile";
 const maxFileSize = process.env.MAX_FILE_SIZE || 0; // in bytes, 0 for unlimited
