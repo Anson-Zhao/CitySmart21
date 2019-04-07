@@ -20,7 +20,9 @@ const con_CS = mysql.createConnection(config.commondb_connection);
 
 const geoServer = config.geoServer;
 const WMS_URL = config.WMS_URL;
+
 const downloadPath = config.Download_Path;
+const sourceFiles = path.resolve(__dirname, "../" + downloadPath, 'ows.xml'); //the path of the source file
 const num_backups = config.num_backups;
 const download_interval = config.download_interval;
 
@@ -2408,14 +2410,13 @@ function QueryStat(myObj, sqlStat, res) {
 
 
     function copyXML(){
-        const downloadDir = path.resolve(__dirname, downloadPath, 'ows.xml'); //the path of the source file
         const today = new Date();//get the current date
         let date = today.getFullYear()+ '_' +(today.getMonth()+1)+ '_' + today.getDate();
         let time = today.getHours() + "_" + today.getMinutes()+'_' + today.getSeconds();
         let dataStr = date + "_"+ time;
         let downloadDis = downloadPath + '/geoCapacity/' + dataStr+ '.xml'; //define a file name
 
-        fsextra.copy(downloadDir, downloadDis) //copy the file and rename
+        fsextra.copy(sourceFiles, downloadDis) //copy the file and rename
             .then(//if copy succeed, call pre-download XML function
                 console.log('copy successful'),
                 predownloadXml ()
@@ -2423,12 +2424,9 @@ function QueryStat(myObj, sqlStat, res) {
     }
 
     function predownloadXml () {
-        const downloadDir = path.resolve(__dirname, downloadPath, 'ows.xml'); // the path of the destination
-        const timeout = 500000;
         const requestOptions = {
             uri: WMS_URL,
-            // timeout: download_interval
-            timeout:timeout
+            timeout: download_interval - 20000
         };
         let resXMLRequest;
         console.log('predownloadXML was called');
@@ -2444,7 +2442,7 @@ function QueryStat(myObj, sqlStat, res) {
                 console.log('predownloadXML res');
                 resXMLRequest = res;
                 if (res.statusCode === 200){
-                    res.pipe(fs.createWriteStream(downloadDir))
+                    res.pipe(fs.createWriteStream(sourceFiles))
                 } else {
                     console.log("Respose with Error Code: " + res.statusCode);
                     removeFile();
@@ -2462,22 +2460,22 @@ function QueryStat(myObj, sqlStat, res) {
     function removeFile() {
         console.log('the remove function was called');
 
-        const dir = 'config/geoCapacity'; //the dir of the file that I am going to remove.
-
+        // const dir = 'config/geoCapacity'; //the dir of the file that I am going to remove.
+        const dir = downloadPath + '/geoCapacity/';
         fs.readdir(dir, (err, files) => {//a method to calculate the number of the files in the geoCapacity folder
 
             if(files.length > num_backups){
-                console.log('readdir');
+
                 //if there are more than 100 file in the directory
                 if(!downloadFalse){ //if download succeed, run the code below
-                    fs.unlink('config/geoCapacity/'+ files[0], (err) => { //delete the first (the oldest) file in the directory
+                    fs.unlink(dir + files[0], (err) => { //delete the first (the oldest) file in the directory
                         if (err) {throw err} else {
                             downloadFalse = true; //change the value of "downloadFalse" to true
                         }
                         console.log('download and remove copy successfully');
                     })
                 } else { //if download failed, run the code below
-                    fs.unlink('config/geoCapacity/'+ files[files.length-1], (err) => { //then delete the last (the latest) file in the directory
+                    fs.unlink(dir + files[files.length-1], (err) => { //then delete the last (the latest) file in the directory
                         if (err) {throw err}
                         console.log('download file failed, removed copy successfully')
                     })
@@ -2486,10 +2484,8 @@ function QueryStat(myObj, sqlStat, res) {
                 //if the file number is less than num_backups, and download failed
                 if (files.length > 0) {
                     if (downloadFalse === null) {
-                        fs.unlink('config/geoCapacity/' + files[files.length - 1], (err) => { //then delete the last (the latest) file in the directory
-                            if (err) {
-                                throw err
-                            }
+                        fs.unlink(dir + files[files.length - 1], (err) => { //then delete the last (the latest) file in the directory
+                            if (err) throw err;
                             console.log('download file failed,number is less than num_backups, removed copy successfully')
                         })
                     }
@@ -2497,6 +2493,4 @@ function QueryStat(myObj, sqlStat, res) {
             }
         });
     }
-
-
 };

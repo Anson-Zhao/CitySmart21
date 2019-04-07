@@ -27,7 +27,6 @@ requirejs([
     ) {
         "use strict";
         // Load Globe
-        // console.log(WorldWind);
         var globe = new WorldWind.WorldWindow("canvasOne");
 
         var layers = [
@@ -78,28 +77,23 @@ requirejs([
 
         function createWMSLayer (xmlDom) {
 
-            // console.log(xmlDom);
             // Create a WmsCapabilities object from the XML DOM
             var wms = new WorldWind.WmsCapabilities(xmlDom);
-            console.log(wms);
 
             // Retrieve a WmsLayerCapabilities object by the desired layer name
             for (var n = 0; n < preloadWMSLayerName.length; n++) {
-                // console.log(preloadWMSLayerName[n]);
+
                 var wmsLayerCapability = wms.getNamedLayer(preloadWMSLayerName[n]);
-                console.log(wmsLayerCapability);
 
                 // Form a configuration object from the wmsLayerCapability object
                 var wmsConfig = WorldWind.WmsLayer.formLayerConfiguration(wmsLayerCapability);
 
                 // Modify the configuration objects title property to a more user friendly title
                 wmsConfig.title = preloadWMSLayerName[n];
-                // console.log (wmsConfig.title);
 
                 // Create the WMS Layer from the configuration object
                 var wmsLayer = new WorldWind.WmsLayer(wmsConfig);
 
-                // console.log(wmsLayer);
                 // Add the layers to WorldWind and update the layer manager
                 globe.addLayer(wmsLayer);
                 layerManager.synchronizeLayerList();
@@ -112,17 +106,12 @@ requirejs([
         }
 
         function Placemark_Creation (RGB,PKValue, coLat, coLong, LayerName) {
-            // console.log(coLong);
-
             var placemark;
             var highlightAttributes;
             var placemarkLayer = new WorldWind.RenderableLayer(LayerName);
             var placemarkAttributes = new WorldWind.PlacemarkAttributes(null);
-            // console.log(latandlong[0]);
-
 
             // Create the custom image for the placemark.
-
             var canvas = document.createElement("canvas"),
                 ctx2d = canvas.getContext("2d"),
                 size = 60, c = size / 2, innerRadius = 12, outerRadius = 20;
@@ -130,7 +119,6 @@ requirejs([
             canvas.width = size;
             canvas.height = size;
             //This is the color of the placeholder and appearance (Most likely)
-            //             console.log(RGB);
 
             var gradient = ctx2d.createRadialGradient(c, c, innerRadius, c, c, outerRadius);
             gradient.addColorStop(0, RGB[0]);
@@ -142,17 +130,12 @@ requirejs([
             ctx2d.arc(c, c, outerRadius, 0, 2 * Math.PI, false);
             ctx2d.fill();
 
-            // var ImageLibrary = WorldWind.configuration.baseUrl + "home/Pics/" ;// location of the image files
-            // console.log(ImageLibrary);
-
-
             // Set up the common placemark attributes.
             placemarkAttributes.imageScale = 0.75; //placemark size!
             placemarkAttributes.imageOffset = new WorldWind.Offset(
                 WorldWind.OFFSET_FRACTION, 0.5,
                 WorldWind.OFFSET_FRACTION, 0.5);
             placemarkAttributes.imageColor = WorldWind.Color.WHITE;
-
 
             placemark = new WorldWind.Placemark(new WorldWind.Position(coLat, coLong, 1e2), true, null);
             // console.log(PKValue);
@@ -174,8 +157,6 @@ requirejs([
             highlightAttributes.imageScale = 1.2;
             placemark.highlightAttributes = highlightAttributes;
             placemark.primarykeyAttributes = PKValue;
-
-            // console.log(placemark);
 
             // Add the placemark to the layer.
             placemarkLayer.addRenderable(placemark);
@@ -231,9 +212,6 @@ requirejs([
         //     }
         // }
 
-            // http://cs.aworldbridgelabs.com:8080/geoserver/City_Smart/wms?service=WMS&version=1.1.0&request=GetMap&layers=City_Smart:KEAParcelMap_Layer&bbox=-154.82015128037102%2C56.165278407107536%2C-144.29104078833544%2C61.88058272783616&width=768&height=416&srs=EPSG%3A4326&format=application/openlayers
-            // http://cs.aworldbridgelabs.com:8081/geoserver/City_Smart/wms?service=WMS&version=1.1.0&request=GetMap&layers=City_Smart:KEAParcelMap_Layer&bbox=-154.82015128037102,56.165278407107536,-144.29104078833544,61.88058272783616&width=768&height=416&srs=EPSG:4326&format=application/openlayers
-
         function handleMouseCLK (a)   {
             var x = a.clientX,
                 y = a.clientY;
@@ -244,22 +222,14 @@ requirejs([
                 var pickedPM = pickListCLK.objects[m].userObject;
                 if (pickedPM instanceof WorldWind.Placemark) {
 
-                    // sitePopUp(pickedPM.label);
-                    // alert(pickedPM.label);
-                    // sitePopUp(pickListCLK.objects[m].position.latitude, pickListCLK.objects[m].position.longitude);
-                    // sitePopUp(pickListCLK.objects[m].position.longitude);
-                    console.log(pickListCLK.objects[m].userObject.primarykeyAttributes);
                     sitePopUp(pickListCLK.objects[m].userObject.primarykeyAttributes);
-                    // console.log(pickedPM);
 
                     $(document).ready(function () {
 
                         var modal = document.getElementById('popupBox');
                         var span = document.getElementById('closeIt');
-                        console.log(modal);
+
                         modal.style.display = "block";
-
-
 
                         span.onclick = function () {
                             modal.style.display = "none";
@@ -267,7 +237,6 @@ requirejs([
                             window.onclick = function (event) {
                                 if (event.target === modal) {
                                     modal.style.display = "none";
-
                                 }
                             }
                         }
@@ -310,9 +279,7 @@ requirejs([
                 data: layerRequest, //send the most current value of the selected switch to server-side
                 async: false,
                 success: function (results) {
-                    console.log(results);
-                    LayerSelected = results[0];//the first object of an array --- Longitude: " ", Latitude: "", Altitude: "", ThirdLayer: "", LayerName: ""
-                    console.log(LayerSelected);
+                    LayerSelected = results[0];//the first object of an array --- Longitude: " ", Latitude: "", Altitude: "", ThirdLayer: "", LayerName: ""console.log(LayerSelected);
                     // console.log(LayerSelected);
                     Altitude = LayerSelected.Altitude * 1000;
                     globe.goTo(new WorldWind.Position(LayerSelected.Latitude, LayerSelected.Longitude, Altitude));
@@ -324,18 +291,16 @@ requirejs([
             if (alertVal){
                 confirm("Some layers may take awhile to load. Please be patient.")
             }
-            console.log(allCheckedArray.length);
+
             if (allCheckedArray.length > checkedCount){ //if there is new array was inserted into the allCheckedArray ( If user choose more than 1 switch)
                 checked.push(layer1); //insert current value to "checked" array
                 checkedCount = allCheckedArray.length; //checkedCount now equals to the numbers of arrays that were inserted to allCheckedArray
                 alertVal = false; //alert (only appear at the first time)
                 currentSelectedLayer.prop('value', LayerSelected.ThirdLayer); //if there are new array was inserted into the allCheckedArray,the value of the opened layer button equals to the name of the switch that user selected
-                console.log(currentSelectedLayer);
                 arrMenu.push(LayerSelected.ThirdLayer);
-                console.log(LayerSelected);
+
                 //insert current ThirdLayer value to arrMenu
                 j = arrMenu.length - 1; //count
-                console.log(arrMenu.length);
                 if(arrMenu.length === 1){ //if the length of arrMenu is equal to 1 /if user only checks one switch.
                     nextL.prop('disabled',true);
                     previousL.prop('disabled',true);
@@ -358,9 +323,6 @@ requirejs([
                 alertVal = false;
                 currentSelectedLayer.prop('value',arrMenu[arrMenu.length - 1]);
                 // currentSelectedLayer.prop('value',arrMenu[j]);
-                console.log(arrMenu[arrMenu.length - 1]);
-                console.log(arrMenu.length - 1);
-                console.log('hh');
                 // currentSelectedLayer.value = arrMenu[arrMenu.length - 1];
                 j = arrMenu.length - 1;
                 if(arrMenu.length === 1){
@@ -391,27 +353,19 @@ requirejs([
                 dataType: 'json',
                 success: function(result) {
                     if (!result.err) {
-                        console.log(result.data);
                         infobox = result.data;
                         for (var k = 0; k < infobox.length; k++) {
-                            // alert (data[0].Color);
 
                             var colorAttribute = infobox[k].Color;
-
                             var cAtwo = colorAttribute.split(" ");
-
                             var coLat = infobox[k].Latitude;
-
                             var coLong = infobox[k].Longitude;
-
                             var PK = infobox[k].PK;
-
                             var LayerName = infobox[k].LayerName;
 
                             Placemark_Creation(cAtwo, PK, coLat, coLong, LayerName);
                         }
                     }
-
                 }
             });
 
@@ -423,14 +377,12 @@ requirejs([
             //preload wmsLayer
             $(".wmsLayer").each(function (i) {
                 preloadLayer[i] = $(this).val();
-                console.log(preloadLayer[i])
             });
-            console.log(preloadLayer);
+
             var preloadLayerStr = preloadLayer + '';//change preloadLayer into a string
             preloadWMSLayerName = preloadLayerStr.split(",");//split preloadLayerStr with ","
 
             $.get(serviceAddress).done(createWMSLayer).fail(logError);// get the xml file of wmslayer and pass the file into  createLayer function.
-
 
             // $('.placemarkLayer').click(function(){
             //
@@ -480,7 +432,6 @@ requirejs([
             $(".wmsLayer,.placemarkLayer").click(function () {
                 var layer1 = $(this).val(); //the most current value of the selected switch
                 allCheckedArray = $(':checkbox:checked');
-                console.log(allCheckedArray);
 
                 var layerRequest = 'layername=' + layer1;
                 globlePosition(layerRequest);
@@ -523,7 +474,7 @@ requirejs([
                     j = j - 1;
                     // nextL.prop('disabled',false);
                     currentSelectedLayer.prop('value',arrMenu[j]); //value of currentSelectedLayer changes to the previous one
-                    console.log(j);
+
                     if (j === 0){
                         previousL.prop('disabled',true);// if there is no previous layer ,then the button would be disabled
                     }
@@ -539,9 +490,6 @@ requirejs([
                     previousL.prop('disabled',false);
                     currentSelectedLayer.prop('value',arrMenu[j]);
                 }
-                // else{
-                //     nextL.disabled = true; //?
-                // }
             });
 
             //if the opened layer was clicked, the layer shows
@@ -558,9 +506,8 @@ requirejs([
                     async: false,
                     success: function (results) {
                         var FirstLayerId = '#' + results[0].FirstLayer;
-                        // console.log(FirstLayerId);
                         var SecondLayerId = '#' + results[0].FirstLayer + '-' + results[0].SecondLayer;
-                        // console.log(SecondLayerId);
+
                         globe.goTo(new WorldWind.Position(results[0].Latitude, results[0].Longitude, results[0].Altitude * 1000));
 
                         $(FirstLayerId).collapse('show');

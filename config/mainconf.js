@@ -31,7 +31,7 @@ var configGlobal = {
     'WMS_URL' : 'https://cors.aworldbridgelabs.com:9084/http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities',
 
     // 'Upload_Path': 'http://usgs.aworldbridgelabs.com/uploadfiles' https://cors.aworldbridgelabs.com:9084/https://emxsys.net/worldwind26,
-    'Download_Path':'../config',
+    'Download_Path':'config',
 
     //upload file--pending
     // 'Pending_Dir': '/var/www/usgs/uploadfolder',
@@ -46,7 +46,7 @@ var configGlobal = {
     'Delete_Dir':'trashfolder',
 
     'num_backups': 4,
-    'download_interval': 600000,
+    'download_interval': 1800000,
 
     // uswtdb eye distance for placemark layer menu display (km)
     'eyeDistance_PL': 1500,

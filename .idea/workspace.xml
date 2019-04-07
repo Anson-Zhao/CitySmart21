@@ -2,21 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4704f94f-8e06-4422-a8b4-19d911764f68" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/bak/ows.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/geoCapacity/2019_4_7_15_32_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/geoCapacity/2019_4_7_15_33_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/geoCapacity/2019_4_7_15_34_6.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/mainconf.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/mainconf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/ows.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config/ows.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/routes2.js" beforeDir="false" afterPath="$PROJECT_DIR$/bak/routes2.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/MainMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/MainMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/WorldWind.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/WorldWind.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ogc/gml/GmlRectifiedGrid.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ogc/gml/GmlRectifiedGrid.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ogc/ows/OwsOperationsMetadata.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ogc/ows/OwsOperationsMetadata.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ogc/ows/OwsServiceProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ogc/ows/OwsServiceProvider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ogc/wcs/WcsCapabilities.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ogc/wcs/WcsCapabilities.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ogc/wms/WmsCapabilities.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ogc/wms/WmsCapabilities.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ogc/wms/WmsLayerCapabilities.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ogc/wms/WmsLayerCapabilities.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ogc/wmts/WmtsCapabilities.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ogc/wmts/WmtsCapabilities.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ogc/wmts/WmtsLayerCapabilities.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ogc/wmts/WmtsLayerCapabilities.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -59,20 +52,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="1748" column="31" lean-forward="true" selection-start-line="1748" selection-start-column="31" selection-end-line="1748" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/ows.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="39" column="76" selection-start-line="39" selection-start-column="69" selection-end-line="39" selection-end-column="76" />
+            <state relative-caret-position="176">
+              <caret line="2428" column="46" lean-forward="true" selection-start-line="2428" selection-start-column="46" selection-end-line="2428" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -89,29 +73,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/mainconf.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
-              <caret line="30" column="56" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="56" />
+            <state relative-caret-position="380">
+              <caret line="47" column="21" lean-forward="true" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/MainMenu.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="82" column="60" lean-forward="true" selection-start-line="82" selection-start-column="60" selection-end-line="82" selection-end-column="60" />
+            <state relative-caret-position="69">
+              <caret line="96" column="10" selection-start-line="96" selection-start-column="10" selection-end-line="96" selection-end-column="10" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <element signature="e#4339#4473#0" />
-                <element signature="e#4551#7832#0" />
-                <element signature="e#10125#11849#0" />
-                <element signature="e#11888#13403#0" />
+                <element signature="e#7932#7960#0" />
                 <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
-                <element signature="e#13451#14267#0" />
-                <element signature="e#14324#17922#0" />
-                <element signature="e#18041#18961#0" />
-                <element signature="e#23907#24407#0" />
-                <element signature="e#24529#25616#0" />
+                <element signature="e#20632#20673#0" />
               </folding>
             </state>
           </provider>
@@ -120,7 +97,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/homepage.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
+            <state relative-caret-position="57">
               <caret line="3" column="67" selection-start-line="3" selection-start-column="67" selection-end-line="3" selection-end-column="67" />
             </state>
           </provider>
@@ -129,7 +106,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ogc/wms/WmsLayerCapabilities.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
+            <state relative-caret-position="14288">
               <caret line="752" column="102" selection-start-line="752" selection-start-column="90" selection-end-line="752" selection-end-column="102" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
@@ -150,15 +127,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>onSimpleUpload</find>
-      <find>onUpload</find>
-      <find>uploadfolder</find>
-      <find>reject_</find>
-      <find>geoData_Dir</find>
-      <find>download_interval</find>
-      <find>copyXML</find>
-      <find>USGS</find>
-      <find>cs.aworldbridge</find>
       <find>WMS_URL</find>
       <find>.done</find>
       <find>serviceAddress</find>
@@ -168,18 +136,27 @@
       <find>createWMSLayer</find>
       <find>K_Subs</find>
       <find>Sea_World</find>
-      <find>KEA</find>
       <find>cs.aworldb</find>
       <find>cs.aworldbridgelabs.com:8080</find>
       <find>http://cs.aworldbridgelabs.com:8080</find>
       <find>getNamedLayer</find>
       <find>assembleDocument</find>
       <find>assembleCapability</find>
-      <find>aworldb</find>
       <find>geoServer</find>
-      <find>preloadWMSLayerName</find>
       <find>getAttribute</find>
       <find>xlink:href</find>
+      <find>preloadWMSLayerName</find>
+      <find>aworldb</find>
+      <find>copyXML</find>
+      <find>sourceFile</find>
+      <find>fsextra</find>
+      <find>resXMLRequest</find>
+      <find>geoCapacity</find>
+      <find>num_backups</find>
+      <find>downloadPath</find>
+      <find>KEA</find>
+      <find>console.log</find>
+      <find>sourceFiles</find>
     </findStrings>
     <replaceStrings>
       <replace>src</replace>
@@ -194,11 +171,13 @@
       <replace>https://cors.aworldbridgelabs.com:9084/https://emxsys.net/worldwind26</replace>
       <replace>requirejs-2.3.6</replace>
       <replace>https://cors.aworldbridgelabs.com:9084/http://cs.aworldbridgelabs.com:8080</replace>
+      <replace>sourceFile</replace>
+      <replace>sourceFiles</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/views</dir>
-      <dir>$PROJECT_DIR$</dir>
       <dir>$PROJECT_DIR$/src</dir>
+      <dir>$PROJECT_DIR$</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -236,10 +215,7 @@
         <option value="$PROJECT_DIR$/scripts/AutoMenu.js" />
         <option value="$PROJECT_DIR$/views/LayerRequestForm_edit.ejs" />
         <option value="$PROJECT_DIR$/src/requirejs-2.3.6.min.js" />
-        <option value="$PROJECT_DIR$/routes/routes.js" />
         <option value="$PROJECT_DIR$/config/ows.xml" />
-        <option value="$PROJECT_DIR$/scripts/MainMenu.js" />
-        <option value="$PROJECT_DIR$/config/mainconf.js" />
         <option value="$PROJECT_DIR$/src/ogc/wms/WmsCapabilities.js" />
         <option value="$PROJECT_DIR$/src/ogc/gml/GmlRectifiedGrid.js" />
         <option value="$PROJECT_DIR$/src/ogc/ows/OwsServiceProvider.js" />
@@ -249,12 +225,15 @@
         <option value="$PROJECT_DIR$/src/ogc/wms/WmsLayerCapabilities.js" />
         <option value="$PROJECT_DIR$/src/ogc/wmts/WmtsCapabilities.js" />
         <option value="$PROJECT_DIR$/src/WorldWind.js" />
+        <option value="$PROJECT_DIR$/scripts/MainMenu.js" />
+        <option value="$PROJECT_DIR$/config/mainconf.js" />
+        <option value="$PROJECT_DIR$/routes/routes.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="156" />
-    <option name="y" value="55" />
+    <option name="x" value="300" />
+    <option name="y" value="70" />
     <option name="width" value="1958" />
     <option name="height" value="1237" />
   </component>
@@ -265,7 +244,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -276,17 +254,18 @@
             <path>
               <item name="CitySmart21" type="b2602c69:ProjectViewProjectNode" />
               <item name="CitySmart21" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CitySmart21" type="b2602c69:ProjectViewProjectNode" />
               <item name="CitySmart21" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -305,23 +284,23 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/views/recovery.ejs" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/bak" />
+      <recent name="$PROJECT_DIR$/config" />
+      <recent name="$PROJECT_DIR$/scripts" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/routes" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/views" />
       <recent name="$PROJECT_DIR$/routes" />
       <recent name="$PROJECT_DIR$/scripts" />
       <recent name="$PROJECT_DIR$/2" />
       <recent name="$PROJECT_DIR$/src" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/config" />
-      <recent name="$PROJECT_DIR$/bak" />
-      <recent name="$PROJECT_DIR$/scripts" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/routes" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -364,7 +343,8 @@
       <workItem from="1554321874488" duration="5822000" />
       <workItem from="1554495111303" duration="5000" />
       <workItem from="1554495123402" duration="5176000" />
-      <workItem from="1554585935570" duration="8916000" />
+      <workItem from="1554585935570" duration="10665000" />
+      <workItem from="1554663441494" duration="2609000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1553714451260</created>
@@ -604,22 +584,28 @@
       <option name="project" value="LOCAL" />
       <updated>1554591350341</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Fixed CORS issue.">
+      <created>1554656591829</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1554656591829</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62274000" />
+    <option name="totallyTimeSpent" value="66632000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="156" y="55" width="1958" height="1237" extended-state="0" />
-    <editor active="true" />
+    <frame x="300" y="70" width="1958" height="1237" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49933776" visible="true" weight="0.20828961" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49933776" visible="true" weight="0.21091291" />
       <window_info id="Structure" order="1" sideWeight="0.50066227" side_tool="true" weight="0.19517314" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49685204" weight="0.3294849" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4910808" visible="true" weight="0.3285968" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49003148" visible="true" weight="0.3285968" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -627,8 +613,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49790135" weight="0.3294849" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49758258" weight="0.3285968" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5089192" side_tool="true" visible="true" weight="0.3285968" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49685204" weight="0.3285968" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5099685" side_tool="true" visible="true" weight="0.3285968" />
       <window_info anchor="bottom" id="Database Console" order="12" sideWeight="0.49952742" weight="0.3294849" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -690,37 +676,8 @@
     <MESSAGE value="Merge branch 'yiyang' of https://github.com/Anson-Zhao/CitySmart21&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;config/ows.xml" />
     <MESSAGE value="Merge branch 'Amy' of https://github.com/Anson-Zhao/CitySmart21&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;approvedfolder/2019-03-29T19:11:59Z_NAA_Campus.tif&#10;#&#9;config/ows.xml&#10;#&#9;routes/routes.js&#10;#&#9;trashfolder/2019-03-29T19:11:59Z_NAA_Campus.tif&#10;#&#9;uploadfolder/2019-04-05T23:22:53Z_NAA_Campus.tif" />
     <MESSAGE value="Merge branch 'Yiyang' of https://github.com/Anson-Zhao/CitySmart21&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;config/mainconf.js&#10;#&#9;config/ows.xml&#10;#&#9;routes/routes.js&#10;#&#9;scripts/MainMenu.js&#10;#&#9;uploadfolder/2019-04-05T23:22:53Z_NAA_Campus.tif" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'Yiyang' of https://github.com/Anson-Zhao/CitySmart21&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;config/mainconf.js&#10;#&#9;config/ows.xml&#10;#&#9;routes/routes.js&#10;#&#9;scripts/MainMenu.js&#10;#&#9;uploadfolder/2019-04-05T23:22:53Z_NAA_Campus.tif" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/scripts/MainMenu.js</url>
-          <line>87</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/scripts/MainMenu.js</url>
-          <line>89</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/scripts/MainMenu.js</url>
-          <line>425</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/scripts/MainMenu.js</url>
-          <line>427</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Fixed CORS issue." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed CORS issue." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/examples/WorldWindShim.js" />
@@ -906,38 +863,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/geoCapacity/2019_4_5_18_8_58.xml" />
     <entry file="file://$PROJECT_DIR$/config/ows2.xml" />
-    <entry file="file://$PROJECT_DIR$/bak/ows.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="176" column="18" selection-start-line="176" selection-start-column="14" selection-end-line="176" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/homepage.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="3" column="67" selection-start-line="3" selection-start-column="67" selection-end-line="3" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/requirejs-2.3.6.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="4" column="17493" selection-start-line="4" selection-start-column="17493" selection-end-line="4" selection-end-column="17493" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://57aaff9e-0a65-4f92-bbaf-3af7b5e18b6e/schema/CitySmart2/table/Country2">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="1748" column="31" lean-forward="true" selection-start-line="1748" selection-start-column="31" selection-end-line="1748" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -948,20 +877,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/ows.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="39" column="76" selection-start-line="39" selection-start-column="69" selection-end-line="39" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/mainconf.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="30" column="56" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ogc/wms/WmsCapabilities.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="316">
@@ -969,9 +884,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/ows.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="22" column="19" lean-forward="true" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://57aaff9e-0a65-4f92-bbaf-3af7b5e18b6e/schema/CitySmart2/table/Country2">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/homepage.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="67" selection-start-line="3" selection-start-column="67" selection-end-line="3" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ogc/wms/WmsLayerCapabilities.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
+        <state relative-caret-position="14288">
           <caret line="752" column="102" selection-start-line="752" selection-start-column="90" selection-end-line="752" selection-end-column="102" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
@@ -979,23 +915,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/geoCapacity/2019_4_7_15_19_48.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="6212" column="22" lean-forward="true" selection-start-line="6212" selection-start-column="22" selection-end-line="6212" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/MainMenu.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="82" column="60" lean-forward="true" selection-start-line="82" selection-start-column="60" selection-end-line="82" selection-end-column="60" />
+        <state relative-caret-position="69">
+          <caret line="96" column="10" selection-start-line="96" selection-start-column="10" selection-end-line="96" selection-end-column="10" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="e#4339#4473#0" />
-            <element signature="e#4551#7832#0" />
-            <element signature="e#10125#11849#0" />
-            <element signature="e#11888#13403#0" />
+            <element signature="e#7932#7960#0" />
             <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
-            <element signature="e#13451#14267#0" />
-            <element signature="e#14324#17922#0" />
-            <element signature="e#18041#18961#0" />
-            <element signature="e#23907#24407#0" />
-            <element signature="e#24529#25616#0" />
+            <element signature="e#20632#20673#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/mainconf.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="47" column="21" lean-forward="true" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="2428" column="46" lean-forward="true" selection-start-line="2428" selection-start-column="46" selection-end-line="2428" selection-end-column="46" />
         </state>
       </provider>
     </entry>
