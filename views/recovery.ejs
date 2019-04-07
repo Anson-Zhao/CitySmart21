@@ -246,6 +246,7 @@
     var picturename = []
     var priorStatus = []
     var layerName = [];
+    var username = "<%= user.username %>";
 
 
     $(document).ready(function(){
@@ -271,6 +272,15 @@
 
             table.clear();
             table.draw();
+
+            // if (UserRole === "Regular") {
+            //     // document.getElementById('searchname').style.display = "none"; //disables username search for regular members
+            //     queryStr = "Current_Status=Pending&UID=" + username;
+            // } else {
+            //     queryStr = "Current_Status=Pending";//this line is for the admin, who does not need to only see a specific UID, but all records
+            // }
+            // console.log(queryStr);
+            // queryAndDisplay(queryStr);
             trapTable.clear();
             trapTable.draw();
             <!--queryAndDisplay("statusDel=" + "Deleted" + "&firstName=" + "<%= firstName %>" + "&lastName=" + "<%= lastName %>");-->
@@ -282,31 +292,85 @@
         });
 
         $('#dataDisplay tbody').on('click', 'tr', function () {
-            console.log('hello')
-            transactionID = [];
-            picturename = [];
-            priorStatus = [];
-            layerName = []
-            $(this).toggleClass('selected');    //toggle class for the rows selected
-            // $(this).toggleClass('change');   //toggle class change color
-            // changeColor();
 
-            rowSelected = table.rows('.selected').data();    //Store all the data for selected rows
+            if ($(this).hasClass('selected')) { //if the row is selected already
 
-            console.log(rowSelected);
+                $(this).removeClass('selected');//unselect it
 
-            // $('#dataDisplay > thead > tr > th').each(function () {
-            //     thArray.push($(this).text())
-            // })
+                d = table.row(this).data();
+                var index = transactionID.indexOf(d[0]); //delete the last transactionID in the array when deselected
+                console.log(index)
+                transactionID.splice(index, 1);
+                priorStatus.splice(index,1)
+                layerName.splice(index,1)
+                picturename.splice(index,1)
+                console.log(priorStatus);
+                console.log(transactionID)
+                console.log(layerName)
+                console.log(picturename)
+            } else {
+                $(this).addClass('selected'); // change the class to selected, so that there is changing of background color
 
-            for (let i = 0; i < rowSelected.length; i++) {
-//                console.log("rowSelected[" + i + "][0]: " + rowSelected[i][0]);
-                transactionID.push(rowSelected[i][1]);
-                layerName.push(rowSelected[i][8]);
-                priorStatus.push(rowSelected[i][13]);
-                picturename.push(rowSelected[i][11]);
-                console.log(picturename);
+                d = table.row(this).data(); // all the data of the row that was selected
+                d.counter++;
+                table.row(this).data(d).draw();
+                // console.log(d)
+
+                priorStatus.push(d[13])
+                layerName.push(d[8]);
+                transactionID.push(d[1]);
+                picturename.push(d[11]);
+                console.log(transactionID);
+                console.log(priorStatus)
+                console.log(picturename)
+                // var pictureStr = "pictureStr=" + picturename.toString();
+                // console.log(pictureStr);
+
+                var thArray = [];
+
+                $('#dataDisplay > thead > tr > th').each(function () {
+                    thArray.push($(this).text())
+                })
+                // console.log(thArray);
+
+                for (var i = 0; i < thArray.length; i++) {
+                    rowSelected[i] = {};
+                    rowSelected[i].Name = thArray[i];
+                    rowSelected[i].Value = d[i];
+                }
             }
+
+            // if ($(this).hasClass('selected')) { //if the row is selected already
+            //     $(this).removeClass('selected');//unselect it
+            //     d = table.row(this).data();
+            //     var index = transactionID.indexOf(d[0]); //delete the transactionID in the array
+            //     transactionID.splice(index, 1);
+            // } else {
+            //     $(this).addClass('selected');
+            //
+            //     d = table.row(this).data();
+            //     d.counter++;
+            //     table.row(this).data(d).draw();
+            //     console.log(d[1])
+            //
+            //     console.log(d);
+            //     priorStatus.push(d[13])
+            //     transactionID.push(d[1]);
+            //     picturename.push(d[11]);
+            //
+            //     var thArray = [];
+            //
+            //     $('#dataDisplay > thead > tr > th').each(function () {
+            //         thArray.push($(this).text())
+            //     })
+            //     console.log(thArray);
+            //
+            //     for (var i = 0; i < thArray.length; i++) {
+            //         rowSelected[i] = {};
+            //         rowSelected[i].Name = thArray[i];
+            //         rowSelected[i].Value = d[i];
+            //     }
+            // }
         });
 
         $("#recoverButton").on("click", function () {
@@ -315,43 +379,10 @@
             //update pic path with most current
             //move file from trash to approved file (if file is still pending?)
 
-            // if (priorStatus[i] ==='Pending'){
-            //     //update the status to pending
-            //     //move file from trash folder to upload files.
-            //     console.log('pending')
-            //
-            //     transactionIDStr += transactionID[i] + ",";
-            //     console.log(transactionIDStr);
-            //     if (i === transactionID.length - 1) { //delete the , at the end of the string
-            //         transactionIDStr = transactionIDStr.substring(0, transactionIDStr.length - 1);
-            //         console.log(transactionIDStr);
-            //         update();
-            //     }
-            // }else{
-            //     //update the status to approved
-            //     //copy the records of Request_form to Layer Menu
-            //     transactionIDStr += transactionID[i] + ",";
-            //     console.log(transactionIDStr);
-            //     if (i === transactionID.length - 1) { //delete the , at the end of the string
-            //         transactionIDStr = transactionIDStr.substring(0, transactionIDStr.length - 1);
-            //         console.log(transactionIDStr);
-            //         update();
-            //     }
-            //     console.log('was approved')
-            // }
 
             if (confirm("Are you sure you would like to recover this row(s)?") === true) {
                 console.log(priorStatus)
-                // if (priorStatus[0] ==='Pending'){
-                //     console.log('pending')
-                //     //update the status to pending
-                //     //move file from trash folder to upload files.
-                // }else{
-                //     //update the status to approved
-                //     //copy the records of Request_form to Layer Menu
-                //     //
-                //     console.log('was approved')
-                // }
+
 
                 var transactionIDStr = "transactionIDStr=";
                 var transactionPrStatusStr = "transactionStatusStr="
@@ -380,6 +411,15 @@
                         async: false,
                         data: transactionIDStr + '&' + pictureStr+ '&' + transactionPrStatusStr + '&' + layerNameStr,
                         success: function (result) {
+                            console.log(result.message);
+                            console.log(result.error);
+
+                            if(result.error === true){
+                                alert(result.message)
+                            }else{
+                                alert(result.message)
+                            }
+
                             window.location.replace('/userHome')
                         }
                     })
@@ -390,8 +430,6 @@
         });
     });
 
-        var username = "<%= user.username %>";
-
     var queryAndDisplay = function (querystr) {
         console.log(querystr);
         $.ajax({
@@ -401,7 +439,7 @@
             success: function (results) {
                 console.log(results);
                 for (var i = 0; i < results.length; i++) {
-                    if (results[i].Current_Status === "Delete") {
+                    if (results[i].Current_Status === "Deleted") {
                         if (UserRole === "Regular") {
                             if (results[i].UID === username) {
                                 table.row.add([
