@@ -14,7 +14,7 @@ const rimraf = require("rimraf");
 const mkdirp = require("mkdirp");
 const multiparty = require('multiparty');
 const path    = require('path');
-// var exec = require('child_process').exec, child;
+let exec = require('child_process').exec, child;
 
 const con_CS = mysql.createConnection(config.commondb_connection);
 
