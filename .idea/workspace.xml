@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4704f94f-8e06-4422-a8b4-19d911764f68" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config/geoCapacity/2019_4_7_15_32_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/geoCapacity/2019_4_7_15_33_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/geoCapacity/2019_4_7_15_34_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_4_7_15_32_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_4_7_15_33_6.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/config/mainconf.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/mainconf.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/ows.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config/ows.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/routes2.js" beforeDir="false" afterPath="$PROJECT_DIR$/bak/routes2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/MainMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/MainMenu.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -55,62 +55,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="2428" column="46" lean-forward="true" selection-start-line="2428" selection-start-column="46" selection-end-line="2428" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="das://57aaff9e-0a65-4f92-bbaf-3af7b5e18b6e/schema/CitySmart2/table/Country2">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/mainconf.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="47" column="21" lean-forward="true" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/MainMenu.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="96" column="10" selection-start-line="96" selection-start-column="10" selection-end-line="96" selection-end-column="10" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="e#7932#7960#0" />
-                <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
-                <element signature="e#20632#20673#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/homepage.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="3" column="67" selection-start-line="3" selection-start-column="67" selection-end-line="3" selection-end-column="67" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ogc/wms/WmsLayerCapabilities.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="14288">
-              <caret line="752" column="102" selection-start-line="752" selection-start-column="90" selection-end-line="752" selection-end-column="102" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+            <state relative-caret-position="431">
+              <caret line="2410" column="5" selection-start-line="2410" selection-start-column="5" selection-end-line="2410" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -127,11 +73,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>WMS_URL</find>
-      <find>.done</find>
-      <find>serviceAddress</find>
-      <find>https://emxsys.net/worldwind26</find>
-      <find>handlePick</find>
       <find>require-2.3.5</find>
       <find>createWMSLayer</find>
       <find>K_Subs</find>
@@ -157,6 +98,11 @@
       <find>KEA</find>
       <find>console.log</find>
       <find>sourceFiles</find>
+      <find>sourcefiles</find>
+      <find>copySource</find>
+      <find>removeFile</find>
+      <find>dir</find>
+      <find>remove</find>
     </findStrings>
     <replaceStrings>
       <replace>src</replace>
@@ -173,6 +119,7 @@
       <replace>https://cors.aworldbridgelabs.com:9084/http://cs.aworldbridgelabs.com:8080</replace>
       <replace>sourceFile</replace>
       <replace>sourceFiles</replace>
+      <replace>copySource</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/views</dir>
@@ -226,15 +173,17 @@
         <option value="$PROJECT_DIR$/src/ogc/wmts/WmtsCapabilities.js" />
         <option value="$PROJECT_DIR$/src/WorldWind.js" />
         <option value="$PROJECT_DIR$/scripts/MainMenu.js" />
+        <option value="&lt;0858d933-fec0-4d22-8df5-5be4b9951d68&gt;/routes/routes.js" />
+        <option value="&lt;0858d933-fec0-4d22-8df5-5be4b9951d68&gt;/config/mainconf.js" />
         <option value="$PROJECT_DIR$/config/mainconf.js" />
         <option value="$PROJECT_DIR$/routes/routes.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="300" />
-    <option name="y" value="70" />
-    <option name="width" value="1958" />
+    <option name="x" value="109" />
+    <option name="y" value="23" />
+    <option name="width" value="2119" />
     <option name="height" value="1237" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -250,6 +199,11 @@
             <path>
               <item name="CitySmart21" type="b2602c69:ProjectViewProjectNode" />
               <item name="CitySmart21" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CitySmart21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CitySmart21" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CitySmart21" type="b2602c69:ProjectViewProjectNode" />
@@ -271,7 +225,12 @@
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="10.15.3" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/scripts" />
@@ -344,7 +303,7 @@
       <workItem from="1554495111303" duration="5000" />
       <workItem from="1554495123402" duration="5176000" />
       <workItem from="1554585935570" duration="10665000" />
-      <workItem from="1554663441494" duration="2609000" />
+      <workItem from="1554663441494" duration="7398000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1553714451260</created>
@@ -591,21 +550,30 @@
       <option name="project" value="LOCAL" />
       <updated>1554656591829</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Fixed xml download issue.">
+      <created>1554666080236</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1554666080236</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66632000" />
+    <option name="totallyTimeSpent" value="71421000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="300" y="70" width="1958" height="1237" extended-state="0" />
+    <frame x="109" y="23" width="2119" height="1237" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49933776" visible="true" weight="0.21091291" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49933776" visible="true" weight="0.19448476" />
       <window_info id="Structure" order="1" sideWeight="0.50066227" side_tool="true" weight="0.19517314" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="File Transfer" sideWeight="0.8021287" weight="0.3294849" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49685204" weight="0.3294849" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49003148" visible="true" weight="0.3285968" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.48959845" visible="true" weight="0.3285968" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -614,12 +582,13 @@
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49790135" weight="0.3294849" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49685204" weight="0.3285968" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5099685" side_tool="true" visible="true" weight="0.3285968" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.51040155" side_tool="true" visible="true" weight="0.3285968" />
       <window_info anchor="bottom" id="Database Console" order="12" sideWeight="0.49952742" weight="0.3294849" />
+      <window_info anchor="right" id="Remote Host" visible="true" weight="0.30382195" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.14690451" />
+      <window_info anchor="right" id="Database" order="3" weight="0.14690451" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -677,7 +646,8 @@
     <MESSAGE value="Merge branch 'Amy' of https://github.com/Anson-Zhao/CitySmart21&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;approvedfolder/2019-03-29T19:11:59Z_NAA_Campus.tif&#10;#&#9;config/ows.xml&#10;#&#9;routes/routes.js&#10;#&#9;trashfolder/2019-03-29T19:11:59Z_NAA_Campus.tif&#10;#&#9;uploadfolder/2019-04-05T23:22:53Z_NAA_Campus.tif" />
     <MESSAGE value="Merge branch 'Yiyang' of https://github.com/Anson-Zhao/CitySmart21&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;config/mainconf.js&#10;#&#9;config/ows.xml&#10;#&#9;routes/routes.js&#10;#&#9;scripts/MainMenu.js&#10;#&#9;uploadfolder/2019-04-05T23:22:53Z_NAA_Campus.tif" />
     <MESSAGE value="Fixed CORS issue." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed CORS issue." />
+    <MESSAGE value="Fixed xml download issue." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed xml download issue." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/examples/WorldWindShim.js" />
@@ -937,15 +907,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/mainconf.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="47" column="21" lean-forward="true" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
+        <state relative-caret-position="399">
+          <caret line="48" column="27" selection-start-line="48" selection-start-column="27" selection-end-line="48" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/routes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="2428" column="46" lean-forward="true" selection-start-line="2428" selection-start-column="46" selection-end-line="2428" selection-end-column="46" />
+        <state relative-caret-position="431">
+          <caret line="2410" column="5" selection-start-line="2410" selection-start-column="5" selection-end-line="2410" selection-end-column="5" />
         </state>
       </provider>
     </entry>
