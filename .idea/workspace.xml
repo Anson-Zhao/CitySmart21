@@ -1,42 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4704f94f-8e06-4422-a8b4-19d911764f68" name="Default Changelist" comment="Merge branch 'master' of https://github.com/Anson-Zhao/CitySmart21 into julia&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <change afterPath="$PROJECT_DIR$/bak/ows.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bak/routes2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jquery.multi-select.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/requirejs-2.3.6.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trashfolder/2019-04-01T20:41:54Z_2019-03-14T16:16:31Z_t.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trashfolder/2019-04-04T15:37:06Z_t.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trashfolder/2019-04-04T15:51:00Z_t.tif" afterDir="false" />
+    <list default="true" id="4704f94f-8e06-4422-a8b4-19d911764f68" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/mainconf.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/mainconf.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/ows.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config/ows.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/MainMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/MainMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/WorldWind.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/WorldWind.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/globe/AsterV2ElevationCoverage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/globe/AsterV2ElevationCoverage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/globe/GebcoElevationCoverage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/globe/GebcoElevationCoverage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/globe/UsgsNedElevationCoverage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/globe/UsgsNedElevationCoverage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/globe/UsgsNedHiElevationCoverage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/globe/UsgsNedHiElevationCoverage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ogc/gml/GmlRectifiedGrid.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ogc/gml/GmlRectifiedGrid.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ogc/ows/OwsOperationsMetadata.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ogc/ows/OwsOperationsMetadata.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ogc/ows/OwsServiceProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ogc/ows/OwsServiceProvider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ogc/wcs/WcsCapabilities.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ogc/wcs/WcsCapabilities.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ogc/wms/WmsCapabilities.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ogc/wms/WmsCapabilities.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ogc/wms/WmsLayerCapabilities.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ogc/wms/WmsLayerCapabilities.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ogc/wmts/WmtsCapabilities.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ogc/wmts/WmtsCapabilities.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ogc/wmts/WmtsLayerCapabilities.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ogc/wmts/WmtsLayerCapabilities.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploadfolder/2019-01-30T21:47:52Z_NAA_Campus.tif" beforeDir="false" afterPath="$PROJECT_DIR$/uploadfolder/2019-04-05T23:22:53Z_NAA_Campus.tif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploadfolder/2019-02-01T21:26:00Z_NAA_Campus.tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/LayerRequestForm_edit.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/LayerRequestForm_edit.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/dataHistory.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/dataHistory.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/homepage.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/homepage.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/homepageUSER.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/homepageUSER.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/recovery.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/recovery.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/userEdit.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/userEdit.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/userHome.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/userHome.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/userProfile.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/userProfile.ejs" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -79,11 +46,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="1538" column="54" selection-start-line="1538" selection-start-column="54" selection-end-line="1538" selection-end-column="54" />
+            <state relative-caret-position="316">
+              <caret line="1663" column="12" selection-start-line="1663" selection-start-column="12" selection-end-line="1663" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -92,7 +59,7 @@
         <entry file="file://$PROJECT_DIR$/config/mainconf.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="189">
-              <caret line="37" column="8" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="16" />
+              <caret line="37" column="8" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -145,11 +112,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/LayerRequestForm_edit.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="502" column="67" selection-start-line="502" selection-start-column="67" selection-end-line="502" selection-end-column="67" />
+            <state relative-caret-position="498">
+              <caret line="873" column="45" selection-start-line="873" selection-start-column="45" selection-end-line="873" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -175,7 +142,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>geoServer</find>
       <find>getAttribute</find>
       <find>xlink:href</find>
       <find>preloadWMSLayerName</find>
@@ -190,21 +156,22 @@
       <find>KEA</find>
       <find>console.log</find>
       <find>sourceFiles</find>
-      <find>approve'</find>
       <find>rejected</find>
       <find>AddD</find>
       <find>Pending_D</find>
       <find>Pending_Dir +</find>
       <find>submitL</find>
-      <find>SearchLayerName</find>
       <find>Move</find>
       <find>Move</find>
-      <find>fs</find>
       <find>moveF</find>
       <find>moveUp</find>
       <find>onSimp</find>
       <find>onUpl</find>
       <find>move</find>
+      <find>reject</find>
+      <find>approve'</find>
+      <find>fs</find>
+      <find>SearchLayerName</find>
     </findStrings>
     <replaceStrings>
       <replace>src</replace>
@@ -261,7 +228,6 @@
         <option value="$PROJECT_DIR$/scripts/LayerMenu.js" />
         <option value="$PROJECT_DIR$/scripts/LayerNameSearch.js" />
         <option value="$PROJECT_DIR$/scripts/AutoMenu.js" />
-        <option value="$PROJECT_DIR$/views/LayerRequestForm_edit.ejs" />
         <option value="$PROJECT_DIR$/src/requirejs-2.3.6.min.js" />
         <option value="$PROJECT_DIR$/config/ows.xml" />
         <option value="$PROJECT_DIR$/src/ogc/wms/WmsCapabilities.js" />
@@ -276,12 +242,13 @@
         <option value="$PROJECT_DIR$/scripts/MainMenu.js" />
         <option value="$PROJECT_DIR$/config/mainconf.js" />
         <option value="$PROJECT_DIR$/routes/routes.js" />
+        <option value="$PROJECT_DIR$/views/LayerRequestForm_edit.ejs" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="300" />
-    <option name="y" value="70" />
+    <option name="x" value="273" />
+    <option name="y" value="23" />
     <option name="width" value="1958" />
     <option name="height" value="1237" />
   </component>
@@ -355,11 +322,11 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/uploadfolder" />
       <recent name="$PROJECT_DIR$/bak" />
       <recent name="$PROJECT_DIR$/config" />
       <recent name="$PROJECT_DIR$/scripts" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/routes" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -650,22 +617,36 @@
       <option name="project" value="LOCAL" />
       <updated>1554656591829</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="fixed several bugs">
+      <created>1554671336469</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1554671336470</updated>
+    </task>
+    <task id="LOCAL-00037" summary="reject">
+      <created>1554672438338</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1554672438338</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69422000" />
+    <option name="totallyTimeSpent" value="71717000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="953" extended-state="0" />
+    <frame x="273" y="23" width="1958" height="1237" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49933776" visible="true" weight="0.20926517" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49933776" visible="true" weight="0.20511483" />
       <window_info id="Structure" order="1" sideWeight="0.50066227" side_tool="true" weight="0.19517314" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49685204" weight="0.3294849" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.48935038" visible="true" weight="0.32752612" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4895616" visible="true" weight="0.24628821" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -674,12 +655,12 @@
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49790135" weight="0.3294849" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49685204" weight="0.3285968" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5106496" side_tool="true" visible="true" weight="0.32752612" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.51043844" side_tool="true" visible="true" weight="0.24628821" />
       <window_info anchor="bottom" id="Database Console" order="12" sideWeight="0.49952742" weight="0.3294849" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.14962727" />
+      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.1466597" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -737,7 +718,9 @@
     <MESSAGE value="Merge branch 'Amy' of https://github.com/Anson-Zhao/CitySmart21&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;approvedfolder/2019-03-29T19:11:59Z_NAA_Campus.tif&#10;#&#9;config/ows.xml&#10;#&#9;routes/routes.js&#10;#&#9;trashfolder/2019-03-29T19:11:59Z_NAA_Campus.tif&#10;#&#9;uploadfolder/2019-04-05T23:22:53Z_NAA_Campus.tif" />
     <MESSAGE value="Merge branch 'Yiyang' of https://github.com/Anson-Zhao/CitySmart21&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;config/mainconf.js&#10;#&#9;config/ows.xml&#10;#&#9;routes/routes.js&#10;#&#9;scripts/MainMenu.js&#10;#&#9;uploadfolder/2019-04-05T23:22:53Z_NAA_Campus.tif" />
     <MESSAGE value="Fixed CORS issue." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed CORS issue." />
+    <MESSAGE value="fixed several bugs" />
+    <MESSAGE value="reject" />
+    <option name="LAST_COMMIT_MESSAGE" value="reject" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -992,7 +975,7 @@
     <entry file="file://$PROJECT_DIR$/config/mainconf.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
-          <caret line="37" column="8" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="16" />
+          <caret line="37" column="8" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -1003,10 +986,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/LayerRequestForm_edit.ejs">
+    <entry file="file://$PROJECT_DIR$/routes/routes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="502" column="67" selection-start-line="502" selection-start-column="67" selection-end-line="502" selection-end-column="67" />
+        <state relative-caret-position="316">
+          <caret line="1663" column="12" selection-start-line="1663" selection-start-column="12" selection-end-line="1663" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -1017,10 +1000,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/routes.js">
+    <entry file="file://$PROJECT_DIR$/views/LayerRequestForm_edit.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="1538" column="54" selection-start-line="1538" selection-start-column="54" selection-end-line="1538" selection-end-column="54" />
+        <state relative-caret-position="498">
+          <caret line="873" column="45" selection-start-line="873" selection-start-column="45" selection-end-line="873" selection-end-column="45" />
         </state>
       </provider>
     </entry>
