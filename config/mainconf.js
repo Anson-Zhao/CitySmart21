@@ -27,26 +27,25 @@ var configGlobal = {
     // 'local_URL' : "",
     // 'local_URL' : "http://viewer.usgs.aworldbridgelabs.com",
 
-    'geoServer' : 'http://aworldbridgelabs.com:8080/geoserver/',
+    'geoServer' : 'http://cs.aworldbridgelabs.com:8080/geoserver/',
     'WMS_URL' : 'https://cors.aworldbridgelabs.com:9084/http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities',
 
     // 'Upload_Path': 'http://usgs.aworldbridgelabs.com/uploadfiles' https://cors.aworldbridgelabs.com:9084/https://emxsys.net/worldwind26,
     'Download_Path':'config',
 
     //upload file--pending
-    // 'Pending_Dir': '/var/www/usgs/uploadfolder',
     'Pending_Dir': 'uploadfolder',
     'Reject_Dir': 'rejectfolder',
 
     //approve file--active
-    // 'Approve_Dir': '/usr/share/geoserver-2.15.0/data_dir/data/citysmart'
-    'Approve_Dir':'approvedfolder',
+    // 'Approve_Dir': '/usr/share/geoserver-2.15.0/data_dir/data/Approved',
+    'Approve_Dir': 'approvedfolder',
 
     //trashfolder file--trashfolder
-    'Delete_Dir':'trashfolder',
+    'Delete_Dir': 'trashfolder',
 
     'num_backups': 4,
-    'download_interval': 1800000,
+    'download_interval': 600000,
 
     // uswtdb eye distance for placemark layer menu display (km)
     'eyeDistance_PL': 1500,

@@ -14,7 +14,7 @@ const rimraf = require("rimraf");
 const mkdirp = require("mkdirp");
 const multiparty = require('multiparty');
 const path    = require('path');
-var exec = require('child_process').exec, child;
+let exec = require('child_process').exec, child;
 
 const con_CS = mysql.createConnection(config.commondb_connection);
 
@@ -22,14 +22,16 @@ const geoServer = config.geoServer;
 const WMS_URL = config.WMS_URL;
 
 const downloadPath = config.Download_Path;
-const sourceFiles = path.resolve(__dirname, "../" + downloadPath, 'ows.xml'); //the path of the source file
+
+const copySource = path.resolve(__dirname, "../" + downloadPath, 'ows.xml'); //the path of the source file
+const copyDestDir = path.resolve(__dirname, "../" + downloadPath + "/geoCapacity/");
 const num_backups = config.num_backups;
 const download_interval = config.download_interval;
 
 const Approve_Dir = config.Approve_Dir; //approve folder
-const Pending_Dir = config.Pending_Dir;
-const Reject_Dir = config.Reject_Dir;
-const Delete_Dir = config.Delete_Dir; //trash folder
+const Pending_Dir = path.resolve(__dirname, "../" + config.Pending_Dir);
+const Reject_Dir = path.resolve(__dirname, "../" + config.Reject_Dir);
+const Delete_Dir = path.resolve(__dirname, "../" + config.Delete_Dir);
 
 const fileInputName = process.env.FILE_INPUT_NAME || "qqfile";
 const maxFileSize = process.env.MAX_FILE_SIZE || 0; // in bytes, 0 for unlimited
@@ -2411,15 +2413,13 @@ function QueryStat(myObj, sqlStat, res) {
         });
     }
 
-
     function copyXML(){
         const today = new Date();//get the current date
         let date = today.getFullYear()+ '_' +(today.getMonth()+1)+ '_' + today.getDate();
         let time = today.getHours() + "_" + today.getMinutes()+'_' + today.getSeconds();
         let dataStr = date + "_"+ time;
-        let downloadDis = downloadPath + '/geoCapacity/' + dataStr+ '.xml'; //define a file name
-
-        fsextra.copy(sourceFiles, downloadDis) //copy the file and rename
+        let downloadDis = copyDestDir + '/' + dataStr+ '.xml'; //define a file name
+        fsextra.copy(copySource, downloadDis) //copy the file and rename
             .then(//if copy succeed, call pre-download XML function
                 console.log('copy successful'),
                 predownloadXml ()
@@ -2445,7 +2445,7 @@ function QueryStat(myObj, sqlStat, res) {
                 console.log('predownloadXML res');
                 resXMLRequest = res;
                 if (res.statusCode === 200){
-                    res.pipe(fs.createWriteStream(sourceFiles))
+                    res.pipe(fs.createWriteStream(copySource))
                 } else {
                     console.log("Respose with Error Code: " + res.statusCode);
                     removeFile();
@@ -2461,24 +2461,23 @@ function QueryStat(myObj, sqlStat, res) {
     }
 
     function removeFile() {
-        console.log('the remove function was called');
 
-        // const dir = 'config/geoCapacity'; //the dir of the file that I am going to remove.
-        const dir = downloadPath + '/geoCapacity/';
-        fs.readdir(dir, (err, files) => {//a method to calculate the number of the files in the geoCapacity folder
+        console.log('the remove function was called at: ' + copyDestDir);
+
+        fs.readdir(copyDestDir, (err, files) => {//a method to calculate the number of the files in the geoCapacity folder
 
             if(files.length > num_backups){
 
                 //if there are more than 100 file in the directory
                 if(!downloadFalse){ //if download succeed, run the code below
-                    fs.unlink(dir + files[0], (err) => { //delete the first (the oldest) file in the directory
+                    fs.unlink(copyDestDir + "/" + files[0], (err) => { //delete the first (the oldest) file in the directory
                         if (err) {throw err} else {
                             downloadFalse = true; //change the value of "downloadFalse" to true
                         }
                         console.log('download and remove copy successfully');
                     })
                 } else { //if download failed, run the code below
-                    fs.unlink(dir + files[files.length-1], (err) => { //then delete the last (the latest) file in the directory
+                    fs.unlink(copyDestDir + "/" + files[files.length-1], (err) => { //then delete the last (the latest) file in the directory
                         if (err) {throw err}
                         console.log('download file failed, removed copy successfully')
                     })
@@ -2487,7 +2486,7 @@ function QueryStat(myObj, sqlStat, res) {
                 //if the file number is less than num_backups, and download failed
                 if (files.length > 0) {
                     if (downloadFalse === null) {
-                        fs.unlink(dir + files[files.length - 1], (err) => { //then delete the last (the latest) file in the directory
+                        fs.unlink(copyDestDir + "/" + files[files.length - 1], (err) => { //then delete the last (the latest) file in the directory
                             if (err) throw err;
                             console.log('download file failed,number is less than num_backups, removed copy successfully')
                         })

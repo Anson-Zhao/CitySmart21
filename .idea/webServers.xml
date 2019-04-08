@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="0858d933-fec0-4d22-8df5-5be4b9951d68" name="cs2.awb" url="http://v2.cs.aworldbridgelabs.com">
+        <fileTransfer host="cs.aworldbridgelabs.com" port="5532" rootFolder="/var/www/cs/v2" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="5532" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
