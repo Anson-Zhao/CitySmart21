@@ -14,21 +14,16 @@ const rimraf = require("rimraf");
 const mkdirp = require("mkdirp");
 const multiparty = require('multiparty');
 const path    = require('path');
-let exec = require('child_process').exec, child;
-
-const con_CS = mysql.createConnection(config.commondb_connection);
 
 const geoServer = config.geoServer;
-const WMS_URL = config.WMS_URL;
+const Download_From = config.Download_From;
 
-const downloadPath = config.Download_Path;
-
-const copySource = path.resolve(__dirname, "../" + downloadPath, 'ows.xml'); //the path of the source file
-const copyDestDir = path.resolve(__dirname, "../" + downloadPath + "/geoCapacity/");
+const copySource = path.resolve(__dirname, config.Download_To); //the path of the source file
+const copyDestDir = path.resolve(__dirname, config.Backup_Dir);
 const num_backups = config.num_backups;
 const download_interval = config.download_interval;
 
-const Approve_Dir = config.Approve_Dir; //approve folder
+const Approve_Dir = path.resolve(__dirname, "../" + config.Approve_Dir);
 const Pending_Dir = path.resolve(__dirname, "../" + config.Pending_Dir);
 const Reject_Dir = path.resolve(__dirname, "../" + config.Reject_Dir);
 const Delete_Dir = path.resolve(__dirname, "../" + config.Delete_Dir);
@@ -36,10 +31,7 @@ const Delete_Dir = path.resolve(__dirname, "../" + config.Delete_Dir);
 const fileInputName = process.env.FILE_INPUT_NAME || "qqfile";
 const maxFileSize = process.env.MAX_FILE_SIZE || 0; // in bytes, 0 for unlimited
 
-let transactionID, myStat, myVal, myErrMsg, token, errStatus, mylogin;
-let today, date2, date3, time2, time3, dateTime, tokenExpire;
-let downloadFalse = null ;
-
+const con_CS = mysql.createConnection(config.commondb_connection);
 const smtpTrans = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
@@ -47,6 +39,11 @@ const smtpTrans = nodemailer.createTransport({
         pass: "12344321"
     }
 });
+
+let exec = require('child_process').exec;
+let transactionID, myStat, myVal, myErrMsg, token, errStatus, mylogin;
+let today, date2, date3, time2, time3, dateTime, tokenExpire, child;
+let downloadFalse = null ;
 
 con_CS.query('USE ' + config.Login_db); // Locate Login DB
 
@@ -1485,7 +1482,7 @@ module.exports = function (app, passport) {
         let fName = req.query.fName;
         let layerName;
 
-        let statement = "UPDATE Request_Form SET Current_Status = 'Approved' WHERE RID = '" + approveIDStr + "'";
+        let myState1 = "UPDATE Request_Form SET Current_Status = 'Approved' WHERE RID = '" + approveIDStr + "'";
 
         // mover folder
         for(let i = 0; i < approvepictureStr.length; i++) {
@@ -1496,7 +1493,7 @@ module.exports = function (app, passport) {
                     console.log("Approval success");
                 }
             });
-            con_CS.query(statement, function (err, results) {
+            con_CS.query(myState1, function (err, results) {
                 if (err) throw err;
                 // console.log(results);
 
@@ -1505,21 +1502,21 @@ module.exports = function (app, passport) {
                     var type = "Content-type: application/zip";
                     var datastore = "datastore" + fName;
 
-                    var statement = "curl -u julia:123654 -v -XPUT -H '" + type + "' --data-binary @approvedfolder/" + approvepictureStr[0] + " " + geoServer + "rest/workspaces/Approved/datastores/" + datastore +"/file.shp";
+                    var uploadStat1 = "curl -u julia:123654 -v -XPUT -H '" + type + "' --data-binary @approvedfolder/" + approvepictureStr[0] + " " + geoServer + "rest/workspaces/Approved/datastores/" + datastore +"/file.shp";
 
-                    child = exec(statement,
+                    child = exec(uploadStat1,
                         function (error, stdout, stderr) {
-                            console.log(statement);
+                            console.log(uploadStat1);
                             console.log('stdout: ' + stdout);
                             console.log('stderr: ' + stderr);
                             if (error !== null) {
                                 console.log('exec error: ' + error);
                             } else {
-                                var statement = "curl -u julia:123654 -v -XGET " + geoServer + "rest/workspaces/Approved/datastores/" + datastore + "/featuretypes.json";
+                                var uploadStat2 = "curl -u julia:123654 -v -XGET " + geoServer + "rest/workspaces/Approved/datastores/" + datastore + "/featuretypes.json";
                                 var jsonF;
-                                child = exec(statement,
+                                child = exec(uploadStat2,
                                     function (error, stdout, stderr) {
-                                        console.log(statement);
+                                        console.log(uploadStat2);
                                         console.log('stdout: ' + stdout);
                                         console.log('stderr: ' + stderr);
 
@@ -1532,14 +1529,10 @@ module.exports = function (app, passport) {
                                             console.log(layerName);
                                             geoName = layerName;
 
-                                            let statementNext = "UPDATE Request_Form SET LayerName = '" + geoName +"' WHERE RID = '" + approveIDStr + "'";
+                                            let myStat2 = "UPDATE Request_Form SET LayerName = '" + geoName +"' WHERE RID = '" + approveIDStr + "'";
 
-                                            con_CS.query(statementNext, function (err, results) {
-                                                if (err) {
-                                                    throw err;
-                                                } else {
-                                                    //res.json(results);
-                                                }
+                                            con_CS.query(myStat2, function (err, results) {
+                                                if (err) throw err;
                                             })
                                         }
                                     });
@@ -1548,22 +1541,6 @@ module.exports = function (app, passport) {
                 } else if (format === "GeoTIFF - Tagged Image File Format with Geographic information (.tif)") {
                     console.log("geotiff file works :D");
                 }
-
-                // res.setHeader("Access-Control-Allow-Origin", "*");
-                //
-                // var type = "Content-type: application/zip";
-                //
-                // var statement = "curl -u julia:123654 -v -XPUT -H '" + type + "' --data-binary @approvedfolder/" + approvepictureStr[0] + " " + geoServer + "rest/workspaces/Approved/datastores/datastore/file.shp";
-                //
-                // child = exec(statement,
-                //     function (error, stdout, stderr) {
-                //     console.log(statement);
-                //         console.log('stdout: ' + stdout);
-                //         console.log('stderr: ' + stderr);
-                //         if (error !== null) {
-                //             console.log('exec error: ' + error);
-                //         }
-                //     });
 
                 res.json(results[i]);
             });
@@ -2151,7 +2128,7 @@ function QueryStat(myObj, sqlStat, res) {
         responseData.preventRetry = true;
         res.send(responseData);
     }
-//delete new photo
+    //delete new photo
     function onDeleteFile1(req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
         //console.log("result=" + req.params.uuid);
@@ -2418,8 +2395,8 @@ function QueryStat(myObj, sqlStat, res) {
         let date = today.getFullYear()+ '_' +(today.getMonth()+1)+ '_' + today.getDate();
         let time = today.getHours() + "_" + today.getMinutes()+'_' + today.getSeconds();
         let dataStr = date + "_"+ time;
-        let downloadDis = copyDestDir + '/' + dataStr+ '.xml'; //define a file name
-        fsextra.copy(copySource, downloadDis) //copy the file and rename
+        let copyDest = copyDestDir + '/' + dataStr+ '.xml'; //define a file name
+        fsextra.copy(copySource, copyDest) //copy the file and rename
             .then(//if copy succeed, call pre-download XML function
                 console.log('copy successful'),
                 predownloadXml ()
@@ -2428,7 +2405,7 @@ function QueryStat(myObj, sqlStat, res) {
 
     function predownloadXml () {
         const requestOptions = {
-            uri: WMS_URL,
+            uri: Download_From,
             timeout: download_interval - 20000
         };
         let resXMLRequest;
@@ -2442,10 +2419,10 @@ function QueryStat(myObj, sqlStat, res) {
                 // process.exit(0)
             })
             .on('response', function (res) {
-                console.log('predownloadXML res');
                 resXMLRequest = res;
                 if (res.statusCode === 200){
                     res.pipe(fs.createWriteStream(copySource))
+                    console.log('download starting');
                 } else {
                     console.log("Respose with Error Code: " + res.statusCode);
                     removeFile();
