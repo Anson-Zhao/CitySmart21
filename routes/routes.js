@@ -410,7 +410,7 @@ module.exports = function (app, passport) {
         let pictureStr = req.query.pictureStr.split(',');
         let transactionPrStatusStr = req.query.transactionStatusStr.split(',');
         let layerNameStr = req.query.layerName.split(',');
-
+        console.log(pictureStr.length);
         // mover folder
         for(let i = 0; i < pictureStr.length; i++) {//the length of pictureStr and Prior_status may not be the same since some layer may not have picture with it
             console.log("tran:"+transactionPrStatusStr[i]);
@@ -1708,7 +1708,8 @@ module.exports = function (app, passport) {
             });
             con_CS.query(statement + statement1, function (err, results) {
                 if (err) throw err;
-                res.json(results[i]);
+                console.log(results);
+                // res.json(results[i]);
             });
         }
     });
