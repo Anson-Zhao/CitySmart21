@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4704f94f-8e06-4422-a8b4-19d911764f68" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_4_7_18_41_57.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config/geoCapacity/2019_4_8_10_7_18.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_4_7_18_57_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config/geoCapacity/2019_4_8_9_1_55.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_4_7_19_7_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config/geoCapacity/2019_4_8_9_11_55.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/mainconf.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/mainconf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/ows.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config/ows.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/routes.js" afterDir="false" />
-    </list>
+    <list default="true" id="4704f94f-8e06-4422-a8b4-19d911764f68" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -55,7 +47,7 @@
         <entry file="file://$PROJECT_DIR$/routes/routes.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="108">
-              <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+              <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -63,8 +55,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/ows.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-71">
-              <caret line="6133" column="29" selection-start-line="6133" selection-start-column="25" selection-end-line="6133" selection-end-column="29" />
+            <state relative-caret-position="461">
+              <caret line="6161" column="38" selection-start-line="6161" selection-start-column="38" selection-end-line="6161" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -86,7 +78,7 @@
         <entry file="file://$PROJECT_DIR$/config/mainconf.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="615">
-              <caret line="52" column="33" lean-forward="true" selection-start-line="52" selection-start-column="33" selection-end-line="52" selection-end-column="33" />
+              <caret line="52" column="33" selection-start-line="52" selection-start-column="33" selection-end-line="52" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -339,7 +331,7 @@
       <workItem from="1554495111303" duration="5000" />
       <workItem from="1554495123402" duration="5176000" />
       <workItem from="1554585935570" duration="10665000" />
-      <workItem from="1554663441494" duration="17966000" />
+      <workItem from="1554663441494" duration="18607000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1553714451260</created>
@@ -670,11 +662,18 @@
       <option name="project" value="LOCAL" />
       <updated>1554678860198</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="fix upload/trash/delete/reject folder path">
+      <created>1554737438685</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1554737438685</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81989000" />
+    <option name="totallyTimeSpent" value="82630000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="202" y="84" width="2119" height="1237" extended-state="0" />
@@ -1028,21 +1027,21 @@
     <entry file="file://$PROJECT_DIR$/config/mainconf.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="615">
-          <caret line="52" column="33" lean-forward="true" selection-start-line="52" selection-start-column="33" selection-end-line="52" selection-end-column="33" />
+          <caret line="52" column="33" selection-start-line="52" selection-start-column="33" selection-end-line="52" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
-          <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/ows.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-71">
-          <caret line="6133" column="29" selection-start-line="6133" selection-start-column="25" selection-end-line="6133" selection-end-column="29" />
+        <state relative-caret-position="461">
+          <caret line="6161" column="38" selection-start-line="6161" selection-start-column="38" selection-end-line="6161" selection-end-column="38" />
         </state>
       </provider>
     </entry>
