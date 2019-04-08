@@ -89,7 +89,7 @@ requirejs(['./WorldWindShim',
                 var layerRequest = "layername=" + layer1;
 
                 $.ajax({
-                    url: 'position',
+                    url: '/position',
                     type: 'GET',
                     dataType: 'json',
                     data:layerRequest,

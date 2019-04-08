@@ -15,10 +15,6 @@
 */
 
 requirejs([
-        // '../src/heatmap/GlobeInterface',
-        // '../src/heatmap/Globe',
-        // '../src/heatmap/Controls',
-        // '../src/heatmap/HeatmapPanel',
         './WorldWindShim',
         './LayerManager',
         './OptionList',
@@ -26,18 +22,11 @@ requirejs([
         '../src/ogc/wms/WmsLayerCapabilities'
         ],
     function (
-        // OptionList,
-        // AutoMenu,
-        // GlobeInterface,
-        // Globe,
-        // Controls,
-        // HeatmapPanel,
         WorldWind,
         LayerManager
     ) {
         "use strict";
         // Load Globe
-        // console.log(WorldWind);
         var globe = new WorldWind.WorldWindow("canvasOne");
 
         var layers = [
@@ -55,14 +44,6 @@ requirejs([
             layers[l].layer.enabled = layers[l].enabled;
             globe.addLayer(layers[l].layer);
         }
-        // var globe = new Globe({id: "canvasOne"});
-        // var globeID = "canvasOne";
-        // var controls = new Controls(globe);
-        // var gInterface = new GlobeInterface(globe);
-        //
-        // var heatmapPanel = new HeatmapPanel(globe, gInterface.globe.navigator, gInterface.globe.worldWindowController, controls);
-
-        // WorldWind.Logger.setLoggingLevel(WorldWind.Logger.LEVEL_WARNING);
 
         // Create a layer manager for controlling layer visibility.
         var layerManager = new LayerManager(globe);
@@ -73,15 +54,14 @@ requirejs([
         globe.goTo(new WorldWind.Position(37.0902, -95.7129, 9000000));
 
         // Web Map Service information from NASA's Near Earth Observations WMS
-        // var serviceAddress = "http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&request=GetCapabilities&version=1.1.1";
-        // var serviceAddress = "https://cors.aworldbridgelabs.com/http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities";
+        // var serviceAddress = "https://cors.aworldbridgelabs.com:9084/http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities";
+        var serviceAddress = "../config/ows.xml";
 
         var preloadWMSLayerName = [];
-        var highlightedItems= [];
-        var layerName = [];
+        // var highlightedItems= [];
         var preloadLayer = []; //preload entire layer name
         var layers = globe.layers;
-        let bob=[];
+        var bob=[];
         var checked = []; //selected toggle switch value
         var alertVal = true;
         var LayerSelected;
@@ -97,14 +77,12 @@ requirejs([
 
         function createWMSLayer (xmlDom) {
 
-            // console.log(xmlDom);
             // Create a WmsCapabilities object from the XML DOM
             var wms = new WorldWind.WmsCapabilities(xmlDom);
-            // console.log(wms.getNamedLayer);
 
             // Retrieve a WmsLayerCapabilities object by the desired layer name
             for (var n = 0; n < preloadWMSLayerName.length; n++) {
-                // console.log(preloadWMSLayerName[n]);
+
                 var wmsLayerCapability = wms.getNamedLayer(preloadWMSLayerName[n]);
 
                 // Form a configuration object from the wmsLayerCapability object
@@ -112,35 +90,28 @@ requirejs([
 
                 // Modify the configuration objects title property to a more user friendly title
                 wmsConfig.title = preloadWMSLayerName[n];
-                // console.log (wmsConfig.title);
 
                 // Create the WMS Layer from the configuration object
                 var wmsLayer = new WorldWind.WmsLayer(wmsConfig);
 
-                // console.log(wmsLayer);
                 // Add the layers to WorldWind and update the layer manager
                 globe.addLayer(wmsLayer);
                 layerManager.synchronizeLayerList();
             }
-        };
+        }
 
         // Called if an error occurs during WMS Capabilities document retrieval
         function logError (jqXhr, text, exception) {
             console.log("There was a failure retrieving the capabilities document: " + text + " exception: " + exception);
-        };
+        }
 
         function Placemark_Creation (RGB,PKValue, coLat, coLong, LayerName) {
-            // console.log(coLong);
-
             var placemark;
             var highlightAttributes;
             var placemarkLayer = new WorldWind.RenderableLayer(LayerName);
             var placemarkAttributes = new WorldWind.PlacemarkAttributes(null);
-            // console.log(latandlong[0]);
-
 
             // Create the custom image for the placemark.
-
             var canvas = document.createElement("canvas"),
                 ctx2d = canvas.getContext("2d"),
                 size = 60, c = size / 2, innerRadius = 12, outerRadius = 20;
@@ -148,7 +119,6 @@ requirejs([
             canvas.width = size;
             canvas.height = size;
             //This is the color of the placeholder and appearance (Most likely)
-            //             console.log(RGB);
 
             var gradient = ctx2d.createRadialGradient(c, c, innerRadius, c, c, outerRadius);
             gradient.addColorStop(0, RGB[0]);
@@ -160,17 +130,12 @@ requirejs([
             ctx2d.arc(c, c, outerRadius, 0, 2 * Math.PI, false);
             ctx2d.fill();
 
-            // var ImageLibrary = WorldWind.configuration.baseUrl + "home/Pics/" ;// location of the image files
-            // console.log(ImageLibrary);
-
-
             // Set up the common placemark attributes.
             placemarkAttributes.imageScale = 0.75; //placemark size!
             placemarkAttributes.imageOffset = new WorldWind.Offset(
                 WorldWind.OFFSET_FRACTION, 0.5,
                 WorldWind.OFFSET_FRACTION, 0.5);
             placemarkAttributes.imageColor = WorldWind.Color.WHITE;
-
 
             placemark = new WorldWind.Placemark(new WorldWind.Position(coLat, coLong, 1e2), true, null);
             // console.log(PKValue);
@@ -193,62 +158,59 @@ requirejs([
             placemark.highlightAttributes = highlightAttributes;
             placemark.primarykeyAttributes = PKValue;
 
-            // console.log(placemark);
-
             // Add the placemark to the layer.
             placemarkLayer.addRenderable(placemark);
             placemarkLayer.enabled = false;
             // console.log(placemarkLayer);
             // console.log(placemark);
             globe.addLayer(placemarkLayer);
-        };
+        }
 
-        function handlePick (o) {
-
-            // alert("ttyy");
-            // The input argument is either an Event or a TapRecognizer. Both have the same properties for determining
-            // the mouse or tap location.
-            var x = o.clientX,
-                y = o.clientY;
-
-            var redrawRequired = highlightedItems.length > 0; // must redraw if we de-highlight previously picked items
-
-            // De-highlight any previously highlighted placemarks.
-            for (var h = 0; h < highlightedItems.length; h++) {
-                highlightedItems[h].highlighted = false;
-            }
-            highlightedItems = [];
-
-            // Perform the pick. Must first convert from window coordinates to canvas coordinates, which are
-            // relative to the upper left corner of the canvas rather than the upper left corner of the page.
-            var pickList = globe .pick(globe.canvasCoordinates(x, y));
-            if (pickList.objects.length > 0) {
-                redrawRequired = true;
-            }
-
-            // Highlight the items picked by simply setting their highlight flag to true.
-            if (pickList.objects.length > 0) {
-                for (var p = 0; p < pickList.objects.length; p++) {
-                    pickList.objects[p].userObject.highlighted = true;
-
-                    // Keep track of highlighted items in order to de-highlight them later.
-                    highlightedItems.push(pickList.objects[p].userObject);
-
-                    // Detect whether the placemark's label was picked. If so, the "labelPicked" property is true.
-                    // If instead the user picked the placemark's image, the "labelPicked" property is false.
-                    // Applications might use this information to determine whether the user wants to edit the label
-                    // or is merely picking the placemark as a whole.
-                    if (pickList.objects[p].labelPicked) {
-                        // console.log("Label picked");
-                    }
-                }
-            }
-
-            // Update the window if we changed anything.
-            if (redrawRequired) {
-                globe.redraw(); // redraw to make the highlighting changes take effect on the screen
-            }
-        };
+        // function handlePick (o) {
+        //
+        //     // The input argument is either an Event or a TapRecognizer. Both have the same properties for determining
+        //     // the mouse or tap location.
+        //     var x = o.clientX,
+        //         y = o.clientY;
+        //
+        //     var redrawRequired = highlightedItems.length > 0; // must redraw if we de-highlight previously picked items
+        //
+        //     // De-highlight any previously highlighted placemarks.
+        //     for (var h = 0; h < highlightedItems.length; h++) {
+        //         highlightedItems[h].highlighted = false;
+        //     }
+        //     highlightedItems = [];
+        //
+        //     // Perform the pick. Must first convert from window coordinates to canvas coordinates, which are
+        //     // relative to the upper left corner of the canvas rather than the upper left corner of the page.
+        //     var pickList = globe .pick(globe.canvasCoordinates(x, y));
+        //     if (pickList.objects.length > 0) {
+        //         redrawRequired = true;
+        //     }
+        //
+        //     // Highlight the items picked by simply setting their highlight flag to true.
+        //     if (pickList.objects.length > 0) {
+        //         for (var p = 0; p < pickList.objects.length; p++) {
+        //             pickList.objects[p].userObject.highlighted = true;
+        //
+        //             // Keep track of highlighted items in order to de-highlight them later.
+        //             highlightedItems.push(pickList.objects[p].userObject);
+        //
+        //             // Detect whether the placemark's label was picked. If so, the "labelPicked" property is true.
+        //             // If instead the user picked the placemark's image, the "labelPicked" property is false.
+        //             // Applications might use this information to determine whether the user wants to edit the label
+        //             // or is merely picking the placemark as a whole.
+        //             if (pickList.objects[p].labelPicked) {
+        //                 // console.log("Label picked");
+        //             }
+        //         }
+        //     }
+        //
+        //     // Update the window if we changed anything.
+        //     if (redrawRequired) {
+        //         globe.redraw(); // redraw to make the highlighting changes take effect on the screen
+        //     }
+        // }
 
         function handleMouseCLK (a)   {
             var x = a.clientX,
@@ -260,22 +222,14 @@ requirejs([
                 var pickedPM = pickListCLK.objects[m].userObject;
                 if (pickedPM instanceof WorldWind.Placemark) {
 
-                    // sitePopUp(pickedPM.label);
-                    // alert(pickedPM.label);
-                    // sitePopUp(pickListCLK.objects[m].position.latitude, pickListCLK.objects[m].position.longitude);
-                    // sitePopUp(pickListCLK.objects[m].position.longitude);
-                    console.log(pickListCLK.objects[m].userObject.primarykeyAttributes);
                     sitePopUp(pickListCLK.objects[m].userObject.primarykeyAttributes);
-                    // console.log(pickedPM);
 
                     $(document).ready(function () {
 
                         var modal = document.getElementById('popupBox');
                         var span = document.getElementById('closeIt');
-                        console.log(modal);
+
                         modal.style.display = "block";
-
-
 
                         span.onclick = function () {
                             modal.style.display = "none";
@@ -283,33 +237,21 @@ requirejs([
                             window.onclick = function (event) {
                                 if (event.target === modal) {
                                     modal.style.display = "none";
-
                                 }
                             }
                         }
                     });
                 }
             }
-        };
+        }
 
         function sitePopUp (PKValue) {
             var popupBodyItem = $("#popupBody");
             var c = PKValue;
-            console.log(c);
-
-            // console.log(infobox);
-
 
             for (var k = 0, lengths = infobox.length; k < lengths; k++) {
-                // alert("popup info");
-                console.log(infobox[k].PK);
                 if (infobox[k].PK === c) {
-                    console.log("good-bye");
-
                     popupBodyItem.children().remove();
-                    // alert(infobox[k].sitename);
-                    //     alert("hi");
-
 
                     var popupBodyName = $('<p class="site-name"><h4>' + infobox[k].LayerName + '</h4></p>');
                     var popupBodyDesc = $('<p class="site-description">' + infobox[k].Site_Description + '</p><br>');
@@ -325,63 +267,40 @@ requirejs([
                     popupBodyItem.append(copyrightStatus);
                     popupBodyItem.append(coordinates);
                     break
-
-                    // alert(popupBodyName);
                 }
             }
-
-            // alert("hello" + pmDescription[0].Layer_Name);
-            // alert ("length: " + pmDescription.length);
-
-            // for (var k = 0, lengths = pmDescription.length; k < lengths; k++) {
-            //     var pmLayerName = pmDescription[k].Layer_Name;
-            //     var pmSiteNam
-            // e = pmDescription[k].Site_Name;
-            //     var pmColor = pmDescription[k].Color;
-            //     var pmPicLoc = pmDescription[k].Picture_Location;
-            //
-            //     // if (pmLayerName[k]) {
-            //     //
-            //     //     popupBodyItem.children().remove();
-            //     //.
-            //     // }
-            // }
-        };
+        }
 
         function globlePosition (layerRequest){
             $.ajax({
-                url: 'position',
+                url: '/position',
                 type: 'GET',
                 dataType: 'json',
                 data: layerRequest, //send the most current value of the selected switch to server-side
                 async: false,
                 success: function (results) {
-                    console.log(results);
-                    LayerSelected = results[0];//the first object of an array --- Longitude: " ", Latitude: "", Altitude: "", ThirdLayer: "", LayerName: ""
-                    console.log(LayerSelected);
+                    LayerSelected = results[0];//the first object of an array --- Longitude: " ", Latitude: "", Altitude: "", ThirdLayer: "", LayerName: ""console.log(LayerSelected);
                     // console.log(LayerSelected);
                     Altitude = LayerSelected.Altitude * 1000;
                     globe.goTo(new WorldWind.Position(LayerSelected.Latitude, LayerSelected.Longitude, Altitude));
                 }
             })
-        };
+        }
 
         function buttonControl (allCheckedArray,layer1){
             if (alertVal){
                 confirm("Some layers may take awhile to load. Please be patient.")
             }
-            console.log(allCheckedArray.length);
+
             if (allCheckedArray.length > checkedCount){ //if there is new array was inserted into the allCheckedArray ( If user choose more than 1 switch)
                 checked.push(layer1); //insert current value to "checked" array
                 checkedCount = allCheckedArray.length; //checkedCount now equals to the numbers of arrays that were inserted to allCheckedArray
                 alertVal = false; //alert (only appear at the first time)
                 currentSelectedLayer.prop('value', LayerSelected.ThirdLayer); //if there are new array was inserted into the allCheckedArray,the value of the opened layer button equals to the name of the switch that user selected
-                console.log(currentSelectedLayer);
                 arrMenu.push(LayerSelected.ThirdLayer);
-                console.log(LayerSelected);
+
                 //insert current ThirdLayer value to arrMenu
                 j = arrMenu.length - 1; //count
-                console.log(arrMenu.length);
                 if(arrMenu.length === 1){ //if the length of arrMenu is equal to 1 /if user only checks one switch.
                     nextL.prop('disabled',true);
                     previousL.prop('disabled',true);
@@ -404,9 +323,6 @@ requirejs([
                 alertVal = false;
                 currentSelectedLayer.prop('value',arrMenu[arrMenu.length - 1]);
                 // currentSelectedLayer.prop('value',arrMenu[j]);
-                console.log(arrMenu[arrMenu.length - 1]);
-                console.log(arrMenu.length - 1);
-                console.log('hh');
                 // currentSelectedLayer.value = arrMenu[arrMenu.length - 1];
                 j = arrMenu.length - 1;
                 if(arrMenu.length === 1){
@@ -427,7 +343,7 @@ requirejs([
                 }
             }
 
-        };
+        }
 
         //preload function
         $(document).ready(function() {
@@ -437,83 +353,22 @@ requirejs([
                 dataType: 'json',
                 success: function(result) {
                     if (!result.err) {
-                        console.log(result.data);
                         infobox = result.data;
                         for (var k = 0; k < infobox.length; k++) {
-                            // alert (data[0].Color);
 
                             var colorAttribute = infobox[k].Color;
-
                             var cAtwo = colorAttribute.split(" ");
-
                             var coLat = infobox[k].Latitude;
-
                             var coLong = infobox[k].Longitude;
-
                             var PK = infobox[k].PK;
-
                             var LayerName = infobox[k].LayerName;
 
                             Placemark_Creation(cAtwo, PK, coLat, coLong, LayerName);
                         }
                     }
-
                 }
             });
 
-            $('.placemarkLayer').click(function(){
-
-                var val1;
-                if ($('.placemarkLayer').is(":checkbox:checked")) {
-                    alert("hi");
-
-                    $(':checkbox:checked').each(function () {
-                        val1 = $(this).val();
-                        // var str = val+'';
-                        // val2 = str.split(",");
-                        console.log(val1);
-                        console.log(layers);
-
-                        for (var a = 0; a < layers.length; a++) {
-
-                            if (layers[a].displayName === val1) {
-                                alert(layers[a].displayName + " works now!");
-
-                                layers[a].enabled = true;
-                                console.log(layers[a]);
-                                // console.log('KEA_Wind_Turbine'); //find out how to console the problem
-
-                            }
-                        }
-                    });
-                }
-
-                if($('.placemarkLayer').is(":not(:checked)")) {
-                    // console.log("enable:false");
-                    var val2;
-                    $(":checkbox:not(:checked)").each(function (i) {
-                        val2 = $(this).val();
-
-                        // console.log(str);
-                        // console.log(val2[i]);
-
-                        // alert("it doesn't works");
-                        // console.log(val);
-                        // console.log("s"+val2s[a].displayName);
-                        for (var a = 0; a < layers.length; a++) {
-                            if (layers[a].displayName === val2) {
-
-                                layers[a].enabled = false;
-
-                                // console.log("str: " + layers[a].displayName);
-                                // console.log(layers[a]);
-                            }
-                        }
-                    });
-                }
-            });
-
-            // var serviceAddress = "https://cors.aworldbridgelabs.com/http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities";
             //the beginning value of the button
             currentSelectedLayer.prop('value','No Layer Selected');
             nextL.prop('disabled',true);
@@ -523,15 +378,60 @@ requirejs([
             $(".wmsLayer").each(function (i) {
                 preloadLayer[i] = $(this).val();
             });
+
             var preloadLayerStr = preloadLayer + '';//change preloadLayer into a string
             preloadWMSLayerName = preloadLayerStr.split(",");//split preloadLayerStr with ","
 
-            $.get("../config/ows.xml").done(createWMSLayer).fail(logError);// get the xml file of wmslayer and pass the file into  createLayer function.
+            $.get(serviceAddress).done(createWMSLayer).fail(logError);// get the xml file of wmslayer and pass the file into  createLayer function.
+
+            // $('.placemarkLayer').click(function(){
+            //
+            //     var val1;
+            //     if ($('.placemarkLayer').is(":checkbox:checked")) {
+            //         alert("hi");
+            //
+            //         $(':checkbox:checked').each(function () {
+            //             val1 = $(this).val();
+            //             // var str = val+'';
+            //             // val2 = str.split(",");
+            //             console.log(val1);
+            //             console.log(layers);
+            //
+            //             for (var a = 0; a < layers.length; a++) {
+            //
+            //                 if (layers[a].displayName === val1) {
+            //                     alert(layers[a].displayName + " works now!");
+            //
+            //                     layers[a].enabled = true;
+            //                     console.log(layers[a]);
+            //                     // console.log('KEA_Wind_Turbine'); //find out how to console the problem
+            //
+            //                 }
+            //             }
+            //         });
+            //     }
+            //
+            //     if($('.placemarkLayer').is(":not(:checked)")) {
+            //         // console.log("enable:false");
+            //         var val2;
+            //         $(":checkbox:not(:checked)").each(function (i) {
+            //             val2 = $(this).val();
+            //             for (var a = 0; a < layers.length; a++) {
+            //                 if (layers[a].displayName === val2) {
+            //
+            //                     layers[a].enabled = false;
+            //
+            //                     // console.log("str: " + layers[a].displayName);
+            //                     // console.log(layers[a]);
+            //                 }
+            //             }
+            //         });
+            //     }
+            // });
 
             $(".wmsLayer,.placemarkLayer").click(function () {
                 var layer1 = $(this).val(); //the most current value of the selected switch
                 allCheckedArray = $(':checkbox:checked');
-                console.log(allCheckedArray);
 
                 var layerRequest = 'layername=' + layer1;
                 globlePosition(layerRequest);
@@ -574,7 +474,7 @@ requirejs([
                     j = j - 1;
                     // nextL.prop('disabled',false);
                     currentSelectedLayer.prop('value',arrMenu[j]); //value of currentSelectedLayer changes to the previous one
-                    console.log(j);
+
                     if (j === 0){
                         previousL.prop('disabled',true);// if there is no previous layer ,then the button would be disabled
                     }
@@ -582,10 +482,7 @@ requirejs([
             });
 
             $('#nextL').click(function(){
-                // console.log(arrMenu.length);
-                // console.log(j); //j = j - 1;
                 if(j !== arrMenu.length - 1){ // if there is not only one switch was selected
-                    // console.log(j);
                     if(j === arrMenu.length - 2){
                         nextL.prop('disabled',true);
                     }
@@ -593,9 +490,6 @@ requirejs([
                     previousL.prop('disabled',false);
                     currentSelectedLayer.prop('value',arrMenu[j]);
                 }
-                // else{
-                //     nextL.disabled = true; //?
-                // }
             });
 
             //if the opened layer was clicked, the layer shows
@@ -605,16 +499,15 @@ requirejs([
 
                 var currentSelectedLayerData = "thirdlayer=" + arrMenu[j];
                 $.ajax({
-                    url: 'thirdL',
+                    url: '/currentLayer',
                     type: 'GET',
                     dataType: 'json',
                     data:currentSelectedLayerData,
                     async: false,
                     success: function (results) {
                         var FirstLayerId = '#' + results[0].FirstLayer;
-                        // console.log(FirstLayerId);
                         var SecondLayerId = '#' + results[0].FirstLayer + '-' + results[0].SecondLayer;
-                        // console.log(SecondLayerId);
+
                         globe.goTo(new WorldWind.Position(results[0].Latitude, results[0].Longitude, results[0].Altitude * 1000));
 
                         $(FirstLayerId).collapse('show');
@@ -628,7 +521,7 @@ requirejs([
                 globe.goTo(new WorldWind.Position(37.0902, -95.7129, 9000000));
             });
 
-            globe.addEventListener("mousemove", handlePick);
+            // globe.addEventListener("mousemove", handlePick);
 
             globe.addEventListener("click", handleMouseCLK);
         });

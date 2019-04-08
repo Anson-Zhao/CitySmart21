@@ -236,6 +236,14 @@
     var passwordC = "<%= user.password %>";
     var newusername;
 
+
+    var getvalue = JSON.parse(localStorage.getItem("getvalue"));
+    document.getElementById('username').value = getvalue[0];
+    document.getElementById('firstName').value = getvalue[1];
+    document.getElementById('lastName').value = getvalue[2];
+
+
+
     $.ajax({
         url: "/profile",
         dataType: 'json',
@@ -282,21 +290,23 @@
     }
 
     function clearForm(){
-        if (confirm("Are you sure you want to leave this page? All the data will be cleared accordingly!") === true) {
+        if (confirm("Are you sure you want to leave this page? All data will be cleared accordingly.") === true) {
             document.getElementById("basic").reset();
             document.getElementById("pswchange").reset();
         }
     }
 
     function check() {
-        let password = "pass=" + document.getElementById("currentPassword").value;
+        // let password = "pass=" + document.getElementById("currentPassword").value;
         let oldP = document.getElementById("currentPassword").value;
         var newP = document.getElementById("newPassword").value;
         var confirmP = document.getElementById("confirmPassword").value;
+        let userProfileData = "username=" + UserName + "&pass=" + document.getElementById("currentPassword").value;
+
         $.ajax({
             url  : '/checkpassword',
             method : "POST",
-            data : password,
+            data : userProfileData,
             dataType: 'json',
             success : function(d){
                 if (d === true) {
@@ -306,8 +316,9 @@
                         if (oldP !== newP) {
                             if (newP === confirmP) {
                                 alert("You can submit now!");
+                                document.getElementById("submit").removeAttribute("disabled");
                             } else {
-                                alert("Passwords do not match!");
+                                alert("New passwords do not match!");
                             }
                         } else {
                             alert("Please make sure your new password is different from old one.");
@@ -337,10 +348,15 @@
             text.style.display = "block";
             document.getElementById("checkit").style.display = "block";
             document.getElementById("checkit").style.backgroundColor =  "#4183c4";
+            document.getElementById("submit").setAttribute("disabled", "");
+            alert("Please verify your password(s) by clicking \"Check\" before updating.");
+            alert("Please also verify that your current password is correct and your two new passwords match before submitting.");
+
         } else{
             text.style.display = "none";
             document.getElementById("checkit").style.display = "none";
             document.getElementById("checkit").style.backgroundColor =  "lightgray";
+            document.getElementById("submit").removeAttribute("disabled");
         }
         document.getElementById("submit").style.marginTop = "30px";
     }
@@ -400,7 +416,7 @@
             } else if(document.getElementById("username").value === UserName) {
                 document.getElementById("emailc").innerHTML = "";
             }  else{
-                document.getElementById("emailc").innerHTML = "The User Name will not change until you verify the new username in your email.";
+                document.getElementById("emailc").innerHTML = "The user name will not change until you verify the new username in your email.";
             }
         }
         // document.getElementById("emailc").innerHTML = "The User Name will not change until you verify the new username in your email.";

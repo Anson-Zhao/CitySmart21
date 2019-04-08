@@ -32,11 +32,11 @@ var configGlobal = {
 
     //upload file--pending
     // 'Upload_Path': 'http://usgs.aworldbridgelabs.com/uploadfiles',
-    // 'Upload_Path':'uploadfiles',
-    // 'Upload_Dir': '/var/www/usgs/uploadfiles',
+    // 'Upload_Path':'uploadfolder',
+    // 'Upload_Dir': '/var/www/usgs/uploadfolder',
 
     // 'Upload_Dir': 'uploadfolder',
-    'Upload_Dir': 'uploadfiles',
+    'Upload_Dir': 'uploadfolder',
 
     //approve file--active
     // 'GeoData_Dir': '/usr/share/worldwind-geoserver-0.2.1/data_dir/data/USGS'

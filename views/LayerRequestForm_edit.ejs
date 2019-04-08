@@ -251,7 +251,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group" hidden>
+                    <div class="form-group">
                         <label class="col-md-4 control-label">Main-Category</label>
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group">
@@ -279,7 +279,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group" hidden>
+                    <div class="form-group">
                         <label class="col-md-4 control-label">Sub-Category</label>
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group">
@@ -294,50 +294,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">Main-Category</label>
-                        <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group">
-                                <span class="input-group-addon" style="max-width: 100%;"><i class="glyphicon glyphicon-list"></i></span>
-                                <select required id="main2" class="selectpicker form-control" name="FirstLayer" onchange="ChangeMainCategory(this.value); Check(this.value);" >
-                                    <option value="">SELECT MAIN CATEGORY</option>
-                                    <option>CustomLayers_Energy</option>
-                                    <option>CustomLayers_Water</option>
-                                    <option>CustomLayers_Agriculture</option>
-                                    <option>CustomLayers_Transportation</option>
-                                    <option>CustomLayers_Economics</option>
-                                    <option>CustomLayers_Health_Services</option>
-                                    <option>CustomLayers_Risk_Management</option>
-                                    <option>CustomLayers_Education</option>
-                                    <option>BaseMap</option>
-                                    <option>NaturalHazards</option>
-                                    <option>OtherFeaturedData</option>
-                                    <option>Small-Scale</option>
-                                    <option>ThemeOverlayers</option>
-                                    <option value="other">Other(Please specify)</option>
-                                </select>
-                                <div id="other1" style="display:none;">
-                                    <input class="other" type="text" name="FirstOther" id="inputone">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">Sub-Category</label>
-                        <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group">
-                                <span class="input-group-addon" style="max-width: 100%;"><i class="glyphicon glyphicon-list"></i></span>
-                                <select id="sub2" class="selectpicker form-control" name="SecondLayer">
-                                    <option value="Category">SELECT SUBCATEGORY</option>
-                                    <option value="other" id="secondOther">Other(Please specify)</option>
-                                </select>
-                                <div id="other2" style="display:none;">
-                                    <input class="other" type="text" name="SecondOther" id="inputtwo">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
+                    <div class="form-group" hidden>
                         <label class="col-md-4 control-label">Layer Name</label>
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
@@ -463,6 +420,14 @@
                             </div>
                         </div>
                     </div>
+                    <div class="form-group" hidden>
+                        <label class="col-md-4 control-label">Picture String Name</label>
+                        <div class="col-md-8 inputGroupContainer">
+                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                                <input id="pictureStr" name="Layer_Uploader_name" value="" placeholder="Layer Name.  NOTE: Do not include spaces." class="form-control" required  type="text" onchange="SearchLayerName(this.value)"></div>
+                            <p id="LayerUploaderName" style="color: palevioletred;margin-top:15px;"></p>
+                        </div>
+                    </div>
                     <div class="form-group">
                         <label class="col-md-4 control-label">Layer Uploader <p>(You can only upload one file)</p> </label>
                         <div class="col-md-8 inputGroupContainer">
@@ -498,12 +463,13 @@
 <script>
     let UserRole = "<%= user.userrole %>";
     let rowSelectedValue = JSON.parse(localStorage.getItem("rowSelectedValue"));
+    console.log(rowSelectedValue);
 
     $(document).ready(function() {
         document.getElementById('date').value = rowSelectedValue[0];
         document.getElementById('User ID').value = rowSelectedValue[1];
         document.getElementById('RID').value = rowSelectedValue[2];
-        document.getElementById('LayerNameInput').value = rowSelectedValue[12];
+        document.getElementById('pictureStr').value = rowSelectedValue[15];
         document.getElementById('LayerStateInput').value = rowSelectedValue[6];
         document.getElementById('LayerFormat').value = rowSelectedValue[14];
         document.getElementById('LayerFormat2').value = rowSelectedValue[14];
@@ -520,20 +486,16 @@
 
         if(rowSelectedValue[8] === "other" || rowSelectedValue[10] === "other"){
             document.getElementById('main').value = rowSelectedValue[8];
-            document.getElementById('main2').value = rowSelectedValue[8];
             document.getElementById("other1").style.display = "block";
             document.getElementById("inputone").value = rowSelectedValue[9];
             $('#sub option[value="Category"]').val(rowSelectedValue[10]);
-            $('#sub2 option[value="Category"]').val(rowSelectedValue[10])
-            $("#sub2").html("<option>" + rowSelectedValue[10]+ "</option>")
+            $("#sub").html("<option>" + rowSelectedValue[10]+ "</option>")
             document.getElementById("other2").style.display = "block";
             document.getElementById("inputtwo").value = rowSelectedValue[11];
         }else{
             document.getElementById('main').value = rowSelectedValue[8];
-            document.getElementById('main2').value = rowSelectedValue[8];
             $('#sub option[value="Category"]').val(rowSelectedValue[10]);
-            $('#sub2 option[value="Category"]').val(rowSelectedValue[10]);
-            $("#sub2").html("<option>" + rowSelectedValue[10]+ "</option>")
+            $("#sub").html("<option>" + rowSelectedValue[10]+ "</option>")
         }
 
         $(function () {
@@ -549,13 +511,9 @@
                 document.getElementById('continent').disabled = false;
                 document.getElementById('country2').disabled = true;
                 document.getElementById('continent2').disabled = true;
-                document.getElementById('DisplayName').readOnly = true;
                 document.getElementById('main').disabled = true;
                 document.getElementById('sub').disabled = false;
-                document.getElementById('sub2').disabled = true;
-                document.getElementById('LayerNameInput').readOnly = true;
                 document.getElementById('main').disabled = false;
-                document.getElementById('main2').disabled = true;
                 document.getElementsByClassName('qq-uploader-selector').disabled = true;
                 document.getElementById('upload-button').disabled = true;
                 // $('#upload-button').prop('disabled',true);
@@ -723,6 +681,7 @@
                 let lForm = "lForm=" + rowSelectedValue[14];
                 let fName = "fName=" + rowSelectedValue[12];
                 let data = $("#layer").serialize();
+                console.log(fName);
                 $.ajax({
                     url: 'approve',
                     type: "GET",
@@ -901,13 +860,24 @@
         if (confirm("Are you sure to reject the data?") === true) {
             let tID = "reject=" + document.getElementById('RID').value;
             let Comment = "comment=" + document.getElementById('comment').value;
+            let rejectPicPath = "picturePath="+ rowSelectedValue[15];
             $.ajax({
                 url: 'reject',
                 type: "GET",
                 dataType: 'json',
-                data: tID + "&" + Comment,
+                data: tID + "&" + Comment + "&" +rejectPicPath,
+                success: function (result) {
+                    console.log(result.message);
+                    console.log(result.error);
+
+                    if(result.error === true){
+                        alert(result.message)
+                    }else{
+                        alert(result.message);
+                    }
+                    window.location.replace('/userHome')
+                }
             });
-            window.location.replace('/userHome');
         }else {
             return false;
         }

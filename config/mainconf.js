@@ -27,26 +27,30 @@ var configGlobal = {
     // 'local_URL' : "",
     // 'local_URL' : "http://viewer.usgs.aworldbridgelabs.com",
 
-    // 'Upload_Path': 'http://usgs.aworldbridgelabs.com/uploadfiles',
-    'Download_Path':'../config',
+    //upload path to geoserver when approved
+    'geoServer' : 'http://cs.aworldbridgelabs.com:8080/geoserver/',
+
+    //sysnchronization between approvedfolder and data folder under geoserver when approved
+    // 'Sync_Dir' : '/usr/share/geoserver-2.15.0/data_dir/data/Approved',
+    'Sync_Dir' : 'syncfolder',
+
+    //download/backup wmsCapabilities file (xml)
+    'Download_From' : 'https://cors.aworldbridgelabs.com:9084/http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities',
+    'Download_To':'../config/ows.xml',
+    'Backup_Dir':'../config/geoCapacity',
 
     //upload file--pending
-    // 'Upload_Path': 'http://usgs.aworldbridgelabs.com/uploadfiles',
-    // 'Upload_Path':'uploadfiles',
-    // 'Upload_Dir': '/var/www/usgs/uploadfiles',
-
-    // 'Upload_Dir': 'uploadfolder',
-    'Upload_Dir': 'uploadfiles',
+    'Pending_Dir': 'uploadfolder',
+    'Reject_Dir': 'rejectfolder',
 
     //approve file--active
-    // 'GeoData_Dir': '/usr/share/worldwind-geoserver-0.2.1/data_dir/data/USGS'
-    'GeoData_Dir':'approvedfolder',
+    'Approve_Dir': 'approvedfolder',
 
     //trashfolder file--trashfolder
-    'Delete_Dir':'trashfolder',
+    'Delete_Dir': 'trashfolder',
 
-    //rejectfolder file--rejectfolder
-    'Reject_Dir':'rejectfolder',
+    'num_backups': 24,
+    'download_interval': 3600000,
 
     // uswtdb eye distance for placemark layer menu display (km)
     'eyeDistance_PL': 1500,
@@ -55,15 +59,7 @@ var configGlobal = {
     'eyeDistance_Heatmap': 4500,
 
     // uswtdb initial eye distance (m)
-    'eyeDistance_initial': 5000000,
-
-    // 'num_backups': 100,
-
-    'num_backups': 4,
-
-    'download_interval':660000,
-
-    // 'download_interval':86400000,
+    'eyeDistance_initial': 5000000
 };
 
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {

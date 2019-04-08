@@ -1,6 +1,6 @@
 function SearchLayerName(value){
     $.ajax({
-        url: "SearchLayerName",
+        url: "/SearchLayerName",
         dataType:"json",
         success: function (results) {
             for(var i = 0; i < results.length; i++) {
@@ -30,7 +30,7 @@ function SearchLayerName(value){
 
 function SearchThirdLayer(thisvalue){
     $.ajax({
-        url: "SearchThirdLayer",
+        url: "/SearchThirdLayer",
         dataType:"json",
         success: function (results) {
             for(var i = 0; i < results.length; i++) {

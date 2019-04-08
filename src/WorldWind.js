@@ -29124,7 +29124,7 @@ define('globe/AsterV2ElevationCoverage',[
                 retrievalImageFormat: "application/bil16",
                 minElevation: -11000,
                 maxElevation: 8850,
-                urlBuilder: new WmsUrlBuilder("https://emxsys.net/worldwind26/elev", "aster_v2", "", "1.3.0")
+                urlBuilder: new WmsUrlBuilder("https://cors.aworldbridgelabs.com:9084/https://emxsys.net/worldwind26/elev", "aster_v2", "", "1.3.0")
                 // urlBuilder: new WmsUrlBuilder("https://worldwind26.arc.nasa.gov/elev", "aster_v2", "", "1.3.0")
             });
 
@@ -50673,7 +50673,7 @@ define('globe/GebcoElevationCoverage',[
                 retrievalImageFormat: "application/bil16",
                 minElevation: -11000,
                 maxElevation: 8850,
-                urlBuilder: new WmsUrlBuilder("https://emxsys.net/worldwind26/elev", "GEBCO", "", "1.3.0")
+                urlBuilder: new WmsUrlBuilder("https://cors.aworldbridgelabs.com:9084/https://emxsys.net/worldwind26/elev", "GEBCO", "", "1.3.0")
                 // urlBuilder: new WmsUrlBuilder("https://worldwind26.arc.nasa.gov/elev", "GEBCO", "", "1.3.0")
             });
 
@@ -50731,7 +50731,7 @@ define('globe/UsgsNedElevationCoverage',[
                 retrievalImageFormat: "application/bil16",
                 minElevation: -11000,
                 maxElevation: 8850,
-                urlBuilder: new WmsUrlBuilder("https://emxsys.net/worldwind26/elev", "USGS-NED", "", "1.3.0")
+                urlBuilder: new WmsUrlBuilder("https://cors.aworldbridgelabs.com:9084/https://emxsys.net/worldwind26/elev", "USGS-NED", "", "1.3.0")
                 // urlBuilder: new WmsUrlBuilder("https://worldwind26.arc.nasa.gov/elev", "USGS-NED", "", "1.3.0")
             });
 
@@ -50789,7 +50789,7 @@ define('globe/UsgsNedHiElevationCoverage',[
                 retrievalImageFormat: "application/bil16",
                 minElevation: -11000,
                 maxElevation: 8850,
-                urlBuilder: new WmsUrlBuilder("https://emxsys.net/worldwind26/elev", "USGS-NED", "", "1.3.0")
+                urlBuilder: new WmsUrlBuilder("https://cors.aworldbridgelabs.com:9084/https://emxsys.net/worldwind26/elev", "USGS-NED", "", "1.3.0")
                 // urlBuilder: new WmsUrlBuilder("https://worldwind26.arc.nasa.gov/elev", "USGS-NED", "", "1.3.0")
             });
 
@@ -69893,7 +69893,7 @@ define('ogc/ows/OwsOperationsMetadata',[
         OwsOperationsMetadata.assembleMethod = function (element) {
             var result = {};
 
-            result.url = element.getAttribute("xlink:href");
+            result.url = "https://cors.aworldbridgelabs.com:9084/" + element.getAttribute("xlink:href");
 
             var children = element.children || element.childNodes;
             for (var c = 0; c < children.length; c++) {
@@ -70035,7 +70035,7 @@ define('ogc/ows/OwsServiceProvider',[
                 if (child.localName === "ProviderName") {
                     this.providerName = child.textContent;
                 } else if (child.localName === "ProviderSite") {
-                    this.providerSiteUrl = child.getAttribute("xlink:href");
+                    this.providerSiteUrl = "https://cors.aworldbridgelabs.com:9084/" + child.getAttribute("xlink:href");
                 } else if (child.localName === "ServiceContact") {
                     this.serviceContact = OwsServiceProvider.assembleServiceContact(child);
                 }
@@ -70902,7 +70902,7 @@ define('ogc/wms/WmsLayerCapabilities',[
                     result.title = childElement.textContent;
 
                 } else if (childElement.localName === "OnlineResource") {
-                    result.url = childElement.getAttribute("xlink:href");
+                    result.url = "https://cors.aworldbridgelabs.com:9084/" + childElement.getAttribute("xlink:href");
 
                 } else if (childElement.localName === "LogoUrul") {
                     result.logoUrl = WmsLayerCapabilities.assembleLogoUrl(childElement);
@@ -70922,7 +70922,7 @@ define('ogc/wms/WmsLayerCapabilities',[
                 var childElement = children[c];
 
                 if (childElement.localName === "OnlineResource") {
-                    result.url = childElement.getAttribute("xlink:href");
+                    result.url = "https://cors.aworldbridgelabs.com:9084/" + childElement.getAttribute("xlink:href");
                 }
             }
 
@@ -70951,7 +70951,7 @@ define('ogc/wms/WmsLayerCapabilities',[
                     result.format = childElement.textContent;
 
                 } else if (childElement.localName === "OnlineResource") {
-                    result.url = childElement.getAttribute("xlink:href");
+                    result.url = "https://cors.aworldbridgelabs.com:9084/" + childElement.getAttribute("xlink:href");
                 }
             }
 
@@ -70972,7 +70972,7 @@ define('ogc/wms/WmsLayerCapabilities',[
                     result.format = childElement.textContent;
 
                 } else if (childElement.localName === "OnlineResource") {
-                    result.url = childElement.getAttribute("xlink:href");
+                    result.url = "https://cors.aworldbridgelabs.com:9084/" + childElement.getAttribute("xlink:href");
                 }
             }
 
@@ -70993,7 +70993,7 @@ define('ogc/wms/WmsLayerCapabilities',[
                     result.format = childElement.textContent;
 
                 } else if (childElement.localName === "OnlineResource") {
-                    result.url = childElement.getAttribute("xlink:href");
+                    result.url = "https://cors.aworldbridgelabs.com:9084/" + childElement.getAttribute("xlink:href");
                 }
             }
 
@@ -71011,7 +71011,7 @@ define('ogc/wms/WmsLayerCapabilities',[
                     result.format = childElement.textContent;
 
                 } else if (childElement.localName === "OnlineResource") {
-                    result.url = childElement.getAttribute("xlink:href");
+                    result.url = "https://cors.aworldbridgelabs.com:9084/" + childElement.getAttribute("xlink:href");
                 }
             }
 
@@ -71185,7 +71185,7 @@ define('ogc/wms/WmsCapabilities',[
                 } else if (child.localName === "KeywordList") {
                     service.keywordList = this.assembleKeywordList(child);
                 } else if (child.localName === "OnlineResource") {
-                    service.url = child.getAttribute("xlink:href");
+                    service.url = "https://cors.aworldbridgelabs.com:9084/" + child.getAttribute("xlink:href");
                 } else if (child.localName === "Fees") {
                     service.fees = child.textContent;
                 } else if (child.localName === "AccessConstraints") {
@@ -71352,7 +71352,7 @@ define('ogc/wms/WmsCapabilities',[
                                     for (var c4 = 0; c4 < children4.length; c4++) {
                                         var child4 = children4[c4];
                                         if (child4.localName === "OnlineResource") {
-                                            request.getUrl = child4.getAttribute("xlink:href");
+                                            request.getUrl = "https://cors.aworldbridgelabs.com:9084/" + child4.getAttribute("xlink:href");
                                         }
                                     }
                                 }
@@ -71685,7 +71685,7 @@ define('ogc/wmts/WmtsLayerCapabilities',[
         WmtsLayerCapabilities.assembleMetadata = function (element) { // TODO
             var result = {};
 
-            var link = element.getAttribute("xlink:href");
+            var link = "https://cors.aworldbridgelabs.com:9084/" + element.getAttribute("xlink:href");
             if (link) {
                 result.url = link;
             }
@@ -71738,7 +71738,7 @@ define('ogc/wmts/WmtsLayerCapabilities',[
             result.format = element.getAttribute("format");
             result.minScaleDenominator = element.getAttribute("minScaleDenominator");
             result.maxScaleDenominator = element.getAttribute("maxScaleDenominator");
-            result.href = element.getAttribute("xlink:href");
+            result.href = "https://cors.aworldbridgelabs.com:9084/" + element.getAttribute("xlink:href");
             result.width = element.getAttribute("width");
             result.height = element.getAttribute("height");
 
@@ -72051,7 +72051,7 @@ define('ogc/wmts/WmtsCapabilities',[
         WmtsCapabilities.assembleServiceMetadataURL = function (element) {
             var result = {};
 
-            var link = element.getAttribute("xlink:href");
+            var link = "https://cors.aworldbridgelabs.com:9084/" + element.getAttribute("xlink:href");
             if (link) {
                 result.url = link;
             }
@@ -84313,7 +84313,7 @@ define('ogc/wcs/WcsCapabilities',[
                 var child = children[c];
 
                 if (child.localName === "OnlineResource") {
-                    return child.getAttribute("xlink:href");
+                    return ("https://cors.aworldbridgelabs.com:9084/" + child.getAttribute("xlink:href"));
                 }
             }
         };
@@ -84816,7 +84816,7 @@ define('ogc/gml/GmlRectifiedGrid',[
                 if (child.localName === "description") {
                     this.description = child.textContent;
                 } else if (child.localName === "descriptionReference") {
-                    this.descriptionReference = child.getAttribute("xlink:href");
+                    this.descriptionReference = "https://cors.aworldbridgelabs.com:9084/" + child.getAttribute("xlink:href");
                 } else if (child.localName === "identifier") {
                     this.identifier = child.textContent;
                 } else if (child.localName === "name") {
@@ -84883,7 +84883,7 @@ define('ogc/gml/GmlRectifiedGrid',[
         GmlRectifiedGrid.prototype.assembleOrigin = function (element) {
             var origin = {};
             origin.type = element.getAttribute("xlink:type");
-            origin.href = element.getAttribute("xlink:href");
+            origin.href = "https://cors.aworldbridgelabs.com:9084/" + element.getAttribute("xlink:href");
             origin.role = element.getAttribute("xlink:role");
             origin.arcrole = element.getAttribute("xlink:arcrole");
             origin.title = element.getAttribute("xlink:title");

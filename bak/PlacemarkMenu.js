@@ -354,7 +354,7 @@ requirejs(['./WorldWindShim',
 
                     var popupBodyName = $('<p class="site-name"><h4>' + infobox[k].LayerName + '</h4></p>');
                     var popupBodyDesc = $('<p class="site-description">' + infobox[k].Site_Description + '</p><br>');
-                    var fillerImages = $('<img style="width:100%; height:110%;" src="../images/Pics/' + infobox[k].Picture_Location + '"/>');
+                    var fillerImages = $('<img style="width:100%; height:110%;" src=' + infobox[k].Picture_Location + '"../images/Pics"/>');
                     var imageLinks = $('<h6><strong><a href="' + infobox[k].Link_to_site_location + '">Website Link </a></strong></h6>');
 
                     popupBodyItem.append(popupBodyName);
