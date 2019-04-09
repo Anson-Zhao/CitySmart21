@@ -411,6 +411,7 @@ module.exports = function (app, passport) {
         let transactionPrStatusStr = req.query.transactionStatusStr.split(',');
         let layerNameStr = req.query.layerName.split(',');
         console.log(pictureStr.length);
+        console.log(transactionStatusStr);
         // mover folder
         for(let i = 0; i < pictureStr.length; i++) {//the length of pictureStr and Prior_status may not be the same since some layer may not have picture with it
             console.log("tran:"+transactionPrStatusStr[i]);
@@ -421,6 +422,7 @@ module.exports = function (app, passport) {
                 }
 
             }
+
 
             if (transactionPrStatusStr[i] === 'Pending') {
                 console.log('pending');
@@ -1711,6 +1713,17 @@ module.exports = function (app, passport) {
                 console.log(results);
                 // res.json(results[i]);
             });
+
+            if(transactionPrStatusStr[i] === 'Approved'){
+                console.log('Approved');
+
+                fs.rename(''+ Delete_Dir + '/' + pictureStr[i] + '' , '' + Approve_Dir + '/' + pictureStr[i] + '', function (err) {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        console.log("Recovery process is successful");
+                    }
+                });
         }
     });
 
