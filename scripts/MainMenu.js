@@ -91,13 +91,19 @@ requirejs([
                 // Modify the configuration objects title property to a more user friendly title
                 wmsConfig.title = preloadWMSLayerName[n];
 
+
+
                 // Create the WMS Layer from the configuration object
                 var wmsLayer = new WorldWind.WmsLayer(wmsConfig);
 
+                wmsLayer.enabled = false;
+
                 // Add the layers to WorldWind and update the layer manager
                 globe.addLayer(wmsLayer);
+                console.log(globe.layers);
                 layerManager.synchronizeLayerList();
             }
+
         }
 
         // Called if an error occurs during WMS Capabilities document retrieval
