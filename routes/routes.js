@@ -124,7 +124,7 @@ module.exports = function (app, passport) {
         });
     });
 
-    app.get('/currenLayer',function (req,res) {
+    app.get('/currentLayer',function (req,res) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
         var thirdlayer = req.query.thirdlayer;
         var queryState = 'SELECT FirstLayer, SecondLayer, ThirdLayer, Longitude, Latitude, Altitude FROM LayerMenu WHERE ThirdLayer = ?';
