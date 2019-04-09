@@ -308,6 +308,7 @@
     let UserRole = "<%= user.userrole %>";
     let transactionID = [];
     let LayerNameStr = [];
+    let curStatus = [];
     let queryStr;
 
     $(document).ready(function() {
@@ -355,6 +356,8 @@
                 transactionID.push(rowSelected[i][2]); //object variable / push means insert this value into ScoutingID
                 picPath.push(rowSelected[i][15]);
                 LayerNameStr.push(rowSelected[i][12]);
+                curStatus.push(rowSelected[i][16]);
+
             }
         });
 
@@ -374,19 +377,21 @@
         });
 
         $("#deleteButton").on("click", function () {
-            if (confirm("Are you sure you would like to trashfolder the row(s) you selected?") === true) {
+            if (confirm("Are you sure you would lik 3e to trashfolder the row(s) you selected?") === true) {
                 // console.log(transactionID); //provides the associated values of the element(record) in the array
 
                 let transactionIDStr = "transactionIDStr=" + transactionID.toString();//combines Scouting ID with the trapID
                 console.log(transactionIDStr);
                 let pictureStr = "pictureStr=" + picPath.toString();
                 let LayerName = "LayerName=" + LayerNameStr.toString();
-                console.log(transactionIDStr + '&' + pictureStr + '&' + LayerName);
+                let CurStatus = "currentStatus=" + curStatus.toString();
+
+                console.log(transactionIDStr + '&' + pictureStr + '&' + LayerName + '&' + CurStatus);
                 $.ajax({
                     url: '/deleteData',
                     type: "GET",
                     dataType: 'json',
-                    data: transactionIDStr + '&' + pictureStr + '&' + LayerName,
+                    data: transactionIDStr + '&' + pictureStr + '&' + LayerName + '&' + CurStatus,
                     success: function (result) {
                         console.log(result);
                         window.location.reload();

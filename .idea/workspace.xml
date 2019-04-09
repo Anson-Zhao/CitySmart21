@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4704f94f-8e06-4422-a8b4-19d911764f68" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config/geoCapacity/2019_4_8_11_38_33.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_4_8_11_38_33.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/WorldWind.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/WorldWind.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/globe/AsterV2ElevationCoverage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/globe/AsterV2ElevationCoverage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/globe/GebcoElevationCoverage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/globe/GebcoElevationCoverage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/globe/UsgsNedElevationCoverage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/globe/UsgsNedElevationCoverage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/globe/UsgsNedHiElevationCoverage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/globe/UsgsNedHiElevationCoverage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/userHome.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/userHome.ejs" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -41,20 +37,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="413" column="42" selection-start-line="413" selection-start-column="42" selection-end-line="413" selection-end-column="42" />
+            <state relative-caret-position="448">
+              <caret line="1761" column="49" lean-forward="true" selection-start-line="1761" selection-start-column="49" selection-end-line="1761" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/userHome.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="489">
+              <caret line="400" lean-forward="true" selection-start-line="400" selection-end-line="400" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node_modules/mysql/lib/Connection.js">
+        <entry file="file://$PROJECT_DIR$/views/recovery.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="501" column="9" selection-start-line="501" selection-start-column="9" selection-end-line="501" selection-end-column="9" />
+            <state relative-caret-position="288">
+              <caret line="387" column="66" selection-start-line="387" selection-start-column="46" selection-end-line="387" selection-end-column="66" />
             </state>
           </provider>
         </entry>
@@ -64,24 +69,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="140">
               <caret line="458" column="13" selection-start-line="458" selection-start-column="13" selection-end-line="459" selection-end-column="70" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/userHome.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
-              <caret line="357" column="13" selection-start-line="357" selection-start-column="13" selection-end-line="357" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/recovery.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="425" column="17" selection-start-line="425" selection-start-column="17" selection-end-line="425" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -119,8 +106,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/mainconf.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="49">
-              <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
+            <state relative-caret-position="284">
+              <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -146,10 +133,16 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
+      <find>fsextra</find>
+      <find>resXMLRequest</find>
+      <find>geoCapacity</find>
+      <find>num_backups</find>
+      <find>downloadPath</find>
       <find>KEA</find>
       <find>console.log</find>
       <find>sourceFiles</find>
       <find>sourcefiles</find>
+      <find>copySource</find>
       <find>removeFile</find>
       <find>dir</find>
       <find>remove</find>
@@ -161,21 +154,15 @@
       <find>Reject_Dir</find>
       <find>Pending_Dir</find>
       <find>FTAA</find>
-      <find>fs.read</find>
-      <find>downloadDis</find>
-      <find>26</find>
-      <find>worldwind26</find>
-      <find>github</find>
-      <find>sys</find>
-      <find>emxsys</find>
-      <find>onDeleteFile2</find>
-      <find>statementNext</find>
-      <find>copySource</find>
-      <find>WMS_URL</find>
-      <find>Download_From</find>
-      <find>approve</find>
-      <find>Layer_Uploader</find>
+      <find>fs</find>
       <find>transactionPrStatusStr</find>
+      <find>disapprove</find>
+      <find>LayerNameStr</find>
+      <find>recover</find>
+      <find>deleteData</find>
+      <find>transactionStatusStr</find>
+      <find>delete</find>
+      <find>picPath</find>
     </findStrings>
     <replaceStrings>
       <replace>src</replace>
@@ -193,12 +180,6 @@
       <replace>sourceFile</replace>
       <replace>sourceFiles</replace>
       <replace>copySource</replace>
-      <replace>copyDest</replace>
-      <replace>myState1</replace>
-      <replace>uploadStat1</replace>
-      <replace>uploadStat2</replace>
-      <replace>myStat2</replace>
-      <replace>Download_From</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/views</dir>
@@ -227,7 +208,6 @@
         <option value="$PROJECT_DIR$/src/globe/UsgsNedHiElevationCoverage.js" />
         <option value="$PROJECT_DIR$/views/userEdit.ejs" />
         <option value="$PROJECT_DIR$/views/login.ejs" />
-        <option value="$PROJECT_DIR$/views/userHome.ejs" />
         <option value="$PROJECT_DIR$/views/reset.ejs" />
         <option value="$PROJECT_DIR$/views/signup.ejs" />
         <option value="$PROJECT_DIR$/src/globe/WcsEarthElevationCoverage.js" />
@@ -256,14 +236,15 @@
         <option value="&lt;0858d933-fec0-4d22-8df5-5be4b9951d68&gt;/routes/routes.js" />
         <option value="$PROJECT_DIR$/config/mainconf.js" />
         <option value="$PROJECT_DIR$/routes/routes.js" />
+        <option value="$PROJECT_DIR$/views/userHome.ejs" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="202" />
-    <option name="y" value="84" />
-    <option name="width" value="2119" />
-    <option name="height" value="1237" />
+    <option name="x" value="-13" />
+    <option name="y" value="29" />
+    <option name="width" value="2061" />
+    <option name="height" value="1030" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -299,12 +280,12 @@
             <path>
               <item name="CitySmart21" type="b2602c69:ProjectViewProjectNode" />
               <item name="CitySmart21" type="462c0819:PsiDirectoryNode" />
-              <item name="trashfolder" type="462c0819:PsiDirectoryNode" />
+              <item name="rejectfolder" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CitySmart21" type="b2602c69:ProjectViewProjectNode" />
               <item name="CitySmart21" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="trashfolder" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -333,23 +314,24 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="settings.nodejs" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/views/recovery.ejs" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/config" />
-      <recent name="$PROJECT_DIR$/views" />
-      <recent name="$PROJECT_DIR$/routes" />
-      <recent name="$PROJECT_DIR$/scripts" />
-      <recent name="$PROJECT_DIR$/2" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/bak" />
       <recent name="$PROJECT_DIR$/config" />
       <recent name="$PROJECT_DIR$/scripts" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/routes" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/config" />
+      <recent name="$PROJECT_DIR$/views" />
+      <recent name="$PROJECT_DIR$/routes" />
+      <recent name="$PROJECT_DIR$/scripts" />
+      <recent name="$PROJECT_DIR$/2" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -393,7 +375,7 @@
       <workItem from="1554495111303" duration="5000" />
       <workItem from="1554495123402" duration="5176000" />
       <workItem from="1554585935570" duration="10665000" />
-      <workItem from="1554663441494" duration="18607000" />
+      <workItem from="1554663441494" duration="11803000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1553714451260</created>
@@ -717,53 +699,62 @@
       <option name="project" value="LOCAL" />
       <updated>1554675197994</updated>
     </task>
-    <task id="LOCAL-00047" summary="fix upload/trash/delete/reject folder path">
-      <created>1554678860198</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1554678860198</updated>
-    </task>
-    <task id="LOCAL-00048" summary="fix upload/trash/delete/reject folder path">
-      <created>1554737438685</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1554737438685</updated>
-    </task>
-    <option name="localTasksCounter" value="49" />
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84727000" />
+    <option name="totallyTimeSpent" value="81128000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="29" width="1872" height="1030" extended-state="0" />
-    <editor active="true" />
+    <frame x="79" y="29" width="2061" height="1030" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49933776" visible="true" weight="0.21147542" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49933776" visible="true" weight="0.21099554" />
       <window_info id="Structure" order="1" sideWeight="0.50066227" side_tool="true" weight="0.19517314" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49637157" weight="0.3294849" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.48814708" visible="true" weight="0.3285968" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.48828542" visible="true" weight="0.3272921" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49733913" weight="0.3294849" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49637157" weight="0.3285968" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5021858" side_tool="true" visible="true" weight="0.3283582" />
+      <window_info anchor="bottom" id="Database Changes" order="8" sideWeight="0.49945354" weight="0.32942432" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4968051" weight="0.43786296" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49617487" weight="0.3283582" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50054646" side_tool="true" weight="0.32942432" />
       <window_info anchor="bottom" id="Database Console" order="12" sideWeight="0.49952742" weight="0.3294849" />
       <window_info anchor="bottom" id="File Transfer" order="13" sideWeight="0.8021287" weight="0.3294849" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" weight="0.14690451" />
-      <window_info anchor="right" id="Remote Host" order="4" visible="true" weight="0.2660861" />
+      <window_info anchor="right" id="Database" order="3" weight="0.016393442" />
+      <window_info anchor="right" id="Remote Host" order="4" visible="true" weight="0.30382195" />
     </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49933776" visible="true" weight="0.21147542" />
+      <window_info id="Structure" order="1" sideWeight="0.50066227" side_tool="true" weight="0.19517314" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49637157" weight="0.3294849" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.48828542" visible="true" weight="0.3272921" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" sideWeight="0.49945354" weight="0.32942432" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4968051" weight="0.43786296" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49617487" weight="0.3283582" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50054646" side_tool="true" weight="0.32942432" />
+      <window_info anchor="bottom" id="Database Console" order="12" sideWeight="0.49952742" weight="0.3294849" />
+      <window_info anchor="bottom" id="File Transfer" order="13" sideWeight="0.8021287" weight="0.3294849" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" weight="0.016393442" />
+      <window_info anchor="right" id="Remote Host" order="4" visible="true" weight="0.30382195" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -826,6 +817,7 @@
     <option name="LAST_COMMIT_MESSAGE" value="fix upload/trash/delete/reject folder path" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/examples/Polygons.js" />
     <entry file="file://$PROJECT_DIR$/bak/views/homepage.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
@@ -885,17 +877,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/dataHistory.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="458" column="13" selection-start-line="458" selection-start-column="13" selection-end-line="459" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/forgotPassword.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="158" column="19" selection-start-line="158" selection-start-column="16" selection-end-line="158" selection-end-column="19" />
+        <state relative-caret-position="228">
+          <caret line="143" column="68" selection-start-line="143" selection-start-column="68" selection-end-line="143" selection-end-column="68" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -908,8 +896,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/LayerRequestForm.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="394" column="30" selection-start-line="394" selection-start-column="23" selection-end-line="394" selection-end-column="30" />
+        <state relative-caret-position="1106">
+          <caret line="574" column="42" selection-start-line="574" selection-start-column="42" selection-end-line="574" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -922,8 +910,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/userManagement.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="399" column="30" selection-start-line="399" selection-start-column="27" selection-end-line="399" selection-end-column="30" />
+        <state relative-caret-position="2535">
+          <caret line="564" column="46" selection-start-line="564" selection-start-column="46" selection-end-line="564" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -950,8 +938,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/signup.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="74" column="95" selection-start-line="74" selection-start-column="95" selection-end-line="74" selection-end-column="95" />
+        <state relative-caret-position="240">
+          <caret line="153" column="61" selection-start-line="153" selection-start-column="61" selection-end-line="153" selection-end-column="61" />
         </state>
       </provider>
     </entry>
@@ -977,27 +965,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/recovery2.ejs" />
-    <entry file="file://$PROJECT_DIR$/views/userHome.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="357" column="13" selection-start-line="357" selection-start-column="13" selection-end-line="357" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/recovery.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="425" column="17" selection-start-line="425" selection-start-column="17" selection-end-line="425" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/LayerRequestForm_edit.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9063">
-          <caret line="482" column="74" selection-start-line="482" selection-start-column="74" selection-end-line="482" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/geoCapacity/2019_4_5_18_8_58.xml" />
     <entry file="file://$PROJECT_DIR$/config/ows2.xml" />
     <entry file="file://$PROJECT_DIR$/src/requirejs-2.3.6.min.js">
@@ -1040,38 +1007,75 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/geoCapacity/2019_4_7_15_19_48.xml" />
-    <entry file="file://$PROJECT_DIR$/node_modules/worldwindjs/build/dist/README.md" />
-    <entry file="file://$PROJECT_DIR$/node_modules/worldwindjs/build/dist/worldwind.js" />
     <entry file="file://$PROJECT_DIR$/scripts/MainMenu.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="86" selection-start-line="85" selection-start-column="16" selection-end-line="86" />
+        <state relative-caret-position="69">
+          <caret line="96" column="10" selection-start-line="96" selection-start-column="10" selection-end-line="96" selection-end-column="10" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <element signature="e#7932#7960#0" />
             <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+            <element signature="e#20632#20673#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/worldwindjs/build/dist/worldwind.min.js" />
-    <entry file="file://$PROJECT_DIR$/config/mainconf.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="49">
-          <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="413" column="42" selection-start-line="413" selection-start-column="42" selection-end-line="413" selection-end-column="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/ows.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="6161" column="38" selection-start-line="6161" selection-start-column="38" selection-end-line="6161" selection-end-column="38" />
+        <state relative-caret-position="202">
+          <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/LayerRequestForm_edit.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9063">
+          <caret line="482" column="74" selection-start-line="482" selection-start-column="74" selection-end-line="482" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/mysql/lib/Connection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="501" column="9" selection-start-line="501" selection-start-column="9" selection-end-line="501" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/dataHistory.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="458" column="13" selection-start-line="458" selection-start-column="13" selection-end-line="459" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/mainconf.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="1761" column="49" lean-forward="true" selection-start-line="1761" selection-start-column="49" selection-end-line="1761" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/recovery.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="387" column="66" selection-start-line="387" selection-start-column="46" selection-end-line="387" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/userHome.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="489">
+          <caret line="400" lean-forward="true" selection-start-line="400" selection-end-line="400" />
         </state>
       </provider>
     </entry>

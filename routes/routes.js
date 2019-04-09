@@ -411,7 +411,7 @@ module.exports = function (app, passport) {
         let transactionPrStatusStr = req.query.transactionStatusStr.split(',');
         let layerNameStr = req.query.layerName.split(',');
         console.log(pictureStr.length);
-        console.log(transactionStatusStr);
+        console.log('WOW' + transactionStatusStr);
         // mover folder
         for(let i = 0; i < pictureStr.length; i++) {//the length of pictureStr and Prior_status may not be the same since some layer may not have picture with it
             console.log("tran:"+transactionPrStatusStr[i]);
@@ -1691,6 +1691,7 @@ module.exports = function (app, passport) {
         let transactionID = req.query.transactionIDStr.split(',');
         let pictureStr = req.query.pictureStr.split(',');
         let LayerName = req.query.LayerName.split(',');
+        let currentStatus = req.query.currentStatus.split(',');
 
         for (let i = 0; i < transactionID.length; i++) {
             console.log('hh');
@@ -1700,32 +1701,59 @@ module.exports = function (app, passport) {
 
             console.log("WOW " + statement1);
             // let statement1 = "DELETE FROM LayerMenu WHERE ThirdLayer = '" + LayerName[i]  + "';"; // the [i] is converting the array back to string so it can be used
-        ////transferred value from client side to server side and then be used in SQL
-            fs.rename(''+ Pending_Dir + '/' + pictureStr[i] + '' , ''  + Delete_Dir + '/' + pictureStr[i] + '',  function (err) {
+            ////transferred value from client side to server side and then be used in SQL
+            if (currentStatus[i] === 'Pending') {
+
+
+            fs.rename('' + Pending_Dir + '/' + pictureStr[i] + '', '' + Delete_Dir + '/' + pictureStr[i] + '', function (err) {
                 if (err) {
                     console.log(err);
                 } else {
                     console.log("Delete button working fine!");
                 }
             });
+            }
+
             con_CS.query(statement + statement1, function (err, results) {
                 if (err) throw err;
                 console.log(results);
                 // res.json(results[i]);
             });
 
-            if(transactionPrStatusStr[i] === 'Approved'){
+            if(currentStatus[i] === 'Approved') {
                 console.log('Approved');
 
-                fs.rename(''+ Delete_Dir + '/' + pictureStr[i] + '' , '' + Approve_Dir + '/' + pictureStr[i] + '', function (err) {
+                fs.rename('' + Approve_Dir + '/' + pictureStr[i] + '', '' + Delete_Dir + '/' + pictureStr[i] + '', function (err) {
                     if (err) {
                         console.log(err);
                     } else {
-                        console.log("Recovery process is successful");
+                        console.log("Delete process is successful");
                     }
                 });
+            }
+            con_CS.query(statement + statement1, function (err, results) {
+                if (err) throw err;
+                console.log(results);
+                // res.json(results[i]);
+            });
+
+            if(currentStatus[i] === 'Rejected') {
+                fs.rename('' + Reject_Dir + '/' + pictureStr[i] + '','' + Delete_Dir + '/' + pictureStr[i] + '',  function (err) {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        console.log("Delete process is successful");
+                    }
+                });
+            }
+            con_CS.query(statement + statement1, function (err, results) {
+                if (err) throw err;
+                console.log(results);
+                // res.json(results[i]);
+            });
         }
     });
+
 
     app.get('/editdata',function (req,res){
         // var d = new Date();
