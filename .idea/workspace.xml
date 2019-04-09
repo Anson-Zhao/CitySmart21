@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4704f94f-8e06-4422-a8b4-19d911764f68" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/MainMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/MainMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -74,8 +73,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/MainMenu.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="501" column="41" lean-forward="true" selection-start-line="501" selection-start-column="41" selection-end-line="501" selection-end-column="41" />
+            <state relative-caret-position="266">
+              <caret line="43" column="56" lean-forward="true" selection-start-line="43" selection-start-column="56" selection-end-line="43" selection-end-column="56" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#2972#3999#0" />
@@ -89,6 +88,11 @@
                 <element signature="e#16835#17645#0" />
                 <element signature="e#17928#17992#0" />
                 <element signature="e#18340#18381#0" />
+                <element signature="e#20333#21979#0" />
+                <element signature="e#22027#22693#0" />
+                <element signature="e#22737#23141#0" />
+                <element signature="e#23263#24242#0" />
+                <element signature="e#24292#24387#0" />
               </folding>
             </state>
           </provider>
@@ -250,8 +254,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-214" />
-    <option name="y" value="112" />
+    <option name="x" value="-167" />
+    <option name="y" value="23" />
     <option name="width" value="2048" />
     <option name="height" value="1052" />
   </component>
@@ -379,28 +383,7 @@
       <workItem from="1554585935570" duration="10665000" />
       <workItem from="1554663441494" duration="18607000" />
       <workItem from="1554751180052" duration="258000" />
-      <workItem from="1554751472680" duration="6043000" />
-    </task>
-    <task id="LOCAL-00001" summary="Initial Commit">
-      <created>1553714451260</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1553714451260</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Initial Commit">
-      <created>1553714994649</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1553714994649</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Initial Commit">
-      <created>1553718419855</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1553718419855</updated>
+      <workItem from="1554751472680" duration="6314000" />
     </task>
     <task id="LOCAL-00004" summary="Initial Commit">
       <created>1553718529878</created>
@@ -724,22 +707,42 @@
       <option name="project" value="LOCAL" />
       <updated>1554838212735</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="fix upload/trash/delete/reject folder path">
+      <created>1554839623969</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1554839623970</updated>
+    </task>
+    <task id="LOCAL-00051" summary="fix upload/trash/delete/reject folder path">
+      <created>1554839635100</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1554839635100</updated>
+    </task>
+    <task id="LOCAL-00052" summary="fix upload/trash/delete/reject folder path">
+      <created>1554839639577</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1554839639577</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88931000" />
+    <option name="totallyTimeSpent" value="89202000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="107" y="130" width="2048" height="1052" extended-state="0" />
-    <editor active="true" />
+    <frame x="-167" y="23" width="2048" height="1052" extended-state="0" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49933776" visible="true" weight="0.19840479" />
       <window_info id="Structure" order="1" sideWeight="0.50066227" side_tool="true" weight="0.19517314" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49637157" weight="0.3294849" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.48703888" visible="true" weight="0.37291667" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.48703888" visible="true" weight="0.37291667" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -748,7 +751,7 @@
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49733913" weight="0.3294849" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49551347" weight="0.328125" />
-      <window_info active="true" anchor="bottom" id="Event Log" order="11" sideWeight="0.5129611" side_tool="true" visible="true" weight="0.37291667" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5129611" side_tool="true" visible="true" weight="0.37291667" />
       <window_info anchor="bottom" id="Database Console" order="12" sideWeight="0.49952742" weight="0.3294849" />
       <window_info anchor="bottom" id="File Transfer" order="13" sideWeight="0.8021287" weight="0.3294849" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -1074,8 +1077,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/MainMenu.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="501" column="41" lean-forward="true" selection-start-line="501" selection-start-column="41" selection-end-line="501" selection-end-column="41" />
+        <state relative-caret-position="266">
+          <caret line="43" column="56" lean-forward="true" selection-start-line="43" selection-start-column="56" selection-end-line="43" selection-end-column="56" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="e#2972#3999#0" />
@@ -1089,6 +1092,11 @@
             <element signature="e#16835#17645#0" />
             <element signature="e#17928#17992#0" />
             <element signature="e#18340#18381#0" />
+            <element signature="e#20333#21979#0" />
+            <element signature="e#22027#22693#0" />
+            <element signature="e#22737#23141#0" />
+            <element signature="e#23263#24242#0" />
+            <element signature="e#24292#24387#0" />
           </folding>
         </state>
       </provider>
