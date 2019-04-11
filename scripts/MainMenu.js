@@ -85,13 +85,13 @@ requirejs([
 
                 var wmsLayerCapability = wms.getNamedLayer(preloadWMSLayerName[n]);
 
+                if (!wmsLayerCapability) continue;
+
                 // Form a configuration object from the wmsLayerCapability object
                 var wmsConfig = WorldWind.WmsLayer.formLayerConfiguration(wmsLayerCapability);
 
                 // Modify the configuration objects title property to a more user friendly title
                 wmsConfig.title = preloadWMSLayerName[n];
-
-
 
                 // Create the WMS Layer from the configuration object
                 var wmsLayer = new WorldWind.WmsLayer(wmsConfig);
@@ -100,7 +100,7 @@ requirejs([
 
                 // Add the layers to WorldWind and update the layer manager
                 globe.addLayer(wmsLayer);
-                console.log(globe.layers);
+                // console.log(globe.layers);
                 layerManager.synchronizeLayerList();
             }
 
