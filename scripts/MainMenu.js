@@ -16,6 +16,7 @@
 
 requirejs([
         './WorldWindShim',
+        './mrds',
         './LayerManager',
         './OptionList',
         './AutoMenu',
