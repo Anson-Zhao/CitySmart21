@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4704f94f-8e06-4422-a8b4-19d911764f68" name="Default Changelist" comment="fix upload/trash/delete/reject folder path" />
+    <list default="true" id="4704f94f-8e06-4422-a8b4-19d911764f68" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -318,14 +318,7 @@
       <workItem from="1554495111303" duration="5000" />
       <workItem from="1554495123402" duration="5176000" />
       <workItem from="1554585935570" duration="10665000" />
-      <workItem from="1554663441494" duration="25279000" />
-    </task>
-    <task id="LOCAL-00002" summary="Initial Commit">
-      <created>1553714994649</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1553714994649</updated>
+      <workItem from="1554663441494" duration="25524000" />
     </task>
     <task id="LOCAL-00003" summary="Initial Commit">
       <created>1553718419855</created>
@@ -663,16 +656,23 @@
       <option name="project" value="LOCAL" />
       <updated>1554996801434</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="fix upload/trash/delete/reject folder path">
+      <created>1554997288332</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1554997288332</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89302000" />
+    <option name="totallyTimeSpent" value="89547000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="77" y="68" width="2119" height="1237" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49933776" visible="true" weight="0.19448476" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49933776" visible="true" weight="0.19448476" />
       <window_info id="Structure" order="1" sideWeight="0.50066227" side_tool="true" weight="0.19517314" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="File Transfer" sideWeight="0.8021287" weight="0.3294849" />
@@ -687,7 +687,7 @@
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49685535" visible="true" weight="0.3294849" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49637157" weight="0.3285968" />
-      <window_info active="true" anchor="bottom" id="Event Log" order="11" sideWeight="0.5031447" side_tool="true" visible="true" weight="0.3294849" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5031447" side_tool="true" visible="true" weight="0.3294849" />
       <window_info anchor="bottom" id="Database Console" order="12" sideWeight="0.49952742" weight="0.3294849" />
       <window_info anchor="right" id="Remote Host" visible="true" weight="0.2660861" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
