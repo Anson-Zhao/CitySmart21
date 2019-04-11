@@ -381,7 +381,7 @@ requirejs([
 
             var preloadLayerStr = preloadLayer + '';//change preloadLayer into a string
             preloadWMSLayerName = preloadLayerStr.split(",");//split preloadLayerStr with ","
-
+            console.log(preloadWMSLayerName);
             $.get(serviceAddress).done(createWMSLayer).fail(logError);// get the xml file of wmslayer and pass the file into  createLayer function.
 
             // $('.placemarkLayer').click(function(){

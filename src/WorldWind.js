@@ -35472,8 +35472,8 @@ define('layer/BMNGLandsatLayer',[
             this.displayName = "Blue Marble & Landsat";
             this.pickEnabled = false;
 
-            // this.urlBuilder = new WmsUrlBuilder("https://worldwind25.arc.nasa.gov/wms",
-            //     "BlueMarble-200405,esat", "", "1.3.0");
+            this.urlBuilder = new WmsUrlBuilder("https://emxsys.net/worldwind25/wms",
+                "BlueMarble-200405,esat", "", "1.3.0");
         };
 
         BMNGLandsatLayer.prototype = Object.create(TiledImageLayer.prototype);
@@ -35529,8 +35529,8 @@ define('layer/BMNGLayer',[
             this.displayName = "Blue Marble";
             this.pickEnabled = false;
 
-            // this.urlBuilder = new WmsUrlBuilder("https://worldwind25.arc.nasa.gov/wms",
-            //     layerName || "BlueMarble-200405", "", "1.3.0");
+            this.urlBuilder = new WmsUrlBuilder("https://emxsys.net/worldwind25/wms",
+                layerName || "BlueMarble-200405", "", "1.3.0");
         };
 
         BMNGLayer.prototype = Object.create(TiledImageLayer.prototype);
