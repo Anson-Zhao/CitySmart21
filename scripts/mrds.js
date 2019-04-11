@@ -1,4 +1,4 @@
-requirejs(['./worldwind.min',
+requirejs(['./WorldWindShim',
         './LayerManager',
         './RadiantCircleTile',
         '../src/util/WWMath',
