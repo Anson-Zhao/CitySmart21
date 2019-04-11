@@ -857,30 +857,44 @@
     });
 
     $("#reject").click(function () {
-        if (confirm("Are you sure to reject the data?") === true) {
-            let tID = "reject=" + document.getElementById('RID').value;
-            let Comment = "comment=" + document.getElementById('comment').value;
-            let rejectPicPath = "picturePath="+ rowSelectedValue[15];
-            $.ajax({
-                url: 'reject',
-                type: "GET",
-                dataType: 'json',
-                data: tID + "&" + Comment + "&" +rejectPicPath,
-                success: function (result) {
-                    console.log(result.message);
-                    console.log(result.error);
+        let tID = "reject=" + document.getElementById('RID').value;
+        let Comment = "comment=" + document.getElementById('comment').value;
+        let rejectPicPath = "picturePath="+ rowSelectedValue[15];
+        $.ajax({
+            url: 'reject',
+            type: "GET",
+            dataType: 'json',
+            data: tID + "&" + Comment + "&" +rejectPicPath,
+            success: function (result) {
 
-                    if(result.error === true){
-                        alert(result.message)
-                    }else{
-                        alert(result.message);
-                    }
-                    window.location.replace('/userHome')
-                }
-            });
-        }else {
-            return false;
-        }
+                alert(result.message);
+                window.location.replace('/userHome')
+            }
+        });
+        // if (confirm("Are you sure to reject the data?") === true) {
+        //     let tID = "reject=" + document.getElementById('RID').value;
+        //     let Comment = "comment=" + document.getElementById('comment').value;
+        //     let rejectPicPath = "picturePath="+ rowSelectedValue[15];
+        //     $.ajax({
+        //         url: 'reject',
+        //         type: "GET",
+        //         dataType: 'json',
+        //         data: tID + "&" + Comment + "&" +rejectPicPath,
+        //         success: function (result) {
+        //             console.log(result.message);
+        //             console.log(result.error);
+        //
+        //             if(result.error === true){
+        //                 alert(result.message)
+        //             }else{
+        //                 alert(result.message);
+        //             }
+        //             window.location.replace('/userHome')
+        //         }
+        //     });
+        // }else {
+        //     return false;
+        // }
     });
 </script>
 </body>

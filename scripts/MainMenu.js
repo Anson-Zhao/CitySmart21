@@ -91,13 +91,19 @@ requirejs([
                 // Modify the configuration objects title property to a more user friendly title
                 wmsConfig.title = preloadWMSLayerName[n];
 
+
+
                 // Create the WMS Layer from the configuration object
                 var wmsLayer = new WorldWind.WmsLayer(wmsConfig);
 
+                wmsLayer.enabled = false;
+
                 // Add the layers to WorldWind and update the layer manager
                 globe.addLayer(wmsLayer);
+                console.log(globe.layers);
                 layerManager.synchronizeLayerList();
             }
+
         }
 
         // Called if an error occurs during WMS Capabilities document retrieval
@@ -437,6 +443,7 @@ requirejs([
                 globlePosition(layerRequest);
                 buttonControl(allCheckedArray,layer1);
 
+
                 //turn on/off wmsLayer and placemark layer
                 for (var a = 0; a < layers.length; a++) {
                     $(':checkbox:checked').each(function () {
@@ -472,7 +479,6 @@ requirejs([
                     previousL.prop('disabled',true) //
                 }else{//if there was more than one switch was checked
                     j = j - 1;
-                    // nextL.prop('disabled',false);
                     currentSelectedLayer.prop('value',arrMenu[j]); //value of currentSelectedLayer changes to the previous one
 
                     if (j === 0){

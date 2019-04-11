@@ -124,7 +124,7 @@ module.exports = function (app, passport) {
         });
     });
 
-    app.get('/currenLayer',function (req,res) {
+    app.get('/currentLayer',function (req,res) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
         var thirdlayer = req.query.thirdlayer;
         var queryState = 'SELECT FirstLayer, SecondLayer, ThirdLayer, Longitude, Latitude, Altitude FROM LayerMenu WHERE ThirdLayer = ?';
@@ -357,52 +357,52 @@ module.exports = function (app, passport) {
         del_recov("Deleted", "Deletion failed!", "/userHome", req, res);
     });
 
-    function del_recov(StatusUpd, ErrMsg, targetURL, req, res) {
+    // function del_recov(StatusUpd, ErrMsg, targetURL, req, res) {
+    //
+    //     transactionID = req.query.transactionIDStr.split(",");
+    //     // console.log(transactionID);
+    //     let statementGeneral = "UPDATE Request_Form SET Current_Status = '" + StatusUpd + "'"; //this is where the problem is
+    //
+    //     for (let i = 0; i < transactionID.length; i++) {
+    //         if (i === 0) {
+    //             statementGeneral += " WHERE RID = '" + transactionID[i] + "'";
+    //             // statementDetailedS += " WHERE transactionID = '" + transactionID[i] + "'";
+    //             // statementDetailedT += " WHERE transactionID = '" + transactionID[i] + "'";
+    //
+    //             if (i === transactionID.length - 1) {
+    //                 statementGeneral += ";";
+    //                 // statementDetailedS += ";";
+    //                 // statementDetailedT += ";";
+    //                 myStat = statementGeneral;
+    //                 updateDBNres(myStat, "", ErrMsg, targetURL, res);
+    //             }
+    //         } else {
+    //             statementGeneral += " OR RID = '" + transactionID[i] + "'";
+    //             // statementDetailedS += " OR transactionID = '" + transactionID[i] + "'";
+    //             // statementDetailedT += " OR transactionID = '" + transactionID[i] + "'";
+    //
+    //             if (i === transactionID.length - 1) {
+    //                 statementGeneral += ";";
+    //                 // statementDetailedS += ";";
+    //                 // statementDetailedT += ";";
+    //                 myStat = statementGeneral;
+    //                 updateDBNres(myStat, "", ErrMsg, targetURL, res);
+    //             }
+    //         }
+    //     }
+    // }
 
-        transactionID = req.query.transactionIDStr.split(",");
-        // console.log(transactionID);
-        let statementGeneral = "UPDATE Request_Form SET Current_Status = '" + StatusUpd + "'"; //this is where the problem is
-
-        for (let i = 0; i < transactionID.length; i++) {
-            if (i === 0) {
-                statementGeneral += " WHERE RID = '" + transactionID[i] + "'";
-                // statementDetailedS += " WHERE transactionID = '" + transactionID[i] + "'";
-                // statementDetailedT += " WHERE transactionID = '" + transactionID[i] + "'";
-
-                if (i === transactionID.length - 1) {
-                    statementGeneral += ";";
-                    // statementDetailedS += ";";
-                    // statementDetailedT += ";";
-                    myStat = statementGeneral;
-                    updateDBNres(myStat, "", ErrMsg, targetURL, res);
-                }
-            } else {
-                statementGeneral += " OR RID = '" + transactionID[i] + "'";
-                // statementDetailedS += " OR transactionID = '" + transactionID[i] + "'";
-                // statementDetailedT += " OR transactionID = '" + transactionID[i] + "'";
-
-                if (i === transactionID.length - 1) {
-                    statementGeneral += ";";
-                    // statementDetailedS += ";";
-                    // statementDetailedT += ";";
-                    myStat = statementGeneral;
-                    updateDBNres(myStat, "", ErrMsg, targetURL, res);
-                }
-            }
-        }
-    }
-
-    function updateDBNres(SQLstatement, Value, ErrMsg, targetURL, res) {
-        res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
-        con_CS.query(SQLstatement, Value, function (err, rows) {
-            if (err) {
-                console.log(err);
-                res.json({"error": true, "message": ErrMsg});
-            } else {
-                res.json({"error": false, "message": targetURL});
-            }
-        })
-    }
+    // function updateDBNres(SQLstatement, Value, ErrMsg, targetURL, res) {
+    //     res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
+    //     con_CS.query(SQLstatement, Value, function (err, rows) {
+    //         if (err) {
+    //             console.log(err);
+    //             res.json({"error": true, "message": ErrMsg});
+    //         } else {
+    //             res.json({"error": false, "message": targetURL});
+    //         }
+    //     })
+    // }
     //Copy the record directly to Layer Menu if the PStatus was approved.
 
     app.get('/recoverRow', isLoggedIn, function (req, res) {
@@ -415,7 +415,7 @@ module.exports = function (app, passport) {
         for(let i = 0; i < pictureStr.length; i++) {//the length of pictureStr and Prior_status may not be the same since some layer may not have picture with it
             console.log("tran:"+transactionPrStatusStr[i]);
 
-            if(transactionPrStatusStr[i] !== 'Pending' && 'Approved' && 'Rejected'){
+            if(transactionPrStatusStr[i] === 'NULL'){
                 if(i===pictureStr.length-1){
                     res.json({"error": true, "message": "Recover Failed, error occur,Prior Statue undefined"});
                 }
@@ -442,8 +442,9 @@ module.exports = function (app, passport) {
                 con_CS.query(statementpractice, [Pending_Dir, layerNameStr[i]], (err, results)=> {
                     if(i ===pictureStr.length - 1){
                         if (err) {
-                            console.log(err);
-                            res.json({"error": true, "message": "Recover Failed"});
+                            throw err;
+                            // console.log(err);
+                            // res.json({"error": true, "message": "Recover Failed"});
                         } else {
                             res.json({"error": false, "message": "Recover successful, jump to UserHome"});
                         }
@@ -468,12 +469,14 @@ module.exports = function (app, passport) {
                 let statement2 = "UPDATE LayerMenu SET Status = 'Approved' WHERE ThirdLayer = '" + layerNameStr[i]  + "';";
                 console.log(statement2);
                 console.log('statement:D'+statement1+statement2);
-
+                console.log(i);
+                console.log(pictureStr.length);
                 con_CS.query(statement1+statement2, function (err, results) {
                     if(i === pictureStr.length - 1){
+                        console.log('last one');
                         if (err) {
-                            console.log(err);
-                            res.json({"error": true, "message": "Recover Failed"});
+                           throw err;
+                            // res.json({"error": true, "message": "Recover Failed"});
                         } else {
                             res.json({"error": false, "message": "Recover successful, jump to UserHome"});
                         }
@@ -505,29 +508,12 @@ module.exports = function (app, passport) {
 
                     if(i === pictureStr.length - 1){
                         if (err) {
-                            console.log(err);
-                            res.json({"error": true, "message": "Recover Failed, err"});
+                            throw err
+                            // res.json({"error": true, "message": "Recover Failed, err"});
                         } else {
                             res.json({"error": false, "message": "Recover successful, go to UserHome"});
                         }
                     }
-                    // con_CS.query(statement2, function (err, results) {
-                    //
-                    //     // if (err) throw err;
-                    //
-                    //
-                    //     for (var a = 0; a < results.length; a++) {
-                    //
-                    //         let statement3 = "UPDATE LayerMenu SET Status = 'Rejected' WHERE ThirdLayer = '" + results[a].ThirdLayer + "';";
-                    //         console.log(statement3);
-                    //
-                    //         con_CS.query(statement3, function (err, results) {
-                    //             console.log('statement');
-                    //
-                    //         });
-                    //     }
-                    // });
-
                 });
             }
         }
@@ -1636,31 +1622,31 @@ module.exports = function (app, passport) {
         let comment = req.query.comment;
         let pictureStr = req.query.picturePath.split(',');
 
-        for (var i = 0; i< pictureStr.length; i++) {
+        let statement = "UPDATE Request_Form SET Current_Status = 'Rejected', Comments = '" + comment + "' WHERE RID = '" + rejectID + "';";
+        let statement2 = "UPDATE LayerMenu SET Status = 'Rejected' WHERE ThirdLayer = '" + rejectID  + "';";
 
-            let statement = "UPDATE Request_Form SET Current_Status = 'Rejected', Comments = '" + comment + "' WHERE RID = '" + rejectID + "'";
-            let statement2 = "UPDATE LayerMenu SET Status = 'Rejected' WHERE ThirdLayer = '" + rejectID  + "';";
+        console.log(statement + statement2);
+
+        con_CS.query(statement + statement2,function (err,results) {
+            if (err) {
+                console.log(err);
+                // res.json({"error": true, "message": "Reject Failed"});
+            } else {
+                res.json({"error": false, "message": "Reject successful, jump to UserHome"});
+            }
+        });
+
+
+        for (let i = 0; i< pictureStr.length; i++) {
+
             fs.rename('' + Pending_Dir + '/' + pictureStr[i] + '', '' + Reject_Dir + '/' + pictureStr[i] + '', function (err) {
                 if (err) {
                     console.log(err);
                 } else {
-
                     console.log("Reject process is successful");
                 }
             });
-            con_CS.query(statement + statement2,function (err,results) {
-                if(i ===pictureStr.length - 1){
-                    if (err) {
-                        console.log(err);
-                        res.json({"error": true, "message": "Reject Failed"});
-                    } else {
-                        res.json({"error": false, "message": "Reject successful, jump to UserHome"});
-                    }
-                }
-            });
         }
-
-
     });
 
     let olduuid;
@@ -1707,8 +1693,11 @@ module.exports = function (app, passport) {
                 }
             });
             con_CS.query(statement + statement1, function (err, results) {
-                if (err) throw err;
-                res.json(results[i]);
+                if (err){
+                    throw err;
+                }else{
+                    res.json({"error": false, "message": "Delete successful"});
+                }
             });
         }
     });
