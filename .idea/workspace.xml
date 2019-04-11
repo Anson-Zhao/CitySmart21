@@ -1,33 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4704f94f-8e06-4422-a8b4-19d911764f68" name="Default Changelist" comment="fix upload/trash/delete/reject folder path">
-      <change afterPath="$PROJECT_DIR$/config/geoCapacity/2019_4_10_14_17_29.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/geoCapacity/2019_4_10_15_17_29.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/geoCapacity/2019_4_10_16_17_29.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/geoCapacity/2019_4_10_17_17_29.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/geoCapacity/2019_4_11_10_9_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/geoCapacity/2019_4_11_11_9_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/geoCapacity/2019_4_8_17_12_27.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/geoCapacity/2019_4_8_18_12_27.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/geoCapacity/2019_4_8_19_12_27.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/geoCapacity/2019_4_8_20_12_27.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/geoCapacity/2019_4_8_21_12_27.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/geoCapacity/2019_4_9_12_39_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/geoCapacity/2019_4_9_13_39_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/geoCapacity/2019_4_9_14_39_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/geoCapacity/2019_4_9_15_39_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/geoCapacity/2019_4_9_16_39_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/geoCapacity/2019_4_9_17_39_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/geoCapacity/2019_4_9_18_39_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_4_8_9_11_55.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config/geoCapacity/2019_4_8_16_12_27.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/ows.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config/ows.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/MainMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/MainMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/WorldWind.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/WorldWind.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layer/BMNGLandsatLayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layer/BMNGLandsatLayer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layer/BMNGLayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layer/BMNGLayer.js" afterDir="false" />
-    </list>
+    <list default="true" id="4704f94f-8e06-4422-a8b4-19d911764f68" name="Default Changelist" comment="fix upload/trash/delete/reject folder path" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -344,14 +318,7 @@
       <workItem from="1554495111303" duration="5000" />
       <workItem from="1554495123402" duration="5176000" />
       <workItem from="1554585935570" duration="10665000" />
-      <workItem from="1554663441494" duration="25025000" />
-    </task>
-    <task id="LOCAL-00001" summary="Initial Commit">
-      <created>1553714451260</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1553714451260</updated>
+      <workItem from="1554663441494" duration="25279000" />
     </task>
     <task id="LOCAL-00002" summary="Initial Commit">
       <created>1553714994649</created>
@@ -689,31 +656,38 @@
       <option name="project" value="LOCAL" />
       <updated>1554750714844</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="fix upload/trash/delete/reject folder path">
+      <created>1554996801431</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1554996801434</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89048000" />
+    <option name="totallyTimeSpent" value="89302000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="77" y="68" width="2119" height="1237" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49933776" visible="true" weight="0.19448476" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49933776" visible="true" weight="0.19448476" />
       <window_info id="Structure" order="1" sideWeight="0.50066227" side_tool="true" weight="0.19517314" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="File Transfer" sideWeight="0.8021287" weight="0.3294849" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49637157" weight="0.3294849" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.48814708" visible="true" weight="0.3285968" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.48814708" weight="0.3285968" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49733913" weight="0.3294849" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49685535" visible="true" weight="0.3294849" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49637157" weight="0.3285968" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5118529" side_tool="true" visible="true" weight="0.3285968" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="11" sideWeight="0.5031447" side_tool="true" visible="true" weight="0.3294849" />
       <window_info anchor="bottom" id="Database Console" order="12" sideWeight="0.49952742" weight="0.3294849" />
       <window_info anchor="right" id="Remote Host" visible="true" weight="0.2660861" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
