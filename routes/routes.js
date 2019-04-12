@@ -410,15 +410,15 @@ module.exports = function (app, passport) {
         let pictureStr = req.query.pictureStr.split(',');
         let transactionPrStatusStr = req.query.transactionStatusStr.split(',');
         let layerNameStr = req.query.layerName.split(',');
-        console.log(pictureStr.length);
-        console.log('WOW' + transactionStatusStr);
+        // console.log(pictureStr.length);
+        // console.log('WOW' + transactionStatusStr);
         // mover folder
         for(let i = 0; i < pictureStr.length; i++) {//the length of pictureStr and Prior_status may not be the same since some layer may not have picture with it
             console.log("tran:"+transactionPrStatusStr[i]);
 
             if(transactionPrStatusStr[i] !== 'Pending' && 'Approved' && 'Rejected'){
                 if(i===pictureStr.length-1){
-                    res.json({"error": true, "message": "Recover Failed, error occur,Prior Statue undefined"});
+                    res.json({"error": true, "message": "Recover Failed, error occur,Prior Status undefined"});
                 }
 
             }
@@ -566,7 +566,7 @@ module.exports = function (app, passport) {
         let LayerName = req.query.LayerName.split(',');
         for (let i = 0; i < transactionID.length; i++) {
             let statement = "UPDATE Request_Form SET Current_Status = 'Rejected', Layer_Uploader_name = '" + pictureStr[i] + "' WHERE RID = '" + transactionID[i] + "';";
-            let statement1 = "UPDATE LayerMenu SET Status = 'Disapproved' WHERE ThirdLayer = '" + LayerName  + "';";
+            let statement1 = "UPDATE LayerMenu SET Status = 'Rejected' WHERE ThirdLayer = '" + LayerName  + "';";
             fs.rename(''+ Approve_Dir + '/' + pictureStr[i] + '' , '' + Pending_Dir + '/' + pictureStr[i] + '',  function (err) {
                 if (err) {
                     console.log(err);
@@ -1489,12 +1489,12 @@ module.exports = function (app, passport) {
         // mover folder
         for(let i = 0; i < approvepictureStr.length; i++) {
             fs.rename(''+ Pending_Dir +'/' + approvepictureStr[i] + '' , '' + Approve_Dir + '/' + approvepictureStr[i] + '',  function (err) {
-                if (err) {
-                    console.log(err);
-                } else {
-                    console.log("Approval success");
-                }
-            });
+                        if (err) {
+                            console.log(err);
+                        } else {
+                            console.log("Approval success");
+                        }
+                    });
             con_CS.query(myState1, function (err, results) {
                 if (err) throw err;
                 // console.log(results);
@@ -1696,32 +1696,33 @@ module.exports = function (app, passport) {
         for (let i = 0; i < transactionID.length; i++) {
             console.log('hh');
             console.log(LayerName[i]);
-            let statement = "UPDATE Request_Form SET Layer_Uploader = 'trashfolder/', Prior_Status = Current_Status, Current_Status = 'Deleted'  WHERE RID = '" + transactionID[i] + "';";
+            let statement = "UPDATE Request_Form SET Layer_Uploader = 'trashfolder/', Prior_Status = ?, Current_Status = 'Deleted'  WHERE RID = ?;";
             let statement1 = "UPDATE LayerMenu SET Status = 'Deleted' WHERE ThirdLayer = '" + LayerName[i] + "';";
 
             console.log("WOW " + statement1);
             // let statement1 = "DELETE FROM LayerMenu WHERE ThirdLayer = '" + LayerName[i]  + "';"; // the [i] is converting the array back to string so it can be used
             ////transferred value from client side to server side and then be used in SQL
+
+            con_CS.query(statement + statement1, [currentStatus[i], transactionID[i]],function (err, results) {
+                if (err) {
+                    throw err;
+                    res.json({'error': true, 'message': 'Deletion Error!'});
+                } else {
+                    res.json({'error': false, 'message': 'Update LayerMenu table successfully!'});
+                }
+            });
+
             if (currentStatus[i] === 'Pending') {
+                console.log('Pending Dir: ' + Delete_Dir);
 
-
-            fs.rename('' + Pending_Dir + '/' + pictureStr[i] + '', '' + Delete_Dir + '/' + pictureStr[i] + '', function (err) {
+                fs.rename('' + Pending_Dir + '/' + pictureStr[i] + '', '' + Delete_Dir + '/' + pictureStr[i] + '', function (err) {
                 if (err) {
                     console.log(err);
                 } else {
                     console.log("Delete button working fine!");
                 }
             });
-            }
-
-            con_CS.query(statement + statement1, function (err, results) {
-                if (err) throw err;
-                console.log(results);
-                // res.json(results[i]);
-            });
-
-            if(currentStatus[i] === 'Approved') {
-                console.log('Approved');
+            } else if(currentStatus[i] === 'Approved') {
 
                 fs.rename('' + Approve_Dir + '/' + pictureStr[i] + '', '' + Delete_Dir + '/' + pictureStr[i] + '', function (err) {
                     if (err) {
@@ -1730,14 +1731,7 @@ module.exports = function (app, passport) {
                         console.log("Delete process is successful");
                     }
                 });
-            }
-            con_CS.query(statement + statement1, function (err, results) {
-                if (err) throw err;
-                console.log(results);
-                // res.json(results[i]);
-            });
-
-            if(currentStatus[i] === 'Rejected') {
+            } else if(currentStatus[i] === 'Rejected') {
                 fs.rename('' + Reject_Dir + '/' + pictureStr[i] + '','' + Delete_Dir + '/' + pictureStr[i] + '',  function (err) {
                     if (err) {
                         console.log(err);
@@ -1746,11 +1740,6 @@ module.exports = function (app, passport) {
                     }
                 });
             }
-            con_CS.query(statement + statement1, function (err, results) {
-                if (err) throw err;
-                console.log(results);
-                // res.json(results[i]);
-            });
         }
     });
 

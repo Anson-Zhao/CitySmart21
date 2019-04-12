@@ -377,7 +377,7 @@
         });
 
         $("#deleteButton").on("click", function () {
-            if (confirm("Are you sure you would lik 3e to trashfolder the row(s) you selected?") === true) {
+            if (confirm("Are you sure you would like to trashfolder the row(s) you selected?") === true) {
                 // console.log(transactionID); //provides the associated values of the element(record) in the array
 
                 let transactionIDStr = "transactionIDStr=" + transactionID.toString();//combines Scouting ID with the trapID
@@ -393,12 +393,11 @@
                     dataType: 'json',
                     data: transactionIDStr + '&' + pictureStr + '&' + LayerName + '&' + CurStatus,
                     success: function (result) {
-                        console.log(result);
-                        window.location.reload();
+                        alert(result.message);
+                        // window.location.reload();
+                        if (!result.error) {window.location.replace('/userHome')}
                     }
                 });
-
-
             } else {
                 return false;
 

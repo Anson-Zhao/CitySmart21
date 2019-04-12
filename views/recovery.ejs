@@ -404,25 +404,25 @@
                 function update() {
                     var pictureStr = "pictureStr=" + picturename.toString();
                     console.log(transactionIDStr + '&' + pictureStr+ '&' + transactionPrStatusStr + '&' + layerNameStr);
-                    // $.ajax({
-                    //     url: '/recoverRow',
-                    //     type: 'GET',
-                    //     dataType: 'json',
-                    //     async: false,
-                    //     data: transactionIDStr + '&' + pictureStr+ '&' + transactionPrStatusStr + '&' + layerNameStr,
-                    //     success: function (result) {
-                    //         console.log(result.message);
-                    //         console.log(result.error);
-                    //
-                    //         if(result.error === true){
-                    //             alert(result.message)
-                    //         }else{
-                    //             alert(result.message)
-                    //         }
-                    //
-                    //         window.location.replace('/userHome')
-                    //     }
-                    // })
+                    $.ajax({
+                        url: '/recoverRow',
+                        type: 'GET',
+                        dataType: 'json',
+                        async: false,
+                        data: transactionIDStr + '&' + pictureStr+ '&' + transactionPrStatusStr + '&' + layerNameStr,
+                        success: function (result) {
+                            console.log(result.message);
+                            console.log(result.error);
+
+                            if(result.error === true){
+                                alert(result.message)
+                            }else{
+                                alert(result.message)
+                            }
+
+                            window.location.replace('/userHome')
+                        }
+                    })
                 }
             } else {
                 return false;
