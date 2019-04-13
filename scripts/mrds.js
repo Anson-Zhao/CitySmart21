@@ -1,4 +1,4 @@
-requirejs(['./WorldWindShim',
+requirejs(['./worldwind.min',
         './LayerManager',
         './RadiantCircleTile',
         '../src/util/WWMath',
@@ -144,31 +144,31 @@ requirejs(['./WorldWindShim',
                     //     "commodity_color": ["<1MW", ">3 MW"],
                     // };
 
-                    $("#legend").empty();
-
-                    // if (category === 'commodity') {
-                        $("#legend").append($("<li><span style='background:#2E4053;'></span>Antimony</li>\n" +
-                            "<li><span style='background:#1F618D;'></span>Asbestos</li>\n" +
-                            "<li><span style='background:#D5F5E3;'></span>Chromium</li>\n" +
-                            "<li><span style='background:#E67E22;'></span>Copper</li>\n" +
-                            "<li><span style='background:#F7DC6F;'></span>Gold</li>\n" +
-                            "<li><span style='background:#CB4335;'></span>Iron</li>\n" +
-                            "<li><span style='background:#117864;'></span>Lead</li>\n" +
-                            "<li><span style='background:#AED6F1;'></span>Manganese</li>\n" +
-                            "<li><span style='background:#FAD7A0;'></span>Molybdenum</li>\n" +
-                            "<li><span style='background:#F1948A;'></span>Nickel</li>\n" +
-                            "<li><span style='background:#48C9B0;'></span>Silver</li>\n" +
-                            "<li><span style='background:#922B21;'></span>Tungsten</li>\n" +
-                            "<li><span style='background:#9B59B6;'></span>Uranium</li>\n" +
-                            "<li><span style='background:#BA4A00;'></span>Zinc</li>\n" +
-                            "<li><span style='background:#A6ACAF;'></span>Other</li>"));
-                    // } else if (category === 'dev_stat') {
-                        $("#legend").append($("<li><span style='background:#D98880;'></span>Past Producer</li>\n" +
-                            "<li><span style='background:#A93226;'></span>Present Producer</li>\n" +
-                            "<li><span style='background:#82E0AA;'></span>Occurrence</li>\n" +
-                            "<li><span style='background:#28B463;'></span>Prospect</li>\n" +
-                            "<li><span style='background:#A6ACAF;'></span>Unknown</li>"));
-                    // }
+                    // $("#legend").empty();
+                    //
+                    // // if (category === 'commodity') {
+                    //     $("#legend").append($("<li><span style='background:#2E4053;'></span>Antimony</li>\n" +
+                    //         "<li><span style='background:#1F618D;'></span>Asbestos</li>\n" +
+                    //         "<li><span style='background:#D5F5E3;'></span>Chromium</li>\n" +
+                    //         "<li><span style='background:#E67E22;'></span>Copper</li>\n" +
+                    //         "<li><span style='background:#F7DC6F;'></span>Gold</li>\n" +
+                    //         "<li><span style='background:#CB4335;'></span>Iron</li>\n" +
+                    //         "<li><span style='background:#117864;'></span>Lead</li>\n" +
+                    //         "<li><span style='background:#AED6F1;'></span>Manganese</li>\n" +
+                    //         "<li><span style='background:#FAD7A0;'></span>Molybdenum</li>\n" +
+                    //         "<li><span style='background:#F1948A;'></span>Nickel</li>\n" +
+                    //         "<li><span style='background:#48C9B0;'></span>Silver</li>\n" +
+                    //         "<li><span style='background:#922B21;'></span>Tungsten</li>\n" +
+                    //         "<li><span style='background:#9B59B6;'></span>Uranium</li>\n" +
+                    //         "<li><span style='background:#BA4A00;'></span>Zinc</li>\n" +
+                    //         "<li><span style='background:#A6ACAF;'></span>Other</li>"));
+                    // // } else if (category === 'dev_stat') {
+                    //     $("#legend").append($("<li><span style='background:#D98880;'></span>Past Producer</li>\n" +
+                    //         "<li><span style='background:#A93226;'></span>Present Producer</li>\n" +
+                    //         "<li><span style='background:#82E0AA;'></span>Occurrence</li>\n" +
+                    //         "<li><span style='background:#28B463;'></span>Prospect</li>\n" +
+                    //         "<li><span style='background:#A6ACAF;'></span>Unknown</li>"));
+                    // // }
 
 
                     // $("#leftScale").html(scale[category][0]);
@@ -209,21 +209,21 @@ requirejs(['./WorldWindShim',
                         placemark[i].attributes.imageSource.image = circle;
                         placemark[i].updateImage = true;
 
-                        if (i === placemark.length - 1) {
-                            // console.log("B");
-                            // console.log(placemark);
-                            // console.log(wwd.layers);
-                        }
+                        // if (i === placemark.length - 1) {
+                        //     // console.log("B");
+                        //     // console.log(placemark);
+                        //     // console.log(wwd.layers);
+                        // }
                     }
 
 
-                $("#switchMethod").on('click', function() {
-                    // $("#switchLayer").css('pointer-events', (this.checked === true) ? 'auto' : 'none');
-                    // console.log($($("#switchLayer")[0].parentElement));
-                    var switchLayer = $($("#switchLayer")[0].parentElement);
-                    switchLayer.css('pointer-events', (this.checked === true) ? 'none' : 'auto');
-                    $("#manualSwitch").css('display', (this.checked === true) ? 'none' : 'block');
-                });
+                // $("#switchMethod").on('click', function() {
+                //     // $("#switchLayer").css('pointer-events', (this.checked === true) ? 'auto' : 'none');
+                //     // console.log($($("#switchLayer")[0].parentElement));
+                //     var switchLayer = $($("#switchLayer")[0].parentElement);
+                //     switchLayer.css('pointer-events', (this.checked === true) ? 'none' : 'auto');
+                //     $("#manualSwitch").css('display', (this.checked === true) ? 'none' : 'block');
+                // });
 
 
                     // this.checked, true: placemark, false: heatmap
@@ -233,42 +233,43 @@ requirejs(['./WorldWindShim',
 
                     wwd.layers[wwd.layers.length - 1].enabled = !this.checked;
 
-                    if (this.checked) {
-                        $("#placemarkButton").find("input").each(function() {
-                            if ($(this).is(':checked')) {
-                                var id = "#" + $(this)[0].id;
+                    // if (this.checked) {
+                    //     // $("#placemarkButton").find("input").each(function() {
+                    //     //     if ($(this).is(':checked')) {
+                    //     //         var id = "#" + $(this)[0].id;
+                    //     //
+                    //     //         $(id).click();
+                    //     //     }
+                    //     // })
+                    // } else {
+                    //     $("#legend").empty();
+                    //
+                    //
+                    // }
 
-                                $(id).click();
-                            }
-                        })
-                    } else {
-                        $("#legend").empty();
+                for (var i = 0; i < placemark.length; i++) {
+                    var circle = document.createElement("canvas"),
+                        ctx = circle.getContext('2d'),
+                        radius = 15,
+                        r2 = radius + radius;
 
-                        for (var i = 0; i < placemark.length; i++) {
-                            var circle = document.createElement("canvas"),
-                                ctx = circle.getContext('2d'),
-                                radius = 15,
-                                r2 = radius + radius;
+                    circle.width = circle.height = r2;
 
-                            circle.width = circle.height = r2;
+                    var gradient = ctx.createRadialGradient(radius, radius, 0, radius, radius, radius);
 
-                            var gradient = ctx.createRadialGradient(radius, radius, 0, radius, radius, radius);
+                    gradient.addColorStop(0, 'rgba(255, 255, 255, 0)');
 
-                            gradient.addColorStop(0, 'rgba(255, 255, 255, 0)');
+                    ctx.beginPath();
+                    ctx.arc(radius, radius, radius, 0, Math.PI * 2, true);
 
-                            ctx.beginPath();
-                            ctx.arc(radius, radius, radius, 0, Math.PI * 2, true);
+                    ctx.fillStyle = gradient;
+                    ctx.fill();
 
-                            ctx.fillStyle = gradient;
-                            ctx.fill();
+                    ctx.closePath();
 
-                            ctx.closePath();
-
-                            placemark[i].updateImage = true;
-                            placemark[i].attributes.imageSource.image = circle;
-                        }
-                    }
-
+                    placemark[i].updateImage = true;
+                    placemark[i].attributes.imageSource.image = circle;
+                }
                     // for (var i = layers.length; i < wwd.layers.length; i++) {
                     //     if (i === wwd.layers.length - 1) {
                     //         wwd.layers[i].enabled = !this.checked;
@@ -701,41 +702,41 @@ requirejs(['./WorldWindShim',
 
                 };
 
-                function autoSwitch() {
-                    if ($("#switchMethod").is(':checked')) {
-                        var altitude = wwd.layers[0].eyeText.text;
-
-                        if (altitude.substring(altitude.length - 2, altitude.length) === "km") {
-                            altitude = altitude.replace(/Eye  |,| km/g, '');
-                        } else {
-                            altitude = (altitude.replace(/Eye  |,| m/g, '')) / 1000;
-                        }
-
-                        if (altitude <= mainconfig.eyeDistance_Heatmap && !$("#switchLayer").is(':checked')) {
-                            $("#switchLayer").click();
-                            $("#switchNote").html("");
-                            $("#switchNote").append("NOTE: Toggle switch to temporarily view density heatmap.");
-                            $("#globeNote").html("");
-                            $("#globeNote").append("NOTE: Zoom in to an eye distance of more than 4,500 km to view the density heatmap.");
-
-                        } else if (altitude > mainconfig.eyeDistance_Heatmap && $("#switchLayer").is(':checked')) {
-                            $("#switchNote").html("");
-                            $("#switchNote").append("NOTE: Toggle switch to temporarily view point locations.");
-                            $("#globeNote").html("");
-                            $("#globeNote").append("NOTE: Zoom in to an eye distance of less than 4,500 km to view the point locations.");
-
-                            $("#switchLayer").click();
-                        }
-
-                        if (altitude <= mainconfig.eyeDistance_PL && $("#switchLayer").is(':checked')) {
-                            $("#menuNote").html("");
-                            $("#menuNote").append("NOTE: Click the items listed below in the menu to fly to and highlight point location(s).");
-                        } else if (altitude > mainconfig.eyeDistance_PL && $("#switchLayer").is(':checked')) {
-                            $("#menuNote").html("");
-                            $("#menuNote").append("NOTE: Zoom in to an eye distance of less than 1,500 km to display a menu for wind turbines.");
-                        }
-                    }
-                }
+                // function autoSwitch() {
+                //     if ($("#switchMethod").is(':checked')) {
+                //         var altitude = wwd.layers[0].eyeText.text;
+                //
+                //         if (altitude.substring(altitude.length - 2, altitude.length) === "km") {
+                //             altitude = altitude.replace(/Eye  |,| km/g, '');
+                //         } else {
+                //             altitude = (altitude.replace(/Eye  |,| m/g, '')) / 1000;
+                //         }
+                //
+                //         if (altitude <= mainconfig.eyeDistance_Heatmap && !$("#switchLayer").is(':checked')) {
+                //             $("#switchLayer").click();
+                //             $("#switchNote").html("");
+                //             $("#switchNote").append("NOTE: Toggle switch to temporarily view density heatmap.");
+                //             $("#globeNote").html("");
+                //             $("#globeNote").append("NOTE: Zoom in to an eye distance of more than 4,500 km to view the density heatmap.");
+                //
+                //         } else if (altitude > mainconfig.eyeDistance_Heatmap && $("#switchLayer").is(':checked')) {
+                //             $("#switchNote").html("");
+                //             $("#switchNote").append("NOTE: Toggle switch to temporarily view point locations.");
+                //             $("#globeNote").html("");
+                //             $("#globeNote").append("NOTE: Zoom in to an eye distance of less than 4,500 km to view the point locations.");
+                //
+                //             $("#switchLayer").click();
+                //         }
+                //
+                //         if (altitude <= mainconfig.eyeDistance_PL && $("#switchLayer").is(':checked')) {
+                //             $("#menuNote").html("");
+                //             $("#menuNote").append("NOTE: Click the items listed below in the menu to fly to and highlight point location(s).");
+                //         } else if (altitude > mainconfig.eyeDistance_PL && $("#switchLayer").is(':checked')) {
+                //             $("#menuNote").html("");
+                //             $("#menuNote").append("NOTE: Zoom in to an eye distance of less than 1,500 km to display a menu for wind turbines.");
+                //         }
+                //     }
+                // }
 
                 // function totalWTCap() {
                 //     // if ($("#switchLayer").is(':checked')) {
@@ -1013,48 +1014,48 @@ requirejs(['./WorldWindShim',
                                 placemarkLayer.addRenderable(placemark[i]);
                                 wwd.addLayer(placemarkLayer);
 
-                                if (i === resp.data.length - 1) {
-                                    // wwd.addLayer(placemarkLayer);
-                                    // console.log("A");
-                                    // console.log(new Date());
-                                    // console.log(layerNames);
-                                    // console.log(wwd.layers.length);
-                                    // console.log(wwd.layers);
-
-                                    // var z = 10;
-                                    // var x = z;
-                                    // setTimeout(function() {
-                                    //     var showLayers = setInterval(function() {
-                                    //         console.log(new Date());
-                                    //         x += 100;
-                                    //         for (; z < x; z++) {
-                                    //             wwd.layers[z].enabled = true;
-                                    //
-                                    //             if (z === wwd.layers.length - 1) {
-                                    //                 console.log(new Date());
-                                    //                 clearInterval(showLayers);
-                                    //                 break;
-                                    //             }
-                                    //         }
-                                    //         // wwd.redraw();
-                                    //     }, 500);
-                                    // }, 10000);
-
-                                    // console.log(data);
-                                    var HeatMapLayer = new WorldWind.HeatMapLayer("Heatmap", data, {
-                                        tile: RadiantCircleTile,
-                                        incrementPerIntensity: 0.05,
-                                        blur: 10,
-                                        // scale: ['rgba(255, 255, 255, 0)', 'rgba(172, 211, 236, 0.25)', 'rgba(204, 255, 255, 0.5)', 'rgba(0, 191, 0, 0.5)']
-                                        scale: ['#000000', '#ffffff', '#00ff00', '#ffff00', '#ff0000']
-                                    });
-
-                                    // HeatMapLayer.enabled = false;
-                                    wwd.addLayer(HeatMapLayer);
-
-                                    wwd.goTo(new WorldWind.Position(64.2008, -149.4937, mainconfig.eyeDistance_initial));
-                                    // console.log(wwd.layers);
-                                }
+                                // if (i === resp.data.length - 1) {
+                                //     // wwd.addLayer(placemarkLayer);
+                                //     // console.log("A");
+                                //     // console.log(new Date());
+                                //     // console.log(layerNames);
+                                //     // console.log(wwd.layers.length);
+                                //     // console.log(wwd.layers);
+                                //
+                                //     // var z = 10;
+                                //     // var x = z;
+                                //     // setTimeout(function() {
+                                //     //     var showLayers = setInterval(function() {
+                                //     //         console.log(new Date());
+                                //     //         x += 100;
+                                //     //         for (; z < x; z++) {
+                                //     //             wwd.layers[z].enabled = true;
+                                //     //
+                                //     //             if (z === wwd.layers.length - 1) {
+                                //     //                 console.log(new Date());
+                                //     //                 clearInterval(showLayers);
+                                //     //                 break;
+                                //     //             }
+                                //     //         }
+                                //     //         // wwd.redraw();
+                                //     //     }, 500);
+                                //     // }, 10000);
+                                //
+                                //     // console.log(data);
+                                //     var HeatMapLayer = new WorldWind.HeatMapLayer("Heatmap", data, {
+                                //         tile: RadiantCircleTile,
+                                //         incrementPerIntensity: 0.05,
+                                //         blur: 10,
+                                //         // scale: ['rgba(255, 255, 255, 0)', 'rgba(172, 211, 236, 0.25)', 'rgba(204, 255, 255, 0.5)', 'rgba(0, 191, 0, 0.5)']
+                                //         scale: ['#000000', '#ffffff', '#00ff00', '#ffff00', '#ff0000']
+                                //     });
+                                //
+                                //     // HeatMapLayer.enabled = false;
+                                //     wwd.addLayer(HeatMapLayer);
+                                //
+                                //     wwd.goTo(new WorldWind.Position(64.2008, -149.4937, mainconfig.eyeDistance_initial));
+                                //     // console.log(wwd.layers);
+                                // }
                             }
                         }
                     }
