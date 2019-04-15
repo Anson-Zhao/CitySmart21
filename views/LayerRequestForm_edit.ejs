@@ -683,18 +683,17 @@
                 let data = $("#layer").serialize();
                 console.log(fName);
                 $.ajax({
-                    url: 'approve',
-                    type: "GET",
-                    dataType: 'json',
-                    data: tID + '&' + LUN + '&' + lForm + '&' + fName,
-                });
-                $.ajax({
                     url: 'replace',
                     method: "post",
                     data: data,
                     dataType: 'json',
                     success: function (d) {
-                        console.log(data);
+                        $.ajax({
+                            url: 'approve',
+                            type: "GET",
+                            dataType: 'json',
+                            data: tID + '&' + LUN + '&' + lForm + '&' + fName,
+                        });
                     }
                 });
                 window.location.replace('/userHome');

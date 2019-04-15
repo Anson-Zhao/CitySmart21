@@ -27,7 +27,8 @@ var configGlobal = {
     // 'local_URL' : "",
     // 'local_URL' : "http://viewer.usgs.aworldbridgelabs.com",
 
-    'geoServer' : 'http://cs.aworldbridgelabs.com:8080/geoserver/',
+    // 'geoServer' : 'http://cs.aworldbridgelabs.com:8080/geoserver/',
+    'geoServer' : 'http://10.11.90.16:8080/geoserver/',
     'WMS_URL' : 'https://cors.aworldbridgelabs.com:9084/http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities',
 
     // 'Upload_Path': 'http://usgs.aworldbridgelabs.com/uploadfiles' https://cors.aworldbridgelabs.com:9084/https://emxsys.net/worldwind26,
