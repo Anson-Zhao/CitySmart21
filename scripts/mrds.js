@@ -77,144 +77,145 @@ requirejs(['./worldwind.min',
                 // });
 
 
-                    var category = this.id;
-                    // console.log(category);
-                    var color = {
-                        // 'Antimony': "",
-                        // 'Asbestos': "",
-                        // 'Barium-Barite': "",
-                        // 'Cadmium': "",
-                        // 'Chromium': "",
-                        // 'Copper': "",
-                        // 'Diatomite': "",
-                        // 'Fluorine-Fluorite': "",
-                        // 'Gold': "",
-                        // 'Gypsum-Anhydrite': "",
-                        // 'Iron': "",
-                        // 'Jade': "",
-                        // 'Lead': "",
-                        // 'Manganese': "",
-                        // 'Mercury': "",
-                        // 'Molybdenum': "",
-                        // 'Nickel': "",
-                        // 'PGE': "",
-                        // 'Platinum': "",
-                        // 'REE': "",
-                        // 'Sapphire': "",
-                        // 'Silver': "",
-                        // 'Stone': "",
-                        // 'Sulfur': "",
-                        // 'Thorium': "",
-                        // 'Tin': "",
-                        // 'Titanium': "",
-                        // 'Tungsten': "",
-                        // 'Uranium': "",
-                        // 'Vanadium': "",
-                        // 'Zeolites': "",
-                        // 'Zinc': "",
+                var category = this.id;
+                console.log(category);
+                var color = {
+                    // 'Antimony': "",
+                    // 'Asbestos': "",
+                    // 'Barium-Barite': "",
+                    // 'Cadmium': "",
+                    // 'Chromium': "",
+                    // 'Copper': "",
+                    // 'Diatomite': "",
+                    // 'Fluorine-Fluorite': "",
+                    // 'Gold': "",
+                    // 'Gypsum-Anhydrite': "",
+                    // 'Iron': "",
+                    // 'Jade': "",
+                    // 'Lead': "",
+                    // 'Manganese': "",
+                    // 'Mercury': "",
+                    // 'Molybdenum': "",
+                    // 'Nickel': "",
+                    // 'PGE': "",
+                    // 'Platinum': "",
+                    // 'REE': "",
+                    // 'Sapphire': "",
+                    // 'Silver': "",
+                    // 'Stone': "",
+                    // 'Sulfur': "",
+                    // 'Thorium': "",
+                    // 'Tin': "",
+                    // 'Titanium': "",
+                    // 'Tungsten': "",
+                    // 'Uranium': "",
+                    // 'Vanadium': "",
+                    // 'Zeolites': "",
+                    // 'Zinc': "",
 
-                        'Antimony': "#2E4053",
-                        'Asbestos': "#1F618D",
-                        'Chromium': "#D5F5E3",
-                        'Copper': "#E67E22",
-                        'Gold': "#F7DC6F",
-                        'Iron': "#CB4335",
-                        'Lead': "#117864",
-                        'Manganese': "#AED6F1",
-                        'Molybdenum': "#FAD7A0",
-                        'Nickel': "#F1948A",
-                        'Silver': "#48C9B0",
-                        'Tungsten': "#922B21",
-                        'Uranium': "#9B59B6",
-                        'Zinc': "#BA4A00",
-                        'Other': "#A6ACAF",
+                    'Antimony': "#2E4053",
+                    'Asbestos': "#1F618D",
+                    'Chromium': "#D5F5E3",
+                    'Copper': "#E67E22",
+                    'Gold': "#F7DC6F",
+                    'Iron': "#CB4335",
+                    'Lead': "#117864",
+                    'Manganese': "#AED6F1",
+                    'Molybdenum': "#FAD7A0",
+                    'Nickel': "#F1948A",
+                    'Silver': "#48C9B0",
+                    'Tungsten': "#922B21",
+                    'Uranium': "#9B59B6",
+                    'Zinc': "#BA4A00",
+                    'Other': "#A6ACAF",
 
-                        'Past Producer': "#D98880",
-                        'Producer': "#A93226",
-                        'Occurrence': "#82E0AA",
-                        'Prospect': "#28B463",
-                        'Unknown': "#A6ACAF",
+                    'Past Producer': "#D98880",
+                    'Producer': "#A93226",
+                    'Occurrence': "#82E0AA",
+                    'Prospect': "#28B463",
+                    'Unknown': "#A6ACAF",
 
-                        'undefined': "#ffffff"
-                    };
+                    'undefined': "#ffffff"
+                };
 
-                    // var scale = {
-                    //     "none": ["", ""],
-                    //     "type_color": ["1980", "2017"],
-                    //     "commodity_color": ["<1MW", ">3 MW"],
-                    // };
+                // var scale = {
+                //     "none": ["", ""],
+                //     "type_color": ["1980", "2017"],
+                //     "commodity_color": ["<1MW", ">3 MW"],
+                // };
 
-                    // $("#legend").empty();
-                    //
-                    // // if (category === 'commodity') {
-                    //     $("#legend").append($("<li><span style='background:#2E4053;'></span>Antimony</li>\n" +
-                    //         "<li><span style='background:#1F618D;'></span>Asbestos</li>\n" +
-                    //         "<li><span style='background:#D5F5E3;'></span>Chromium</li>\n" +
-                    //         "<li><span style='background:#E67E22;'></span>Copper</li>\n" +
-                    //         "<li><span style='background:#F7DC6F;'></span>Gold</li>\n" +
-                    //         "<li><span style='background:#CB4335;'></span>Iron</li>\n" +
-                    //         "<li><span style='background:#117864;'></span>Lead</li>\n" +
-                    //         "<li><span style='background:#AED6F1;'></span>Manganese</li>\n" +
-                    //         "<li><span style='background:#FAD7A0;'></span>Molybdenum</li>\n" +
-                    //         "<li><span style='background:#F1948A;'></span>Nickel</li>\n" +
-                    //         "<li><span style='background:#48C9B0;'></span>Silver</li>\n" +
-                    //         "<li><span style='background:#922B21;'></span>Tungsten</li>\n" +
-                    //         "<li><span style='background:#9B59B6;'></span>Uranium</li>\n" +
-                    //         "<li><span style='background:#BA4A00;'></span>Zinc</li>\n" +
-                    //         "<li><span style='background:#A6ACAF;'></span>Other</li>"));
-                    // // } else if (category === 'dev_stat') {
-                    //     $("#legend").append($("<li><span style='background:#D98880;'></span>Past Producer</li>\n" +
-                    //         "<li><span style='background:#A93226;'></span>Present Producer</li>\n" +
-                    //         "<li><span style='background:#82E0AA;'></span>Occurrence</li>\n" +
-                    //         "<li><span style='background:#28B463;'></span>Prospect</li>\n" +
-                    //         "<li><span style='background:#A6ACAF;'></span>Unknown</li>"));
-                    // // }
+                // $("#legend").empty();
+                //
+                // // if (category === 'commodity') {
+                //     $("#legend").append($("<li><span style='background:#2E4053;'></span>Antimony</li>\n" +
+                //         "<li><span style='background:#1F618D;'></span>Asbestos</li>\n" +
+                //         "<li><span style='background:#D5F5E3;'></span>Chromium</li>\n" +
+                //         "<li><span style='background:#E67E22;'></span>Copper</li>\n" +
+                //         "<li><span style='background:#F7DC6F;'></span>Gold</li>\n" +
+                //         "<li><span style='background:#CB4335;'></span>Iron</li>\n" +
+                //         "<li><span style='background:#117864;'></span>Lead</li>\n" +
+                //         "<li><span style='background:#AED6F1;'></span>Manganese</li>\n" +
+                //         "<li><span style='background:#FAD7A0;'></span>Molybdenum</li>\n" +
+                //         "<li><span style='background:#F1948A;'></span>Nickel</li>\n" +
+                //         "<li><span style='background:#48C9B0;'></span>Silver</li>\n" +
+                //         "<li><span style='background:#922B21;'></span>Tungsten</li>\n" +
+                //         "<li><span style='background:#9B59B6;'></span>Uranium</li>\n" +
+                //         "<li><span style='background:#BA4A00;'></span>Zinc</li>\n" +
+                //         "<li><span style='background:#A6ACAF;'></span>Other</li>"));
+                // // } else if (category === 'dev_stat') {
+                //     $("#legend").append($("<li><span style='background:#D98880;'></span>Past Producer</li>\n" +
+                //         "<li><span style='background:#A93226;'></span>Present Producer</li>\n" +
+                //         "<li><span style='background:#82E0AA;'></span>Occurrence</li>\n" +
+                //         "<li><span style='background:#28B463;'></span>Prospect</li>\n" +
+                //         "<li><span style='background:#A6ACAF;'></span>Unknown</li>"));
+                // // }
 
 
-                    // $("#leftScale").html(scale[category][0]);
-                    // $("#rightScale").html(scale[category][1]);
+                // $("#leftScale").html(scale[category][0]);
+                // $("#rightScale").html(scale[category][1]);
 
-                    // console.log(color['undefined']);
-                    // console.log(color[undefined]);
-                    // console.log(color[placemark[0].userProperties[category]]);
+                // console.log(color['undefined']);
+                // console.log(color[undefined]);
+                // console.log(color[placemark[0].userProperties[category]]);
 
-                    for (var i = 0; i < placemark.length; i++) {
-                        var circle = document.createElement("canvas"),
-                            ctx = circle.getContext('2d'),
-                            radius = 10,
-                            r2 = radius + radius;
 
-                        circle.width = circle.height = r2;
+                for (var i = 0; i < placemark.length; i++) {
+                    var circle = document.createElement("canvas"),
+                        ctx = circle.getContext('2d'),
+                        radius = 10,
+                        r2 = radius + radius;
 
-                        var gradient = ctx.createRadialGradient(radius, radius, 0, radius, radius, radius);
-                        // console.log(placemark[i].userProperties[category]);
-                        // console.log(color[placemark[i].userProperties[category]]);
+                    circle.width = circle.height = r2;
 
-                        if (!color[placemark[i].userProperties[category]]) {
-                            gradient.addColorStop(0, color['Other']);
-                        } else {
-                            gradient.addColorStop(0, color[placemark[i].userProperties[category]]);
-                        }
+                    var gradient = ctx.createRadialGradient(radius, radius, 0, radius, radius, radius);
+                    // console.log(placemark[i].userProperties[category]);
+                    // console.log(color[placemark[i].userProperties[category]]);
 
-                        ctx.beginPath();
-                        ctx.arc(radius, radius, radius, 0, Math.PI * 2, true);
-
-                        ctx.fillStyle = gradient;
-                        ctx.fill();
-                        // ctx.strokeStyle = "rgb(255, 255, 255)";
-                        // ctx.stroke();
-
-                        ctx.closePath();
-
-                        placemark[i].attributes.imageSource.image = circle;
-                        placemark[i].updateImage = true;
-
-                        // if (i === placemark.length - 1) {
-                        //     // console.log("B");
-                        //     // console.log(placemark);
-                        //     // console.log(wwd.layers);
-                        // }
+                    if (!color[placemark[i].userProperties[category]]) {
+                        gradient.addColorStop(0, color['Other']);
+                    } else {
+                        gradient.addColorStop(0, color[placemark[i].userProperties[category]]);
                     }
+
+                    ctx.beginPath();
+                    ctx.arc(radius, radius, radius, 0, Math.PI * 2, true);
+
+                    ctx.fillStyle = gradient;
+                    ctx.fill();
+                    // ctx.strokeStyle = "rgb(255, 255, 255)";
+                    // ctx.stroke();
+
+                    ctx.closePath();
+
+                    placemark[i].attributes.imageSource.image = circle;
+                    placemark[i].updateImage = true;
+
+                    // if (i === placemark.length - 1) {
+                    //     // console.log("B");
+                    //     // console.log(placemark);
+                    //     // console.log(wwd.layers);
+                    // }
+                }
 
 
                 // $("#switchMethod").on('click', function() {
@@ -226,26 +227,26 @@ requirejs(['./worldwind.min',
                 // });
 
 
-                    // this.checked, true: placemark, false: heatmap
-                    // console.log(this.checked + "   " + !this.checked);
+                // this.checked, true: placemark, false: heatmap
+                // console.log(this.checked + "   " + !this.checked);
 
-                    document.getElementById("placemarkButton").style.pointerEvents = (this.checked === true) ? "auto" : "none";
+                document.getElementById("placemarkButton").style.pointerEvents = (this.checked === true) ? "auto" : "none";
 
-                    wwd.layers[wwd.layers.length - 1].enabled = !this.checked;
+                wwd.layers[wwd.layers.length - 1].enabled = !this.checked;
 
-                    // if (this.checked) {
-                    //     // $("#placemarkButton").find("input").each(function() {
-                    //     //     if ($(this).is(':checked')) {
-                    //     //         var id = "#" + $(this)[0].id;
-                    //     //
-                    //     //         $(id).click();
-                    //     //     }
-                    //     // })
-                    // } else {
-                    //     $("#legend").empty();
-                    //
-                    //
-                    // }
+                // if (this.checked) {
+                //     // $("#placemarkButton").find("input").each(function() {
+                //     //     if ($(this).is(':checked')) {
+                //     //         var id = "#" + $(this)[0].id;
+                //     //
+                //     //         $(id).click();
+                //     //     }
+                //     // })
+                // } else {
+                //     $("#legend").empty();
+                //
+                //
+                // }
 
                 for (var i = 0; i < placemark.length; i++) {
                     var circle = document.createElement("canvas"),
@@ -270,14 +271,14 @@ requirejs(['./worldwind.min',
                     placemark[i].updateImage = true;
                     placemark[i].attributes.imageSource.image = circle;
                 }
-                    // for (var i = layers.length; i < wwd.layers.length; i++) {
-                    //     if (i === wwd.layers.length - 1) {
-                    //         wwd.layers[i].enabled = !this.checked;
-                    //         // console.log(wwd.layers);
-                    //     } else {
-                    //         wwd.layers[i].enabled = this.checked;
-                    //     }
-                    // }
+                // for (var i = layers.length; i < wwd.layers.length; i++) {
+                //     if (i === wwd.layers.length - 1) {
+                //         wwd.layers[i].enabled = !this.checked;
+                //         // console.log(wwd.layers);
+                //     } else {
+                //         wwd.layers[i].enabled = this.checked;
+                //     }
+                // }
 
 
                 // $(".sortButton").on("click", function () {
