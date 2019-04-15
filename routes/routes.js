@@ -410,19 +410,17 @@ module.exports = function (app, passport) {
         let pictureStr = req.query.pictureStr.split(',');
         let transactionPrStatusStr = req.query.transactionStatusStr.split(',');
         let layerNameStr = req.query.layerName.split(',');
-        // console.log(pictureStr.length);
-        // console.log('WOW' + transactionStatusStr);
+
         // mover folder
         for(let i = 0; i < pictureStr.length; i++) {//the length of pictureStr and Prior_status may not be the same since some layer may not have picture with it
             console.log("tran:"+transactionPrStatusStr[i]);
 
             if(transactionPrStatusStr[i] !== 'Pending' && 'Approved' && 'Rejected'){
                 if(i===pictureStr.length-1){
-                    res.json({"error": true, "message": "Recover Failed, error occur,Prior Status undefined"});
+                    res.json({"error": true, "message": "Recover Failed, error occur,Prior Statue undefined"});
                 }
 
             }
-
 
             if (transactionPrStatusStr[i] === 'Pending') {
                 console.log('pending');
@@ -1489,12 +1487,12 @@ module.exports = function (app, passport) {
         // mover folder
         for(let i = 0; i < approvepictureStr.length; i++) {
             fs.rename(''+ Pending_Dir +'/' + approvepictureStr[i] + '' , '' + Approve_Dir + '/' + approvepictureStr[i] + '',  function (err) {
-                        if (err) {
-                            console.log(err);
-                        } else {
-                            console.log("Approval success");
-                        }
-                    });
+                if (err) {
+                    console.log(err);
+                } else {
+                    console.log("Approval success");
+                }
+            });
             con_CS.query(myState1, function (err, results) {
                 if (err) throw err;
                 // console.log(results);
@@ -1742,7 +1740,6 @@ module.exports = function (app, passport) {
             }
         }
     });
-
 
     app.get('/editdata',function (req,res){
         // var d = new Date();
