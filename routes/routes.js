@@ -415,7 +415,7 @@ module.exports = function (app, passport) {
         for(let i = 0; i < pictureStr.length; i++) {//the length of pictureStr and Prior_status may not be the same since some layer may not have picture with it
             console.log("tran:"+transactionPrStatusStr[i]);
 
-            if(transactionPrStatusStr[i] !== 'Pending' && 'Approved' && 'Rejected'){
+            if(transactionPrStatusStr[i] === 'NULL'){
                 if(i===pictureStr.length-1){
                     res.json({"error": true, "message": "Recover Failed, error occur,Prior Statue undefined"});
                 }
@@ -442,8 +442,9 @@ module.exports = function (app, passport) {
                 con_CS.query(statementpractice, [Pending_Dir, layerNameStr[i]], (err, results)=> {
                     if(i ===pictureStr.length - 1){
                         if (err) {
-                            console.log(err);
-                            res.json({"error": true, "message": "Recover Failed"});
+                            throw err;
+                            // console.log(err);
+                            // res.json({"error": true, "message": "Recover Failed"});
                         } else {
                             res.json({"error": false, "message": "Recover successful, jump to UserHome"});
                         }
@@ -472,8 +473,8 @@ module.exports = function (app, passport) {
                 con_CS.query(statement1+statement2, function (err, results) {
                     if(i === pictureStr.length - 1){
                         if (err) {
-                            console.log(err);
-                            res.json({"error": true, "message": "Recover Failed"});
+                           throw err;
+                            // res.json({"error": true, "message": "Recover Failed"});
                         } else {
                             res.json({"error": false, "message": "Recover successful, jump to UserHome"});
                         }
@@ -505,8 +506,8 @@ module.exports = function (app, passport) {
 
                     if(i === pictureStr.length - 1){
                         if (err) {
-                            console.log(err);
-                            res.json({"error": true, "message": "Recover Failed, err"});
+                            throw err
+                            // res.json({"error": true, "message": "Recover Failed, err"});
                         } else {
                             res.json({"error": false, "message": "Recover successful, go to UserHome"});
                         }
@@ -565,7 +566,7 @@ module.exports = function (app, passport) {
         for (let i = 0; i < transactionID.length; i++) {
             let statement = "UPDATE Request_Form SET Current_Status = 'Rejected', Layer_Uploader_name = '" + pictureStr[i] + "' WHERE RID = '" + transactionID[i] + "';";
             let statement1 = "UPDATE LayerMenu SET Status = 'Rejected' WHERE ThirdLayer = '" + LayerName  + "';";
-            fs.rename(''+ Approve_Dir + '/' + pictureStr[i] + '' , '' + Pending_Dir + '/' + pictureStr[i] + '',  function (err) {
+            fs.rename(''+ Approve_Dir + '/' + pictureStr[i] + '' , '' + Reject_Dir + '/' + pictureStr[i] + '',  function (err) {
                 if (err) {
                     console.log(err);
                 } else {

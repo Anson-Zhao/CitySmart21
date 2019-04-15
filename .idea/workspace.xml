@@ -1,28 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4704f94f-8e06-4422-a8b4-19d911764f68" name="Default Changelist" comment="Merge branch 'yiyang' of https://github.com/Anson-Zhao/CitySmart21 into Amy&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;approvedfolder/2019-04-05T23:22:53Z_NAA_Campus.tif&#10;#&#9;approvedfolder/2019-04-08T19:39:51Z_t.tif&#10;#&#9;rejectfolder/2019-04-01T20:41:54Z_2019-03-14T16:16:31Z_t.tif&#10;#&#9;rejectfolder/2019-04-04T15:37:06Z_t.tif&#10;#&#9;rejectfolder/2019-04-04T15:51:00Z_t.tif&#10;#&#9;routes/routes.js&#10;#&#9;trashfolder/2019-04-01T20:41:54Z_2019-03-14T16:16:31Z_t.tif&#10;#&#9;trashfolder/2019-04-04T15:37:06Z_t.tif&#10;#&#9;trashfolder/2019-04-04T15:51:00Z_t.tif&#10;#&#9;trashfolder/2019-04-05T23:22:53Z_NAA_Campus.tif&#10;#&#9;uploadfolder/2019-04-05T23:22:53Z_NAA_Campus.tif">
-      <change afterPath="$PROJECT_DIR$/rejectfolder/2019-04-01T20:41:54Z_2019-03-14T16:16:31Z_t.tif~HEAD_0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rejectfolder/2019-04-04T15:37:06Z_t.tif~129915364981b4cf3e4632106f72d11dcac3eb7e" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rejectfolder/2019-04-04T15:37:06Z_t.tif~129915364981b4cf3e4632106f72d11dcac3eb7e_0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rejectfolder/2019-04-04T15:37:06Z_t.tif~HEAD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rejectfolder/2019-04-04T15:37:06Z_t.tif~HEAD_0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rejectfolder/2019-04-04T15:51:00Z_t.tif~129915364981b4cf3e4632106f72d11dcac3eb7e" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rejectfolder/2019-04-04T15:51:00Z_t.tif~HEAD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploadfolder/2019-04-12T19:50:59Z_t.tif" afterDir="false" />
+    <list default="true" id="4704f94f-8e06-4422-a8b4-19d911764f68" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/approvedfolder/2019-04-08T19:39:51Z_t.tif" beforeDir="false" afterPath="$PROJECT_DIR$/approvedfolder/2019-04-12T15:40:18Z_t.tif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/ows.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config/ows.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rejectfolder/2019-04-01T20:41:54Z_2019-03-14T16:16:31Z_t.tif" beforeDir="false" afterPath="$PROJECT_DIR$/rejectfolder/2019-04-01T20:41:54Z_2019-03-14T16:16:31Z_t.tif~129915364981b4cf3e4632106f72d11dcac3eb7e" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rejectfolder/2019-04-04T15:37:06Z_t.tif" beforeDir="false" afterPath="$PROJECT_DIR$/rejectfolder/2019-04-01T20:41:54Z_2019-03-14T16:16:31Z_t.tif~129915364981b4cf3e4632106f72d11dcac3eb7e_0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rejectfolder/2019-04-04T15:51:00Z_t.tif" beforeDir="false" afterPath="$PROJECT_DIR$/rejectfolder/2019-04-01T20:41:54Z_2019-03-14T16:16:31Z_t.tif~HEAD" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/MainMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/MainMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trashfolder/2019-04-05T23:22:53Z_NAA_Campus.tif" beforeDir="false" afterPath="$PROJECT_DIR$/approvedfolder/2019-04-05T23:22:53Z_NAA_Campus.tif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trashfolder/2019-04-09T19:40:22Z_t.tif" beforeDir="false" afterPath="$PROJECT_DIR$/approvedfolder/2019-04-09T19:40:22Z_t.tif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/LayerRequestForm_edit.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/LayerRequestForm_edit.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/recovery.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/recovery.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/userHome.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/userHome.ejs" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -57,8 +38,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="1755" column="44" lean-forward="true" selection-start-line="1755" selection-start-column="44" selection-end-line="1755" selection-end-column="44" />
+            <state relative-caret-position="235">
+              <caret line="563" column="57" lean-forward="true" selection-start-line="563" selection-start-column="57" selection-end-line="563" selection-end-column="57" />
               <folding>
                 <element signature="e#74364#74551#0" />
               </folding>
@@ -78,8 +59,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/recovery.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-266">
-              <caret line="379" column="46" selection-start-line="379" selection-start-column="38" selection-end-line="379" selection-end-column="46" />
+            <state relative-caret-position="52">
+              <caret line="433" column="30" selection-start-line="433" selection-start-column="30" selection-end-line="433" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -182,7 +163,6 @@
       <find>Recover</find>
       <find>transactionStatusStr</find>
       <find>transaction</find>
-      <find>deleteData</find>
       <find>pending</find>
       <find>Approve_Dir</find>
       <find>deleteD</find>
@@ -191,6 +171,7 @@
       <find>disapprove</find>
       <find>approve</find>
       <find>delete</find>
+      <find>deleteData</find>
       <find>approved</find>
     </findStrings>
     <replaceStrings>
@@ -271,15 +252,15 @@
         <option value="$PROJECT_DIR$/scripts/MainMenu.js" />
         <option value="$PROJECT_DIR$/views/recovery.ejs" />
         <option value="$PROJECT_DIR$/config/mainconf.js" />
-        <option value="$PROJECT_DIR$/routes/routes.js" />
         <option value="$PROJECT_DIR$/views/userHome.ejs" />
+        <option value="$PROJECT_DIR$/routes/routes.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="134" />
-    <option name="y" value="27" />
-    <option name="width" value="1724" />
+    <option name="x" value="280" />
+    <option name="y" value="23" />
+    <option name="width" value="1821" />
     <option name="height" value="1030" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -296,6 +277,16 @@
             <path>
               <item name="CitySmart21" type="b2602c69:ProjectViewProjectNode" />
               <item name="CitySmart21" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CitySmart21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CitySmart21" type="462c0819:PsiDirectoryNode" />
+              <item name="approvedfolder" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CitySmart21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CitySmart21" type="462c0819:PsiDirectoryNode" />
+              <item name="uploadfolder" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -391,28 +382,7 @@
       <workItem from="1555012475438" duration="432000" />
       <workItem from="1555013041976" duration="473000" />
       <workItem from="1555083167760" duration="100000" />
-      <workItem from="1555083388306" duration="5561000" />
-    </task>
-    <task id="LOCAL-00004" summary="Initial Commit">
-      <created>1553718529878</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1553718529878</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Initial Commit">
-      <created>1553719744704</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1553719744704</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Initial Commit">
-      <created>1553721005758</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1553721005758</updated>
+      <workItem from="1555083388306" duration="8296000" />
     </task>
     <task id="LOCAL-00007" summary="Initial Commit">
       <created>1553721159546</created>
@@ -736,21 +706,43 @@
       <option name="project" value="LOCAL" />
       <updated>1554839639577</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Merge branch 'yiyang' of https://github.com/Anson-Zhao/CitySmart21 into Amy&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;approvedfolder/2019-04-05T23:22:53Z_NAA_Campus.tif&#10;#&#9;approvedfolder/2019-04-08T19:39:51Z_t.tif&#10;#&#9;rejectfolder/2019-04-01T20:41:54Z_2019-03-14T16:16:31Z_t.tif&#10;#&#9;rejectfolder/2019-04-04T15:37:06Z_t.tif&#10;#&#9;rejectfolder/2019-04-04T15:51:00Z_t.tif&#10;#&#9;routes/routes.js&#10;#&#9;trashfolder/2019-04-01T20:41:54Z_2019-03-14T16:16:31Z_t.tif&#10;#&#9;trashfolder/2019-04-04T15:37:06Z_t.tif&#10;#&#9;trashfolder/2019-04-04T15:51:00Z_t.tif&#10;#&#9;trashfolder/2019-04-05T23:22:53Z_NAA_Campus.tif&#10;#&#9;uploadfolder/2019-04-05T23:22:53Z_NAA_Campus.tif">
+      <created>1555101469881</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1555101469882</updated>
+    </task>
+    <task id="LOCAL-00054" summary="Merge branch 'yiyang' of https://github.com/Anson-Zhao/CitySmart21 into Amy&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1555101577983</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1555101577983</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Merge branch 'yiyang' of https://github.com/Anson-Zhao/CitySmart21 into Amy&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1555342522228</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1555342522228</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98559000" />
+    <option name="totallyTimeSpent" value="101294000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="134" y="27" width="1724" height="1030" extended-state="0" />
+    <frame x="280" y="23" width="1821" height="1030" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49933776" visible="true" weight="0.2627824" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49933776" visible="true" weight="0.25182688" />
       <window_info id="Structure" order="1" sideWeight="0.50066227" side_tool="true" weight="0.19517314" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49637157" weight="0.3294849" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.48454222" visible="true" weight="0.4978678" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.48454222" visible="true" weight="0.35074627" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -852,7 +844,8 @@
     <MESSAGE value="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart21&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;config/geoCapacity/2019_4_7_17_23_56.xml&#10;#&#9;config/geoCapacity/2019_4_7_17_24_56.xml&#10;#&#9;config/geoCapacity/2019_4_7_17_25_56.xml" />
     <MESSAGE value="fix upload/trash/delete/reject folder path" />
     <MESSAGE value="Merge branch 'yiyang' of https://github.com/Anson-Zhao/CitySmart21 into Amy&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;approvedfolder/2019-04-05T23:22:53Z_NAA_Campus.tif&#10;#&#9;approvedfolder/2019-04-08T19:39:51Z_t.tif&#10;#&#9;rejectfolder/2019-04-01T20:41:54Z_2019-03-14T16:16:31Z_t.tif&#10;#&#9;rejectfolder/2019-04-04T15:37:06Z_t.tif&#10;#&#9;rejectfolder/2019-04-04T15:51:00Z_t.tif&#10;#&#9;routes/routes.js&#10;#&#9;trashfolder/2019-04-01T20:41:54Z_2019-03-14T16:16:31Z_t.tif&#10;#&#9;trashfolder/2019-04-04T15:37:06Z_t.tif&#10;#&#9;trashfolder/2019-04-04T15:51:00Z_t.tif&#10;#&#9;trashfolder/2019-04-05T23:22:53Z_NAA_Campus.tif&#10;#&#9;uploadfolder/2019-04-05T23:22:53Z_NAA_Campus.tif" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'yiyang' of https://github.com/Anson-Zhao/CitySmart21 into Amy&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;approvedfolder/2019-04-05T23:22:53Z_NAA_Campus.tif&#10;#&#9;approvedfolder/2019-04-08T19:39:51Z_t.tif&#10;#&#9;rejectfolder/2019-04-01T20:41:54Z_2019-03-14T16:16:31Z_t.tif&#10;#&#9;rejectfolder/2019-04-04T15:37:06Z_t.tif&#10;#&#9;rejectfolder/2019-04-04T15:51:00Z_t.tif&#10;#&#9;routes/routes.js&#10;#&#9;trashfolder/2019-04-01T20:41:54Z_2019-03-14T16:16:31Z_t.tif&#10;#&#9;trashfolder/2019-04-04T15:37:06Z_t.tif&#10;#&#9;trashfolder/2019-04-04T15:51:00Z_t.tif&#10;#&#9;trashfolder/2019-04-05T23:22:53Z_NAA_Campus.tif&#10;#&#9;uploadfolder/2019-04-05T23:22:53Z_NAA_Campus.tif" />
+    <MESSAGE value="Merge branch 'yiyang' of https://github.com/Anson-Zhao/CitySmart21 into Amy&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'yiyang' of https://github.com/Anson-Zhao/CitySmart21 into Amy&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/config/geoCapacity/2019_3_27_16_22_47.xml" />
@@ -1130,15 +1123,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/recovery.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-266">
-          <caret line="379" column="46" selection-start-line="379" selection-start-column="38" selection-end-line="379" selection-end-column="46" />
+        <state relative-caret-position="52">
+          <caret line="433" column="30" selection-start-line="433" selection-start-column="30" selection-end-line="433" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/routes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="1755" column="44" lean-forward="true" selection-start-line="1755" selection-start-column="44" selection-end-line="1755" selection-end-column="44" />
+        <state relative-caret-position="235">
+          <caret line="563" column="57" lean-forward="true" selection-start-line="563" selection-start-column="57" selection-end-line="563" selection-end-column="57" />
           <folding>
             <element signature="e#74364#74551#0" />
           </folding>
