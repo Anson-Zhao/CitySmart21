@@ -16,8 +16,8 @@
 
 requirejs([
         './WorldWindShim',
-        './mrds',
-        './mrds_HeatMap',
+        // './mrds',
+        // './mrds_HeatMap',
         './LayerManager',
         './OptionList',
         './AutoMenu',
