@@ -526,5 +526,17 @@ requirejs([
             // globe.addEventListener("mousemove", handlePick);
 
             globe.addEventListener("click", handleMouseCLK);
+
+
+
+            var MRHeatmapUS  = document.getElementsByClassName("placemarkLayerinputUSGS_HeatMap_US");
+            var MRPlacemarkUS  = document.getElementsByClassName("placemarkLayerinputUSGS_Placemark_US");
+
+            if(MRPlacemarkUS.value = 'USGS_MR') {
+
+            } else {
+
+            }
+
         });
     });
