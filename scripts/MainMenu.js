@@ -433,6 +433,7 @@ requirejs([
 
             $(".wmsLayer,.placemarkLayer").click(function () {
                 var layer1 = $(this).val(); //the most current value of the selected switch
+                console.log(layer1);
                 allCheckedArray = $(':checkbox:checked');
 
                 var layerRequest = 'layername=' + layer1;
@@ -533,7 +534,7 @@ requirejs([
             var MRPlacemarkUS  = document.getElementsByClassName("placemarkLayerinputUSGS_Placemark_US");
 
             if(MRPlacemarkUS.value = 'USGS_MR') {
-
+                    //this.click
             } else {
 
             }

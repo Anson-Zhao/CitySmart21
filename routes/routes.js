@@ -114,7 +114,7 @@ module.exports = function (app, passport) {
 
     app.get('/placemark', function(req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
-        var select = "SELECT * FROM CitySmart2.LayerMenu WHERE LayerType = 'Placemark'";
+        var select = "SELECT * FROM CitySmart2.LayerMenu WHERE LayerType = 'PlacemarkLayer'";
         con_CS.query( select, function (err, result) {
             if (err) throw err;
             else {
@@ -124,7 +124,7 @@ module.exports = function (app, passport) {
         });
     });
 
-    app.get('/currenLayer',function (req,res) {
+    app.get('/currentLayer',function (req,res) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
         var thirdlayer = req.query.thirdlayer;
         var queryState = 'SELECT FirstLayer, SecondLayer, ThirdLayer, Longitude, Latitude, Altitude FROM LayerMenu WHERE ThirdLayer = ?';
