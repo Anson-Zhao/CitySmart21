@@ -185,7 +185,7 @@ $(document).ready(function () {
                             //    classname.push([res3[i].ThirdLayer +" " + statenamestr + countrynamestr + citynamestr, statenamestr]);
                             //});
                         }
-                        if(res3[i].LayerType ==='Placemark'){
+                        if(res3[i].LayerType ==='PlacemarkLayer'){
 
                             let countrynamestr = res3[i].CountryName.replace(/\s+/g, '');
                             let statenamestr = res3[i].StateName.replace(/\s+/g, '');

@@ -533,11 +533,11 @@ requirejs([
             var MRHeatmapUS  = document.getElementsByClassName("placemarkLayerinputUSGS_HeatMap_US");
             var MRPlacemarkUS  = document.getElementsByClassName("placemarkLayerinputUSGS_Placemark_US");
 
-            if(MRPlacemarkUS.value = 'USGS_MR') {
-                    //this.click
-            } else {
-
-            }
+            // if(MRPlacemarkUS.value = 'USGS_MR') {
+            //         //this.click
+            // } else {
+            //
+            // }
 
         });
     });

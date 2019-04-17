@@ -1,4 +1,4 @@
-if (res[i].LayerType === "Placemark") {
+if (res[i].LayerType === "PlacemarkLayer") {
     let continentnamestr = res[i].ContinentName.replace(/\s+/g, '');
     let countrynamestr = res[i].CountryName.replace(/\s+/g, '');
     let statenamestr = res[i].StateName.replace(/\s+/g, '');
