@@ -153,9 +153,9 @@ $(document).ready(function () {
                         checkboxlabel.className = "switch right";
                         var checkboxinput = document.createElement("input");
                         checkboxinput.type = "checkbox";
-                        // checkboxinput.id = res3[i].LayerType;
+                        checkboxinput.id = res3[i].LayerType;
                         // console.log(res3[i].ThirdLayer);
-                        checkboxinput.className = "input" + res3[i].LayerType+ Thirdreplace;
+                        checkboxinput.className = "wmsLayer input" + Thirdreplace;
                         checkboxinput.setAttribute("value", res3[i].LayerName);
                         var checkboxspan = document.createElement("span");
                         checkboxspan.className = "slider round";
@@ -191,9 +191,9 @@ $(document).ready(function () {
                         checkboxlabel.className = "switch right";
                         var checkboxinput = document.createElement("input");
                         checkboxinput.type = "checkbox";
-                        // checkboxinput.id = res3[i].LayerType;
+                        checkboxinput.id = res3[i].LayerType;
                         // console.log(res3[i].ThirdLayer);
-                        checkboxinput.className = "input" + res3[i].LayerType + res3[i].ThirdLayer;
+                        checkboxinput.className = "placemarkLayer input" + res3[i].ThirdLayer;
                         checkboxinput.setAttribute("value", res3[i].LayerName);
                         var checkboxspan = document.createElement("span");
                         checkboxspan.className = "slider round";
