@@ -14,6 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+import {WWConf} from "../WWConf";
+
 /**
  * @exports BMNGLayer
  */
@@ -47,8 +50,10 @@ define([
             this.displayName = "Blue Marble";
             this.pickEnabled = false;
 
-            this.urlBuilder = new WmsUrlBuilder("https://emxsys.net/worldwind25/wms",
+            this.urlBuilder = new WmsUrlBuilder(WWConf.Wms_Svr,
                 layerName || "BlueMarble-200405", "", "1.3.0");
+            // this.urlBuilder = new WmsUrlBuilder("https://emxsys.net/worldwind25/wms",
+            //     layerName || "BlueMarble-200405", "", "1.3.0");
         };
 
         BMNGLayer.prototype = Object.create(TiledImageLayer.prototype);

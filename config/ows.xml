@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><WMS_Capabilities version="1.3.0" updateSequence="201" xmlns="http://www.opengis.net/wms" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wms http://cs.aworldbridgelabs.com:8080/geoserver/schemas/wms/1.3.0/capabilities_1_3_0.xsd">
+<?xml version="1.0" encoding="UTF-8"?><WMS_Capabilities version="1.3.0" updateSequence="242" xmlns="http://www.opengis.net/wms" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wms http://cs.aworldbridgelabs.com:8080/geoserver/schemas/wms/1.3.0/capabilities_1_3_0.xsd">
   <Service>
     <Name>WMS</Name>
     <Title>GeoServer Web Map Service</Title>
@@ -6076,6 +6076,35 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
         </Style>
       </Layer>
       <Layer queryable="1" opaque="0">
+        <Name>Approved:BVGC_May2016_mosaic</Name>
+        <Title>BVGC_May2016_mosaic</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>BVGC_May2016_mosaic</Keyword>
+          <Keyword>WCS</Keyword>
+          <Keyword>GeoTIFF</Keyword>
+        </KeywordList>
+        <CRS>EPSG:32605</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-152.56716097736754</westBoundLongitude>
+          <eastBoundLongitude>-152.55397908423117</eastBoundLongitude>
+          <southBoundLatitude>57.7831551407547</southBoundLatitude>
+          <northBoundLatitude>57.787497209056035</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-152.56716097736754" miny="57.7831551407547" maxx="-152.55397908423117" maxy="57.787497209056035"/>
+        <BoundingBox CRS="EPSG:32605" minx="525739.1154" miny="6404655.88408" maxx="526519.86336" maxy="6405134.23153"/>
+        <Style>
+          <Name>raster</Name>
+          <Title>Default Raster</Title>
+          <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Approved%3ABVGC_May2016_mosaic"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
         <Name>City_Smart:BaseRoad_Layer</Name>
         <Title>BaseRoad_Layer</Title>
         <Abstract/>
@@ -6608,6 +6637,35 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
         </Style>
       </Layer>
       <Layer queryable="1" opaque="0">
+        <Name>Approved:NBarrow25Oct17_transparent_mosaic_group1</Name>
+        <Title>NBarrow25Oct17_transparent_mosaic_group1</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>NBarrow25Oct17_transparent_mosaic_group1</Keyword>
+          <Keyword>WCS</Keyword>
+          <Keyword>GeoTIFF</Keyword>
+        </KeywordList>
+        <CRS>EPSG:32604</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-156.66587927513953</westBoundLongitude>
+          <eastBoundLongitude>-156.66069150898747</eastBoundLongitude>
+          <southBoundLatitude>71.33181812973736</southBoundLatitude>
+          <northBoundLatitude>71.33355364941109</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-156.66587927513953" miny="71.33181812973736" maxx="-156.66069150898747" maxy="71.33355364941109"/>
+        <BoundingBox CRS="EPSG:32604" minx="583368.20863" miny="7916020.973930001" maxx="583546.46523" maxy="7916207.812810001"/>
+        <Style>
+          <Name>raster</Name>
+          <Title>Default Raster</Title>
+          <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Approved%3ANBarrow25Oct17_transparent_mosaic_group1"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
         <Name>City_Smart:OHC_1</Name>
         <Title>OHC_1</Title>
         <Abstract/>
@@ -7066,6 +7124,35 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
         </Style>
       </Layer>
       <Layer queryable="1" opaque="0">
+        <Name>Approved:kea windfarm_transparent_mosaic_group1</Name>
+        <Title>kea windfarm_transparent_mosaic_group1</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>kea windfarm_transparent_mosaic_group1</Keyword>
+          <Keyword>WCS</Keyword>
+          <Keyword>GeoTIFF</Keyword>
+        </KeywordList>
+        <CRS>EPSG:32605</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-152.46517567875924</westBoundLongitude>
+          <eastBoundLongitude>-152.43492278322145</eastBoundLongitude>
+          <southBoundLatitude>57.779426821957095</southBoundLatitude>
+          <northBoundLatitude>57.790021931592136</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-152.46517567875924" miny="57.779426821957095" maxx="-152.43492278322145" maxy="57.790021931592136"/>
+        <BoundingBox CRS="EPSG:32605" minx="531806.8864600001" miny="6404293.612850001" maxx="533596.4518100001" maxy="6405458.680310001"/>
+        <Style>
+          <Name>raster</Name>
+          <Title>Default Raster</Title>
+          <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Approved%3Akea%20windfarm_transparent_mosaic_group1"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
         <Name>nurc:mosaic</Name>
         <Title>mosaic</Title>
         <Abstract>Italian sample mosaic</Abstract>
@@ -7139,118 +7226,6 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=tiger%3Apoi&amp;style=point"/>
-          </LegendURL>
-        </Style>
-      </Layer>
-      <Layer queryable="1" opaque="0">
-        <Name>Approved:pointlands</Name>
-        <Title>pointlands</Title>
-        <Abstract/>
-        <KeywordList>
-          <Keyword>pointlands</Keyword>
-          <Keyword>features</Keyword>
-        </KeywordList>
-        <CRS>EPSG:4269</CRS>
-        <CRS>CRS:84</CRS>
-        <EX_GeographicBoundingBox>
-          <westBoundLongitude>-105.37358322</westBoundLongitude>
-          <eastBoundLongitude>-105.06225678</eastBoundLongitude>
-          <southBoundLatitude>39.91021077907047</southBoundLatitude>
-          <northBoundLatitude>40.22153721907047</northBoundLatitude>
-        </EX_GeographicBoundingBox>
-        <BoundingBox CRS="CRS:84" minx="-105.37358322" miny="39.91021077907047" maxx="-105.06225678" maxy="40.22153721907047"/>
-        <BoundingBox CRS="EPSG:4269" minx="39.914352" miny="-105.370531" maxx="40.217396" maxy="-105.065309"/>
-        <Style>
-          <Name>point</Name>
-          <Title>Default Point</Title>
-          <Abstract>A sample style that draws a point</Abstract>
-          <LegendURL width="20" height="20">
-            <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Approved%3Apointlands"/>
-          </LegendURL>
-        </Style>
-      </Layer>
-      <Layer queryable="1" opaque="0">
-        <Name>Approved:pointlands3</Name>
-        <Title>pointlands</Title>
-        <Abstract/>
-        <KeywordList>
-          <Keyword>pointlands</Keyword>
-          <Keyword>features</Keyword>
-        </KeywordList>
-        <CRS>EPSG:4269</CRS>
-        <CRS>CRS:84</CRS>
-        <EX_GeographicBoundingBox>
-          <westBoundLongitude>-105.370531</westBoundLongitude>
-          <eastBoundLongitude>-105.065309</eastBoundLongitude>
-          <southBoundLatitude>39.914352</southBoundLatitude>
-          <northBoundLatitude>40.217396</northBoundLatitude>
-        </EX_GeographicBoundingBox>
-        <BoundingBox CRS="CRS:84" minx="-105.370531" miny="39.914352" maxx="-105.065309" maxy="40.217396"/>
-        <BoundingBox CRS="EPSG:4269" minx="39.914352" miny="-105.370531" maxx="40.217396" maxy="-105.065309"/>
-        <Style>
-          <Name>point</Name>
-          <Title>Default Point</Title>
-          <Abstract>A sample style that draws a point</Abstract>
-          <LegendURL width="20" height="20">
-            <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Approved%3Apointlands3"/>
-          </LegendURL>
-        </Style>
-      </Layer>
-      <Layer queryable="1" opaque="0">
-        <Name>Approved:pointlands4</Name>
-        <Title>pointlands</Title>
-        <Abstract/>
-        <KeywordList>
-          <Keyword>pointlands</Keyword>
-          <Keyword>features</Keyword>
-        </KeywordList>
-        <CRS>EPSG:4269</CRS>
-        <CRS>CRS:84</CRS>
-        <EX_GeographicBoundingBox>
-          <westBoundLongitude>-105.370531</westBoundLongitude>
-          <eastBoundLongitude>-105.065309</eastBoundLongitude>
-          <southBoundLatitude>39.914352</southBoundLatitude>
-          <northBoundLatitude>40.217396</northBoundLatitude>
-        </EX_GeographicBoundingBox>
-        <BoundingBox CRS="CRS:84" minx="-105.370531" miny="39.914352" maxx="-105.065309" maxy="40.217396"/>
-        <BoundingBox CRS="EPSG:4269" minx="39.914352" miny="-105.370531" maxx="40.217396" maxy="-105.065309"/>
-        <Style>
-          <Name>point</Name>
-          <Title>Default Point</Title>
-          <Abstract>A sample style that draws a point</Abstract>
-          <LegendURL width="20" height="20">
-            <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Approved%3Apointlands4"/>
-          </LegendURL>
-        </Style>
-      </Layer>
-      <Layer queryable="1" opaque="0">
-        <Name>Approved:pointlands5</Name>
-        <Title>pointlands</Title>
-        <Abstract/>
-        <KeywordList>
-          <Keyword>pointlands</Keyword>
-          <Keyword>features</Keyword>
-        </KeywordList>
-        <CRS>EPSG:4269</CRS>
-        <CRS>CRS:84</CRS>
-        <EX_GeographicBoundingBox>
-          <westBoundLongitude>-105.370531</westBoundLongitude>
-          <eastBoundLongitude>-105.065309</eastBoundLongitude>
-          <southBoundLatitude>39.914352</southBoundLatitude>
-          <northBoundLatitude>40.217396</northBoundLatitude>
-        </EX_GeographicBoundingBox>
-        <BoundingBox CRS="CRS:84" minx="-105.370531" miny="39.914352" maxx="-105.065309" maxy="40.217396"/>
-        <BoundingBox CRS="EPSG:4269" minx="39.914352" miny="-105.370531" maxx="40.217396" maxy="-105.065309"/>
-        <Style>
-          <Name>point</Name>
-          <Title>Default Point</Title>
-          <Abstract>A sample style that draws a point</Abstract>
-          <LegendURL width="20" height="20">
-            <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Approved%3Apointlands5"/>
           </LegendURL>
         </Style>
       </Layer>

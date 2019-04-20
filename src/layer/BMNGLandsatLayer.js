@@ -14,6 +14,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import {WWConf} from "../WWConf";
+
 /**
  * @exports BMNGLandsatLayer
  */
@@ -44,8 +46,10 @@ define([
             this.displayName = "Blue Marble & Landsat";
             this.pickEnabled = false;
 
-            this.urlBuilder = new WmsUrlBuilder("https://emxsys.net/worldwind25/wms",
+            this.urlBuilder = new WmsUrlBuilder(WWConf.Wms_Svr,
                 "BlueMarble-200405,esat", "", "1.3.0");
+            // this.urlBuilder = new WmsUrlBuilder("https://emxsys.net/worldwind25/wms",
+            //     "BlueMarble-200405,esat", "", "1.3.0");
         };
 
         BMNGLandsatLayer.prototype = Object.create(TiledImageLayer.prototype);

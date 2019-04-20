@@ -14,6 +14,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import {WWConf} from "../WWConf";
+
 /**
  * @exports UsgsNedHiElevationCoverage
  */
@@ -45,7 +47,8 @@ define([
                 retrievalImageFormat: "application/bil16",
                 minElevation: -11000,
                 maxElevation: 8850,
-                urlBuilder: new WmsUrlBuilder("https://cors.aworldbridgelabs.com:9084/http://emxsys.net/worldwind26/elev", "USGS-NED", "", "1.3.0")
+                urlBuilder: new WmsUrlBuilder(WWConf.CORS_Proxy + WWConf.Elev_Svr, "USGS-NED", "", "1.3.0")
+                // urlBuilder: new WmsUrlBuilder("https://cors.aworldbridgelabs.com:9084/http://emxsys.net/worldwind26/elev", "USGS-NED", "", "1.3.0")
                 // urlBuilder: new WmsUrlBuilder("https://worldwind26.arc.nasa.gov/elev", "USGS-NED", "", "1.3.0")
             });
 

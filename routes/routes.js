@@ -1,7 +1,7 @@
 // routes/routes.js
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
-const config = require('../config/mainconf');
+const configGlobal = require('../config/mainconf');
 const fs = require("fs");
 const fsextra = require('fs-extra');
 const request = require("request");
@@ -15,23 +15,23 @@ const mkdirp = require("mkdirp");
 const multiparty = require('multiparty');
 const path    = require('path');
 
-const geoServer = config.geoServer;
-const Download_From = config.Download_From;
+const geoServer = configGlobal.geoServer;
+const Download_From = configGlobal.Download_From;
 
-const copySource = path.resolve(__dirname, config.Download_To); //the path of the source file
-const copyDestDir = path.resolve(__dirname, config.Backup_Dir);
-const num_backups = config.num_backups;
-const download_interval = config.download_interval;
+const copySource = path.resolve(__dirname, configGlobal.Download_To); //the path of the source file
+const copyDestDir = path.resolve(__dirname, configGlobal.Backup_Dir);
+const num_backups = configGlobal.num_backups;
+const download_interval = configGlobal.download_interval;
 
-const Approve_Dir = path.resolve(__dirname, "../" + config.Approve_Dir);
-const Pending_Dir = path.resolve(__dirname, "../" + config.Pending_Dir);
-const Reject_Dir = path.resolve(__dirname, "../" + config.Reject_Dir);
-const Delete_Dir = path.resolve(__dirname, "../" + config.Delete_Dir);
+const Approve_Dir = path.resolve(__dirname, "../" + configGlobal.Approve_Dir);
+const Pending_Dir = path.resolve(__dirname, "../" + configGlobal.Pending_Dir);
+const Reject_Dir = path.resolve(__dirname, "../" + configGlobal.Reject_Dir);
+const Delete_Dir = path.resolve(__dirname, "../" + configGlobal.Delete_Dir);
 
 const fileInputName = process.env.FILE_INPUT_NAME || "qqfile";
 const maxFileSize = process.env.MAX_FILE_SIZE || 0; // in bytes, 0 for unlimited
 
-const con_CS = mysql.createConnection(config.commondb_connection);
+const con_CS = mysql.createConnection(configGlobal.commondb_connection);
 const smtpTrans = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
@@ -45,7 +45,7 @@ let transactionID, myStat, myVal, myErrMsg, token, errStatus, mylogin;
 let today, date2, date3, time2, time3, dateTime, tokenExpire, child;
 let downloadFalse = null ;
 
-con_CS.query('USE ' + config.Login_db); // Locate Login DB
+con_CS.query('USE ' + configGlobal.Login_db); // Locate Login DB
 
 module.exports = function (app, passport) {
 
@@ -858,7 +858,7 @@ module.exports = function (app, passport) {
 
     app.post('/signup', function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
-        // con_CS.query('USE ' + config.Login_db); // Locate Login DB
+        // con_CS.query('USE ' + configGlobal.Login_db); // Locate Login DB
 
         let newUser = {
             username: req.body.username,
@@ -902,7 +902,7 @@ module.exports = function (app, passport) {
     app.post('/addUser', isLoggedIn, function (req, res) {
 
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
-        // connection.query('USE ' + config.Login_db); // Locate Login DB
+        // connection.query('USE ' + configGlobal.Login_db); // Locate Login DB
 
         var newUser = {
             username: req.body.username,

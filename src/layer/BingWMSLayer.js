@@ -14,6 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+import {WWConf} from "../WWConf";
+
 /**
  * @exports BingWMSLayer
  */
@@ -37,7 +40,7 @@ define([
             this.displayName = "Bing WMS";
             this.pickEnabled = false;
             this.maxActiveAltitude = 10e3;
-
+            // this.urlBuilder = new WmsUrlBuilder(WWConf.Virtual_Earth, "ve", "", "1.3.0");
             // this.urlBuilder = new WmsUrlBuilder("https://worldwind27.arc.nasa.gov/wms/virtualearth", "ve", "", "1.3.0");
         };
 

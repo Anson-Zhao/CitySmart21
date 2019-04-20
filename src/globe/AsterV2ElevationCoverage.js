@@ -14,6 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 /**
  * @exports AsterV2ElevationCoverage
  */
@@ -21,12 +22,14 @@ define([
         '../geom/Location',
         '../geom/Sector',
         '../globe/TiledElevationCoverage',
-        '../util/WmsUrlBuilder'
+        '../util/WmsUrlBuilder',
+        '../WWConf'
     ],
     function (Location,
               Sector,
               TiledElevationCoverage,
-              WmsUrlBuilder) {
+              WmsUrlBuilder,
+              WWConf) {
         "use strict";
 
         /**
@@ -36,14 +39,17 @@ define([
          * @augments TiledElevationCoverage
          * @classdesc Provides elevations for Earth. Elevations are drawn from the NASA WorldWind elevation service.
          */
-        var AsterV2ElevationCoverage = function () {
+        // let worldwindConf = new WWConf();
+            console.log(WWConf);
+        let AsterV2ElevationCoverage = function () {
             TiledElevationCoverage.call(this, {
                 coverageSector: new Sector(-83.0001, 83.0001, -180, 180),
                 resolution: 0.000277777777778,
                 retrievalImageFormat: "application/bil16",
                 minElevation: -11000,
                 maxElevation: 8850,
-                urlBuilder: new WmsUrlBuilder("https://cors.aworldbridgelabs.com:9084/http://emxsys.net/worldwind26/elev", "aster_v2", "", "1.3.0")
+                urlBuilder: new WmsUrlBuilder(WWConf.CORS_Proxy + WWConf.Elev_Svr, "aster_v2", "", "1.3.0")
+                // urlBuilder: new WmsUrlBuilder("https://cors.aworldbridgelabs.com:9084/http://emxsys.net/worldwind26/elev", "aster_v2", "", "1.3.0")
                 // urlBuilder: new WmsUrlBuilder("https://worldwind26.arc.nasa.gov/elev", "aster_v2", "", "1.3.0")
             });
 
