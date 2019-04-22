@@ -155,7 +155,7 @@ $(document).ready(function () {
                         checkboxinput.type = "checkbox";
                         checkboxinput.id = res3[i].LayerType;
                         // console.log(res3[i].ThirdLayer);
-                        checkboxinput.className = "wmsLayer input" + Thirdreplace;
+                        checkboxinput.className = res3[i].LayerType + " input " + Thirdreplace;
                         checkboxinput.setAttribute("value", res3[i].LayerName);
                         var checkboxspan = document.createElement("span");
                         checkboxspan.className = "slider round";
@@ -193,7 +193,7 @@ $(document).ready(function () {
                         checkboxinput.type = "checkbox";
                         checkboxinput.id = res3[i].LayerType;
                         // console.log(res3[i].ThirdLayer);
-                        checkboxinput.className = "placemarkLayer input" + res3[i].ThirdLayer;
+                        checkboxinput.className = res3[i].LayerType + " input " + res3[i].ThirdLayer;
                         checkboxinput.setAttribute("value", res3[i].LayerName);
                         var checkboxspan = document.createElement("span");
                         checkboxspan.className = "slider round";
