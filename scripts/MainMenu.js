@@ -56,8 +56,8 @@ requirejs([
         globe.goTo(new WorldWind.Position(37.0902, -95.7129, 9000000));
 
         // Web Map Service information from NASA's Near Earth Observations WMS
-        // var serviceAddress = "https://cors.aworldbridgelabs.com:9084/http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities";
-        var serviceAddress = "../config/ows.xml";
+        var serviceAddress = "https://cors.aworldbridgelabs.com:9084/http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities";
+        // var serviceAddress = "../config/ows.xml";
 
         var preloadWMSLayerName = [];
         // var highlightedItems= [];

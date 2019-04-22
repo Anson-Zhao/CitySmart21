@@ -134,7 +134,15 @@ $(document).ready(function () {
                 //     console.log(res3[i].ThirdLayer);
                 // }
                 for (var i = 0; i < res3.length; i++) {
+
+
                     if (res3[i].LayerType === 'Wmslayer') {
+                        var thelayertype = 'wmsLayer';
+                    } else if (res3[i].LayerType === 'PlacemarkLayer'){
+                        var thelayertype = 'placemarkLayer';
+                    } else{
+                    }
+                    // if (res3[i].LayerType === 'Wmslayer') {
                         // console.log(res3[i].LayerType);
                         // console.log('hh');
                         let Thirdreplace = res3[i].ThirdLayer.replace(/\s+/g, '');
@@ -153,9 +161,9 @@ $(document).ready(function () {
                         checkboxlabel.className = "switch right";
                         var checkboxinput = document.createElement("input");
                         checkboxinput.type = "checkbox";
-                        checkboxinput.id = res3[i].LayerType;
+                        // checkboxinput.id = res3[i].LayerType;
                         // console.log(res3[i].ThirdLayer);
-                        checkboxinput.className = res3[i].LayerType + " input " + Thirdreplace;
+                        checkboxinput.className = thelayertype + " input " + Thirdreplace;
                         checkboxinput.setAttribute("value", res3[i].LayerName);
                         var checkboxspan = document.createElement("span");
                         checkboxspan.className = "slider round";
@@ -172,41 +180,41 @@ $(document).ready(function () {
                         // classname.push([res3[i].ThirdLayer +" " + statenamestr + countrynamestr + continentnamestr, statenamestr]);
                         //    classname.push([res3[i].ThirdLayer +" " + statenamestr + countrynamestr + citynamestr, statenamestr]);
                         //});
-                    }
-                    if(res3[i].LayerType ==='PlacemarkLayer'){
-
-                        let countrynamestr = res3[i].CountryName.replace(/\s+/g, '');
-                        let statenamestr = res3[i].StateName.replace(/\s+/g, '');
-                        let citynamestr = res3[i].CityName.replace(/\s+/g, '');
-                        // console.log(res3[i].ThirdLayer);
-
-                        var checkboxdiv = document.createElement("div");
-                        checkboxdiv.className = "State " + res3[i].ThirdLayer + " " + countrynamestr + statenamestr + citynamestr;
-                        // checkboxdiv.className = "State " + res3[i].ThirdLayer + " " + countrynamestr + statenamestr + continentnamestr;
-                        var checkboxh5 = document.createElement("h5");
-                        var checkboxa = document.createElement("a");
-                        var checkaboxat = document.createTextNode(res3[i].ThirdLayer);
-                        // console.log(checkboxdiv);
-                        var checkboxlabel = document.createElement("label");
-                        checkboxlabel.className = "switch right";
-                        var checkboxinput = document.createElement("input");
-                        checkboxinput.type = "checkbox";
-                        checkboxinput.id = res3[i].LayerType;
-                        // console.log(res3[i].ThirdLayer);
-                        checkboxinput.className = res3[i].LayerType + " input " + res3[i].ThirdLayer;
-                        checkboxinput.setAttribute("value", res3[i].LayerName);
-                        var checkboxspan = document.createElement("span");
-                        checkboxspan.className = "slider round";
-
-                        checkboxdiv.appendChild(checkboxh5);
-                        checkboxa.appendChild(checkaboxat);
-                        checkboxh5.appendChild(checkboxa);
-                        checkboxh5.appendChild(checkboxlabel);
-                        checkboxlabel.appendChild(checkboxinput);
-                        checkboxlabel.appendChild(checkboxspan);
-
-                        document.getElementsByClassName("panel-body " + res3[i].SecondLayer)[0].appendChild(checkboxdiv);
-                    }
+                    // }
+                    // if(res3[i].LayerType ==='PlacemarkLayer'){
+                    //
+                    //     let countrynamestr = res3[i].CountryName.replace(/\s+/g, '');
+                    //     let statenamestr = res3[i].StateName.replace(/\s+/g, '');
+                    //     let citynamestr = res3[i].CityName.replace(/\s+/g, '');
+                    //     // console.log(res3[i].ThirdLayer);
+                    //
+                    //     var checkboxdiv = document.createElement("div");
+                    //     checkboxdiv.className = "State " + res3[i].ThirdLayer + " " + countrynamestr + statenamestr + citynamestr;
+                    //     // checkboxdiv.className = "State " + res3[i].ThirdLayer + " " + countrynamestr + statenamestr + continentnamestr;
+                    //     var checkboxh5 = document.createElement("h5");
+                    //     var checkboxa = document.createElement("a");
+                    //     var checkaboxat = document.createTextNode(res3[i].ThirdLayer);
+                    //     // console.log(checkboxdiv);
+                    //     var checkboxlabel = document.createElement("label");
+                    //     checkboxlabel.className = "switch right";
+                    //     var checkboxinput = document.createElement("input");
+                    //     checkboxinput.type = "checkbox";
+                    //     checkboxinput.id = res3[i].LayerType;
+                    //     // console.log(res3[i].ThirdLayer);
+                    //     checkboxinput.className = res3[i].LayerType + " input " + res3[i].ThirdLayer;
+                    //     checkboxinput.setAttribute("value", res3[i].LayerName);
+                    //     var checkboxspan = document.createElement("span");
+                    //     checkboxspan.className = "slider round";
+                    //
+                    //     checkboxdiv.appendChild(checkboxh5);
+                    //     checkboxa.appendChild(checkaboxat);
+                    //     checkboxh5.appendChild(checkboxa);
+                    //     checkboxh5.appendChild(checkboxlabel);
+                    //     checkboxlabel.appendChild(checkboxinput);
+                    //     checkboxlabel.appendChild(checkboxspan);
+                    //
+                    //     document.getElementsByClassName("panel-body " + res3[i].SecondLayer)[0].appendChild(checkboxdiv);
+                    // }
                 }
             }
 
