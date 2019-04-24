@@ -572,7 +572,7 @@
                 for(var i = 0; i < results.length; i++) {
                     // let newRes = JSON.stringify(results);
                     console.log(value);
-                    console.log(results[0].LayerName);
+                    console.log(results[i].LayerName);
                     if (value === results[i].LayerName) {
                         document.getElementById("LayerName1").innerHTML = "The layer name has already been used. Please use another one.";
                         document.addEventListener("keyup", function (e) {

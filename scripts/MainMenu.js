@@ -84,6 +84,7 @@ requirejs([
             for (var n = 0; n < preloadWMSLayerName.length; n++) {
 
                 var wmsLayerCapability = wms.getNamedLayer(preloadWMSLayerName[n]);
+                console.log(wmsLayerCapability);
 
                 // Form a configuration object from the wmsLayerCapability object
                 var wmsConfig = WorldWind.WmsLayer.formLayerConfiguration(wmsLayerCapability);

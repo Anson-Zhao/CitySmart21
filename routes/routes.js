@@ -1504,9 +1504,11 @@ module.exports = function (app, passport) {
                     console.log("name of file: " + approvepictureStr[0]);
                     var type = "Content-type: application/zip";
                     var datastore = "datastore" + fName;
+                    var coveragestore = "coveragestore" + fName;
 
                     var statement = "curl -u julia:123654 -v -XPUT -H '" + type + "' --data-binary @approvedfolder/" + approvepictureStr[0] + " " + geoServer + "rest/workspaces/Approved/datastores/" + datastore +"/file.shp";
 
+                    console.log(statement);
                     child = exec(statement,
                         function (error, stdout, stderr) {
                             console.log(statement);
@@ -1592,7 +1594,7 @@ module.exports = function (app, passport) {
                     type = "Content-type: text/plain";
                     datastore = "coveragestore" + fName;
 
-                    statement = "curl -u julia:123654 -v -XPUT -H '" + type + "' -d 'file:data_dir/data/Approved/coveragestore/" + approvepictureStr[0] + ".tif' " + geoServer + "rest/workspaces/Approved/coveragestores/" + datastore +"/external.geotiff";
+                    statement = "curl -u julia:123654 -v -XPUT -H '" + type + "' -d 'file:data_dir/data/Approved/coveragestore/" + approvepictureStr[0] + "' " + geoServer + "rest/workspaces/Approved/coveragestores/" + coveragestore +"/external.geotiff";
 
                     child = exec(statement,
                         function (error, stdout, stderr) {
@@ -1982,31 +1984,11 @@ module.exports = function (app, passport) {
         })
     });
 
-//check if the layer name is available
-    app.get('/SearchLayerName', function (req, res) {
-        res.setHeader("Access-Control-Allow-Origin", "*");
-        con_CS.query("SELECT ThirdLayer FROM LayerMenu", function (err, results) {
-            if (err) throw err;
-            res.json(results);
-
-        });
-    });
-
-
     app.get('/EditData', function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*");
         con_CS.query("SELECT Full Name, Address Line 1, Address Line 2, City, State/Province/Region, Postal Code/ZIP, Country, Email, Phone Number, Layer Name, Layer Category, Layer Description, Layer Uploader FROM GeneralFormDatatable", function (err, results) {
             if (err) throw err;
         })
-    });
-
-    app.get('/SearchLayerName', function (req, res) {
-        res.setHeader("Access-Control-Allow-Origin", "*");
-        con_CS.query("SELECT ThirdLayer FROM LayerMenu", function (err, results) {
-            if (err) throw err;
-            res.json(results);
-
-        });
     });
 
     // =====================================
